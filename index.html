@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramen Talk — a summer at Etsuko&rsquo;s counter</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="frame">
+
+  <!-- ===================== HUD ===================== -->
+  <header class="hud">
+    <div class="hud-l">
+      <span class="sign">&#24742;&#23376; &middot; Menya Etsuko</span>
+      <span class="hud-sub">a Tuesday in August &middot; <span id="progress">before opening</span></span>
+    </div>
+    <div class="hud-r">
+      <button id="phoneBtn" class="ghost" hidden>Phone</button>
+      <button id="bookBtn" class="ghost">Notebook</button>
+      <button id="wordsBtn" class="ghost">Words</button>
+      <button id="soundBtn" class="ghost">Sound off</button>
+      <button id="settingsBtn" class="ghost" title="Text size and speed">Aa</button>
+    </div>
+  </header>
+
+  <!-- ===================== STAGE ===================== -->
+  <div class="stage-wrap">
+    <canvas id="stage" width="384" height="216"></canvas>
+  </div>
+
+  <!-- ===================== DIALOGUE ===================== -->
+  <div id="dialogue" class="dialogue" hidden>
+    <div id="speaker" class="speaker"></div>
+    <div id="line" class="line"></div>
+    <div id="choices" class="choices"></div>
+    <div id="advance" class="advance" hidden>click to continue &#9656;</div>
+  </div>
+
+  <!-- ===================== TITLE ===================== -->
+  <div id="title" class="overlay title-screen">
+    <canvas id="titleArt" class="title-art" width="384" height="216"></canvas>
+    <div class="title-inner">
+      <div class="title-mark">
+        <h1>Ramen<span>Talk</span></h1>
+        <div class="title-bowl" aria-hidden="true"></div>
+      </div>
+      <p class="title-place">Menya Etsuko &middot; a small town in Tohoku, Japan &middot; this summer</p>
+
+      <div class="slides">
+
+        <section class="slide" data-slide="1">
+          <p class="slide-kicker">Where you are</p>
+          <p>You are spending the summer helping at your grandmother&rsquo;s ramen
+             counter. There are <b>six seats</b>. She has been running it for
+             forty years and she is not as fast as she was.</p>
+          <p>Tonight <b>seven people</b> will sit down and talk to you while you
+             make them something.</p>
+          <p class="quiet">You cannot lose. Nobody storms out, every bowl gets
+             eaten. The only thing that changes is <b>how much people tell you</b>.</p>
+        </section>
+
+        <section class="slide" data-slide="2" hidden>
+          <p class="slide-kicker">What you do</p>
+          <p>Nobody reads off a menu. They tell you what kind of evening they are
+             having &mdash; <i>&ldquo;something plain, the way it&rsquo;s always
+             been&rdquo;</i> &mdash; and you work out what that means.</p>
+          <p>Every bowl is three clicks: <b>one broth</b> and <b>two toppings</b>.
+             Tip it out and start again as often as you like.</p>
+          <p class="quiet">Get somebody&rsquo;s bowl right and they tell you the
+             thing they were not going to say. Get it wrong and you never find out.</p>
+        </section>
+
+        <section class="slide" data-slide="3" hidden>
+          <p class="slide-kicker">Between customers</p>
+          <p>When the shop is empty, <b>check your phone</b>. Everyone in this town
+             is arguing about the same things your customers are &mdash; the closed
+             school, the empty houses, whose turn it is to be paid for.</p>
+          <p class="quiet">Click any <span class="gloss-demo">underlined term</span>
+             to see what it means. Your <b>Notebook</b> fills in by itself as you
+             cook, and keeps the words you will need afterwards.</p>
+        </section>
+
+      </div>
+
+      <div class="slide-nav">
+        <button id="slideBack" class="ghost-btn" hidden>&#9664; Back</button>
+        <span id="slideDots" class="slide-dots"></span>
+        <button id="slideNext" class="big-btn">Next &#9654;</button>
+        <button id="beginBtn" class="big-btn" hidden>Open the shop</button>
+      </div>
+
+      <div id="resumeRow" class="resume-row" hidden>
+        <p class="quiet">You left an evening half-finished.</p>
+        <button id="resumeBtn" class="big-btn">Carry on where you stopped</button>
+        <button id="freshBtn" class="ghost">Start the night over</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== THE BENCH ===================== -->
+  <div id="bench" class="overlay bench" hidden>
+    <div class="bench-inner">
+
+      <div class="bench-head">
+        <div>
+          <div class="bench-for">Making a bowl for <b id="benchWho">&mdash;</b></div>
+          <div id="benchOrder" class="bench-order"></div>
+        </div>
+        <div class="bench-count"><span id="benchStep">Pick a broth</span></div>
+      </div>
+
+      <div class="bench-body">
+
+        <div class="shelf">
+          <div class="shelf-label">Broth <span class="shelf-note">pick one</span></div>
+          <div id="brothRow" class="shelf-row"></div>
+
+          <div class="shelf-label">Toppings <span class="shelf-note">pick two</span></div>
+          <div id="topRow" class="shelf-row wrap"></div>
+        </div>
+
+        <div class="bowl-side">
+          <canvas id="bowlArt" width="180" height="140"></canvas>
+          <div id="bowlName" class="bowl-name">an empty bowl</div>
+          <div id="bowlParts" class="bowl-parts"></div>
+          <div class="bowl-btns">
+            <button id="tipBtn" class="ghost-btn">Tip it out</button>
+            <button id="serveBtn" class="big-btn" disabled>Serve it</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PHONE ===================== -->
+  <div id="phone" class="overlay phone" hidden>
+    <div class="phone-body">
+      <div class="phone-notch"></div>
+      <div class="phone-status"><span id="phoneClock">21:04</span><span class="phone-bars">&#9679;&#9679;&#9679; &#9646;</span></div>
+      <div class="phone-app">
+        <div class="app-bar">
+          <span class="app-mark">&#12388;</span>
+          <span class="app-name">Tsubuyaki</span>
+          <span class="app-sub">&#12513;&#12452;&#12531;</span>
+        </div>
+        <div id="feed" class="feed"></div>
+      </div>
+      <div class="phone-foot">
+        <button id="phoneClose" class="big-btn">Put the phone away</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NOTEBOOK ===================== -->
+  <div id="book" class="overlay book" hidden>
+    <div class="book-inner">
+      <div class="book-head">
+        <h2>Recipe Notebook</h2>
+        <button id="bookClose" class="ghost-btn">Close</button>
+      </div>
+      <div class="book-cols">
+        <div class="book-left">
+          <h3>Broths</h3>
+          <div id="bookBroths" class="book-list"></div>
+          <h3>Toppings</h3>
+          <div id="bookTops" class="book-list tight"></div>
+        </div>
+        <div class="book-right">
+          <canvas id="mapArt" width="200" height="260"></canvas>
+          <div class="book-margin">
+            <h3>Margin notes</h3>
+            <div id="bookMargin" class="margin-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== GLOSSARY ===================== -->
+  <div id="words" class="overlay words" hidden>
+    <div class="words-inner">
+      <div class="book-head">
+        <h2>Words</h2>
+        <button id="wordsClose" class="ghost-btn">Close</button>
+      </div>
+      <div id="wordList" class="word-list"></div>
+    </div>
+  </div>
+
+  <!-- ===================== ONE WORD, POPPED ===================== -->
+  <div id="pop" class="pop" hidden>
+    <div class="pop-term" id="popTerm"></div>
+    <div class="pop-def" id="popDef"></div>
+    <button id="popClose" class="ghost-btn">Got it</button>
+  </div>
+
+  <!-- ===================== SETTINGS ===================== -->
+  <div id="settings" class="overlay small" hidden>
+    <div class="small-inner">
+      <div class="book-head"><h2>Reading</h2><button id="setClose" class="ghost-btn">Close</button></div>
+      <p class="set-row"><span>Text size</span> <span id="sizeBtns" class="btn-group"></span></p>
+      <p class="set-row"><span>Text speed</span> <span id="speedBtns" class="btn-group"></span></p>
+      <p class="quiet">Both are remembered on this computer.</p>
+    </div>
+  </div>
+
+  <!-- ===================== CLOSING ===================== -->
+  <div id="closing" class="overlay closing" hidden>
+    <div class="closing-inner">
+      <h2 id="closeTitle">Closing up</h2>
+      <div id="closeBody"></div>
+      <div class="closing-foot">
+        <button id="stepOut" class="big-btn">Step outside</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== END CARD ===================== -->
+  <div id="endcard" class="overlay endcard" hidden>
+    <canvas id="endArt" class="title-art" width="384" height="216"></canvas>
+    <div class="end-inner">
+      <h2>The years after</h2>
+      <div id="endList" class="end-list"></div>
+      <button id="endRestart" class="ghost-btn">Play it again</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/feed.js"></script>
+<script src="js/sprites.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/art.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
