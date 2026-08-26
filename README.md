@@ -34,6 +34,11 @@ republishes it within about a minute.
   back page of AP-task-verb questions (*identify, describe, explain, compare*).
   [`docs/print/handout.html`](docs/print/handout.html) is it laid out for the
   printer — it comes out as exactly two sheets of Letter.
+- **[docs/CONCEPT-HANDOUT-KEY.md](docs/CONCEPT-HANDOUT-KEY.md)** — the teacher
+  key for it: sample answers for every row, model answers for the back page, a
+  four-point rubric for the long response, and the answers that look right and
+  are not. [`docs/print/handout-key.html`](docs/print/handout-key.html) prints
+  as three pages, each banded so it cannot be handed out by accident.
 - **[docs/STUDENT-HANDOUT.md](docs/STUDENT-HANDOUT.md)** — the longer version,
   about three pages, with more room for detail per character.
 - **[docs/GUIDED-NOTES.md](docs/GUIDED-NOTES.md)** — the scaffolded

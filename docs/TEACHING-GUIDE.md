@@ -249,6 +249,14 @@ platform; the numbers quoted inside them are real published figures.
 
 ---
 
+## Keys
+
+The two-page concept handout has its own key, with per-character sample
+answers and a rubric: [CONCEPT-HANDOUT-KEY.md](CONCEPT-HANDOUT-KEY.md)
+(printable at [`print/handout-key.html`](print/handout-key.html)).
+
+The blank-by-blank key for the scaffolded guided notes is below.
+
 ## Guided-notes answer key
 
 Blanks in order, by block. Where a student's wording will vary, the accepted
