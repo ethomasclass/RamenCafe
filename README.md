@@ -55,11 +55,11 @@ server, no build step, no dependencies.
 
 | | |
 |---|---|
-| **Setting** | A shrinking town in Tohoku, present day. Menya Etsuko, six seats |
+| **Setting** | A dying covered shopping arcade in a Tohoku town, present day. Menya Etsuko, six seats, half the shutters opposite are down |
 | **Length** | 30–35 minutes: four conversations, seven bowls, four phone breaks, closing up, end card |
 | **Reading level** | Written for 9th graders with zero background in Japan, Japanese food, or the DTM. Every specialist term is glossed in-game |
 | **Ramen** | Four real regional broths and eight toppings, all named and placed on a map. Nothing is invented food |
-| **Sound** | The pot, the extractor fan and a car going past, all synthesised in-browser. No audio files. **Off by default**, one toggle |
+| **Sound** | The pot, the extractor fan, a car going past, and a hand bell when somebody confides in you — all synthesised in-browser. No audio files. **Off by default**, one toggle |
 | **Fail state** | None. Every bowl is eaten and nobody walks out |
 
 ### The loop
@@ -106,6 +106,30 @@ is never a lookup answer, only reading somebody carefully enough, and it means
 a student who listens to the order gets it right without knowing anything
 about ramen.
 
+### How it looks, and why
+
+The shop opens onto a **shotengai** — a covered shopping arcade — rather than
+a street, so the whole back of the frame is depth: the arcade roof, one
+working lamp of three, cables, the building opposite close enough to touch, a
+run of shutters that have been down for years, a vending machine that is the
+only other thing open at this hour, wet ground reflecting both, and a cat
+nobody owns. Kenji's line about eleven businesses becoming three lands
+differently when the player has been looking at the other eight all night.
+
+The interface is **indigo, washi, sumi and vermilion** — the noren, the paper,
+the ink and the seal — with mincho for names and headings and gothic for body
+text. Dialogue is a paper card with a wooden name tag; scenes arrive behind a
+**shoji screen** that slides shut and open; and when somebody tells you the
+thing they were not going to say, a **red hanko** stamps over the screen and a
+hand bell sounds. That last one is deliberate: the confession is the most
+important mechanic in the game and it needed to be a moment, not just more
+text.
+
+**Etsuko is never at the counter.** She is on your side of it, so she appears
+as a bust portrait at the edge of the screen with her own card — the visual
+grammar is customers across the counter, your grandmother beside you, and you
+never shown at all.
+
 ### The recipe notebook
 
 Fills in by itself as you cook. Every broth gets its region, a phonetic hint
@@ -146,7 +170,14 @@ js/sprites.js     which PNG is whose face — already wired, optional
 js/icons.js       bowls, shelf jars, the map of Japan
 js/audio.js       the pot and the fan, synthesised
 js/game.js        state, the script player, the bench, the phone, closing
+tools/build-single.js   squashes the whole game into one HTML file
 ```
+
+**One file, if you need one.** `node tools/build-single.js` writes
+`dist/ramen-talk.html` — the entire game inlined into a single ~200 KB file
+you can email, put on a USB stick, or upload to an LMS that only accepts one
+attachment. `--fragment` writes the same thing without the outer `<html>`
+wrapper, for hosts that supply their own.
 
 **To change the writing**, edit `js/scenes.js`. It needs no knowledge of the
 rest of the game.

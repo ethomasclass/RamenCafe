@@ -109,10 +109,20 @@
     },
     /* the phone */
     phone: function () { ping(880, 0.07, 'square', 0.03); },
-    /* somebody says the thing they were not going to say */
+    /* somebody says the thing they were not going to say: a small hand
+       bell — a struck fundamental with two inharmonic partials over it,
+       which is what makes metal sound like metal rather than like a flute */
     confide: function () {
-      ping(392, 0.9, 'sine', 0.05);
-      setTimeout(function () { ping(587, 1.2, 'sine', 0.035); }, 180);
+      if (!on || !ctx) return;
+      [[1174, 0.045, 2.6], [1761, 0.022, 2.0], [2637, 0.012, 1.4]].forEach(function (v) {
+        var o = ctx.createOscillator(), g2 = ctx.createGain();
+        o.type = 'sine'; o.frequency.value = v[0];
+        g2.gain.setValueAtTime(0, ctx.currentTime);
+        g2.gain.linearRampToValueAtTime(v[1], ctx.currentTime + 0.004);
+        g2.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + v[2]);
+        o.connect(g2); g2.connect(master);
+        o.start(); o.stop(ctx.currentTime + v[2] + 0.05);
+      });
     }
   };
 

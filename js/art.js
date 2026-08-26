@@ -26,6 +26,7 @@
   var speaker = null, expr = 'neutral';
   var phase = 0;         /* 0 = early evening, 1 = closing time */
   var blinkAt = {};
+  var gust = 0;               /* the noren, when somebody comes in */
 
   /* ------------------------------------------------------------------ */
   /* Who looks like what, when there is no PNG for them.                 */
@@ -208,100 +209,198 @@
   /* THE ROOM                                                            */
 
   var HOT = [
-    { key: 'calendar', x: 10,  y: 10, w: 32, h: 38 },
-    { key: 'photo',    x: 314, y: 8,  w: 44, h: 32 },
-    { key: 'noren',    x: 226, y: 10, w: 76, h: 26 },
-    { key: 'shutter',  x: 240, y: 44, w: 44, h: 26 },
+    { key: 'calendar', x: 14,  y: 96,  w: 34, h: 40 },
+    { key: 'photo',    x: 306, y: 46,  w: 46, h: 34 },
+    { key: 'noren',    x: 88,  y: 16,  w: 208, h: 26 },
+    { key: 'shutter',  x: 92,  y: 84,  w: 130, h: 30 },
+    { key: 'vending',  x: 244, y: 64,  w: 46, h: 50 },
+    { key: 'arcade',   x: 88,  y: 42,  w: 208, h: 16 },
+    { key: 'cat',      x: 98,  y: 116, w: 30, h: 22 },
     { key: 'seats',    x: 40,  y: 150, w: 180, h: 22 }
   ];
 
+  /* The shop front is open onto the arcade. Everything between these two
+     posts is outside; everything either side of them is the shop. */
+  var AX = 88, AW = 208, AY = 16, AB = 150;
+
+  function alley(frame) {
+    b.save();
+    b.beginPath(); b.rect(AX, AY, AW, AB - AY); b.clip();
+
+    b.fillStyle = '#10141b'; b.fillRect(AX, AY, AW, AB - AY);
+
+    /* --- under the arcade roof: one lamp left working ------------------ */
+    b.fillStyle = '#171c25'; b.fillRect(AX, AY, AW, 40);
+    b.fillStyle = '#0d1117';
+    for (var rb = 0; rb < 6; rb++) b.fillRect(AX + 10 + rb * 34, AY, 5, 40);
+    [[132, 1], [206, 0], [268, 2]].forEach(function (L) {
+      var lx = L[0], live = L[1] === 1 || (L[1] === 2 && Math.sin(frame / 6) > -0.25);
+      b.fillStyle = '#242a34'; b.fillRect(lx, 44, 1, 4);
+      b.fillStyle = live ? 'rgba(230,212,160,.9)' : '#282d36';
+      b.beginPath(); b.ellipse(lx, 50, 5, 3.5, 0, 0, 7); b.fill();
+      if (live) {
+        b.fillStyle = 'rgba(230,212,160,.09)';
+        b.beginPath(); b.moveTo(lx - 4, 51); b.lineTo(lx + 4, 51);
+        b.lineTo(lx + 26, AB); b.lineTo(lx - 26, AB); b.closePath(); b.fill();
+      }
+    });
+    b.strokeStyle = '#0b0e13'; b.lineWidth = 1;
+    [50, 57].forEach(function (cy2) {
+      b.beginPath(); b.moveTo(AX, cy2);
+      b.quadraticCurveTo(AX + AW / 2, cy2 + 6, AX + AW, cy2 - 2); b.stroke();
+    });
+
+    /* --- the building opposite, close enough to touch ------------------ */
+    b.fillStyle = '#1e2732'; b.fillRect(AX, 56, AW, 58);
+    b.fillStyle = '#1a222c';
+    for (var pl = 0; pl < 14; pl++) b.fillRect(AX + pl * 16, 56, 1, 58);
+
+    /* hanging signs for shops that closed years apart */
+    var signs = [[100, '#2c3646', 26], [150, '#38323c', 22], [196, '#2c3c3c', 28]];
+    signs.forEach(function (sg) {
+      b.fillStyle = '#141922'; b.fillRect(sg[0] - 1, 58, 15, 2);
+      b.fillStyle = sg[1]; b.fillRect(sg[0], 60, 13, sg[2]);
+      b.fillStyle = 'rgba(190,200,214,.20)';
+      for (var t = 0; t < 3; t++) b.fillRect(sg[0] + 3, 65 + t * 7, 7, 2);
+    });
+
+    /* --- the shutters, all the way down -------------------------------- */
+    b.fillStyle = '#1a2029'; b.fillRect(AX + 4, 84, 130, 3);
+    b.fillStyle = '#232a34'; b.fillRect(AX + 4, 87, 130, 27);
+    b.fillStyle = '#2c343f';
+    for (var sh = 0; sh < 7; sh++) b.fillRect(AX + 4, 88 + sh * 4, 130, 2);
+    b.fillStyle = '#8a8468'; b.fillRect(AX + 52, 95, 10, 8);
+    b.fillStyle = '#6e6a52'; b.fillRect(AX + 53, 97, 8, 1); b.fillRect(AX + 53, 100, 6, 1);
+
+    /* --- the vending machine, the only other thing open ---------------- */
+    var vx = 246;
+    var vg = b.createRadialGradient(vx + 20, 92, 4, vx + 20, 92, 54);
+    vg.addColorStop(0, 'rgba(154,204,240,' + (0.16 + Math.sin(frame / 60) * 0.02) + ')');
+    vg.addColorStop(1, 'rgba(154,204,240,0)');
+    b.fillStyle = vg; b.fillRect(AX, 42, AW, AB - 42);
+    b.fillStyle = '#20262e'; b.fillRect(vx - 2, 64, 44, 50);
+    b.fillStyle = '#2f363f'; b.fillRect(vx, 66, 40, 46);
+    b.fillStyle = '#e4eff7'; b.fillRect(vx + 3, 69, 34, 28);
+    var cans = ['#d8483a', '#3a7ad8', '#e0a92c', '#4aa86a', '#c8543a', '#3a8ad0', '#d8b83a', '#5a9a5a'];
+    for (var cn = 0; cn < 8; cn++) {
+      b.fillStyle = cans[cn];
+      b.fillRect(vx + 6 + (cn % 4) * 8, 72 + Math.floor(cn / 4) * 13, 5, 10);
+      b.fillStyle = 'rgba(255,255,255,.5)';
+      b.fillRect(vx + 6 + (cn % 4) * 8, 72 + Math.floor(cn / 4) * 13, 1, 10);
+    }
+    b.fillStyle = '#9fb8cc'; b.fillRect(vx + 3, 98, 34, 2);
+    b.fillStyle = '#151a20'; b.fillRect(vx + 6, 102, 28, 7);
+    b.fillStyle = '#c8402f'; b.fillRect(vx + 30, 100, 4, 2);
+
+    /* --- the ground, still damp from this afternoon -------------------- */
+    b.fillStyle = '#151a20'; b.fillRect(AX, 114, AW, AB - 114);
+    b.fillStyle = '#1a2028';
+    for (var gg = 0; gg < 6; gg++) b.fillRect(AX, 118 + gg * 6, AW, 1);
+    for (var rf = 0; rf < 5; rf++) {
+      b.globalAlpha = 0.10 + (rf % 2) * 0.04;
+      b.fillStyle = '#a8d6ee';
+      b.fillRect(vx + 4 + rf * 8, 114, 3, 11 + Math.sin(frame / 20 + rf) * 3);
+    }
+    for (var rw = 0; rw < 7; rw++) {
+      b.globalAlpha = 0.07 + (rw % 3) * 0.03;
+      b.fillStyle = '#f0a848';
+      b.fillRect(AX + 10 + rw * 14, 130, 3, 10 + Math.sin(frame / 17 + rw) * 3);
+    }
+    b.globalAlpha = 1;
+
+    /* --- the cat nobody owns and everybody feeds ----------------------- */
+    var cxx = 112, cyy = 128, tw = Math.sin(frame / 26) * 2;
+    b.fillStyle = '#12151a';
+    b.beginPath(); b.ellipse(cxx, cyy + 4, 10, 5, 0, 0, 7); b.fill();
+    b.beginPath(); b.arc(cxx - 7, cyy - 3, 5, 0, 7); b.fill();
+    b.fillRect(cxx - 11, cyy - 10, 2, 4); b.fillRect(cxx - 5, cyy - 10, 2, 4);
+    b.fillRect(cxx + 7, cyy + 1 + tw, 7, 1);
+    b.fillStyle = '#c9c07a';
+    b.fillRect(cxx - 9, cyy - 4, 1, 1); b.fillRect(cxx - 5, cyy - 4, 1, 1);
+
+    b.restore();
+  }
+
   function wall(frame) {
-    /* back wall */
-    b.fillStyle = '#2f211a'; b.fillRect(0, 0, W, 152);
-    b.fillStyle = '#281c15';
+    /* the inside of the shop */
+    b.fillStyle = '#2b2723'; b.fillRect(0, 0, W, 152);
+    b.fillStyle = '#252119';
     for (var i = 0; i < 14; i++) b.fillRect(0, 9 + i * 11, W, 1);
 
-    /* ---- the doorway, and the street through it ---------------------- */
-    var dx = 228, dw = 72;
-    /* night sky and the road outside */
-    b.fillStyle = '#1a2230'; b.fillRect(dx, 30, dw, 122);
-    b.fillStyle = '#20262e'; b.fillRect(dx, 104, dw, 48);          /* road */
-    /* the closed shop opposite: shutter, and a yellowed notice on it */
-    b.fillStyle = '#252d36'; b.fillRect(dx + 12, 46, 46, 30);
-    b.fillStyle = '#2e3843';
-    for (var sh = 0; sh < 7; sh++) b.fillRect(dx + 12, 48 + sh * 4, 46, 2);
-    b.fillStyle = '#8a8468'; b.fillRect(dx + 30, 58, 8, 6);
-    /* street lamp glow, breathing very slightly */
-    b.fillStyle = 'rgba(240,206,140,' + (0.13 + Math.sin(frame / 47) * 0.02) + ')';
-    b.beginPath(); b.arc(dx + 62, 52, 20, 0, 7); b.fill();
-    b.fillStyle = '#3a4048'; b.fillRect(dx + 61, 52, 2, 52);
-    /* door frame */
-    b.fillStyle = '#3f2c21';
-    b.fillRect(dx - 6, 26, 6, 126); b.fillRect(dx + dw, 26, 6, 126); b.fillRect(dx - 6, 26, dw + 12, 6);
+    alley(frame);
 
-    /* noren over the door */
-    b.fillStyle = '#23364f'; b.fillRect(dx - 8, 8, dw + 16, 24);
-    b.fillStyle = '#1a2a3d';
-    b.fillRect(dx + 18, 14, 2, 18); b.fillRect(dx + 52, 14, 2, 18);
-    b.fillStyle = '#eae4d4'; b.font = '11px serif'; b.textAlign = 'center';
-    b.fillText('ラーメン', dx + 36, 25);
+    /* the posts and beam of the shop front */
+    b.fillStyle = '#3b332a';
+    b.fillRect(AX - 8, 6, 8, 146); b.fillRect(AX + AW, 6, 8, 146);
+    b.fillRect(AX - 8, 6, AW + 16, 10);
+    b.fillStyle = '#4a4136'; b.fillRect(AX - 8, 6, AW + 16, 2);
 
-    /* ---- menu strips ------------------------------------------------- */
+    /* the noren, swaying — harder for a moment when somebody comes in */
+    var sway = Math.sin(frame / 40) * 1.2 + gust * Math.sin(frame / 5) * 3;
+    for (var np = 0; np < 4; np++) {
+      var px2 = AX + np * (AW / 4), pw = AW / 4 - 1;
+      var off = Math.sin(frame / 40 + np * 0.8) * 1.1 + gust * Math.sin(frame / 5 + np) * 3;
+      b.fillStyle = np % 2 ? '#1f3350' : '#22385a';
+      b.fillRect(px2 + off, 16, pw, 26);
+    }
+    b.fillStyle = '#eae4d4'; b.font = '13px serif'; b.textAlign = 'center';
+    b.fillText('ラーメン', AX + AW / 2 + sway * 0.4, 34);
+    b.fillStyle = '#16243a'; b.fillRect(AX, 40, AW, 2);
+    if (gust > 0) gust = Math.max(0, gust - 0.012);
+
+    /* ---- the left-hand wall: lantern, menu strips, calendar ---------- */
+    b.fillStyle = '#3b332a'; b.fillRect(40, 0, 2, 10);
+    var glow = 0.80 + Math.sin(frame / 33) * 0.05;
+    b.fillStyle = 'rgba(240,168,72,' + glow + ')';
+    b.beginPath(); b.ellipse(41, 20, 12, 10, 0, 0, 7); b.fill();
+    b.fillStyle = 'rgba(255,228,175,.92)';
+    b.beginPath(); b.ellipse(41, 19, 6, 5, 0, 0, 7); b.fill();
+    b.fillStyle = '#c8402f'; b.fillRect(32, 28, 18, 2);
+
     var menus = ['しょうゆ', 'みそ', 'しお', 'とんこつ'];
     for (var m = 0; m < 4; m++) {
-      var mx = 54 + m * 23;
-      b.fillStyle = '#e9dfc8'; b.fillRect(mx, 8, 16, 46);
-      b.fillStyle = '#c9bfa8'; b.fillRect(mx, 52, 16, 2);
-      b.fillStyle = '#3a2a20'; b.font = '8px serif';
-      for (var ch = 0; ch < menus[m].length; ch++) b.fillText(menus[m][ch], mx + 8, 18 + ch * 9);
+      var mx = 4 + m * 19;
+      b.fillStyle = '#e9dfc8'; b.fillRect(mx, 40, 15, 44);
+      b.fillStyle = '#cfc4aa'; b.fillRect(mx, 82, 15, 2);
+      b.fillStyle = '#2e2a22'; b.font = '8px serif'; b.textAlign = 'center';
+      for (var ch = 0; ch < menus[m].length; ch++) b.fillText(menus[m][ch], mx + 7, 50 + ch * 9);
     }
 
-    /* ---- calendar, with a name written on half the squares ----------- */
-    b.fillStyle = '#efe6d4'; b.fillRect(10, 10, 32, 38);
-    b.fillStyle = '#b8433a'; b.fillRect(10, 10, 32, 8);
-    b.fillStyle = '#8a7a66';
+    b.fillStyle = '#efe6d4'; b.fillRect(14, 96, 34, 40);
+    b.fillStyle = '#c8402f'; b.fillRect(14, 96, 34, 8);
     for (var r = 0; r < 4; r++) for (var c = 0; c < 6; c++) {
-      b.fillStyle = ((r * 6 + c) % 5 === 0) ? '#b8433a' : '#a89a86';
-      b.fillRect(13 + c * 5, 22 + r * 6, 3, 3);
+      b.fillStyle = ((r * 6 + c) % 5 === 0) ? '#c8402f' : '#a89a86';
+      b.fillRect(17 + c * 5, 108 + r * 6, 3, 3);
     }
 
-    /* ---- the photograph from opening day ----------------------------- */
-    b.fillStyle = '#d8c7a6'; b.fillRect(314, 8, 44, 32);
-    b.fillStyle = '#94836a'; b.fillRect(317, 11, 38, 26);
-    b.fillStyle = '#b3a288'; b.fillRect(320, 22, 32, 12);
+    /* ---- the right-hand wall: the photograph and the shelf ------------ */
+    b.fillStyle = '#d8c7a6'; b.fillRect(306, 46, 46, 34);
+    b.fillStyle = '#94836a'; b.fillRect(309, 49, 40, 28);
+    b.fillStyle = '#b3a288'; b.fillRect(312, 60, 34, 14);
     b.fillStyle = '#7a6a52';
-    for (var pp = 0; pp < 4; pp++) b.fillRect(322 + pp * 8, 18, 4, 6);
+    for (var pp = 0; pp < 4; pp++) b.fillRect(314 + pp * 8, 56, 4, 6);
 
-    /* ---- shelf of bottles -------------------------------------------- */
-    b.fillStyle = '#3f2c21'; b.fillRect(292, 76, 92, 4);
-    var cols = ['#7a4a2a', '#4a5a3a', '#6a5a2a', '#3a4a5a', '#5a3a3a'];
+    b.fillStyle = '#3b332a'; b.fillRect(304, 116, 80, 4);
+    var cols = ['#7a4a2a', '#4a5a3a', '#6a5a2a', '#1f3350', '#5a3a3a'];
     for (var q = 0; q < 5; q++) {
-      b.fillStyle = cols[q]; b.fillRect(298 + q * 17, 62, 9, 14);
-      b.fillStyle = '#d8cbb4'; b.fillRect(300 + q * 17, 58, 5, 5);
+      b.fillStyle = cols[q]; b.fillRect(308 + q * 15, 102, 8, 14);
+      b.fillStyle = '#d8cbb4'; b.fillRect(310 + q * 15, 98, 4, 5);
     }
 
-    /* ---- the lantern over the counter -------------------------------- */
-    b.fillStyle = '#3f2c21'; b.fillRect(170, 0, 2, 8);
-    var glow = 0.78 + Math.sin(frame / 33) * 0.05;
-    b.fillStyle = 'rgba(240,168,72,' + glow + ')';
-    b.beginPath(); b.ellipse(171, 18, 13, 10, 0, 0, 7); b.fill();
-    b.fillStyle = 'rgba(255,228,175,.92)';
-    b.beginPath(); b.ellipse(171, 17, 7, 5, 0, 0, 7); b.fill();
-    b.fillStyle = '#c0872c'; b.fillRect(160, 26, 22, 2);
   }
 
   function counter(frame) {
-    b.fillStyle = '#5f4130'; b.fillRect(0, 150, W, 13);
-    b.fillStyle = '#764f39'; b.fillRect(0, 150, W, 3);
-    b.fillStyle = '#3d2a20'; b.fillRect(0, 163, W, H - 163);
-    b.fillStyle = '#33241b';
+    b.fillStyle = '#4a3a2c'; b.fillRect(0, 150, W, 13);
+    b.fillStyle = '#5e4a38'; b.fillRect(0, 150, W, 3);
+    b.fillStyle = '#2e2620'; b.fillRect(0, 163, W, H - 163);
+    b.fillStyle = '#271f1a';
     for (var i = 0; i < 9; i++) b.fillRect(0, 170 + i * 6, W, 1);
 
-    /* the pot, your side of the counter, on the left */
-    b.fillStyle = '#4a4a52'; b.fillRect(14, 170, 48, 32);
-    b.fillStyle = '#5c5c66'; b.fillRect(12, 166, 52, 6);
-    b.fillStyle = '#70707a'; b.fillRect(14, 167, 48, 2);
-    b.fillStyle = '#3c3c44'; b.fillRect(14, 186, 48, 2);
+    /* the pot, your side, on the left */
+    b.fillStyle = '#454952'; b.fillRect(14, 170, 48, 32);
+    b.fillStyle = '#575c66'; b.fillRect(12, 166, 52, 6);
+    b.fillStyle = '#6b7078'; b.fillRect(14, 167, 48, 2);
+    b.fillStyle = '#383c44'; b.fillRect(14, 186, 48, 2);
     b.globalAlpha = 0.32; b.fillStyle = '#e8ded0';
     for (var s = 0; s < 4; s++) {
       var t = (frame * 0.7 + s * 30) % 130;
@@ -309,14 +408,12 @@
     }
     b.globalAlpha = 1;
 
-    /* stacked bowls and the chopstick pot */
     b.fillStyle = '#e8e2d8';
     b.fillRect(88, 180, 28, 5); b.fillRect(90, 175, 24, 5); b.fillRect(92, 170, 20, 5);
-    b.fillStyle = '#3d6d9a'; b.fillRect(88, 183, 28, 1); b.fillRect(90, 178, 24, 1);
-    b.fillStyle = '#6a4a30'; b.fillRect(140, 172, 13, 18);
+    b.fillStyle = '#1f3350'; b.fillRect(88, 183, 28, 1); b.fillRect(90, 178, 24, 1);
+    b.fillStyle = '#5e4a38'; b.fillRect(140, 172, 13, 18);
     b.fillStyle = '#c9a878';
     b.fillRect(142, 163, 2, 10); b.fillRect(146, 161, 2, 12); b.fillRect(149, 164, 2, 9);
-    /* a folded cloth */
     b.fillStyle = '#c8bda6'; b.fillRect(184, 176, 22, 7);
     b.fillStyle = '#b3a68d'; b.fillRect(184, 180, 22, 3);
   }
@@ -342,11 +439,6 @@
 
     counter(frame);
 
-    /* Etsuko stands on your side, so the counter passes behind her */
-    if (seats.some(function (s) { return s.id === 'etsuko'; }) === false) {
-      drawPerson('etsuko', 336, 212, speaker === 'etsuko' || speaker === null, frame);
-    }
-
     nightWash();
     blit();
   }
@@ -359,62 +451,152 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /* TITLE AND END CARDS — the street outside, before and after           */
+  /* TITLE AND END CARDS                                                  */
+  /*                                                                      */
+  /* The title is the arcade from the outside: one lit stall in a run of  */
+  /* shutters. The end card is Tokyo at dawn — where everybody went.      */
 
-  function street(canvas, dawn) {
+  function arcade(canvas) {
+    var c = canvas.getContext('2d');
+    c.imageSmoothingEnabled = false;
+    c.fillStyle = '#0b0e13'; c.fillRect(0, 0, W, H);
+
+    /* roof of the arcade, in perspective, running away from us */
+    c.fillStyle = '#141922'; c.fillRect(0, 0, W, 46);
+    for (var rb = 0; rb < 11; rb++) {
+      var t = rb / 10, bx = 192 + (rb - 5) * 40 * (1 - t * 0.2);
+      c.fillStyle = '#0d1117'; c.fillRect(bx, 0, 5, 46);
+    }
+    /* strung lamps down the middle, most of them out */
+    [[96, 0], [150, 1], [206, 0], [262, 0], [312, 1]].forEach(function (L) {
+      c.fillStyle = L[1] ? 'rgba(226,206,150,.8)' : '#252a33';
+      c.beginPath(); c.ellipse(L[0], 44, 5, 3.5, 0, 0, 7); c.fill();
+    });
+
+    /* the two walls of shops, angled in */
+    function side(dir) {
+      for (var i = 0; i < 5; i++) {
+        var t = i / 5;
+        var x0 = dir < 0 ? i * 34 : W - i * 34 - 34;
+        var top = 46 + t * 26, bot = 168 - t * 12;
+        c.fillStyle = i % 2 ? '#171d26' : '#1b222c';
+        c.fillRect(x0, top, 34, bot - top);
+        /* shutters */
+        c.fillStyle = '#232a33'; c.fillRect(x0 + 4, bot - 34, 26, 32);
+        c.fillStyle = '#2b333e';
+        for (var sh = 0; sh < 7; sh++) c.fillRect(x0 + 4, bot - 32 + sh * 4, 26, 2);
+        /* a dead sign */
+        c.fillStyle = ['#2a3240', '#33303a', '#2c3a3a'][i % 3];
+        c.fillRect(x0 + 10, top + 6, 9, 22);
+      }
+    }
+    side(-1); side(1);
+
+    /* our shop, right of centre, the only warm thing in the picture */
+    var sx = 156, sw = 74;
+    c.fillStyle = '#2b2723'; c.fillRect(sx, 58, sw, 110);
+    c.fillStyle = 'rgba(240,168,72,.92)'; c.fillRect(sx + 5, 76, sw - 10, 84);
+    /* the counter, seen end-on through the opening, with stools */
+    c.fillStyle = 'rgba(90,58,26,.55)'; c.fillRect(sx + 5, 128, sw - 10, 5);
+    c.fillStyle = 'rgba(70,44,20,.45)';
+    for (var st2 = 0; st2 < 4; st2++) c.fillRect(sx + 10 + st2 * 15, 133, 7, 12);
+    /* one person at the far end, and somebody behind the counter */
+    c.fillStyle = 'rgba(58,34,16,.6)';
+    c.beginPath(); c.ellipse(sx + 20, 116, 7, 15, 0, 0, 7); c.fill();
+    c.fillStyle = 'rgba(48,28,12,.5)';
+    c.beginPath(); c.ellipse(sx + 52, 112, 6, 13, 0, 0, 7); c.fill();
+    /* the noren, and the beam over it */
+    c.fillStyle = '#1f3350'; c.fillRect(sx + 3, 70, sw - 6, 16);
+    c.fillStyle = '#16243a';
+    c.fillRect(sx + 20, 74, 2, 12); c.fillRect(sx + 50, 74, 2, 12);
+    c.fillStyle = '#eae4d4'; c.font = '11px serif'; c.textAlign = 'center';
+    c.fillText('ラーメン', sx + sw / 2, 82);
+    c.fillStyle = '#3b332a'; c.fillRect(sx, 58, sw, 6);
+
+    /* the floor of the arcade, wet */
+    c.fillStyle = '#12161d'; c.fillRect(0, 160, W, H - 160);
+    c.fillStyle = '#171c24';
+    for (var g = 0; g < 8; g++) c.fillRect(0, 164 + g * 6, W, 1);
+    for (var rw = 0; rw < 7; rw++) {
+      c.globalAlpha = 0.07 + (rw % 3) * 0.035;
+      c.fillStyle = '#f0a848';
+      c.fillRect(sx + 4 + rw * 10, 162, 4, 18 + (rw % 3) * 5);
+    }
+    c.globalAlpha = 1;
+
+    /* a vending machine down on the left, and the glow off it */
+    var vgr = c.createRadialGradient(58, 138, 4, 58, 138, 52);
+    vgr.addColorStop(0, 'rgba(150,200,236,.16)'); vgr.addColorStop(1, 'rgba(150,200,236,0)');
+    c.fillStyle = vgr; c.fillRect(0, 80, 140, 110);
+    c.fillStyle = '#20262e'; c.fillRect(40, 116, 36, 46);
+    c.fillStyle = '#2f363f'; c.fillRect(42, 118, 32, 42);
+    c.fillStyle = '#dceaf4'; c.fillRect(45, 121, 26, 24);
+    c.fillStyle = '#151a20'; c.fillRect(46, 148, 24, 6);
+
+    var v = c.createRadialGradient(sx + 36, 118, 10, sx + 36, 118, 170);
+    v.addColorStop(0, 'rgba(240,168,72,.20)'); v.addColorStop(1, 'rgba(240,168,72,0)');
+    c.fillStyle = v; c.fillRect(0, 0, W, H);
+  }
+
+  function tokyoDawn(canvas) {
     var c = canvas.getContext('2d');
     c.imageSmoothingEnabled = false;
     var sky = c.createLinearGradient(0, 0, 0, H);
-    if (dawn) { sky.addColorStop(0, '#2c3a56'); sky.addColorStop(0.6, '#7a6a72'); sky.addColorStop(1, '#c99a72'); }
-    else { sky.addColorStop(0, '#0d1220'); sky.addColorStop(0.7, '#1b2436'); sky.addColorStop(1, '#2a2c34'); }
+    sky.addColorStop(0, '#24314e');
+    sky.addColorStop(0.55, '#8a7488'); sky.addColorStop(1, '#e0a878');
     c.fillStyle = sky; c.fillRect(0, 0, W, H);
 
-    if (!dawn) {
-      c.fillStyle = 'rgba(255,255,255,.55)';
-      for (var i = 0; i < 40; i++) {
-        c.fillRect((i * 79) % W, (i * 37) % 90, 1, 1);
+    /* towers, layered back to front, full of lit windows */
+    function block(x, w, h, shade, lit) {
+      c.fillStyle = shade; c.fillRect(x, H - h, w, h);
+      for (var wy = 0; wy < Math.floor(h / 7); wy++) {
+        for (var wx = 0; wx < Math.floor(w / 6); wx++) {
+          if (((wx * 7 + wy * 13 + x) % 5) > 2) continue;
+          c.fillStyle = 'rgba(248,222,168,' + lit + ')';
+          c.fillRect(x + 2 + wx * 6, H - h + 4 + wy * 7, 3, 4);
+        }
       }
     }
+    block(6, 44, 120, '#2e3448', 0.55);   block(56, 30, 92, '#333950', 0.5);
+    block(92, 52, 148, '#272d40', 0.6);   block(150, 34, 104, '#343a52', 0.5);
+    block(190, 46, 132, '#2b3145', 0.6);  block(242, 30, 88, '#363c54', 0.45);
+    block(278, 50, 156, '#252b3c', 0.65); block(334, 44, 118, '#303648', 0.5);
 
-    /* hills behind the town */
-    c.fillStyle = dawn ? '#4a4250' : '#161d2a';
-    c.beginPath(); c.moveTo(0, 118);
-    c.lineTo(70, 84); c.lineTo(130, 112); c.lineTo(210, 72); c.lineTo(290, 108); c.lineTo(384, 86);
-    c.lineTo(384, 216); c.lineTo(0, 216); c.closePath(); c.fill();
-
-    /* the street */
-    c.fillStyle = dawn ? '#5a5048' : '#171a20'; c.fillRect(0, 150, W, 66);
-
-    /* buildings, most of them dark */
-    function shop(x, w, h, lit) {
-      c.fillStyle = lit ? '#3a2a22' : '#12161c';
-      c.fillRect(x, 150 - h, w, h);
-      c.fillStyle = lit ? '#4a362a' : '#0e1116';
-      c.fillRect(x, 150 - h, w, 4);
-      if (lit) {
-        c.fillStyle = 'rgba(240,180,90,.85)'; c.fillRect(x + 5, 150 - h + 12, w - 10, h - 22);
-        c.fillStyle = '#23364f'; c.fillRect(x + 4, 150 - h + 10, w - 8, 9);
-      } else {
-        c.fillStyle = '#1a1f26';
-        for (var s = 0; s < 5; s++) c.fillRect(x + 4, 150 - h + 14 + s * 4, w - 8, 2);
-      }
+    /* the street below, and the crowd on it */
+    c.fillStyle = '#1d2130'; c.fillRect(0, 176, W, H - 176);
+    c.fillStyle = '#161a26'; c.fillRect(0, 176, W, 3);
+    for (var p2 = 0; p2 < 34; p2++) {
+      var px2 = (p2 * 37 + 11) % W, ph = 10 + (p2 % 3) * 2;
+      c.fillStyle = 'rgba(18,20,30,' + (0.55 + (p2 % 4) * 0.1) + ')';
+      c.fillRect(px2, 190 - ph, 4, ph);
+      c.beginPath(); c.arc(px2 + 2, 190 - ph - 2, 2, 0, 7); c.fill();
     }
-    shop(14, 54, 66, false);
-    shop(80, 40, 58, false);
-    shop(136, 74, 78, true);      /* Etsuko's, the only light on the street */
-    shop(224, 46, 60, false);
-    shop(282, 56, 70, false);
-    shop(348, 40, 54, false);
+    /* first light coming down the avenue */
+    var v2 = c.createRadialGradient(W / 2, 176, 6, W / 2, 176, 200);
+    v2.addColorStop(0, 'rgba(240,190,130,.28)'); v2.addColorStop(1, 'rgba(240,190,130,0)');
+    c.fillStyle = v2; c.fillRect(0, 0, W, H);
+  }
 
-    /* the lit shop's glow on the road */
-    var g = c.createRadialGradient(173, 150, 4, 173, 150, 90);
-    g.addColorStop(0, 'rgba(240,180,90,.30)'); g.addColorStop(1, 'rgba(240,180,90,0)');
-    c.fillStyle = g; c.fillRect(0, 110, W, 90);
+  /* ------------------------------------------------------------------ */
+  /* A BUST, FOR THE PERSON STANDING NEXT TO YOU                          */
 
-    /* a single street lamp */
-    c.fillStyle = '#2a2f38'; c.fillRect(300, 96, 2, 54);
-    c.fillStyle = dawn ? 'rgba(200,200,200,.2)' : 'rgba(230,220,180,.35)';
-    c.beginPath(); c.arc(301, 96, 9, 0, 7); c.fill();
+  function portrait(canvas, id, ex, frame) {
+    var c = canvas.getContext('2d');
+    c.imageSmoothingEnabled = false;
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    var L = LOOK[id];
+    if (!L) return;
+    var img = sprite(id, ex);
+    if (img) {
+      /* a supplied PNG is cropped to its top half — head and shoulders */
+      var w2 = canvas.width, h2 = Math.round(img.height * 0.62);
+      c.drawImage(img, 0, 0, img.width, h2, 0, 0, w2, Math.round(w2 * h2 / img.width));
+      return;
+    }
+    figure(id, L, ex, frame || 0);
+    /* the scratch figure is 100x130 with the head near the top; take the
+       top 62 pixels of it and blow that up to fill the frame */
+    c.drawImage(pcan, 20, FOOT - L.h - 34, 60, 62, 0, 0, canvas.width, canvas.height);
   }
 
   /* ------------------------------------------------------------------ */
@@ -425,14 +607,16 @@
       Object.keys(LOOK).forEach(function (k, i) { blinkAt[k] = i * 37; });
     },
     setSeats: function (ids) {
-      var xs = ids.length === 1 ? [118] : ids.length === 2 ? [74, 176] : [56, 140, 224];
+      var xs = ids.length === 1 ? [152] : ids.length === 2 ? [128, 258] : [96, 192, 288];
       seats = ids.map(function (id, i) { return { id: id, x: xs[i] }; });
     },
     setSpeaker: function (id, e) { speaker = id || null; expr = e || 'neutral'; },
+    gust: function () { gust = 1; },
     setPhase: function (p) { phase = Math.max(0, Math.min(1, p)); },
     drawRoom: drawRoom,
-    titleArt: function (c) { street(c, false); },
-    endArt: function (c) { street(c, true); },
+    titleArt: arcade,
+    endArt: tokyoDawn,
+    portrait: portrait,
     hitTest: function (mx, my) {
       for (var i = 0; i < HOT.length; i++) {
         var r = HOT[i];

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ramen Talk — a summer at Etsuko&rsquo;s counter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -32,10 +35,28 @@
 
   <!-- ===================== DIALOGUE ===================== -->
   <div id="dialogue" class="dialogue" hidden>
-    <div id="speaker" class="speaker"></div>
-    <div id="line" class="line"></div>
+    <div class="say-wrap">
+      <div id="asideBox" class="aside" hidden>
+        <canvas id="asideArt" width="72" height="76"></canvas>
+      </div>
+      <div class="say-card">
+        <div id="speaker" class="speaker"></div>
+        <div id="line" class="line"></div>
+        <div id="advance" class="advance" hidden>click to continue &#9656;</div>
+      </div>
+    </div>
     <div id="choices" class="choices"></div>
-    <div id="advance" class="advance" hidden>click to continue &#9656;</div>
+  </div>
+
+  <!-- ===================== SHOJI WIPE ===================== -->
+  <div id="shoji" class="shoji" hidden aria-hidden="true">
+    <div class="shoji-panel left"></div>
+    <div class="shoji-panel right"></div>
+  </div>
+
+  <!-- ===================== THE STAMP ===================== -->
+  <div id="hanko" class="hanko" hidden aria-hidden="true">
+    <div class="hanko-mark">&#35441;</div>
   </div>
 
   <!-- ===================== TITLE ===================== -->

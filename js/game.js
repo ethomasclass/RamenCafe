@@ -58,6 +58,7 @@
 
   var el = {}, queue = [], typing = null, frame = 0, curScene = null;
   var benchGuests = [], benchAt = 0, bench = { broth: null, tops: [] };
+  var asideWho = null, asideExpr = 'neutral';
   var afterBench = null, roomNoteOpen = false;
 
   function $(id) { return document.getElementById(id); }
@@ -162,7 +163,7 @@
           st.heard[g.id] = true;
         }
       });
-      if (conf.length) Snd.confide();
+      if (conf.length) { Snd.confide(); stamp(); }
       queue = conf.concat(queue);
       step(); return;
     }
@@ -177,6 +178,7 @@
     /* --- somebody speaks ----------------------------------------------- */
     if (n.say !== undefined) {
       A.setSpeaker(n.who, n.expr || 'neutral');
+      showAside(n.who, n.expr || 'neutral');
       el.speaker.textContent = nameOf(n.who);
       el.line.className = 'line';
       var html = markup(n.say);
@@ -187,6 +189,7 @@
 
     if (n.narrate !== undefined) {
       A.setSpeaker(null, 'neutral');
+      showAside(null);
       el.speaker.textContent = '';
       el.line.className = 'line narrate';
       var nh = markup(n.narrate);
@@ -214,6 +217,45 @@
     }
 
     step();
+  }
+
+  /* Etsuko is not at the counter — she is next to you. Anybody who is not
+     sitting down gets a bust at the edge and their own card. */
+  function showAside(who, ex) {
+    var seated = curScene && guestsOf(curScene).some(function (g) { return g.id === who; });
+    if (who && !seated) {
+      asideWho = who; asideExpr = ex || 'neutral';
+      el.asideBox.hidden = false;
+      el.dialogue.classList.add('aside-on');
+    } else {
+      asideWho = null;
+      el.asideBox.hidden = true;
+      el.dialogue.classList.remove('aside-on');
+    }
+  }
+
+  /* the stamp that marks somebody telling you the thing */
+  function stamp() {
+    el.hanko.hidden = true;
+    void el.hanko.offsetWidth;
+    el.hanko.hidden = false;
+    setTimeout(function () { el.hanko.hidden = true; }, 1950);
+  }
+
+  /* a screen closing and opening again between scenes */
+  var wiping = false;
+  function wipe(then) {
+    if (wiping) { then(); return; }
+    wiping = true;
+    el.shoji.hidden = false;
+    requestAnimationFrame(function () { el.shoji.classList.add('shut'); });
+    setTimeout(function () {
+      then();
+      setTimeout(function () {
+        el.shoji.classList.remove('shut');
+        setTimeout(function () { el.shoji.hidden = true; wiping = false; }, 460);
+      }, 140);
+    }, 450);
   }
 
   function advance() {
@@ -546,19 +588,21 @@
     save();
 
     if (f.k === 'script') {
-      curScene = f.id;
-      A.setSeats([]);
-      play(S[f.id].script, next);
+      if (f.id === 'closing') { wipe(function () { runScript(f); }); return; }
+      runScript(f);
       return;
     }
 
     if (f.k === 'scene') {
-      curScene = f.id;
-      var g = guestsOf(f.id).map(function (x) { return x.id; });
-      A.setSeats(g);
-      A.setPhase(st.step / FLOW.length);
-      progress();
-      play(S[f.id].script, function () { st.scenesDone[f.id] = true; next(); });
+      wipe(function () {
+        curScene = f.id;
+        var g = guestsOf(f.id).map(function (x) { return x.id; });
+        A.setSeats(g);
+        A.setPhase(st.step / FLOW.length);
+        A.gust();
+        progress();
+        play(S[f.id].script, function () { st.scenesDone[f.id] = true; next(); });
+      });
       return;
     }
 
@@ -566,6 +610,12 @@
     if (f.k === 'idle') { idle(next); return; }
     if (f.k === 'summary') { summary(); return; }
     if (f.k === 'end') { endcard(); return; }
+  }
+
+  function runScript(f) {
+    curScene = f.id;
+    A.setSeats([]);
+    play(S[f.id].script, next);
   }
 
   function next() { st.step++; runStep(); }
@@ -642,6 +692,7 @@
 
   function boot() {
     ['stage', 'dialogue', 'speaker', 'line', 'choices', 'advance', 'title', 'titleArt',
+     'asideBox', 'asideArt', 'shoji', 'hanko',
      'slideBack', 'slideNext', 'beginBtn', 'slideDots', 'resumeRow', 'resumeBtn', 'freshBtn',
      'bench', 'benchWho', 'benchOrder', 'benchStep', 'brothRow', 'topRow', 'bowlArt',
      'bowlName', 'bowlParts', 'tipBtn', 'serveBtn', 'phone', 'phoneBtn', 'feed', 'phoneClose',
@@ -737,6 +788,7 @@
     (function loop() {
       frame++;
       A.drawRoom(frame);
+      if (asideWho) A.portrait(el.asideArt, asideWho, asideExpr, frame);
       if (!el.bench.hidden) renderBowl();
       requestAnimationFrame(loop);
     }());
