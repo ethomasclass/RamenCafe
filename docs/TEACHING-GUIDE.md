@@ -44,12 +44,20 @@ the exam term for that scene. Students can reopen it at any point.
 
 | Minutes | What |
 |---|---|
-| 0–3 | Hand out the link and the worksheet. Say nothing about demography. |
+| 0–3 | Hand out the link and **one** worksheet — the two-page [concept handout](CONCEPT-HANDOUT.md) unless you have a reason to use another. Say nothing about demography. |
 | 3–42 | They play. It is quiet. Let it be quiet. |
 | 42–55 | Discussion (prompts below), or the FRQ-style question on the back of the handout |
 
 **This now runs longer than a 45-minute period for a slow reader.** If you have
 a single short period, cut a scene from `ORDER` (below) before you run it.
+
+**Point them at the concept bank before they start, not at the concepts.**
+The bank on the front of the handout is a word list, not a lesson — students
+should meet Daiki first and go looking for the term afterwards. The column
+that matters is the fourth one, where they have to say *how* the detail proves
+the concept; a student who writes "this relates to the dependency ratio" has
+not answered it, and that distinction is worth making out loud before they
+play.
 
 **Do not front-load vocabulary.** The whole design assumes students meet
 "dependency ratio" *after* they have met Daiki. Pre-teaching it turns the game

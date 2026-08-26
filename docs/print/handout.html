@@ -1,0 +1,269 @@
+<title>Ramen Talk Concept Handout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  /* ---------------------------------------------------------------------
+     A two-page worksheet. It is a print document first: everything is sized
+     in points and inches so a browser's Print dialog gives exactly two
+     sheets of Letter with nothing orphaned.
+
+     On screen the sheet stays paper-white in either theme — only the desk
+     it sits on follows the reader.
+     --------------------------------------------------------------------- */
+
+  :root {
+    --paper:  #ffffff;
+    --ink:    #1c1a17;
+    --soft:   #5f584e;
+    --rule:   #1f3350;   /* 藍 indigo, from the game */
+    --accent: #c8402f;   /* 朱 vermilion */
+    --wash:   #f1eee7;
+    --desk:   #e7e3da;
+    --mincho: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+    --body:   "Zen Kaku Gothic New", "Hiragino Sans", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --desk: #23262c; } }
+  :root[data-theme="dark"] { --desk: #23262c; }
+
+  body { background: var(--desk); margin: 0; }
+
+  .sheet {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--body); font-size: 9.6pt; line-height: 1.34;
+    width: 8.5in; min-height: 11in; margin: 18px auto; padding: 0.5in 0.55in;
+    box-sizing: border-box; box-shadow: 0 6px 26px rgba(0,0,0,.22);
+  }
+
+  /* ---- masthead ---- */
+  .top { display: flex; justify-content: space-between; align-items: flex-end;
+         border-bottom: 2.5pt solid var(--rule); padding-bottom: 4pt; margin-bottom: 7pt; }
+  h1 { font-family: var(--mincho); font-size: 15pt; margin: 0; letter-spacing: .04em; color: var(--rule); }
+  .sub { font-size: 8pt; color: var(--soft); margin-top: 2pt; }
+  .who { font-size: 8.5pt; text-align: right; line-height: 1.9; white-space: nowrap; }
+  .fill { display: inline-block; border-bottom: .75pt solid var(--ink); min-width: 1.5in; }
+  .fill.sm { min-width: .7in; }
+
+  h2 { font-family: var(--mincho); font-size: 10.5pt; color: var(--rule);
+       margin: 5pt 0 3.5pt; letter-spacing: .03em;
+       border-bottom: 1pt solid var(--rule); padding-bottom: 2pt; }
+  h2 .n { color: var(--accent); margin-right: 6pt; }
+  .note { font-size: 8.2pt; color: var(--soft); margin: 0 0 6pt; }
+
+  /* ---- concept bank ---- */
+  .bank { background: var(--wash); border-left: 3pt solid var(--accent);
+          padding: 7pt 9pt; margin-bottom: 4pt; }
+  .bank-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3pt 10pt; }
+  .bank-grid div { font-size: 8.4pt; }
+  .bank-grid b { display: block; font-size: 7pt; letter-spacing: .1em; text-transform: uppercase;
+                 color: var(--accent); margin-bottom: 2pt; }
+
+  /* ---- the big table ---- */
+  table { width: 100%; border-collapse: collapse; }
+  th { font-size: 7.2pt; letter-spacing: .09em; text-transform: uppercase;
+       text-align: left; padding: 3pt 5pt; color: #fff; background: var(--rule); font-weight: 700; }
+  th .v { color: #ffd9d2; }
+  td { border: .75pt solid #b9b3a8; padding: 4pt 5pt; vertical-align: top; }
+  td.who-cell { background: var(--wash); width: 1.15in; font-size: 8.3pt; }
+  td.who-cell b { font-family: var(--mincho); font-size: 9.5pt; display: block; }
+  td.who-cell span { color: var(--soft); font-size: 7.4pt; }
+  .r1 { height: .82in; } .r2 { height: 1.02in; }
+
+  /* ---- verbs ---- */
+  .verbs { border-top: 2pt solid var(--accent); border-bottom: .75pt solid #b9b3a8;
+           background: var(--wash); padding: 4pt 7pt; margin-bottom: 6pt;
+           display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 12pt; }
+  .verb { font-size: 7.7pt; color: var(--soft); }
+  .verb b { font-family: var(--mincho); font-size: 8.8pt; color: var(--rule); margin-right: 3pt; }
+
+  /* ---- tasks ---- */
+  .task { margin-bottom: 4pt; }
+  .task p { margin: 0 0 3pt; }
+  .task .cue { font-family: var(--mincho); font-weight: 700; color: var(--accent);
+               letter-spacing: .06em; margin-right: 4pt; }
+  .line { border-bottom: .75pt solid #b9b3a8; height: 12pt; }
+  .line.tall { height: 13.5pt; }
+  .half { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14pt; }
+  .half > .task { display: flex; flex-direction: column; }
+  .half > .task .line:first-of-type { margin-top: auto; }
+
+  .chain { display: grid; grid-template-columns: 1fr 12pt 1fr 12pt 1fr; align-items: center; gap: 0; margin: 4pt 0 2pt; }
+  .chain .box { border: .75pt solid #b9b3a8; background: var(--wash); height: 29pt; padding: 3pt 4pt; font-size: 7.6pt; color: var(--soft); }
+  .chain .arr { text-align: center; color: var(--accent); font-size: 11pt; }
+
+  .foot { margin-top: 9pt; border-top: 1pt solid var(--rule); padding-top: 4pt;
+          font-size: 7.6pt; color: var(--soft); display: flex; justify-content: space-between; }
+
+  @page { size: letter; margin: 0; }
+  @media print {
+    body { background: #fff; }
+    .sheet { box-shadow: none; margin: 0; page-break-after: always; }
+    .sheet:last-child { page-break-after: auto; }
+  }
+</style>
+
+<!-- ================================ PAGE 1 ================================ -->
+<div class="sheet">
+
+  <div class="top">
+    <div>
+      <h1>Ramen Talk &mdash; Concept Handout</h1>
+      <div class="sub">AP Human Geography &middot; Topic 2.9, Aging Populations (SPS-2.C)</div>
+    </div>
+    <div class="who">
+      Name <span class="fill"></span><br>
+      Period <span class="fill sm"></span> &nbsp; Date <span class="fill sm"></span>
+    </div>
+  </div>
+
+  <h2><span class="n">1</span>Concept bank</h2>
+  <p class="note">Use these on both pages. You will need most of them at least once. Terms you have not met yet are in the game&rsquo;s <b>Words</b> panel.</p>
+
+  <div class="bank">
+    <div class="bank-grid">
+      <div><b>Causes</b>
+        total fertility rate<br>
+        replacement level<br>
+        life expectancy<br>
+        delayed childbearing<br>
+        natural decrease
+      </div>
+      <div><b>Structure</b>
+        old-age dependency ratio<br>
+        median age<br>
+        single-person households<br>
+        Stage 5 (DTM)
+      </div>
+      <div><b>Economic &amp; political</b>
+        labor shortage<br>
+        silver economy<br>
+        pension burden<br>
+        pro-natalist policy<br>
+        voter turnout
+      </div>
+      <div><b>Social &amp; responses</b>
+        caregiving burden<br>
+        rural depopulation<br>
+        social isolation<br>
+        immigration / foreign labor<br>
+        automation
+      </div>
+    </div>
+  </div>
+
+  <h2><span class="n">2</span>The five conversations</h2>
+  <p class="note">One row per customer. Column 2 must be a <b>specific</b> detail &mdash; a number, a quote, an object, a decision &mdash; not a summary. Column 4 is where the thinking is: say <i>how</i> the detail proves the concept, not that it relates to it.</p>
+
+  <table>
+    <tr>
+      <th style="width:1.15in">Who</th>
+      <th style="width:2.1in"><span class="v">IDENTIFY</span> &mdash; one specific detail</th>
+      <th style="width:1.35in"><span class="v">IDENTIFY</span> &mdash; concept</th>
+      <th><span class="v">EXPLAIN</span> &mdash; how the detail shows that concept</th>
+    </tr>
+    <tr>
+      <td class="who-cell"><b>Daiki</b><span>46 &middot; drives to Nagoya, Etsuko&rsquo;s son</span></td>
+      <td class="r2"></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td class="who-cell"><b>Kenji &amp; Mary</b><span>81 &amp; 34 &middot; retired greengrocer, his care worker</span></td>
+      <td class="r2"></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td class="who-cell"><b>Aiko &amp; Ren</b><span>33 &amp; 34 &middot; married, new apartments</span></td>
+      <td class="r2"></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td class="who-cell"><b>Tanaka &amp; Yui</b><span>76 &amp; 38 &middot; ex-councilman, urban planner</span></td>
+      <td class="r2"></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td class="who-cell"><b>Hiroshi</b><span>79 &middot; retired engineer, lives alone</span></td>
+      <td class="r2"></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td class="who-cell"><b>Etsuko</b><span>74 &middot; closing up</span></td>
+      <td class="r1"></td><td></td><td></td>
+    </tr>
+  </table>
+
+  <div class="foot">
+    <span>Page 1 of 2 &middot; complete while you play</span>
+    <span>People who told you the thing they weren&rsquo;t going to say: <span class="fill sm"></span> of 8</span>
+  </div>
+</div>
+
+<!-- ================================ PAGE 2 ================================ -->
+<div class="sheet">
+
+  <div class="top">
+    <div>
+      <h1>After the shop closes</h1>
+      <div class="sub">Answer in full sentences. The verb tells you how much to write.</div>
+    </div>
+    <div class="who">Name <span class="fill"></span></div>
+  </div>
+
+  <div class="verbs">
+    <div class="verb"><b>Identify</b> name it, no explanation</div>
+    <div class="verb"><b>Describe</b> give its characteristics</div>
+    <div class="verb"><b>Explain</b> say <i>how</i> or <i>why</i> &mdash; cause and effect</div>
+    <div class="verb"><b>Compare</b> a similarity <i>and</i> a difference</div>
+  </div>
+
+  <h2><span class="n">3</span>Causes</h2>
+  <div class="half">
+    <div class="task">
+      <p><span class="cue">IDENTIFY</span>Two causes of an aging population. Etsuko names the one people forget.</p>
+      <div class="line"></div><div class="line"></div>
+    </div>
+    <div class="task">
+      <p><span class="cue">EXPLAIN</span>Why one of those causes is, in her words, &ldquo;a triumph&rdquo; &mdash; and why that makes it harder to talk about.</p>
+      <div class="line"></div><div class="line"></div>
+    </div>
+  </div>
+
+  <h2><span class="n">4</span>Consequences</h2>
+  <div class="task">
+    <p><span class="cue">DESCRIBE</span>The old-age dependency ratio, using Daiki and Etsuko as your example. Include the national figure if you have it.</p>
+    <div class="line"></div><div class="line"></div>
+  </div>
+  <div class="task">
+    <p><span class="cue">EXPLAIN</span>Ren&rsquo;s bus. Fill the chain, then say in one sentence why it is a loop and not a straight line.</p>
+    <div class="chain">
+      <div class="box">Fewer children born&nbsp;&hellip;</div>
+      <div class="arr">&#8594;</div>
+      <div class="box">so the local school&nbsp;&hellip;</div>
+      <div class="arr">&#8594;</div>
+      <div class="box">so young families&nbsp;&hellip;</div>
+    </div>
+    <div class="line"></div>
+  </div>
+  <div class="task">
+    <p><span class="cue">COMPARE</span>Kenji and Hiroshi are both over 75 and alone for most of the week. Give one <b>similarity</b> and one <b>difference</b> in their situations, then name the concept each one shows.</p>
+    <div class="line"></div><div class="line"></div>
+  </div>
+
+  <h2><span class="n">5</span>Policy</h2>
+  <div class="task">
+    <p><span class="cue">EXPLAIN</span>The town offers &yen;600,000 per child. Aiko says no. Explain <b>two</b> things she is weighing that the money does not touch, and what that shows about pro-natalist policy generally.</p>
+    <div class="line"></div><div class="line"></div><div class="line"></div>
+  </div>
+  <div class="task">
+    <p><span class="cue">IDENTIFY &amp; EXPLAIN</span>Two responses to a labor shortage that appear in the game. For each, name who or what showed it, and one limit of it.</p>
+    <div class="line"></div><div class="line"></div>
+  </div>
+
+  <h2><span class="n">6</span>The long answer</h2>
+  <div class="task">
+    <p><span class="cue">EXPLAIN</span>Choose <b>one</b> character. In 5&ndash;7 sentences, explain how their personal situation is a <i>consequence</i> of an aging population. State whether it is <b>political</b>, <b>economic</b> or <b>social</b>, and use at least <b>two</b> terms from the concept bank. Underline them.</p>
+    <p class="note" style="margin:1pt 0 3pt">Character: <span class="fill"></span> &nbsp; Consequence is: <span class="fill"></span></p>
+    <div class="line tall"></div><div class="line tall"></div><div class="line tall"></div>
+    <div class="line tall"></div><div class="line tall"></div>
+  </div>
+
+  <div class="foot">
+    <span>Page 2 of 2</span>
+    <span>Ramen Talk &middot; Topic 2.9</span>
+  </div>
+</div>

@@ -28,13 +28,23 @@ republishes it within about a minute.
 
 - **[docs/HOW-TO-PLAY.md](docs/HOW-TO-PLAY.md)** — student directions.
   Printable, or project it while they start.
-- **[docs/STUDENT-HANDOUT.md](docs/STUDENT-HANDOUT.md)** — one double-sided
-  sheet. Front filled in while playing, back after closing.
+- **[docs/CONCEPT-HANDOUT.md](docs/CONCEPT-HANDOUT.md)** — **the short one, and
+  the one to use if you only use one.** Two pages: a concept bank, a row per
+  conversation linking a specific detail to a named curriculum term, and a
+  back page of AP-task-verb questions (*identify, describe, explain, compare*).
+  [`docs/print/handout.html`](docs/print/handout.html) is it laid out for the
+  printer — it comes out as exactly two sheets of Letter.
+- **[docs/STUDENT-HANDOUT.md](docs/STUDENT-HANDOUT.md)** — the longer version,
+  about three pages, with more room for detail per character.
 - **[docs/GUIDED-NOTES.md](docs/GUIDED-NOTES.md)** — the scaffolded
   alternative: fill-in-the-blank, one block per scene, in the order they
   happen. **Use this *or* the handout, not both.**
   [`docs/print/guided-notes.html`](docs/print/guided-notes.html) is the same
   thing laid out for a printer — open it and hit print.
+
+  **The three worksheets are alternatives, not companions.** Concept handout
+  for most classes; guided notes if they need scaffolding; the long handout if
+  you want more writing per character.
 - **[docs/TEACHING-GUIDE.md](docs/TEACHING-GUIDE.md)** — what it teaches and
   where, timing, discussion prompts in the order that works, the full answer
   key including every guided-notes blank, and what it deliberately leaves out.
