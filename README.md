@@ -56,7 +56,7 @@ server, no build step, no dependencies.
 | | |
 |---|---|
 | **Setting** | A dying covered shopping arcade in a Tohoku town, present day. Menya Etsuko, six seats, half the shutters opposite are down |
-| **Length** | 30–35 minutes: four conversations, seven bowls, four phone breaks, closing up, end card |
+| **Length** | 35–42 minutes: five conversations, eight bowls, five phone breaks, closing up, end card. **See the timing note in the teaching guide** — cut a scene from `ORDER` if you only have a short period |
 | **Reading level** | Written for 9th graders with zero background in Japan, Japanese food, or the DTM. Every specialist term is glossed in-game |
 | **Ramen** | Four real regional broths and eight toppings, all named and placed on a map. Nothing is invented food |
 | **Sound** | The pot, the extractor fan, a car going past, and a hand bell when somebody confides in you — all synthesised in-browser. No audio files. **Off by default**, one toggle |
@@ -88,10 +88,16 @@ server, no build step, no dependencies.
    "dependency ratio", but the timeline does, three times, while people fight
    about it.
 
-5. **Closing up.** Etsuko sits on the customer side of her own counter for the
-   only time all night and ties the four conversations into one.
+5. **The last one in.** Hiroshi comes at ten because he has been on the bench
+   outside since eight, waiting until the shop is quiet enough that he will
+   not be a nuisance. The player watches him out there for a whole beat
+   before they know who he is. He is the only customer all night who asks
+   the player a question.
 
-6. **The end card** runs the arithmetic forward — 2035, 2040, 2050, 2070 —
+6. **Closing up.** Etsuko sits on the customer side of her own counter for the
+   only time all night and ties the five conversations into one.
+
+7. **The end card** runs the arithmetic forward — 2035, 2040, 2050, 2070 —
    and then names South Korea, Italy, Spain, Germany and China, because Japan
    is early rather than strange.
 
@@ -153,6 +159,7 @@ own book, without ever putting it in somebody's mouth.
 | **Ren**, 34, her husband | The childcare years and the eldercare years being the *same five years* |
 | **Tanaka**, 76, ex-councilman | Who votes, what gets funded, and two hundred reasonable meetings |
 | **Yui**, 38, his daughter | The generational pressure, and what she actually means by "daycare" |
+| **Hiroshi**, 79, retired engineer | Social isolation — forty-one years of colleagues, none of them here, and a flask that tells his son he is alive |
 
 ---
 

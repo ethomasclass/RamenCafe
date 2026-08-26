@@ -3,14 +3,14 @@
 **AP Human Geography, Topic 2.9 — Aging Populations (SPS-2.C)**
 Causes and consequences (political, economic, social) of an aging population.
 
-Runs in **30–35 minutes**. Written for 9th graders with no prior knowledge of
+Runs in **35–42 minutes**. Written for 9th graders with no prior knowledge of
 Japan, Japanese food, or the demographic transition model.
 
 ---
 
 ## The one-sentence version
 
-Four conversations at a ramen counter, in which nobody ever says "dependency
+Five conversations at a ramen counter, in which nobody ever says "dependency
 ratio" out loud except once, sarcastically, and every 2.9 concept arrives as
 somebody's actual problem.
 
@@ -31,6 +31,8 @@ somebody's actual problem.
 | **Automation as policy response** | Phone feed 3 | Care robotics shipments up 19% — "a lifting frame cannot hold a hand" |
 | **Failed pro-natalism (economic)** | Scene 3, phone feed 4 | ¥600,000 per child against nine years of career, and the estimate that big packages move fertility about +0.1 |
 | **Political consequences** | Scene 4 (Tanaka & Yui) | Two buildings, one budget, and four-in-five turnout among over-65s against one-in-three among twentysomethings |
+| **Social isolation (social)** | Scene 5 (Hiroshi), phone feed 5 | A man who waits on a bench outside until the shop is quiet enough that he will not be a nuisance |
+| **Single-person households / kodokushi** | Scene 5, phone feed 5 | A thermos flask that messages his son when he makes tea, and the afternoon in March he lay on the floor doing arithmetic about when somebody would notice |
 | **Stage 5 / natural decrease** | Phone feed 1, end card | Deaths at double births; population falling every year since 2010 |
 
 Every scene also carries a **margin note** into the in-game notebook naming
@@ -43,8 +45,11 @@ the exam term for that scene. Students can reopen it at any point.
 | Minutes | What |
 |---|---|
 | 0–3 | Hand out the link and the worksheet. Say nothing about demography. |
-| 3–33 | They play. It is quiet. Let it be quiet. |
-| 33–50 | Discussion (prompts below), or the FRQ-style question on the back of the handout |
+| 3–42 | They play. It is quiet. Let it be quiet. |
+| 42–55 | Discussion (prompts below), or the FRQ-style question on the back of the handout |
+
+**This now runs longer than a 45-minute period for a slow reader.** If you have
+a single short period, cut a scene from `ORDER` (below) before you run it.
 
 **Do not front-load vocabulary.** The whole design assumes students meet
 "dependency ratio" *after* they have met Daiki. Pre-teaching it turns the game
@@ -55,15 +60,23 @@ into an illustration of a lecture, which is the thing it is built to avoid.
 Open `js/data.js` and edit the running order near the middle of the file:
 
 ```js
-var ORDER = ['daiki', 'kenji_mary', 'aiko_ren', 'tanaka_yui'];
+var ORDER = ['daiki', 'kenji_mary', 'aiko_ren', 'tanaka_yui', 'hiroshi'];
 ```
 
 Delete any entry and nothing breaks — the phone break, notebook entry, closing
-summary and progress counter all follow this list. Dropping `'aiko_ren'` gets
-you to about 24 minutes and costs you the fertility content, which is the one
-piece the other three scenes do not cover. Dropping `'kenji_mary'` costs you
-the most content of any single cut. **Keep `'tanaka_yui'` last** — the closing
-scene answers it.
+summary and progress counter all follow this list.
+
+| Cut | Gets you to | What it costs |
+|---|---|---|
+| `'aiko_ren'` | ~33 min | All the fertility and pro-natalism content. The other four scenes do not cover it |
+| `'tanaka_yui'` | ~34 min | All the political-consequences content |
+| `'hiroshi'` | ~35 min | Social isolation, and the emotional centre of the night |
+| `'kenji_mary'` | ~34 min | Depopulation, the silver economy and immigration. The single most expensive cut |
+
+If you must cut one, cut `'tanaka_yui'` and cover political consequences in
+discussion — it is the most lecture-able of the five. **Keep `'hiroshi'`
+last if you keep him**; the closing scene answers him directly, and he is
+built to be the last thing that happens.
 
 ---
 
@@ -84,6 +97,7 @@ will not say otherwise:
 | **Ren** | Aiko's mother is having tests. The childcare years and the eldercare years would be the *same five years* |
 | **Tanaka** | He voted for people his own age 200 times, was reasonable every time, and that is how the town emptied |
 | **Yui** | The daycare argument is really "I don't want to find you alone on an empty street" |
+| **Hiroshi** | He fell in March, and while he was on the floor he worked out that nobody would have known until Friday |
 
 **This is what makes two students' notes different**, and it is what the
 discussion should open with. The closing screen tells each student how many
@@ -129,7 +143,28 @@ they heard.
    the deciding. Then: Yui's split-building proposal — why is the compromise
    the hardest thing to get voted for?
 
-7. **"Etsuko says one half of the problem is a triumph. What does she mean?"**
+7. **"Hiroshi says the flask is a lovely piece of design. Why is that the
+   saddest line in the game?"**
+   He is an engineer admiring the device that exists to prove he is still
+   alive. Push toward: technology is a real response to isolation and it is
+   not the same as company. Then ask what the alternative would cost — a
+   neighbour, a delivery, a regular Tuesday somewhere — and why that is
+   harder to fund than a flask.
+
+8. **"Why did Hiroshi wait on the bench?"**
+   Almost every class will have noticed the figure outside and not known who
+   it was. He waits so as not to be a nuisance, which means he gets twenty
+   minutes at closing time. Good route into why isolation is *structural* —
+   he is not shy, he is a man whose entire social network was a company in
+   Tokyo forty-one years long.
+
+9. **"Etsuko says a fifth of men his age live alone. Why men?"**
+   Their networks were built through work and ended with it. Women his age
+   are far more likely to have kept neighbourhood and family ties. Worth
+   naming that this is one of the few places where the aging story is
+   sharply gendered against men.
+
+10. **"Etsuko says one half of the problem is a triumph. What does she mean?"**
    Rising life expectancy. Worth naming that "aging population" is caused as
    much by success as by anything going wrong.
 
@@ -152,7 +187,10 @@ they heard.
   the few growth markets, concentrated in cities.
 - **Social consequences**: caregiving burden on people in their 40s–50s,
   disproportionately women; rural depopulation and ~9 million empty houses;
-  elder care moving outside the family.
+  elder care moving outside the family; and **social isolation** — around a
+  fifth of men over 65 live alone, single-person elderly households have
+  roughly tripled since 1990, and *kodokushi* (dying alone and not being
+  found) is common enough to have a word, an industry and a budget line.
 - **Policy responses**: pro-natalism (small measured effect), immigration
   (politically constrained, and real), automation (real, and limited).
 
@@ -178,7 +216,11 @@ they heard.
 
 ## Historical and factual notes
 
-**Real, and named as such:** Japan's population decline since 2010; fertility
+**Real, and named as such:** the *mimamori* watch-over industry, including
+thermos flasks that message a relative when hot water is used, fridge-door
+sensors and utility-usage alerts — these exist and have been on sale for
+years; *kodokushi* as a recognised category with its own specialist cleaning
+sector; Japan's population decline since 2010; fertility
 around 1.20; median age around 49; over-65 share around 29%; the ~9 million
 empty houses; the 2014 and later municipality-viability estimates (~40% at
 risk by 2040); over 100,000 people a year leaving work over caregiving; the
@@ -241,6 +283,14 @@ silver democracy ·
 in the other, sharing a kitchen, car park and heating ·
 *Why it's hard:* it is not what either side asked for, so neither side
 campaigns for it
+
+**Scene 5 — Hiroshi.** twenty-seven · forty-one · the company — his whole
+social network was his employer, and it ended on the day he retired ·
+a thermos flask / watch-over (mimamori) device · his son, in Chiba ·
+a fifth (1 in 5) · social isolation · kodokushi ·
+*Why he waited on the bench:* so as not to be a nuisance while the shop was
+busy — which means he only ever gets the twenty minutes before closing
+*Phone:* 1 in 5 · tripled (since 1990)
 
 **Closing — Etsuko.** longer life expectancy — people stopped dying young ·
 *The triumph:* living to 84 is a success, not a failure; the problem is caused

@@ -143,6 +143,43 @@
     { name: 'Yui T.', handle: '@yui_planning', av: 'Y', colour: '#7a4a8c', time: '22:41', reply: true,
       body: 'Thirty-eight likes. For the meeting that decides which of the two things this town gets for the next twenty years.<br><br>Average age in that gallery on Tuesday will be about seventy. Not because they took it — because they {{turnout|showed up}}. Doors open at ten.',
       likes: '11K', rt: '7.9K' }
+  ],
+
+  /* ---------------------------------------------------------------------
+     AFTER TANAKA & YUI — the last one before closing. Nobody has said the
+     word "lonely" all night, so the timeline says it instead, ten minutes
+     before somebody walks in who would never use it about himself.
+     --------------------------------------------------------------------- */
+  tanaka_yui: [
+    { name: 'Mainichi Shimbun', handle: '@mainichi', av: 'M', colour: '#3a5a8c', time: '22:52', verified: true,
+      body: 'Survey: <b>1 in 5</b> men over 65 living alone report speaking to someone else less than once every two weeks. The figure for women the same age is under half that. <span class="tag">#高齢者</span>',
+      likes: '19K', rt: '14K' },
+
+    { name: 'Demography Desk', handle: '@jp_demog', av: 'D', colour: '#4a6d8c', time: '22:58',
+      body: 'Why the gap between men and women is so wide, in one line: for a generation of Japanese men, the company <i>was</i> the social network. Retire and it does not shrink, it ends.<br><br>{{solohouse|Single-person households}} over 65 have roughly tripled since 1990.',
+      likes: '27K', rt: '19K' },
+
+    { name: 'とも@介護4年目', handle: '@tomo_kaigo', av: 'と', colour: '#8c5a3a', time: '23:04', reply: true,
+      body: 'My father says "I am fine, I do not need anyone." He has said it 400 times. What he means is that asking would be an imposition, and he was raised to believe that being an imposition is the worst thing a man can be.<br><br>{{isolation|That is not a personality}}. That is a whole generation.',
+      likes: '52K', rt: '30K' },
+
+    { name: 'Mie', handle: '@mie_kango', av: 'M', colour: '#8c3a6a', time: '23:09',
+      body: 'The word is <b>{{kodokushi|孤独死}}</b> and I wish people would stop saying it like a ghost story. It is thousands of people a year. It has a cleaning industry and a line in the municipal budget.<br><br>Things that prevent it are extremely boring: a neighbour, a delivery, a regular Tuesday somewhere.',
+      likes: '88K', rt: '51K' },
+
+    { name: 'Watanabe Denki', handle: '@wtnb_denki', av: 'W', colour: '#2a6a8c', time: '23:14',
+      body: '【i-Pot / 見守り】The flask that messages your family when you make tea. Ten years on the market. Also now: fridge-door sensors, electricity-usage alerts, and a daily call service from the post office. <span class="tag">#見守りサービス</span>',
+      likes: '2.2K', rt: '1.4K' },
+
+    { name: 'ゆき / Yuki', handle: '@yukiyuki_2003', av: 'ゆ', colour: '#c96a9a', time: '23:19', reply: true,
+      body: 'i keep seeing this advertised as heartwarming technology and i genuinely cannot get past the fact that we invented a kettle that proves you are alive instead of just. living near each other',
+      likes: '104K', rt: '61K' },
+
+    { name: 'Tsubuyaki Poll', handle: '@tsubu_polls', av: '?', colour: '#1d9bf0', time: '23:24',
+      body: 'Count honestly. How many people have you had an actual conversation with in the last seven days?',
+      poll: { q: '', opts: ['More than ten', 'Four to ten', 'One to three', 'None'],
+              res: [46, 34, 16, 4], total: '76,455 votes · 12 hours left' },
+      likes: '3.1K', rt: '1.6K' }
   ]
 
   };

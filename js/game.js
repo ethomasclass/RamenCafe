@@ -438,10 +438,23 @@
   function idle(after) {
     A.setSeats([]);
     A.setSpeaker(null);
+    showAside(null);
     el.speaker.textContent = '';
     el.line.className = 'line narrate';
-    el.line.innerHTML = 'The shop is empty. Somewhere behind you the pot ticks over. ' +
-      '<span class="quiet">(Click anything in the room to look at it.)</span>';
+
+    /* If the next person through the curtain is Hiroshi, he is already out
+       there — on the bench, waiting for the shop to be quiet enough that he
+       will not be a nuisance. The player can see him for a whole beat before
+       they know who he is, which is the entire point of him. */
+    var nxt = FLOW[st.step + 1];
+    var soon = nxt && nxt.k === 'scene' && nxt.id === 'hiroshi';
+    A.setWaiting(!!soon);
+
+    el.line.innerHTML = soon
+      ? 'The shop is empty. Out under the dead middle lamp, somebody is sitting on the bench by the vending machine, facing the shutters. They were there when you took the bins out. ' +
+        '<span class="quiet">(Click anything in the room to look at it.)</span>'
+      : 'The shop is empty. Somewhere behind you the pot ticks over. ' +
+        '<span class="quiet">(Click anything in the room to look at it.)</span>';
     el.advance.hidden = true;
     el.choices.innerHTML = '';
     var btn = document.createElement('button');
@@ -565,6 +578,7 @@
         '<div class="close-line">Kenji’s street lost its shops because it ran out of people, not customers — <b>rural depopulation</b> — and Mary is here because a country short of care workers opened a door it does not like talking about.</div>' +
         '<div class="close-line">Aiko is not undecided. She is doing arithmetic, and ¥600,000 does not change it. That is why <b>pro-natalist policy</b> keeps not working.</div>' +
         '<div class="close-line">Tanaka has voted in every election since 1971 and Yui’s neighbours mostly have not. Nobody in that council room is greedy. They are just the ones who came.</div>' +
+        '<div class="close-line">And Hiroshi waited on a bench until the shop was quiet, because being a nuisance is the worst thing he can imagine being. <b>Social isolation</b> is the consequence nobody puts on a poster, and it is the one with a word, a cleaning industry and a budget line of its own.</div>' +
       '</div>';
 
     el.closing.hidden = false;
@@ -598,6 +612,7 @@
         curScene = f.id;
         var g = guestsOf(f.id).map(function (x) { return x.id; });
         A.setSeats(g);
+        A.setWaiting(false);
         A.setPhase(st.step / FLOW.length);
         A.gust();
         progress();

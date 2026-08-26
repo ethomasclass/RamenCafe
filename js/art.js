@@ -27,6 +27,7 @@
   var phase = 0;         /* 0 = early evening, 1 = closing time */
   var blinkAt = {};
   var gust = 0;               /* the noren, when somebody comes in */
+  var waiting = false;        /* somebody on the bench, not coming in yet */
 
   /* ------------------------------------------------------------------ */
   /* Who looks like what, when there is no PNG for them.                 */
@@ -39,6 +40,7 @@
     aiko:   { skin: '#e6c4a4', hair: '#1f1a18', style: 'bob',  cloth: '#3f4756', cloth2: '#333a46', w: 20, h: 31, glasses: false },
     ren:    { skin: '#dfbd9a', hair: '#33282a', style: 'mop',  cloth: '#b0724a', cloth2: '#8f5b3a', w: 23, h: 32, glasses: true },
     tanaka: { skin: '#e2c2a2', hair: '#e2ded6', style: 'side', cloth: '#4a4a55', cloth2: '#3a3a44', w: 24, h: 32, glasses: true },
+    hiroshi:{ skin: '#e4c7a6', hair: '#e8e4dc', style: 'comb', cloth: '#93a0ad', cloth2: '#77848f', w: 20, h: 29, glasses: true },
     yui:    { skin: '#e6c4a4', hair: '#241c1a', style: 'long', cloth: '#7a5f8a', cloth2: '#634d70', w: 20, h: 31, glasses: false }
   };
 
@@ -141,6 +143,10 @@
     } else if (s === 'side') {
       g.fillRect(cx - 13, cy - 13, 26, 5);
       g.fillRect(cx - 13, cy - 9, 7, 6); g.fillRect(cx + 7, cy - 9, 6, 6);
+    } else if (s === 'comb') {
+      g.fillRect(cx - 12, cy - 13, 24, 3);
+      g.fillRect(cx - 12, cy - 10, 17, 4);
+      g.fillRect(cx - 13, cy - 10, 3, 9); g.fillRect(cx + 10, cy - 10, 3, 9);
     } else if (s === 'long') {
       g.beginPath(); g.arc(cx, cy - 3, 14, Math.PI, 0); g.fill();
       g.fillRect(cx - 14, cy - 4, 5, 30); g.fillRect(cx + 9, cy - 4, 5, 30);
@@ -216,6 +222,7 @@
     { key: 'vending',  x: 244, y: 64,  w: 46, h: 50 },
     { key: 'arcade',   x: 88,  y: 42,  w: 208, h: 16 },
     { key: 'cat',      x: 98,  y: 116, w: 30, h: 22 },
+    { key: 'bench',    x: 196, y: 110, w: 48, h: 28 },
     { key: 'seats',    x: 40,  y: 150, w: 180, h: 22 }
   ];
 
@@ -307,6 +314,28 @@
       b.fillRect(AX + 10 + rw * 14, 130, 3, 10 + Math.sin(frame / 17 + rw) * 3);
     }
     b.globalAlpha = 1;
+
+    /* --- the bench, bolted down, facing the shutters ------------------- */
+    b.fillStyle = '#2a3038'; b.fillRect(198, 122, 44, 3);
+    b.fillStyle = '#222831'; b.fillRect(198, 125, 44, 2);
+    b.fillRect(201, 127, 3, 8); b.fillRect(236, 127, 3, 8);
+    b.fillStyle = '#1d232b'; b.fillRect(198, 112, 44, 2);
+    b.fillRect(201, 114, 3, 8); b.fillRect(236, 114, 3, 8);
+
+    /* somebody has been sitting on it a while */
+    if (waiting) {
+      var bx = 220, by = 122;
+      b.fillStyle = '#171c23';
+      b.fillRect(bx - 5, by - 13, 11, 14);              /* back and shoulders */
+      b.fillRect(bx - 6, by, 13, 4);                    /* knees */
+      b.fillRect(bx - 5, by + 4, 4, 7); b.fillRect(bx + 2, by + 4, 4, 7);
+      b.beginPath(); b.arc(bx, by - 17, 5, 0, 7); b.fill();
+      b.fillStyle = '#20262f'; b.fillRect(bx - 6, by - 21, 12, 3);   /* the cap */
+      b.fillRect(bx - 7, by - 19, 14, 1);
+      /* the vending machine puts a cold edge down one side of him */
+      b.fillStyle = 'rgba(168,214,238,.30)';
+      b.fillRect(bx + 5, by - 12, 1, 13); b.fillRect(bx + 4, by - 19, 1, 5);
+    }
 
     /* --- the cat nobody owns and everybody feeds ----------------------- */
     var cxx = 112, cyy = 128, tw = Math.sin(frame / 26) * 2;
@@ -612,6 +641,7 @@
     },
     setSpeaker: function (id, e) { speaker = id || null; expr = e || 'neutral'; },
     gust: function () { gust = 1; },
+    setWaiting: function (v) { waiting = !!v; },
     setPhase: function (p) { phase = Math.max(0, Math.min(1, p)); },
     drawRoom: drawRoom,
     titleArt: arcade,

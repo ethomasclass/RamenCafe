@@ -8,7 +8,7 @@ It works on a school Chromebook, a laptop, an iPad, or a phone turned sideways.
 ## What you're doing
 
 You are spending the summer helping at your grandmother's ramen counter in a
-small town in northern Japan. Tonight, seven people sit down and talk to you
+small town in northern Japan. Tonight, eight people sit down and talk to you
 while you make them something to eat.
 
 **You cannot lose.** Nobody storms out. Every bowl gets eaten, even a bad one.
@@ -65,7 +65,10 @@ Get somebody's food right and they tell you the thing they haven't told their
 own family. Get it wrong and they say "thank you, that was lovely" and you
 never find out it existed.
 
-The closing screen tells you how many you missed. Two students who played the
+The closing screen tells you how many you missed.
+
+The order is a real instruction, and sometimes the only clue to it is
+something the person said earlier. Listen before you cook. Two students who played the
 same game will not have heard the same night.
 
 ---

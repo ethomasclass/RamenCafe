@@ -22,6 +22,7 @@ For each person, write down **one thing they said** that stuck with you, and
 | **Ren**<br>(her husband, 34) | | |
 | **Tanaka**<br>(ex-councilman, 76) | | |
 | **Yui**<br>(his daughter, 38) | | |
+| **Hiroshi**<br>(retired engineer, 79) | | |
 
 ### The phone
 
@@ -53,7 +54,7 @@ Open **Words** in the top bar if you need to check one.
 
 From the closing screen:
 
-- People who told you the thing they weren't going to say: ______ of 7
+- People who told you the thing they weren't going to say: ______ of 8
 - Broths cooked: ______ of 4
 
 **Pick one person who did *not* tell you their thing.** Ask somebody who did.
@@ -102,7 +103,8 @@ definition.
 |---|---|
 | **Political** | |
 | **Economic** | |
-| **Social** | |
+| **Social** — caregiving | |
+| **Social** — isolation | |
 
 ### 5. Why the money didn't work
 
@@ -123,7 +125,29 @@ Mary is one. The care-home manager on Tsubuyaki mentions the other.
 | | | |
 | | | |
 
-### 7. The long answer
+### 7. The bench
+
+Before Hiroshi came in, somebody was sitting on the bench outside, under the
+broken lamp, facing the shutters.
+
+**a)** Why had he been sitting there?
+
+_________________________________________________________________
+
+**b)** Hiroshi has a flask that messages his son when he makes tea. He says it
+is "a lovely piece of design." Explain what he means — and why it is still
+not enough.
+
+_________________________________________________________________
+
+_________________________________________________________________
+
+**c)** Etsuko says about a fifth of men Hiroshi's age live alone, and that the
+figure for women is much lower. Give one reason why the gap is so wide.
+
+_________________________________________________________________
+
+### 8. The long answer
 
 **Tanaka says the senior centre will win the vote, and he is not happy about
 it. Explain why he is confident, using what you know about who votes — and
@@ -131,4 +155,4 @@ then explain why he calls it his own fault.**
 
 Write 5–8 sentences on the back or on your own paper. Use at least three of
 these terms: *old-age dependency ratio, voter turnout, depopulation, pension,
-pro-natalist policy, labor shortage.*
+pro-natalist policy, labor shortage, social isolation.*

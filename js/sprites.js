@@ -96,6 +96,16 @@ window.SPRITES = {
     blink:     'art/characters/ren-blink.png'
   },
 
+  /* Hiroshi — the retired engineer at the end of the road. */
+  hiroshi: {
+    neutral:   'art/characters/hiroshi-neutral.png',
+    warm:      'art/characters/hiroshi-warm.png',
+    worried:   'art/characters/hiroshi-worried.png',
+    stern:     null,
+    surprised: 'art/characters/hiroshi-surprised.png',
+    blink:     'art/characters/hiroshi-blink.png'
+  },
+
   /* Tanaka — retired councilman. */
   tanaka: {
     neutral:   'art/characters/tanaka-neutral.png',

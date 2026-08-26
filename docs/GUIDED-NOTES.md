@@ -143,6 +143,54 @@ ________________________________________________________________
 
 ---
 
+## Scene 5 — Hiroshi (79)
+
+Hiroshi moved here ______ years ago, for his and his wife's retirement. But he
+worked at the same company for ______ years, commuting to Tokyo.
+
+He says: *"You do not notice at the time that it is also every single person
+you ______________."*
+
+That is the reason the isolation figures are so much worse for men than for
+women. Write it in your own words:
+
+________________________________________________________________
+
+Having little or no regular contact with other people is called
+
+**s________________ i________________.**
+
+About ______ in ______ men over 65 in Japan live alone. The number of
+**single-person households** over 65 has roughly ______________ since 1990.
+
+**The flask.** Hiroshi's son bought him a thermos that sends a message when
+
+________________________________________________________________.
+
+Devices and services for checking on an older person living alone are called
+**m________________** (watch-over) services. Name two others he mentions:
+
+1. ______________________  2. ______________________
+
+He says the flask is "a lovely piece of ______________" — and he means it,
+because he was an ______________ for forty-one years.
+
+**The word.** Dying alone and not being found for some time has its own word
+in Japanese: **k________________**. Hiroshi says it has "a word and a cleaning
+company and a ______________ in the budget," which tells you it is treated as
+a ______________ problem, not bad luck.
+
+**The bench.** Somebody was sitting outside on the bench before he came in.
+Why had he been waiting out there?
+
+________________________________________________________________
+
+> **On your phone beforehand:** in a survey, ______ in ______ men over 65
+> living alone said they speak to another person less than once every two
+> weeks.
+
+---
+
 ## Closing up — Etsuko
 
 School will tell you an aging population is because women stopped having
@@ -171,3 +219,4 @@ Name the consequence each person showed you:
 | Mary | | |
 | Aiko | | |
 | Tanaka | | |
+| Hiroshi | | |

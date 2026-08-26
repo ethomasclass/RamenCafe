@@ -157,6 +157,16 @@
           wants: ['sweet', 'warming', 'rich', 'comforting'] }
       ] },
 
+    { id: 'hiroshi',
+      title: 'The last one in',
+      teaches: 'social isolation; single-person elderly households; watch-over services and the technology of being checked on',
+      term: 'social isolation',
+      guests: [
+        { id: 'hiroshi', name: 'Hiroshi', jp: '博', role: 'a retired engineer, 79',
+          order: 'He says whatever is easiest. He does not mean it — he has had the same bowl for thirty years and will not ask for it in case it is a nuisance.',
+          wants: ['nostalgic', 'traditional', 'savory', 'comforting'] }
+      ] },
+
     { id: 'tanaka_yui',
       title: 'The councilman and his daughter',
       teaches: 'political consequences — who votes, and what gets funded',
@@ -172,7 +182,7 @@
   ];
 
   /* The running order. Delete entries to shorten the night. */
-  var ORDER = ['daiki', 'kenji_mary', 'aiko_ren', 'tanaka_yui'];
+  var ORDER = ['daiki', 'kenji_mary', 'aiko_ren', 'tanaka_yui', 'hiroshi'];
 
   function scenesInOrder() {
     return ORDER.map(function (id) {
@@ -267,6 +277,18 @@
     median: { term: 'median age',
       def: 'The age that splits a population in half. Japan’s is about 49 — the highest of any large country. Nigeria’s is about 18.' },
 
+    isolation: { term: 'social isolation', jp: '社会的孤立',
+      def: 'Having little or no regular contact with other people. In Japan it is measured and worried about as a public health problem, not a private sadness. It is sharply gendered: men who built their whole social world through a company tend to lose it on the day they retire, and are far more likely than women to go a week without a conversation.' },
+
+    solohouse: { term: 'single-person households', jp: '単身世帯',
+      def: 'People living alone. Around a fifth of Japanese men over 65 live by themselves, and the number is rising fast — a direct consequence of smaller families, children moving to cities, and longer life expectancy, which reliably leaves one of a married couple on their own for years.' },
+
+    kodokushi: { term: 'kodokushi', jp: '孤独死',
+      def: 'Literally "lonely death" — dying alone and not being found for some time. Japan records thousands of cases a year, concentrated among older men living alone. It has its own word, its own specialist cleaning industry, and its own line in municipal budgets, which tells you it is treated as a structural problem rather than bad luck.' },
+
+    mimamori: { term: 'watch-over services', jp: '見守り',
+      def: 'Arrangements for checking that an older person living alone is all right: a post office visit, a daily phone call, a neighbourhood volunteer, or sensors — a kettle, a fridge door, an electricity meter — that quietly message a relative when the usual thing does not happen. One of the fastest-growing corners of the silver economy.' },
+
     kaedama: { term: 'kaedama', jp: '替え玉',
       def: 'A second helping of noodles, dropped into the broth you have left. A Hakata custom, and a thing you have to know to ask for.' }
   };
@@ -282,6 +304,8 @@
       note: 'The shops that close are not failing at business. They are running out of people. And the care work the town needs is done by somebody who moved 5,000 km to do it.' },
     aiko_ren: { head: 'Total fertility rate',
       note: 'Japan: about 1.2. Replacement: 2.1. The government has been paying people to close that gap since before Aiko was born, and it has not closed.' },
+    hiroshi: { head: 'Social isolation',
+      note: 'A fifth of Japanese men over 65 live alone. He has a kettle that tells his son he is still making tea. He was sitting on the bench outside for an hour, waiting for the shop to be quiet enough that he would not be a nuisance.' },
     tanaka_yui: { head: 'Voter turnout &amp; silver democracy',
       note: 'Two buildings, one budget: a senior centre or a daycare. Whoever turns up on election day wins that argument before it starts.' }
   };
@@ -309,6 +333,7 @@
     shutter:  { name: 'The shutters opposite', text: 'A run of them, all the way down that side of the arcade. The nearest one has a laminated notice taped to it that has gone yellow. It was a fishmonger for fifty-one years. Etsuko can still tell you what day he did the mackerel.' },
     vending:  { name: 'The vending machine', text: 'It is the brightest thing in the arcade and the only other business on this side of it that is open at this hour. It takes cards now. Somebody drives out from Kōriyama to fill it once a fortnight, which makes him the most reliable visitor the street gets.' },
     cat:      { name: 'The cat', text: 'Nobody owns her. Everybody feeds her, which in a street with fourteen hundred people and falling is a smaller committee than it used to be. Etsuko denies feeding her and buys the small dried fish in the large bag.' },
+    bench:    { name: 'The bench', text: 'A metal bench by the vending machine, bolted down, facing the shutters. Etsuko has been meaning to ask the town to move it so it faces something. She has been meaning to for nine years.' },
     arcade:   { name: 'The arcade roof', text: 'Put up in 1988, when the shopping street was busy enough that the rain was the problem. Half the lamps under it have gone and nobody has decided whose job that is.' }
   };
 

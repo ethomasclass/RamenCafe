@@ -641,6 +641,207 @@
   }},
 
   /* =====================================================================
+     5 — HIROSHI, on his own.
+     Teaches: social isolation, single-person elderly households, and the
+     small industry that exists to check whether somebody is still alive.
+
+     The rule for writing him: he never asks for sympathy and never
+     complains. He apologises for taking up time. Everything sad about him
+     is something the player notices rather than something he says. He is
+     also the only customer all night who asks the player a question.
+     ===================================================================== */
+  hiroshi: { script: [
+    { narrate: 'Ten to ten. You are wiping down the far end of the counter when the curtain lifts, carefully, with one hand, the way you do when you are not sure you should.' },
+    { say: 'Ah — you are still open. Are you still open. I can come another time.', who: 'hiroshi', expr: 'worried' },
+    { say: 'Sit down, Hiroshi.', who: 'etsuko', expr: 'neutral' },
+    { say: 'Only if it is no trouble.', who: 'hiroshi', expr: 'worried' },
+    { say: 'Sit down.', who: 'etsuko', expr: 'stern' },
+    { narrate: 'He sits at the second stool from the end. He puts his cap on the counter, then thinks better of it and puts it on his knee. He is wearing a collared shirt, ironed, for a Tuesday.' },
+    { choose: [
+      { label: '"You’re not trouble. It’s been quiet all night."', tone: 'Empathetic',
+        then: [
+          { say: 'That is kind. That is very kind.', who: 'hiroshi', expr: 'warm' },
+          { narrate: 'He says it like somebody accepting a formal gift, and then looks at the counter for a moment.' } ] },
+      { label: '"I don’t think we’ve met — I’m Etsuko’s grandchild."', tone: 'Curious', warm: 'hiroshi',
+        then: [
+          { say: 'Ah! The summer one. She said. She said in — June, I think it was June.', who: 'hiroshi', expr: 'warm' },
+          { say: 'Yamashita Hiroshi. I am at the end of the road, the grey house with the bad gate.', who: 'hiroshi', expr: 'warm' },
+          { say: 'It is not a bad gate. It is a fine gate. I have been going to fix it since 2011.', who: 'hiroshi', expr: 'neutral' } ] },
+      { label: '"Ironed shirt on a Tuesday. Big night?"', tone: 'Playful', warm: 'hiroshi',
+        then: [
+          { say: 'Ha! No. No.', who: 'hiroshi', expr: 'warm' },
+          { say: 'It is a habit. Forty-one years of getting on the 6:52, you keep the habit. The train has gone and the shirt has stayed.', who: 'hiroshi', expr: 'warm' } ] }
+    ]},
+    { say: 'And how are you finding it? The shop, the town. It must be very slow for somebody your age.', who: 'hiroshi', expr: 'warm' },
+    { narrate: 'It occurs to you that he is the first customer all night to ask you a question.' },
+    { choose: [
+      { label: '"Honestly? It’s the best summer I’ve had."', tone: 'Empathetic', warm: 'hiroshi',
+        then: [
+          { say: 'Is it. Is it really.', who: 'hiroshi', expr: 'warm' },
+          { say: 'That is a very good thing to hear. I shall think about that later.', who: 'hiroshi', expr: 'warm' },
+          { narrate: 'You are not sure what he means by later.' } ] },
+      { label: '"It’s slow. I’ve started to like slow."', tone: 'Curious', warm: 'hiroshi',
+        then: [
+          { say: 'It takes about two years, in my experience. My wife liked it immediately. I took until roughly 2004.', who: 'hiroshi', expr: 'warm' } ] },
+      { label: '"She works me like a rented mule."', tone: 'Playful', warm: 'hiroshi',
+        then: [
+          { say: 'She does that. She did it to your grandfather. He used to hide in the walk-in.', who: 'hiroshi', expr: 'warm' },
+          { say: 'He was counting stock.', who: 'etsuko', expr: 'stern' },
+          { say: 'He was hiding in the walk-in, Etsuko.', who: 'hiroshi', expr: 'warm' } ] }
+    ]},
+    { say: 'Anyway. Whatever is easiest. I am not fussy.', who: 'hiroshi', expr: 'neutral' },
+    { narrate: 'Your grandmother does not move to help you. She is wiping a pan that is already clean.' },
+    { say: 'He will tell you, if you ask him properly.', who: 'etsuko', expr: 'neutral' },
+    { choose: [
+      { label: '"What do you usually have?"', tone: 'Curious', warm: 'hiroshi',
+        then: [
+          { say: 'Oh — I do not want to be a—', who: 'hiroshi', expr: 'worried' },
+          { say: 'Hiroshi.', who: 'etsuko', expr: 'stern' },
+          { say: 'The soy sauce one. The local one, the Kitakata. With the bamboo and the egg.', who: 'hiroshi', expr: 'warm' },
+          { say: 'That is how Kimiko had it. Every time, thirty years, and she would not be talked out of it. So I had it too and then I could not stop.', who: 'hiroshi', expr: 'warm' } ] },
+      { label: '"Nobody’s not fussy. Everybody’s got one."', tone: 'Playful', warm: 'hiroshi',
+        then: [
+          { say: 'Ha. All right. All right, you have me.', who: 'hiroshi', expr: 'warm' },
+          { say: 'The soy sauce. The Kitakata one, the local. Bamboo shoots and the egg. My wife’s order — I ate it beside her for thirty years and it stuck.', who: 'hiroshi', expr: 'warm' } ] },
+      { label: '"I’ll surprise you, then."', tone: 'Playful',
+        then: [
+          { say: 'Please. Anything at all.', who: 'hiroshi', expr: 'warm' },
+          { narrate: 'He glances, very briefly, at the menu strip on the left of the wall — the soy sauce one — and then does not mention it.' } ] }
+    ]},
+    { bench: true },
+    { reactions: true },
+    { narrate: 'He eats slowly. Slower than anyone else tonight, and it takes you a minute to work out that it is on purpose.' },
+    { say: 'You have the arcade lamps out again. The middle one.', who: 'hiroshi', expr: 'neutral' },
+    { say: 'Nine months.', who: 'etsuko', expr: 'stern' },
+    { say: 'Nine months! I shall write to them again.', who: 'hiroshi', expr: 'warm' },
+    { say: 'You have written twice.', who: 'etsuko', expr: 'neutral' },
+    { say: 'Then a third will not surprise them.', who: 'hiroshi', expr: 'warm' },
+    { choose: [
+      { label: '"Have you been here long? In the town, I mean."', tone: 'Curious', warm: 'hiroshi',
+        then: [
+          { say: 'Twenty-seven years. We came for the retirement — the plan was the retirement. Kimiko’s people were from two valleys over.', who: 'hiroshi', expr: 'warm' },
+          { say: 'Though I was at the company until I was sixty-two, so for the first ten of those I was really only here at weekends. Electronics. I did thermostats, mostly. Kettles, rice cookers, one very bad hairdryer in 1988.', who: 'hiroshi', expr: 'warm' },
+          { say: 'Forty-one years at the same company. You do not notice at the time that it is also every single person you know.', who: 'hiroshi', expr: 'neutral' } ] },
+      { label: '"You know everyone’s business round here."', tone: 'Playful', warm: 'hiroshi',
+        then: [
+          { say: 'I know the lamps. The lamps are my area.', who: 'hiroshi', expr: 'warm' },
+          { say: 'I was an engineer. Forty-one years, thermostats mostly. You retire and you find the noticing does not retire with you.', who: 'hiroshi', expr: 'warm' } ] },
+      { label: '"Who do you write to about a lamp?"', tone: 'Curious',
+        then: [
+          { say: 'The town office, in theory. The arcade association, in fact, except the arcade association is now two people and one of them is me.', who: 'hiroshi', expr: 'neutral' },
+          { say: 'The other one is eighty-eight and in Kōriyama with her son.', who: 'hiroshi', expr: 'neutral' } ] }
+    ]},
+    { narrate: 'His phone goes off on the counter — not a ring, a short two-tone chime. He looks at it and something goes out of his face for a second, and then comes back.' },
+    { say: 'Ah — that is only the kettle.', who: 'hiroshi', expr: 'neutral' },
+    { choose: [
+      { label: '"The kettle?"', tone: 'Curious', warm: 'hiroshi',
+        then: [
+          { say: 'A thermos flask, really. My son bought it. You make tea, and it sends a little message — to him, in Chiba, and to me, so I know it sent it.', who: 'hiroshi', expr: 'neutral' },
+          { say: 'If it does not hear from me by the evening it messages him anyway, and then he telephones.', who: 'hiroshi', expr: 'neutral' },
+          { narrate: 'He turns the phone around so you can see it. A single line: 7:48pm — hot water used.' },
+          { say: 'It is a {{mimamori|watch-over}} device. There is a whole industry now — the flask, the fridge door, the electricity meter. The gas company will do it.', who: 'hiroshi', expr: 'neutral' } ] },
+      { label: '"That’s a strange sound for a kettle."', tone: 'Playful', warm: 'hiroshi',
+        then: [
+          { say: 'It is a strange thing for a kettle. It writes to my son.', who: 'hiroshi', expr: 'warm' },
+          { say: 'You make tea in Fukushima and a telephone lights up in Chiba. Nobody in 1988 would have believed the use we found for that.', who: 'hiroshi', expr: 'warm' } ] },
+      { label: '"Is somebody checking on you?"', tone: 'Empathetic',
+        then: [
+          { say: 'Ah — no. Well. Yes.', who: 'hiroshi', expr: 'worried' },
+          { narrate: 'He straightens the phone so it is square with the edge of the counter.' },
+          { say: 'It is a flask that tells my son I have made tea. It is a {{mimamori|watch-over}} thing. There are a great many of them now.', who: 'hiroshi', expr: 'neutral' } ] }
+    ]},
+    { say: 'And I will tell you what nobody says about it.', who: 'hiroshi', expr: 'warm' },
+    { say: 'It is a lovely piece of design.', who: 'hiroshi', expr: 'warm' },
+    { narrate: 'He says this with genuine professional pleasure, and it takes a second to land.' },
+    { say: 'Really — it is. The power draw is nothing. It fails safe. My department would have been proud of it and I would have signed it off in a morning.', who: 'hiroshi', expr: 'warm' },
+    { say: 'And what it is for is telling my son that I am still here.', who: 'hiroshi', expr: 'neutral' },
+    { say: 'I do think about that. On the good days I think it is very clever. On the other days I make the tea and I look at the little light and I think: there.', who: 'hiroshi', expr: 'worried' },
+    { confessions: true },
+    { narrate: 'He finishes the bowl and drinks the broth, and puts the bowl down exactly in the middle of the mat.' },
+    { say: 'That was — thank you. That was a good one.', who: 'hiroshi', expr: 'warm' },
+    { say: 'Well. I have kept you both. It is nearly—', who: 'hiroshi', expr: 'worried' },
+    { narrate: 'He is already reaching for his cap.' },
+    { choose: [
+      { label: '"Come back Tuesday. It’s always dead on a Tuesday."', tone: 'Empathetic', warm: 'hiroshi',
+        then: [
+          { narrate: 'He stops with the cap halfway to his head.' },
+          { say: 'Tuesday.', who: 'hiroshi', expr: 'surprised' },
+          { say: 'Yes. All right. Tuesday, then — if it is genuinely no—', who: 'hiroshi', expr: 'warm' },
+          { say: 'Tuesday, Hiroshi.', who: 'etsuko', expr: 'stern' },
+          { say: 'Tuesday.', who: 'hiroshi', expr: 'warm' },
+          { narrate: 'He puts the cap on. He is walking differently.' } ] },
+      { label: '"You haven’t kept us. Finish your tea."', tone: 'Empathetic', warm: 'hiroshi',
+        then: [
+          { say: 'I have finished it. I finished it eleven minutes ago and I have been sitting here anyway.', who: 'hiroshi', expr: 'warm' },
+          { narrate: 'He says it as a joke about himself and it does not entirely come out as one.' },
+          { say: 'Come Tuesday. Tuesday is dead.', who: 'etsuko', expr: 'neutral' },
+          { say: '...All right. Tuesday.', who: 'hiroshi', expr: 'warm' } ] },
+      { label: '"Next time you’re fixing that gate and I’m holding it."', tone: 'Playful', warm: 'hiroshi',
+        then: [
+          { say: 'The gate is fine!', who: 'hiroshi', expr: 'surprised' },
+          { narrate: 'A pause.' },
+          { say: 'Saturday. I have the timber. I have had the timber since 2011.', who: 'hiroshi', expr: 'warm' },
+          { say: 'Saturday, then. Bring gloves, it is a terrible gate.', who: 'hiroshi', expr: 'warm' } ] }
+    ]},
+    { bonus: 'hiroshi' },
+    { narrate: 'At the curtain he turns and bows slightly to the room in general — to Etsuko, to you, and to the shop — and then he is out under the dead middle lamp and going slowly up the arcade.' },
+    { say: 'His wife died in the spring of 2019. Pneumonia, very fast.', who: 'etsuko', expr: 'neutral' },
+    { say: 'He came in the week after and sat where you are wiping and said nothing for forty minutes, and I let him.', who: 'etsuko', expr: 'neutral' },
+    { choose: [
+      { label: '"Does he have anyone here?"', tone: 'Curious', warm: 'etsuko',
+        then: [
+          { say: 'A son in Chiba who telephones on Sundays and comes at New Year. A good son. Not a nearby son.', who: 'etsuko', expr: 'neutral' },
+          { say: 'And that is it. He worked in Tokyo his whole life — his friends were the company, and the company is in Tokyo, and most of them are dead or in Tokyo, which from here is the same problem.', who: 'etsuko', expr: 'stern' },
+          { say: 'A fifth of the men his age in this country live alone. It is on the same chart as the rest of it. {{isolation|They put it under "social"}}, as though it were a mood.', who: 'etsuko', expr: 'stern' } ] },
+      { label: '"He waited outside, didn’t he."', tone: 'Empathetic', warm: 'etsuko',
+        then: [
+          { say: 'On the bench. He does it most weeks.', who: 'etsuko', expr: 'neutral' },
+          { say: 'He waits until it is quiet so that he is not in anybody’s way, and by the time it is quiet I am closing, and so he gets twenty minutes.', who: 'etsuko', expr: 'worried' },
+          { say: 'I have told him. I have told him for four years. He is a polite man and it is going to be the thing that does for him.', who: 'etsuko', expr: 'stern' } ] },
+      { label: '"He seemed all right, though."', tone: 'Playful',
+        then: [
+          { say: 'He is all right. That is not the same as being looked after.', who: 'etsuko', expr: 'stern' },
+          { say: 'He is all right on a Tuesday for twenty minutes, and the other six days he is a light on his son’s telephone.', who: 'etsuko', expr: 'worried' } ] }
+    ]},
+    { say: 'Right. The pots.', who: 'etsuko', expr: 'neutral' }
+  ],
+  react: {
+    hiroshi: {
+      matched: [
+        { narrate: 'He looks at it for a moment before he picks up the chopsticks. The bamboo. The egg.' },
+        { say: 'Ah.', who: 'hiroshi', expr: 'surprised' },
+        { narrate: 'Just that, and then he does not say anything for a while, and neither does your grandmother, and the fan hums.' },
+        { say: 'You were listening. That is — thank you. People do not, usually. It is nobody’s fault, it is only that there is a lot on.', who: 'hiroshi', expr: 'warm' } ],
+      near: [
+        { say: 'That is very good. Thank you.', who: 'hiroshi', expr: 'warm' },
+        { narrate: 'He eats it appreciatively and moves nothing around the bowl, which you will later realise is what he does with everything.' } ],
+      mismatched: [
+        { say: 'Ah — how nice. Thank you very much indeed.', who: 'hiroshi', expr: 'warm' },
+        { narrate: 'He eats every bit of it and thanks you twice more, and at no point does he mention that it is not what he has had every week since 1994.' } ]
+    }
+  },
+  confession: {
+    hiroshi: [
+      { narrate: 'Etsuko has gone through to the back for something that is not in the back.' },
+      { say: 'May I tell you a thing I have not said to my son.', who: 'hiroshi', expr: 'worried' },
+      { say: 'In March I fell. In the hall, on the step where the floor changes — nothing dramatic, I got up after a while and there was no harm done.', who: 'hiroshi', expr: 'neutral' },
+      { say: 'It was not the falling.', who: 'hiroshi', expr: 'worried' },
+      { say: 'It was that while I was on the floor I did the arithmetic. Sunday he telephones. It was a Wednesday. The flask goes off at eight and he might think I had gone to bed early, and he is busy, and he would not want to fuss.', who: 'hiroshi', expr: 'worried' },
+      { say: 'I got to Friday. Lying there I got all the way to Friday, and I thought: well. That is the design working exactly as specified.', who: 'hiroshi', expr: 'worried' },
+      { narrate: 'He straightens the phone again. It was already straight.' },
+      { say: 'They have a word for it now. They have a word and a cleaning company and a line in the budget, which means it happens often enough to be a category.', who: 'hiroshi', expr: 'neutral' },
+      { say: 'I do not want that word. I would like to be a person it did not apply to.', who: 'hiroshi', expr: 'worried' },
+      { say: 'So — I come and sit on the bench a while, and then I come in and I am a nuisance to your grandmother for twenty minutes, and that is Tuesday sorted. That is the whole system.', who: 'hiroshi', expr: 'warm' },
+      { say: 'Do not tell him about March. He would have me in Chiba by October and I would be nobody there at all.', who: 'hiroshi', expr: 'worried' } ]
+  },
+  bonus: {
+    hiroshi: [
+      { narrate: 'He pauses with one hand on the curtain.' },
+      { say: 'You asked me a question. Earlier — about the town, and you waited for the answer.', who: 'hiroshi', expr: 'warm' },
+      { say: 'I have thought of four things to tell you since. I shall have to save them.', who: 'hiroshi', expr: 'warm' } ]
+  }},
+
+  /* =====================================================================
      CLOSING UP — where the night gets tied together, by the one person
      who has been standing there through all four conversations.
      ===================================================================== */
@@ -651,12 +852,12 @@
     { choose: [
       { label: '"Is it always like that? All of them at once?"', tone: 'Curious', warm: 'etsuko',
         then: [
-          { say: 'It is always the same four conversations. Different mouths.', who: 'etsuko', expr: 'neutral' },
-          { say: 'Somebody is driving somebody to a hospital. Somebody’s shop has shut. Somebody cannot afford the child they want. And somebody is angry about a building.', who: 'etsuko', expr: 'neutral' },
+          { say: 'It is always the same five conversations. Different mouths.', who: 'etsuko', expr: 'neutral' },
+          { say: 'Somebody is driving somebody to a hospital. Somebody’s shop has shut. Somebody cannot afford the child they want. Somebody is angry about a building. And somebody has come in at ten o’clock because there is nobody at home to come in from.', who: 'etsuko', expr: 'neutral' },
           { say: 'Forty-one years. In 1984 the four conversations were: the bypass, the price of pork, a wedding, and whose son was being an idiot.', who: 'etsuko', expr: 'warm' } ] },
       { label: '"Everyone was talking about the same thing tonight."', tone: 'Curious', warm: 'etsuko',
         then: [
-          { say: 'They were talking about four things and it was one thing. Yes. Well done.', who: 'etsuko', expr: 'warm' },
+          { say: 'They were talking about five things and it was one thing. Yes. Well done.', who: 'etsuko', expr: 'warm' },
           { say: 'Nobody in here would say the word. Nobody says "we are an {{aging|aging population}}" while eating. They say: my daughter cannot come in October.', who: 'etsuko', expr: 'neutral' } ] },
       { label: '"You must be exhausted."', tone: 'Empathetic',
         then: [

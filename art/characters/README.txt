@@ -16,11 +16,11 @@ figure instead, so art can arrive one piece at a time.
   mary-blink.png       aiko-stern.png       ren-blink.png
                        aiko-blink.png
 
-  tanaka-neutral.png   yui-neutral.png
-  tanaka-warm.png      yui-warm.png
-  tanaka-worried.png   yui-worried.png
-  tanaka-stern.png     yui-stern.png
-  tanaka-blink.png     yui-blink.png
+  hiroshi-neutral.png  tanaka-neutral.png   yui-neutral.png
+  hiroshi-warm.png     tanaka-warm.png      yui-warm.png
+  hiroshi-worried.png  tanaka-worried.png   yui-worried.png
+  hiroshi-surprised.png tanaka-stern.png    yui-stern.png
+  hiroshi-blink.png    tanaka-blink.png     yui-blink.png
 
 YOU DO NOT NEED ALL OF THEM. Missing expressions fall back:
 
@@ -57,6 +57,12 @@ WHO IS WHO
   ren     34, her husband. Sentimental, keeps things light, glasses.
   tanaka  76, retired town councilman. Proud, upright, glasses.
   yui     38, his daughter, urban planner. Sharper than him and fond of him.
+  hiroshi 79, retired electronics engineer, widower, lives alone at the end
+          of the road. Ironed collared shirt on a Tuesday, glasses, thin
+          white hair combed across, a cap he holds on his knee rather than
+          put on the counter. Should read as dignified and courteous rather
+          than pitiable — the sadness in his scene is entirely in what the
+          player notices, never in his face.
 
 While a file is missing the browser console notes it could not be loaded.
 That is expected and harmless — it is how the fallback works.
