@@ -346,6 +346,7 @@
     var v = D.verdict(g, bench.broth, bench.tops);
     st.outcomes[g.id] = v.outcome;
     st.bowls[g.id] = { broth: bench.broth, tops: bench.tops.slice() };
+    A.setBowl(g.id, bench.broth, bench.tops);
     Snd.serve();
     benchAt++;
     nextBowl();
@@ -451,7 +452,7 @@
     A.setWaiting(!!soon);
 
     el.line.innerHTML = soon
-      ? 'The shop is empty. Out under the dead middle lamp, somebody is sitting on the bench by the vending machine, facing the shutters. They were there when you took the bins out. ' +
+      ? 'The shop is empty. Out under the dead middle lamp, somebody is sitting on the bench across from the vending machine, in its light, not moving much. They were there when you took the bins out. ' +
         '<span class="quiet">(Click anything in the room to look at it.)</span>'
       : 'The shop is empty. Somewhere behind you the pot ticks over. ' +
         '<span class="quiet">(Click anything in the room to look at it.)</span>';
@@ -768,8 +769,8 @@
     el.stage.onclick = function (e) {
       if (!el.choices.querySelector('.choice')) return;   /* only while idle */
       var r = el.stage.getBoundingClientRect();
-      var mx = (e.clientX - r.left) / r.width * 384;
-      var my = (e.clientY - r.top) / r.height * 216;
+      var mx = (e.clientX - r.left) / r.width * A.W;
+      var my = (e.clientY - r.top) / r.height * A.H;
       var key = A.hitTest(mx, my);
       if (key) roomNote(key);
     };

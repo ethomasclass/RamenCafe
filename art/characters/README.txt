@@ -1,5 +1,12 @@
 CHARACTER ART — drop PNGs in this folder and they appear in the game.
 
+YOU DO NOT NEED ANY. Every character is already drawn by the game itself, in
+the same shin-hanga woodblock style as the room, with five expressions each
+and blinking. PNGs here are only for replacing a printed figure with a
+hand-made one. If you do, match the style: flat colour areas, a dark key line
+around every shape, a single flat shadow tone on the side away from the
+lantern (the viewer's right), no airbrushing, no photographic lighting.
+
 Filenames are already wired in js/sprites.js. You do not have to edit any
 code; a file that is not here is simply ignored and the game draws its own
 figure instead, so art can arrive one piece at a time.

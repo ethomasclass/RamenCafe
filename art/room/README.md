@@ -1,7 +1,9 @@
 # The room
 
-The shop is currently **drawn in code** — see `js/art.js`. There is no image
-file here yet and the game does not need one.
+The shop is **printed in code** as a shin-hanga woodblock at 1280×720 — see
+`js/art.js`. There is no image file here and the game does not need one. The
+arcade outside is built in real perspective (`proj()`), so anything added to it
+should be placed in metres, not pixels.
 
 If you want to paint it instead, the target is **384 × 216 pixels**, which is
 the exact size of the canvas, so nothing gets resampled and the pixels stay

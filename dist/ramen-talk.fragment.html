@@ -112,8 +112,7 @@ body.size-4 { --fs: 22px; }
   background: #000; border-bottom: 1px solid #3a2820;
 }
 #stage {
-  width: 100%; max-width: 1040px; height: auto;
-  image-rendering: pixelated; display: block;
+  width: 100%; max-width: 1040px; height: auto; display: block;
 }
 
 /* ----------------------------------------------------------- DIALOGUE --- */
@@ -138,7 +137,7 @@ body.size-4 { --fs: 22px; }
   content: ''; position: absolute; right: -7px; top: 26px;
   border: 7px solid transparent; border-left-color: var(--indigo-lt);
 }
-.aside canvas { display: block; image-rendering: pixelated; width: 86px; height: 91px; }
+.aside canvas { display: block; width: 100px; height: 106px; }
 
 /* the card everything is said on */
 .say-card {
@@ -252,8 +251,9 @@ body.size-4 { --fs: 22px; }
 
 .title-screen { flex-direction: column; gap: 10px; }
 .title-art {
-  width: min(560px, 92vw); height: auto; image-rendering: pixelated;
+  width: min(620px, 92vw); height: auto;
   border: 2px solid var(--indigo); border-radius: 2px;
+  image-rendering: auto;
 }
 .title-inner { width: min(620px, 94vw); text-align: center; }
 .title-mark { position: relative; }
@@ -316,12 +316,12 @@ body.size-4 { --fs: 22px; }
 .ing:hover { background: #fff; border-color: var(--indigo-lt); }
 .ing.on { background: #fff; border-color: var(--shu); box-shadow: inset 0 0 0 2px var(--shu); }
 .ing.off { opacity: .3; cursor: default; }
-.ing canvas { image-rendering: pixelated; }
+.ing canvas { display: block; }
 .ing .nm { font-size: .78rem; line-height: 1.25; }
 .ing .jp { font-size: .68rem; color: var(--ink-soft); font-family: var(--mincho); }
 
 .bowl-side { flex: 0 0 210px; text-align: center; }
-#bowlArt { image-rendering: pixelated; width: 180px; height: 140px; }
+#bowlArt { width: 180px; height: 140px; }
 .bowl-name { font-family: var(--mincho); color: var(--indigo); margin-top: 4px; font-size: 1.05rem; font-weight: 700; }
 .bowl-parts { font-size: .8rem; color: var(--ink-soft); min-height: 2.6em; margin: 4px 0 10px; line-height: 1.45; }
 .bowl-btns { display: flex; gap: 8px; justify-content: center; }
@@ -428,7 +428,7 @@ body.size-4 { --fs: 22px; }
 }
 .book-list { display: flex; flex-direction: column; gap: 8px; }
 .entry { display: flex; gap: 10px; align-items: flex-start; }
-.entry canvas { image-rendering: pixelated; flex: 0 0 auto; }
+.entry canvas { flex: 0 0 auto; }
 .entry .e-name { font-weight: 700; font-size: .9rem; }
 .entry .e-name { font-family: var(--mincho); }
 .entry .e-name .jp { font-weight: 400; color: var(--ink-soft); font-size: .82rem; margin-left: 7px; }
@@ -437,7 +437,7 @@ body.size-4 { --fs: 22px; }
 .entry.locked { opacity: .45; }
 .entry.locked .e-desc { font-style: italic; }
 .book-list.tight .entry { align-items: center; }
-#mapArt { width: 200px; height: 260px; image-rendering: pixelated; }
+#mapArt { width: 200px; height: 260px; }
 .margin-list { font-size: .84rem; line-height: 1.5; }
 .margin-list .mg { border-left: 3px solid var(--shu); padding-left: 10px; margin-bottom: 11px; }
 .margin-list .mg b { font-family: var(--mincho); color: var(--indigo); }
@@ -531,14 +531,14 @@ body.size-4 { --fs: 22px; }
 
   <!-- ===================== STAGE ===================== -->
   <div class="stage-wrap">
-    <canvas id="stage" width="384" height="216"></canvas>
+    <canvas id="stage" width="1280" height="720"></canvas>
   </div>
 
   <!-- ===================== DIALOGUE ===================== -->
   <div id="dialogue" class="dialogue" hidden>
     <div class="say-wrap">
       <div id="asideBox" class="aside" hidden>
-        <canvas id="asideArt" width="72" height="76"></canvas>
+        <canvas id="asideArt" width="200" height="212"></canvas>
       </div>
       <div class="say-card">
         <div id="speaker" class="speaker"></div>
@@ -562,7 +562,7 @@ body.size-4 { --fs: 22px; }
 
   <!-- ===================== TITLE ===================== -->
   <div id="title" class="overlay title-screen">
-    <canvas id="titleArt" class="title-art" width="384" height="216"></canvas>
+    <canvas id="titleArt" class="title-art" width="1280" height="720"></canvas>
     <div class="title-inner">
       <div class="title-mark">
         <h1>Ramen<span>Talk</span></h1>
@@ -644,7 +644,7 @@ body.size-4 { --fs: 22px; }
         </div>
 
         <div class="bowl-side">
-          <canvas id="bowlArt" width="180" height="140"></canvas>
+          <canvas id="bowlArt" width="360" height="280"></canvas>
           <div id="bowlName" class="bowl-name">an empty bowl</div>
           <div id="bowlParts" class="bowl-parts"></div>
           <div class="bowl-btns">
@@ -691,7 +691,7 @@ body.size-4 { --fs: 22px; }
           <div id="bookTops" class="book-list tight"></div>
         </div>
         <div class="book-right">
-          <canvas id="mapArt" width="200" height="260"></canvas>
+          <canvas id="mapArt" width="400" height="520"></canvas>
           <div class="book-margin">
             <h3>Margin notes</h3>
             <div id="bookMargin" class="margin-list"></div>
@@ -742,7 +742,7 @@ body.size-4 { --fs: 22px; }
 
   <!-- ===================== END CARD ===================== -->
   <div id="endcard" class="overlay endcard" hidden>
-    <canvas id="endArt" class="title-art" width="384" height="216"></canvas>
+    <canvas id="endArt" class="title-art" width="1280" height="720"></canvas>
     <div class="end-inner">
       <h2>The years after</h2>
       <div id="endList" class="end-list"></div>
@@ -1088,7 +1088,7 @@ body.size-4 { --fs: 22px; }
     shutter:  { name: 'The shutters opposite', text: 'A run of them, all the way down that side of the arcade. The nearest one has a laminated notice taped to it that has gone yellow. It was a fishmonger for fifty-one years. Etsuko can still tell you what day he did the mackerel.' },
     vending:  { name: 'The vending machine', text: 'It is the brightest thing in the arcade and the only other business on this side of it that is open at this hour. It takes cards now. Somebody drives out from Kōriyama to fill it once a fortnight, which makes him the most reliable visitor the street gets.' },
     cat:      { name: 'The cat', text: 'Nobody owns her. Everybody feeds her, which in a street with fourteen hundred people and falling is a smaller committee than it used to be. Etsuko denies feeding her and buys the small dried fish in the large bag.' },
-    bench:    { name: 'The bench', text: 'A metal bench by the vending machine, bolted down, facing the shutters. Etsuko has been meaning to ask the town to move it so it faces something. She has been meaning to for nine years.' },
+    bench:    { name: 'The bench', text: 'A metal bench against the shutters, across from the vending machine, bolted down. Etsuko has been meaning to ask the town to move it so it faces something other than a vending machine. She has been meaning to for nine years.' },
     arcade:   { name: 'The arcade roof', text: 'Put up in 1988, when the shopping street was busy enough that the rain was the problem. Half the lamps under it have gone and nobody has decided whose job that is.' }
   };
 
@@ -2343,220 +2343,277 @@ window.SPRITES = {
 </script>
 <script>
 /* ===========================================================================
-   icons.js — every small drawing in the game, made in code.
+   icons.js — the bowls, the toppings and the map, printed in the same
+   woodblock manner as the room.
 
-   Nothing here loads a file. Bowls, jars, the shelf thumbnails and the map of
-   Japan in the notebook are all drawn onto their own little canvases, so the
-   game works with an empty art/ folder.
+   Everything is drawn at three times the size it is shown, so it stays crisp
+   on a projector. paintBowl() is the one bowl painter: the bench, the
+   notebook and the counter in the room all use it, so the bowl you build is
+   exactly the bowl that gets put down in front of somebody.
    =========================================================================== */
 
 (function (global) {
   'use strict';
 
   var D = global.Data;
+  var SS = 3;                                   /* supersampling */
 
-  function make(w, h, scale) {
+  var INK = {
+    sumi: '#1d1a17', washi: '#efe6d2', shu: '#c8402f', bowl: '#ede4d2',
+    nori: '#1f2a26', cold: '#bfe3f2'
+  };
+  var MIS = { x: 1.4, y: .9 };
+
+  function mk(w, h, scale) {
     var c = document.createElement('canvas');
-    c.width = w; c.height = h;
+    c.width = w * SS; c.height = h * SS;
     c.style.width = (w * (scale || 1)) + 'px';
     c.style.height = (h * (scale || 1)) + 'px';
-    c.style.imageRendering = 'pixelated';
-    var x = c.getContext('2d');
-    x.imageSmoothingEnabled = false;
+    var x = c.getContext('2d'); x.scale(SS, SS);
     return { c: c, x: x };
   }
-
-  function px(x, a, b, w, h, col) { x.fillStyle = col; x.fillRect(a, b, w, h); }
-
-  /* ------------------------------------------------------------------ */
-  /* A small bowl seen from the front — used on the shelf and in the book */
-
-  function brothIcon(id, scale) {
-    var b = D.byId(D.BROTHS, id);
-    var m = make(28, 22, scale || 1), x = m.x;
-    /* steam */
-    px(x, 9, 1, 1, 3, '#5a4a3e'); px(x, 14, 0, 1, 4, '#6a5a4e'); px(x, 19, 2, 1, 3, '#5a4a3e');
-    /* broth surface */
-    x.fillStyle = b ? b.colour : '#e8d49a';
-    x.beginPath(); x.ellipse(14, 10, 11, 3.4, 0, 0, 7); x.fill();
-    /* bowl body */
-    x.fillStyle = '#e8e2d8';
-    x.beginPath(); x.moveTo(3, 10); x.lineTo(25, 10); x.lineTo(20, 20); x.lineTo(8, 20); x.closePath(); x.fill();
-    /* the blue band every cheap ramen bowl has */
-    px(x, 4, 13, 20, 2, '#3d6d9a');
-    px(x, 5, 15, 18, 1, '#2c5580');
-    /* rim highlight */
-    px(x, 3, 9, 22, 1, '#fbf8f2');
-    return m.c;
+  function block(x, path, col) { x.save(); x.translate(MIS.x * .4, MIS.y * .4); x.fillStyle = col; x.beginPath(); path(); x.fill(); x.restore(); }
+  function key(x, path, w, col, a) {
+    x.save(); x.globalAlpha = a == null ? 1 : a; x.strokeStyle = col || INK.sumi; x.lineWidth = w || 1;
+    x.lineJoin = 'round'; x.lineCap = 'round'; x.beginPath(); path(); x.stroke(); x.restore();
   }
+  function both(x, path, col, w, kc) { block(x, path, col); key(x, path, w, kc); }
 
   /* ------------------------------------------------------------------ */
-  /* Toppings, as they sit on the shelf                                  */
+  /* THE TOPPINGS, as little prints — used on the shelf and in the bowl */
+  /* Each is drawn around (0,0) at unit size 1 = about 20 px.            */
 
-  function toppingIcon(id, scale) {
-    var m = make(22, 20, scale || 1), x = m.x;
+  function topping(x, id, u) {
+    var lw = Math.max(.7, u * .07);
     switch (id) {
       case 'chashu':
-        x.fillStyle = '#b5714a'; x.beginPath(); x.arc(11, 11, 8, 0, 7); x.fill();
-        x.fillStyle = '#d99a6c'; x.beginPath(); x.arc(11, 11, 4.5, 0, 7); x.fill();
-        x.fillStyle = '#8c5030'; x.fillRect(3, 10, 16, 1);
+        both(x, function () { x.ellipse(0, 0, 11 * u, 9 * u, -.2, 0, 7); }, '#b5714a', lw);
+        block(x, function () { x.ellipse(-1 * u, 0, 7 * u, 5.5 * u, -.2, 0, 7); }, '#e2b08a');
+        key(x, function () { x.moveTo(-6 * u, 0); x.bezierCurveTo(-4 * u, -4 * u, 4 * u, -4 * u, 4 * u, 0); x.bezierCurveTo(4 * u, 3 * u, -2 * u, 3 * u, -1 * u, 0); }, lw * .8, '#8a4a2a');
+        key(x, function () { x.ellipse(0, 0, 11 * u, 9 * u, -.2, 0, 7); }, lw * 1.6, '#6a3418', .55);
         break;
       case 'ajitama':
-        x.fillStyle = '#fdf6ea'; x.beginPath(); x.ellipse(11, 11, 8, 7.5, 0, 0, 7); x.fill();
-        x.fillStyle = '#f3a92a'; x.beginPath(); x.arc(11, 11, 4, 0, 7); x.fill();
-        x.fillStyle = '#f6c95a'; x.beginPath(); x.arc(10, 10, 2, 0, 7); x.fill();
+        both(x, function () { x.ellipse(0, 0, 10 * u, 8 * u, -.15, 0, 7); }, '#f6efe0', lw);
+        both(x, function () { x.ellipse(.5 * u, .3 * u, 5.4 * u, 4.4 * u, -.15, 0, 7); }, '#e9a531', lw * .8);
+        block(x, function () { x.ellipse(-.6 * u, -.8 * u, 2.2 * u, 1.6 * u, 0, 0, 7); }, '#f6c95a');
+        key(x, function () { x.ellipse(0, 0, 10 * u, 8 * u, -.15, 0, Math.PI); }, lw * 1.4, '#b88a4a', .45);
         break;
       case 'menma':
-        px(x, 4, 5, 3, 12, '#c9a24a'); px(x, 9, 3, 3, 14, '#dcb45c'); px(x, 14, 6, 3, 11, '#b8933f');
-        break;
-      case 'nori':
-        px(x, 5, 2, 12, 16, '#26332c'); px(x, 6, 3, 10, 14, '#1a2620');
-        px(x, 7, 5, 2, 1, '#3a4a40'); px(x, 12, 9, 2, 1, '#3a4a40');
-        break;
-      case 'negi':
-        px(x, 3, 8, 4, 4, '#8fbf5a'); px(x, 4, 9, 2, 2, '#d8ecc0');
-        px(x, 10, 5, 4, 4, '#7fae4c'); px(x, 11, 6, 2, 2, '#d8ecc0');
-        px(x, 12, 12, 4, 4, '#9fcf6a'); px(x, 13, 13, 2, 2, '#d8ecc0');
-        break;
-      case 'corn':
-        [[5,6],[9,5],[13,7],[6,11],[10,10],[14,12],[8,14]].forEach(function (p) {
-          px(x, p[0], p[1], 3, 3, '#f2c53d'); px(x, p[0], p[1], 1, 1, '#fbe89a');
+        [[-5, -1, .15], [0, 1, -.1], [5, -.5, .2]].forEach(function (m) {
+          x.save(); x.translate(m[0] * u, m[1] * u); x.rotate(m[2]);
+          both(x, function () { x.rect(-1.8 * u, -7 * u, 3.6 * u, 14 * u); }, '#c79c4a', lw);
+          key(x, function () { x.moveTo(0, -6 * u); x.lineTo(0, 6 * u); }, lw * .6, '#8a6a2a', .6);
+          x.restore();
         });
         break;
+      case 'nori':
+        both(x, function () { x.rect(-7 * u, -10 * u, 14 * u, 20 * u); }, INK.nori, lw);
+        key(x, function () { x.moveTo(-4 * u, -4 * u); x.lineTo(2 * u, -5 * u); x.moveTo(-2 * u, 4 * u); x.lineTo(4 * u, 3 * u); }, lw * .7, '#3a4a40', .8);
+        break;
+      case 'negi':
+        [[-6, -3], [0, 2], [6, -2], [-2, -6], [4, 6], [-6, 5], [7, 3]].forEach(function (p) {
+          both(x, function () { x.arc(p[0] * u, p[1] * u, 2.4 * u, 0, 7); }, '#8fbf5a', lw * .7);
+          block(x, function () { x.arc(p[0] * u, p[1] * u, 1.1 * u, 0, 7); }, '#e2f0c8');
+        });
+        break;
+      case 'corn':
+        for (var i = 0; i < 11; i++) {
+          var a = i * 2.39, r = Math.sqrt(i) * 3 * u;
+          both(x, function () { x.ellipse(Math.cos(a) * r, Math.sin(a) * r, 2.3 * u, 2 * u, a, 0, 7); }, '#f2c53d', lw * .6, '#8a6a10');
+        }
+        break;
       case 'butter':
-        x.fillStyle = '#f6e6a8'; x.fillRect(4, 6, 14, 9);
-        x.fillStyle = '#fdf7d8'; x.fillRect(4, 6, 14, 2);
-        x.fillStyle = '#dcc678'; x.fillRect(4, 14, 14, 1);
+        both(x, function () { x.moveTo(-7 * u, -3 * u); x.lineTo(6 * u, -6 * u); x.lineTo(8 * u, 3 * u); x.lineTo(-5 * u, 6 * u); x.closePath(); }, '#f6e6a8', lw);
+        block(x, function () { x.moveTo(-7 * u, -3 * u); x.lineTo(6 * u, -6 * u); x.lineTo(7 * u, -3 * u); x.lineTo(-6 * u, 0); x.closePath(); }, '#fdf7d8');
+        /* melting at the edge */
+        block(x, function () { x.ellipse(-3 * u, 7 * u, 6 * u, 2 * u, 0, 0, 7); }, 'rgba(246,230,168,.7)');
         break;
       case 'naruto':
-        x.fillStyle = '#f6f0ea'; x.beginPath(); x.arc(11, 11, 8, 0, 7); x.fill();
-        x.strokeStyle = '#e87a94'; x.lineWidth = 2;
-        x.beginPath();
-        for (var i = 0; i < 40; i++) {
-          var a = i / 40 * Math.PI * 3.2, r = 1 + i / 40 * 6;
-          var ax = 11 + Math.cos(a) * r, ay = 11 + Math.sin(a) * r;
-          if (i === 0) x.moveTo(ax, ay); else x.lineTo(ax, ay);
-        }
-        x.stroke();
+        both(x, function () {
+          for (var t = 0; t < 12; t++) { var an = t / 12 * Math.PI * 2, rr = (t % 2 ? 8.2 : 9) * u; if (t === 0) x.moveTo(Math.cos(an) * rr, Math.sin(an) * rr); else x.lineTo(Math.cos(an) * rr, Math.sin(an) * rr); }
+          x.closePath();
+        }, '#f6f0ea', lw);
+        key(x, function () { for (var i = 0; i < 44; i++) { var an = i / 44 * Math.PI * 3.3, r = (1 + i / 44 * 5.8) * u; if (i === 0) x.moveTo(Math.cos(an) * r, Math.sin(an) * r); else x.lineTo(Math.cos(an) * r, Math.sin(an) * r); } }, lw * 1.6, '#e0708c');
         break;
     }
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* THE BOWL                                                            */
+  /* (cx, cy) is the centre of the rim. At scale 1 the rim is 240 px     */
+  /* across, which is the size it sits on the counter in the room.       */
+
+  function paintBowl(x, cx, cy, sc, brothId, tops, frame, opts) {
+    opts = opts || {};
+    var b = brothId ? D.byId(D.BROTHS, brothId) : null;
+    var tilt = opts.tilt || 1;                 /* 1 = counter height, ~2 = looking down into it */
+    var rw = 120 * sc, rh = 22 * sc * tilt, lw = Math.max(1.2, 2.4 * sc);
+    tops = tops || [];
+
+    /* the body of the bowl */
+    var body = function () {
+      x.moveTo(cx - rw, cy); x.quadraticCurveTo(cx - rw * .9, cy + 84 * sc, cx - rw * .4, cy + 98 * sc);
+      x.lineTo(cx + rw * .4, cy + 98 * sc); x.quadraticCurveTo(cx + rw * .9, cy + 84 * sc, cx + rw, cy);
+    };
+    both(x, function () { body(); x.closePath(); }, INK.bowl, lw);
+    /* the shadow side of the glaze */
+    x.save(); x.beginPath(); body(); x.closePath(); x.clip();
+    var g = x.createLinearGradient(cx - rw, 0, cx + rw, 0);
+    g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(.6, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(60,40,20,.28)');
+    x.fillStyle = g; x.fillRect(cx - rw, cy, rw * 2, 100 * sc);
+    x.restore();
+    /* the raimon band — the thunder pattern every ramen bowl in Japan wears */
+    var by = cy + Math.max(20 * sc, rh + 3 * sc), bh = 14 * sc;
+    x.save(); x.beginPath(); body(); x.closePath(); x.clip();
+    block(x, function () { x.rect(cx - rw, by, rw * 2, bh); }, INK.shu);
+    key(x, function () {
+      var step = 16 * sc;
+      for (var px = cx - rw + 4 * sc; px < cx + rw; px += step) {
+        x.moveTo(px, by + bh * .8); x.lineTo(px, by + bh * .22); x.lineTo(px + step * .5, by + bh * .22);
+        x.lineTo(px + step * .5, by + bh * .6); x.lineTo(px + step * .25, by + bh * .6);
+      }
+    }, Math.max(.8, 1.2 * sc), INK.washi, .9);
+    x.restore();
+    /* the foot */
+    both(x, function () { x.rect(cx - rw * .36, cy + 96 * sc, rw * .72, 8 * sc); }, '#d8cdb8', lw * .8);
+
+    /* the broth */
+    if (b) {
+      block(x, function () { x.ellipse(cx, cy, rw - 3 * sc, rh - 2 * sc, 0, 0, 7); }, b.colour);
+      x.save(); x.beginPath(); x.ellipse(cx, cy, rw - 3 * sc, rh - 2 * sc, 0, 0, 7); x.clip();
+      /* the lantern catches the surface on the near-left */
+      var sh = x.createLinearGradient(cx - rw, 0, cx + rw, 0);
+      sh.addColorStop(0, 'rgba(255,220,160,.45)'); sh.addColorStop(.45, 'rgba(255,220,160,0)'); sh.addColorStop(1, 'rgba(0,0,0,.18)');
+      x.fillStyle = sh; x.fillRect(cx - rw, cy - rh, rw * 2, rh * 2);
+      /* fat on the surface for the rich ones */
+      if (brothId === 'tonkotsu' || brothId === 'miso') {
+        for (var f = 0; f < 9; f++) {
+          x.fillStyle = 'rgba(255,240,200,.35)';
+          x.beginPath(); x.ellipse(cx - rw * .6 + f * rw * .14, cy + Math.sin(f * 2.1) * rh * .4, 3 * sc, 1.6 * sc, 0, 0, 7); x.fill();
+        }
+      }
+      /* noodles folded under the surface */
+      key(x, function () {
+        for (var n = 0; n < 5; n++) {
+          var ny = cy - rh * .5 + n * rh * .25;
+          x.moveTo(cx - rw * .7, ny);
+          for (var t = 0; t <= 1; t += .1) x.lineTo(cx - rw * .7 + t * rw * 1.4, ny + Math.sin(t * 18 + n) * 2 * sc);
+        }
+      }, Math.max(.8, 1.4 * sc), '#f3dfa4', .45);
+      x.restore();
+
+      /* toppings: nori stands up at the back; everything else lies in the broth */
+      var slots = [[-44, -2], [40, 2], [0, 6]], si = 0;
+      if (tops.indexOf('nori') !== -1) {
+        x.save(); x.translate(cx + 70 * sc, cy - 26 * sc * Math.min(tilt, 1.4)); x.rotate(.35);
+        topping(x, 'nori', 2.2 * sc); x.restore();
+      }
+      tops.forEach(function (t) {
+        if (t === 'nori') return;
+        var s = slots[si++] || slots[0];
+        x.save(); x.translate(cx + s[0] * sc, cy + s[1] * sc * tilt); x.scale(1, Math.min(1, .5 + tilt * .2));
+        topping(x, t, (tilt > 1.4 ? 2.4 : 1.9) * sc); x.restore();
+      });
+    } else {
+      block(x, function () { x.ellipse(cx, cy, rw - 3 * sc, rh - 2 * sc, 0, 0, 7); }, '#d9ccb2');
+      block(x, function () { x.ellipse(cx, cy + 4 * sc, rw * .8, rh * .6, 0, 0, 7); }, '#cbbd9f');
+    }
+    key(x, function () { x.ellipse(cx, cy, rw, rh, 0, 0, 7); }, lw);
+    key(x, function () { body(); }, lw);
+
+    /* steam, drawn the old way: calligraphic curls, not particles */
+    if (b && opts.steam !== 0) {
+      [[-50, 0], [-4, 1.3], [44, 2.6]].forEach(function (s) {
+        var ph = s[1] + (frame || 0) / 30;
+        key(x, function () {
+          x.moveTo(cx + s[0] * sc, cy - 10 * sc);
+          for (var t = 0; t <= 1.001; t += .05) {
+            x.lineTo(cx + s[0] * sc + Math.sin(t * 7 + ph) * (8 + t * 10) * sc, cy - 10 * sc - t * (opts.steam || 92) * sc);
+          }
+        }, Math.max(1, 2 * sc), opts.onPaper ? '#8a7a64' : INK.washi, opts.onPaper ? .4 : .34);
+      });
+    }
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* SHELF ICONS                                                         */
+
+  function brothIcon(id, scale) {
+    var m = mk(40, 32, scale), x = m.x;
+    paintBowl(x, 20, 11, .15, id, [], 0, { tilt: 2.3, onPaper: true, steam: 0 });
     return m.c;
   }
 
-  /* ------------------------------------------------------------------ */
-  /* The bowl on the bench, at size, with whatever is in it so far        */
+  function toppingIcon(id, scale) {
+    var m = mk(26, 24, scale), x = m.x;
+    x.save(); x.translate(13, 12); topping(x, id, .95); x.restore();
+    return m.c;
+  }
 
+  /* the bench bowl: the canvas is 360x280 shown at 180x140 */
   function drawBowl(x, w, h, brothId, tops, frame) {
     x.clearRect(0, 0, w, h);
-    x.imageSmoothingEnabled = false;
-    var cx = w / 2, top = h * 0.34, b = brothId ? D.byId(D.BROTHS, brothId) : null;
-
-    /* steam, only once there is something hot in it */
-    if (b) {
-      x.globalAlpha = 0.5;
-      for (var s = 0; s < 3; s++) {
-        var t = ((frame || 0) * 0.6 + s * 40) % 120;
-        var sy = top - 6 - t * 0.22, sx = cx - 26 + s * 26 + Math.sin(t / 12 + s) * 4;
-        x.fillStyle = '#cfc4b4';
-        x.fillRect(sx, sy, 3, 3);
-      }
-      x.globalAlpha = 1;
+    x.save();
+    var sc = w / 300;
+    paintBowl(x, w / 2, h * .36, sc, brothId, tops, frame, { tilt: 2.1, onPaper: true, steam: 70 });
+    if (!brothId) {
+      x.fillStyle = '#8a7963'; x.font = (13 * sc * 1.2) + 'px sans-serif'; x.textAlign = 'center';
+      x.fillText('empty', w / 2, h * .44);
     }
-
-    /* broth */
-    if (b) {
-      x.fillStyle = b.colour;
-      x.beginPath(); x.ellipse(cx, top + 8, w * 0.31, h * 0.085, 0, 0, 7); x.fill();
-      /* noodles showing through, faintly */
-      x.globalAlpha = 0.35; x.fillStyle = '#f6e9c8';
-      for (var n = 0; n < 5; n++) {
-        x.fillRect(cx - 22 + n * 9, top + 4 + (n % 2) * 3, 7, 1);
-      }
-      x.globalAlpha = 1;
-    }
-
-    /* toppings, laid round the bowl */
-    var spots = [[-19, -7], [15, -4], [-3, 0]];
-    (tops || []).forEach(function (t, i) {
-      var ic = toppingIcon(t, 1);
-      var p = spots[i] || spots[0];
-      x.drawImage(ic, Math.round(cx + p[0] - 15), Math.round(top + p[1] - 13), 30, 27);
-    });
-
-    /* the bowl itself, drawn last so it sits in front */
-    x.fillStyle = '#e8e2d8';
-    x.beginPath();
-    x.moveTo(cx - w * 0.33, top + 8);
-    x.lineTo(cx + w * 0.33, top + 8);
-    x.lineTo(cx + w * 0.20, h * 0.86);
-    x.lineTo(cx - w * 0.20, h * 0.86);
-    x.closePath(); x.fill();
-    x.fillStyle = '#3d6d9a'; x.fillRect(cx - w * 0.30, top + 20, w * 0.60, 5);
-    x.fillStyle = '#2c5580'; x.fillRect(cx - w * 0.29, top + 25, w * 0.58, 2);
-    x.fillStyle = '#fbf8f2'; x.fillRect(cx - w * 0.33, top + 6, w * 0.66, 2);
-    /* foot */
-    x.fillStyle = '#cfc7ba'; x.fillRect(cx - w * 0.13, h * 0.86, w * 0.26, 4);
-
-    if (!b) {
-      x.fillStyle = '#7a6a5e'; x.font = '11px sans-serif'; x.textAlign = 'center';
-      x.fillText('empty', cx, top + 14);
-    }
+    x.restore();
   }
 
   /* ------------------------------------------------------------------ */
-  /* Japan, roughly, for the notebook. Not a survey map — a sketch, so a
-     student can see that four broths means four different places.        */
+  /* THE MAP IN THE NOTEBOOK, as an ink sketch. Canvas 400x520.          */
 
   function drawMap(x, w, h, known) {
+    var s = w / 200;
     x.clearRect(0, 0, w, h);
-    x.fillStyle = '#f0e7d6'; x.fillRect(0, 0, w, h);
+    x.save(); x.scale(s, s);
+    /* the sea, as a bokashi wipe */
+    var g = x.createLinearGradient(0, 0, 0, 260);
+    g.addColorStop(0, '#dbe4e6'); g.addColorStop(1, '#eef0ea');
+    x.fillStyle = g; x.fillRect(0, 0, 200, 260);
+    /* waves, the seigaiha way, very faint */
+    x.strokeStyle = 'rgba(31,51,80,.10)'; x.lineWidth = .7;
+    for (var yy = 12; yy < 260; yy += 14) for (var xx = (yy / 14) % 2 * 10; xx < 200; xx += 20) { x.beginPath(); x.arc(xx, yy, 8, Math.PI, 0); x.stroke(); }
 
-    /* sea */
-    x.fillStyle = '#dfe8ea'; x.fillRect(0, 0, w, h);
+    var land = '#e6dcc4', ink = '#3a3226';
+    /* Honshu: a thick brushed stroke is close enough at this size */
+    x.lineCap = 'round'; x.lineJoin = 'round';
+    x.strokeStyle = ink; x.lineWidth = 21;
+    var hon = [[142, 82], [150, 102], [134, 126], [114, 142], [92, 152], [70, 160], [54, 166]];
+    x.beginPath(); hon.forEach(function (p, i) { if (i) x.lineTo(p[0], p[1]); else x.moveTo(p[0], p[1]); }); x.stroke();
+    x.strokeStyle = land; x.lineWidth = 18.5;
+    x.beginPath(); hon.forEach(function (p, i) { if (i) x.lineTo(p[0], p[1]); else x.moveTo(p[0], p[1]); }); x.stroke();
+    /* Hokkaido, Shikoku, Kyushu */
+    function isle(path) { x.fillStyle = land; x.strokeStyle = ink; x.lineWidth = 1.3; x.beginPath(); path(); x.fill(); x.stroke(); }
+    isle(function () { x.moveTo(128, 20); x.lineTo(168, 28); x.lineTo(174, 52); x.lineTo(150, 74); x.lineTo(126, 60); x.lineTo(118, 36); x.closePath(); });
+    isle(function () { x.ellipse(76, 184, 13, 6, -.2, 0, 7); });
+    isle(function () { x.ellipse(36, 200, 14, 17, .3, 0, 7); });
 
-    var land = '#c9bda2';
-
-    /* Honshu — a thick line is close enough at this size */
-    x.strokeStyle = land; x.lineWidth = 19; x.lineCap = 'round'; x.lineJoin = 'round';
-    x.beginPath();
-    x.moveTo(142, 82); x.lineTo(150, 102); x.lineTo(134, 126);
-    x.lineTo(114, 142); x.lineTo(92, 152); x.lineTo(70, 160); x.lineTo(54, 166);
-    x.stroke();
-
-    /* Hokkaido */
-    x.fillStyle = land;
-    x.beginPath();
-    x.moveTo(128, 20); x.lineTo(168, 28); x.lineTo(174, 52);
-    x.lineTo(150, 74); x.lineTo(126, 60); x.lineTo(118, 36);
-    x.closePath(); x.fill();
-
-    /* Shikoku */
-    x.beginPath(); x.ellipse(76, 184, 13, 6, -0.2, 0, 7); x.fill();
-    /* Kyushu */
-    x.beginPath(); x.ellipse(36, 200, 14, 17, 0.3, 0, 7); x.fill();
-
-    /* the dots */
     D.BROTHS.forEach(function (b) {
       var on = known && known[b.id];
-      x.fillStyle = on ? '#c0392b' : '#b3a892';
-      x.beginPath(); x.arc(b.map.x, b.map.y, on ? 4 : 2.5, 0, 7); x.fill();
       if (on) {
-        x.strokeStyle = '#fff'; x.lineWidth = 1;
-        x.beginPath(); x.arc(b.map.x, b.map.y, 4, 0, 7); x.stroke();
-        x.fillStyle = '#4a3f30';
-        x.font = 'bold 9px sans-serif';
-        x.textAlign = b.map.x > 110 ? 'right' : 'left';
-        x.fillText(b.name.split(' ')[0], b.map.x + (b.map.x > 110 ? -8 : 8), b.map.y + 3);
+        x.fillStyle = INK.shu; x.strokeStyle = ink; x.lineWidth = 1;
+        x.beginPath(); x.arc(b.map.x, b.map.y, 4.2, 0, 7); x.fill(); x.stroke();
+        x.fillStyle = ink; x.font = '600 9px "Shippori Mincho", Georgia, serif';
+        var right = b.map.x > 110;
+        x.textAlign = right ? 'right' : 'left';
+        x.fillText(b.name.split(' ')[0], b.map.x + (right ? -8 : 8), b.map.y + 3);
+      } else {
+        x.strokeStyle = 'rgba(58,50,38,.45)'; x.lineWidth = 1;
+        x.beginPath(); x.arc(b.map.x, b.map.y, 3, 0, 7); x.stroke();
       }
     });
-
-    x.fillStyle = '#8a7963'; x.font = '9px sans-serif'; x.textAlign = 'left';
-    x.fillText('where the broths come from', 8, h - 8);
+    x.fillStyle = '#8a7963'; x.font = 'italic 8.5px Georgia, serif'; x.textAlign = 'left';
+    x.fillText('where the broths come from', 8, 252);
+    x.restore();
   }
 
   global.Icons = {
-    make: make, brothIcon: brothIcon, toppingIcon: toppingIcon,
-    drawBowl: drawBowl, drawMap: drawMap
+    brothIcon: brothIcon, toppingIcon: toppingIcon,
+    drawBowl: drawBowl, paintBowl: paintBowl, drawMap: drawMap
   };
 
 }(window));
@@ -2564,661 +2621,1450 @@ window.SPRITES = {
 </script>
 <script>
 /* ===========================================================================
-   art.js — the shop, the people in it, and the evening going by.
+   art.js — the shop, printed as a shin-hanga woodblock.
 
-   Everything here is drawn in code at 384x216 and scaled up with nearest
-   neighbour, so it stays sharp on a projector and needs no image files. If a
-   PNG named in sprites.js does exist, it is drawn over the top of the figure
-   this file would otherwise draw.
+   Everything is drawn in code at 1280x720. There are no image files, and
+   the style is chosen because its rules are ones code can follow well:
 
-   Where things sit:
-     y 0–58     the back wall, menu strips, shelf, calendar, photograph
-     y 58–150   the people, seated, seen from behind your own counter
-     y 150–216  the counter, the pot, the things on your side of it
+     1. INKS.   Every colour is a flat block from one small palette.
+     2. BOKASHI. The only gradients are the smooth wipes a printer makes by
+                hand on the block. Never noise, never airbrush.
+     3. KEY.    A sumi line block printed on top, a hair out of register
+                with the colour, which is most of what makes it read as a
+                print rather than as vector art.
+     4. WASHI.  All of it pressed onto paper: fibre, grain, uneven ink.
+
+   The arcade outside is built in real one-point perspective (proj() below),
+   so everything out there — shutters, signs, the vending machine standing
+   at an angle, the bench, the cat — sits in one consistent space.
+
+   Layers, back to front, each frame:
+     backdrop (printed once)  — shop walls, the arcade, its fixed contents
+     live alley               — lamp flicker, machine glow, rain, the cat
+     noren                    — swaying, gusting when somebody comes in
+     people                   — cached per face and expression
+     counter (printed once)
+     bowls on the counter, steam
+     lantern light, the night going by, the paper itself
+
+   If a PNG named in sprites.js exists it is drawn in place of the printed
+   figure, so hand-made art can still arrive one face at a time.
    =========================================================================== */
 
 (function (global) {
   'use strict';
 
-  var W = 384, H = 216;
+  var W = 1280, H = 720;
   var view = null, vctx = null;
-  var buf = document.createElement('canvas');
-  buf.width = W; buf.height = H;
-  var b = buf.getContext('2d');
-  b.imageSmoothingEnabled = false;
+  var buf = mk(W, H), b = buf.getContext('2d');
 
-  var seats = [];        /* [{id, x}] currently sitting down */
-  var speaker = null, expr = 'neutral';
-  var phase = 0;         /* 0 = early evening, 1 = closing time */
-  var blinkAt = {};
-  var gust = 0;               /* the noren, when somebody comes in */
-  var waiting = false;        /* somebody on the bench, not coming in yet */
-
-  /* ------------------------------------------------------------------ */
-  /* Who looks like what, when there is no PNG for them.                 */
-
-  var LOOK = {
-    etsuko: { skin: '#e8c9a8', hair: '#d8d4cc', style: 'bun',  cloth: '#5a6b6a', cloth2: '#46554f', w: 19, h: 30, glasses: false, apron: true },
-    daiki:  { skin: '#dcb894', hair: '#2a2320', style: 'crop', cloth: '#6a7a86', cloth2: '#55636d', w: 24, h: 33, glasses: false },
-    kenji:  { skin: '#e0c0a0', hair: '#cfcac0', style: 'thin', cloth: '#8a7a5c', cloth2: '#6f624a', w: 21, h: 30, glasses: true,  cap: true },
-    mary:   { skin: '#b98a63', hair: '#241a15', style: 'tie',  cloth: '#4a8a86', cloth2: '#3a6f6b', w: 21, h: 31, glasses: false },
-    aiko:   { skin: '#e6c4a4', hair: '#1f1a18', style: 'bob',  cloth: '#3f4756', cloth2: '#333a46', w: 20, h: 31, glasses: false },
-    ren:    { skin: '#dfbd9a', hair: '#33282a', style: 'mop',  cloth: '#b0724a', cloth2: '#8f5b3a', w: 23, h: 32, glasses: true },
-    tanaka: { skin: '#e2c2a2', hair: '#e2ded6', style: 'side', cloth: '#4a4a55', cloth2: '#3a3a44', w: 24, h: 32, glasses: true },
-    hiroshi:{ skin: '#e4c7a6', hair: '#e8e4dc', style: 'comb', cloth: '#93a0ad', cloth2: '#77848f', w: 20, h: 29, glasses: true },
-    yui:    { skin: '#e6c4a4', hair: '#241c1a', style: 'long', cloth: '#7a5f8a', cloth2: '#634d70', w: 20, h: 31, glasses: false }
+  var INK = {
+    sumi: '#1d1a17', sumiSoft: '#3a342d',
+    indigo: '#1f3350', indigoDk: '#141f33', ai: '#2e4a6e',
+    night: '#0e1522', nightLt: '#1a2539',
+    washi: '#efe6d2', cream: '#e4d6b8', paper: '#f4ecdb',
+    shu: '#c8402f', shuDk: '#9e2f22',
+    ochre: '#e3a54a', lamp: '#f6d58c', lampHot: '#fff0c8',
+    wood: '#5a3e2b', woodDk: '#3a281c', woodLt: '#7a5638', wall: '#3a2a1f',
+    cold: '#bfe3f2', coldDk: '#7fb6d0', steel: '#8fa6b8',
+    nori: '#1f2a26'
   };
 
   /* ------------------------------------------------------------------ */
-  /* OPTIONAL PNG SPRITES                                                */
+  /* PRINTING TOOLS                                                     */
 
-  var poses = {};        /* 'id:expr' -> image, once loaded */
-  var tried = {};
+  function mk(w, h) { var c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
 
-  function fallbackChain(set, want) {
-    var order = { warm: ['warm', 'neutral'], worried: ['worried', 'neutral'],
-                  stern: ['stern', 'worried', 'neutral'],
-                  surprised: ['surprised', 'neutral'], neutral: ['neutral'] };
-    var chain = order[want] || ['neutral'];
-    for (var i = 0; i < chain.length; i++) if (set[chain[i]]) return set[chain[i]];
-    return null;
+  /* seeded, so the same print comes off the block every time */
+  var seed = 11;
+  function R() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+  function reseed(n) { seed = n; }
+
+  var MIS = { x: 1.8, y: 1.1 };   /* colour sits this far off the key block */
+
+  function block(x, path, col) {
+    x.save(); x.translate(MIS.x, MIS.y); x.fillStyle = col; x.beginPath(); path(); x.fill(); x.restore();
+  }
+  function key(x, path, w, col, a) {
+    x.save(); x.globalAlpha = a == null ? 1 : a; x.strokeStyle = col || INK.sumi; x.lineWidth = w || 2.2;
+    x.lineJoin = 'round'; x.lineCap = 'round'; x.beginPath(); path(); x.stroke(); x.restore();
+  }
+  function both(x, path, col, w, kcol) { block(x, path, col); key(x, path, w, kcol); }
+  function bok(x, x0, y0, x1, y1, stops) {
+    var g = x.createLinearGradient(x0, y0, x1, y1);
+    stops.forEach(function (s) { g.addColorStop(s[0], s[1]); }); return g;
+  }
+  function glow(x, cx, cy, r, col, a) {
+    var g = x.createRadialGradient(cx, cy, 1, cx, cy, r);
+    g.addColorStop(0, 'rgba(' + col + ',' + a + ')'); g.addColorStop(1, 'rgba(' + col + ',0)');
+    x.fillStyle = g; x.fillRect(cx - r, cy - r, r * 2, r * 2);
+  }
+  function poly(x, pts) { x.moveTo(pts[0][0], pts[0][1]); for (var i = 1; i < pts.length; i++) x.lineTo(pts[i][0], pts[i][1]); x.closePath(); }
+  function rr(x, a, c, w, h) { x.rect(a, c, w, h); }
+
+  /* woodgrain: long wavering lines, clipped to whatever path is given */
+  function grain(x, clip, col, n, span, amp, horiz, from) {
+    x.save(); x.beginPath(); clip(); x.clip();
+    x.strokeStyle = col; x.lineWidth = 1;
+    for (var i = 0; i < n; i++) {
+      x.globalAlpha = .16 + R() * .24; x.beginPath();
+      var off = (from || 0) + R() * span, ph = R() * 6, fr = .004 + R() * .01;
+      for (var t = -20; t <= (horiz ? W : H) + 20; t += 8) {
+        var wv = Math.sin(t * fr + ph) * amp + Math.sin(t * fr * 3.1 + ph) * amp * .35;
+        if (horiz) x.lineTo(t, off + wv); else x.lineTo(off + wv, t);
+      }
+      x.stroke();
+    }
+    x.restore();
   }
 
+  function jp(size, weight) {
+    return (weight || 700) + ' ' + size + 'px "Shippori Mincho","Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif';
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* THE ARCADE'S SPACE                                                 */
+  /*                                                                    */
+  /* Metres. X across (walls at +-3), Y up (roof at 4), Z away from you. */
+  /* You sit at the counter with your eye 1.2 m up; the arcade's far end */
+  /* is 40 m down. The shop front itself is about 1.5 m in front of you. */
+
+  var CAM = { vx: 690, hz: 250, f: 520, y: 1.2 };
+  function proj(X, Y, Z) { return [CAM.vx + CAM.f * X / Z, CAM.hz + CAM.f * (CAM.y - Y) / Z]; }
+  function pq(pts) { return pts.map(function (p) { return proj(p[0], p[1], p[2]); }); }
+
+  /* the opening in the shop front, in screen space */
+  var OX = 250, OY = 30, OW = 790, OB = 470;
+
+  /* ------------------------------------------------------------------ */
+  /* THE VENDING MACHINE — standing at an angle to the right wall, the  */
+  /* way they do, facing back up the arcade toward the shop.            */
+
+  var VM = (function () {
+    var phi = -50 * Math.PI / 180;                       /* face edge angle in XZ */
+    var u = [Math.cos(phi), Math.sin(phi)];              /* along the face, left to right */
+    var n = [u[1], -u[0]];                               /* outward normal */
+    var p0 = [1.72, 5.9];                                /* front-left foot */
+    return { u: u, n: n, p0: p0, w: 1.0, d: 0.72, h: 1.83 };
+  }());
+  /* a point on the machine's face: s across (0..1), yM up in metres, out = metres proud of the face */
+  function vmFace(s, yM, out) {
+    var X = VM.p0[0] + VM.u[0] * VM.w * s + VM.n[0] * (out || 0);
+    var Z = VM.p0[1] + VM.u[1] * VM.w * s + VM.n[1] * (out || 0);
+    return proj(X, yM, Z);
+  }
+  function vmSide(dz, yM) {  /* the right-hand side panel: dz 0..1 into the depth */
+    var X = VM.p0[0] + VM.u[0] * VM.w - VM.n[0] * VM.d * dz;
+    var Z = VM.p0[1] + VM.u[1] * VM.w - VM.n[1] * VM.d * dz;
+    return proj(X, yM, Z);
+  }
+  function faceQuad(s0, y0, s1, y1, out) {
+    return [vmFace(s0, y0, out), vmFace(s1, y0, out), vmFace(s1, y1, out), vmFace(s0, y1, out)];
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* STATE                                                              */
+
+  var seats = [];            /* [{id, x}] */
+  var bowls = {};            /* id -> {broth, tops} served and in front of them */
+  var speaker = null, expr = 'neutral';
+  var phase = 0;             /* 0 early evening .. 1 closing time */
+  var gust = 0;              /* the noren, when somebody comes in */
+  var waiting = false;       /* somebody on the bench, not coming in yet */
+  var blinkAt = {};
+  var backdrop = null, counterLayer = null, paperMul = null, paperScr = null, vignette = null;
+
+  /* ------------------------------------------------------------------ */
+  /* 1. THE ARCADE — printed once                                       */
+
+  var SIGNS_L = [
+    { z: 5.2, t: '中野鮮魚', col: '#3b4a52' },
+    { z: 9.5, t: '書店',     col: '#3d3642' },
+    { z: 14,  t: '薬',       col: '#2f4a44' },
+    { z: 20,  t: '茶舗',     col: '#4a3a30' },
+    { z: 28,  t: '酒',       col: '#3a3a4a' }
+  ];
+  var SIGNS_R = [
+    { z: 10.5, t: '洋品', col: '#443a48' },
+    { z: 15,   t: '写真', col: '#34424e' },
+    { z: 21,   t: 'パン', col: '#4c3e2e' },
+    { z: 29,   t: '理容', col: '#3a4450' }
+  ];
+
+  function arcade(x) {
+    reseed(29);
+    x.save(); x.beginPath(); x.rect(OX, OY, OW, OB - OY); x.clip();
+
+    /* the dark, wiped down toward the damp ground */
+    x.fillStyle = bok(x, 0, OY, 0, OB, [[0, INK.night], [.5, '#172237'], [1, '#222f45']]);
+    x.fillRect(OX, OY, OW, OB - OY);
+
+    /* the far end: the arcade opens onto a street, and it is raining there */
+    var e = pq([[-3, 0, 40], [3, 0, 40], [3, 4, 40], [-3, 4, 40]]);
+    both(x, function () { poly(x, e); }, '#1d2c45', 1.2, '#0a0f18');
+    block(x, function () { rr(x, e[0][0] + 12, e[2][1] + 10, 7, 9); }, 'rgba(246,213,140,.7)');
+    block(x, function () { rr(x, e[0][0] + 44, e[2][1] + 18, 6, 8); }, 'rgba(246,213,140,.45)');
+    for (var fr = 0; fr < 26; fr++) {
+      var rx = e[0][0] + R() * (e[1][0] - e[0][0]), ry = e[2][1] + R() * (e[0][1] - e[2][1]);
+      key(x, function () { x.moveTo(rx, ry); x.lineTo(rx - 2, ry + 7); }, .8, '#9fb4cc', .35);
+    }
+
+    /* --- the floor: tiles running away from you --------------------- */
+    x.fillStyle = bok(x, 0, 262, 0, OB, [[0, '#1b2638'], [1, '#27344a']]);
+    x.beginPath(); poly(x, pq([[-3, 0, 3.4], [3, 0, 3.4], [3, 0, 40], [-3, 0, 40]])); x.fill();
+    for (var tz = 4; tz < 40; tz += (tz < 12 ? 1 : 2)) {
+      (function (tz) {
+        var a = proj(-3, 0, tz), c = proj(3, 0, tz);
+        key(x, function () { x.moveTo(a[0], a[1]); x.lineTo(c[0], c[1]); }, 1, '#0d1420', .45);
+      }(tz));
+    }
+    [-2, -1, 0, 1, 2].forEach(function (tx) {
+      var a = proj(tx, 0, 3.4), c = proj(tx, 0, 40);
+      key(x, function () { x.moveTo(a[0], a[1]); x.lineTo(c[0], c[1]); }, 1, '#0d1420', .4);
+    });
+
+    /* --- the walls, and the shops along them ------------------------ */
+    [-1, 1].forEach(function (side) {
+      var X = 3 * side;
+      /* the wall plane itself */
+      block(x, function () { poly(x, pq([[X, 0, 3.4], [X, 4, 3.4], [X, 4, 40], [X, 0, 40]])); }, side < 0 ? '#1c2638' : '#192233');
+      /* frontages, three metres each */
+      for (var z = 3.5; z < 38; z += 3) {
+        (function (z0, z1, k) {
+          var fascia = pq([[X, 2.4, z0], [X, 3.1, z0], [X, 3.1, z1], [X, 2.4, z1]]);
+          block(x, function () { poly(x, fascia); }, ['#2a3244', '#2e2b38', '#26343a', '#332c2c'][k % 4]);
+          /* the shutter */
+          var sh = pq([[X, 0, z0 + .15], [X, 2.35, z0 + .15], [X, 2.35, z1 - .15], [X, 0, z1 - .15]]);
+          block(x, function () { poly(x, sh); }, k % 3 === 1 ? '#2d3645' : '#283142');
+          /* corrugations: lines of constant height, so they run to the vanishing point */
+          for (var yy = .12; yy < 2.35; yy += (z0 < 10 ? .09 : .16)) {
+            (function (yy) {
+              var p = proj(X, yy, z0 + .15), q = proj(X, yy, z1 - .15);
+              key(x, function () { x.moveTo(p[0], p[1]); x.lineTo(q[0], q[1]); }, z0 < 8 ? 1 : .8, '#131a26', .55);
+            }(yy));
+          }
+          key(x, function () { poly(x, sh); }, 1.2, '#0b1019', .8);
+          /* the pillar between frontages */
+          var pl = pq([[X, 0, z0 - .08], [X, 3.1, z0 - .08], [X, 3.1, z0 + .1], [X, 0, z0 + .1]]);
+          block(x, function () { poly(x, pl); }, '#141b27');
+        }(z, z + 3, Math.round(z)));
+      }
+    });
+
+    /* the yellowed notice on Nakano's shutter */
+    var nt = pq([[-3, 1.25, 4.6], [-3, 1.62, 4.6], [-3, 1.62, 5.05], [-3, 1.25, 5.05]]);
+    both(x, function () { poly(x, nt); }, '#a39a74', 1, '#3a3624');
+    for (var nl = 0; nl < 4; nl++) {
+      (function (nl) {
+        var p = proj(-3, 1.55 - nl * .07, 4.66), q = proj(-3, 1.55 - nl * .07, 4.98);
+        key(x, function () { x.moveTo(p[0], p[1]); x.lineTo(q[0], q[1]); }, 1, '#5a5436', .7);
+      }(nl));
+    }
+
+    /* --- the roof: arches every four metres, translucent panels ------- */
+    for (var az = 4; az <= 40; az += 4) {
+      (function (az) {
+        var pts = [];
+        for (var a = 0; a <= 16; a++) {
+          var t = a / 16 * Math.PI;
+          pts.push(proj(-3 * Math.cos(t), 3.9 + Math.sin(t) * .9, az));
+        }
+        key(x, function () { x.moveTo(pts[0][0], pts[0][1]); pts.forEach(function (p) { x.lineTo(p[0], p[1]); }); }, az < 12 ? 3 : 2, '#070b12', .95);
+      }(az));
+    }
+    /* the spine of the roof */
+    var s0 = proj(0, 4.8, 4), s1 = proj(0, 4.8, 40);
+    key(x, function () { x.moveTo(s0[0], s0[1]); x.lineTo(s1[0], s1[1]); }, 2, '#070b12');
+
+    /* --- hanging signs, perpendicular to the walls, facing you ------- */
+    function hanging(list, side) {
+      list.forEach(function (sg) {
+        var X0 = 3 * side, X1 = 2.15 * side;
+        var a = proj(Math.min(X0, X1), 3.55, sg.z), c = proj(Math.max(X0, X1), 1.75, sg.z);
+        var sx = a[0], sy = a[1], sw = c[0] - a[0], shh = c[1] - a[1];
+        /* the bracket */
+        var br = proj(X0, 3.7, sg.z), br2 = proj(X1, 3.7, sg.z);
+        key(x, function () { x.moveTo(br[0], br[1]); x.lineTo(br2[0], br2[1]); x.moveTo(br2[0], br2[1]); x.lineTo(br2[0], sy); }, Math.max(1, 3.4 / sg.z * 4), '#070b12');
+        both(x, function () { rr(x, sx, sy, sw, shh); }, sg.col, Math.max(1, 6 / sg.z), '#0a0e16');
+        /* the lettering, long faded */
+        var fs = Math.min(sw * .72, shh / (sg.t.length + .6));
+        x.save(); x.globalAlpha = .42; x.fillStyle = '#d9d0bc'; x.font = jp(Math.max(6, fs));
+        x.textAlign = 'center'; x.textBaseline = 'middle';
+        for (var i = 0; i < sg.t.length; i++) x.fillText(sg.t[i], sx + sw / 2 + MIS.x, sy + shh * (i + .8) / (sg.t.length + .6));
+        x.restore();
+      });
+    }
+    hanging(SIGNS_L, -1);
+    hanging(SIGNS_R, 1);
+
+    /* a barber's pole on the far right, stopped */
+    var bp = proj(2.9, 2.3, 28.5), bq = proj(2.9, 1.4, 28.5);
+    both(x, function () { rr(x, bp[0] - 3, bp[1], 6, bq[1] - bp[1]); }, '#d8d2c6', 1, '#0a0e16');
+    key(x, function () { for (var i = 0; i < 5; i++) { x.moveTo(bp[0] - 3, bp[1] + i * 4); x.lineTo(bp[0] + 3, bp[1] + i * 4 + 4); } }, 1.2, INK.shu, .8);
+
+    /* the cable the lamps hang from, sagging between arches */
+    var ca = proj(-3, 3.5, 9), cb = proj(3, 3.4, 30), cm = proj(0, 3.0, 18);
+    key(x, function () { x.moveTo(ca[0], ca[1]); x.quadraticCurveTo(cm[0], cm[1] + 10, cb[0], cb[1]); }, 1.2, '#070b12', .8);
+
+    /* --- the bench: against the left wall, facing the machine across the way */
+    var benchZ0 = 5.3, benchZ1 = 6.9, bxI = -2.05, bxO = -2.5;
+    var seat = pq([[bxI, .44, benchZ0], [bxO, .44, benchZ0], [bxO, .44, benchZ1], [bxI, .44, benchZ1]]);
+    both(x, function () { poly(x, seat); }, '#2c3441', 1.4, '#080c13');
+    var back = pq([[bxO, .5, benchZ0], [bxO, .9, benchZ0], [bxO, .9, benchZ1], [bxO, .5, benchZ1]]);
+    both(x, function () { poly(x, back); }, '#262e3a', 1.2, '#080c13');
+    [[bxI, benchZ0], [bxI, benchZ1], [bxO, benchZ0], [bxO, benchZ1]].forEach(function (lg) {
+      var p = proj(lg[0], .44, lg[1]), q = proj(lg[0], 0, lg[1]);
+      key(x, function () { x.moveTo(p[0], p[1]); x.lineTo(q[0], q[1]); }, 1.6, '#080c13');
+    });
+
+    /* --- the recycling bin beside the machine ------------------------- */
+    var bn = { x0: 1.18, x1: 1.62, z: 5.55, h: .82 };
+    var binF = pq([[bn.x0, 0, bn.z], [bn.x1, 0, bn.z], [bn.x1, bn.h, bn.z], [bn.x0, bn.h, bn.z]]);
+    var binS = pq([[bn.x1, 0, bn.z], [bn.x1, 0, bn.z + .4], [bn.x1, bn.h, bn.z + .4], [bn.x1, bn.h, bn.z]]);
+    x.save(); x.globalAlpha = .5; x.fillStyle = '#05080d'; x.beginPath();
+    poly(x, pq([[bn.x0 - .05, 0, bn.z - .05], [bn.x1 + .05, 0, bn.z - .05], [bn.x1 + .05, 0, bn.z + .45], [bn.x0 - .05, 0, bn.z + .45]])); x.fill(); x.restore();
+    both(x, function () { poly(x, binS); }, '#2d4a6a', 1.2);
+    both(x, function () { poly(x, binF); }, '#3a6ea8', 1.4);
+    var hole = proj((bn.x0 + bn.x1) / 2, .62, bn.z);
+    both(x, function () { x.ellipse(hole[0], hole[1], 8, 7, 0, 0, 7); }, '#0b0f15', 1);
+    var lab = proj(bn.x0 + .05, .38, bn.z), lab2 = proj(bn.x1 - .05, .22, bn.z);
+    block(x, function () { rr(x, lab[0], lab[1], lab2[0] - lab[0], lab2[1] - lab[1]); }, '#e8edf2');
+    x.save(); x.fillStyle = INK.sumi; x.font = jp(9, 500); x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText('あきかん', (lab[0] + lab2[0]) / 2 + MIS.x, (lab[1] + lab2[1]) / 2 + MIS.y); x.restore();
+
+    vendingMachine(x);
+
+    x.restore();
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* THE VENDING MACHINE, IN DETAIL                                     */
+
+  var PRODUCTS = [
+    /* row, slot, shape, body colour, cap/band colour, hot? */
+    [0, 0, 'pet', '#d9ecf2', '#3a8ad0'], [0, 1, 'pet', '#f0d66a', '#d64a2a'], [0, 2, 'pet', '#c9e4c0', '#2f7a44'],
+    [0, 3, 'pet', '#f3eee4', '#2f5f8f'], [0, 4, 'pet', '#e6c79a', '#8a5a2a'], [0, 5, 'pet', '#d9ecf2', '#3a8ad0'],
+    [1, 0, 'can', '#2f5f8f', '#e4e8ec'], [1, 1, 'can', '#c8402f', '#f1e9dc'], [1, 2, 'can', '#e0a92c', '#2a2a2a'],
+    [1, 3, 'can', '#2f7a44', '#f1e9dc'], [1, 4, 'can', '#6b3a2a', '#e0a92c'], [1, 5, 'can', '#1f3350', '#c8402f'],
+    [2, 0, 'bot', '#e9e4da', '#4a8a5a'], [2, 1, 'bot', '#a3432e', '#e0a92c'], [2, 2, 'bot', '#2a2a2a', '#c8402f'],
+    [2, 3, 'can', '#7a4a2a', '#f1e9dc', 1], [2, 4, 'can', '#3d2a1f', '#e0a92c', 1], [2, 5, 'bot', '#dcd2bd', '#6a3a8a']
+  ];
+
+  function vendingMachine(x) {
+    /* its shadow on the tiles */
+    var foot = [vmFace(-.05, 0, .08), vmFace(1.05, 0, .08), vmSide(1.1, 0), vmSide(-.1, 0)];
+    x.save(); x.globalAlpha = .55; x.fillStyle = '#05080d'; x.beginPath(); poly(x, foot); x.fill(); x.restore();
+    var face = faceQuad(0, 0, 1, VM.h);
+    var side = [vmSide(0, 0), vmSide(1, 0), vmSide(1, VM.h), vmSide(0, VM.h)];
+
+    /* the side panel: a big livery stripe, no brand */
+    both(x, function () { poly(x, side); }, '#1d3b66', 1.6, '#060a10');
+    var st = [vmSide(0, .55), vmSide(1, .55), vmSide(1, 1.05), vmSide(0, 1.05)];
+    block(x, function () { poly(x, st); }, '#e8edf2');
+    var st2 = [vmSide(0, 1.05), vmSide(1, 1.05), vmSide(1, 1.14), vmSide(0, 1.14)];
+    block(x, function () { poly(x, st2); }, INK.shu);
+
+    /* the cabinet front */
+    both(x, function () { poly(x, face); }, '#e7ebee', 2, '#060a10');
+    x.save(); x.beginPath(); poly(x, face); x.clip();
+    var ft = vmFace(.5, VM.h), fb = vmFace(.5, 0);
+    x.fillStyle = bok(x, 0, ft[1], 0, fb[1], [[0, 'rgba(0,0,0,0)'], [.5, 'rgba(0,0,0,0)'], [1, 'rgba(10,20,34,.35)']]);
+    x.fillRect(0, 0, W, H); x.restore();
+    /* header panel */
+    both(x, function () { poly(x, faceQuad(0, 1.64, 1, 1.83)); }, '#1d3b66', 1.2, '#060a10');
+    var hd = vmFace(.5, 1.735);
+    x.save(); x.fillStyle = '#eef2f5'; x.font = jp(9, 700); x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.translate(hd[0] + MIS.x, hd[1]); x.transform(1, (vmFace(1, 1.735)[1] - vmFace(0, 1.735)[1]) / (vmFace(1, 1.735)[0] - vmFace(0, 1.735)[0]), 0, 1, 0, 0);
+    x.fillText('つめた〜い', 0, 0); x.restore();
+
+    /* the lit display window */
+    var win = faceQuad(.05, .98, .95, 1.6, .01);
+    block(x, function () { poly(x, win); }, INK.cold);
+    x.save(); x.beginPath(); poly(x, win); x.clip();
+    var top = vmFace(.5, 1.6), bot = vmFace(.5, .98);
+    x.fillStyle = bok(x, 0, top[1], 0, bot[1], [[0, 'rgba(255,255,255,.75)'], [1, 'rgba(255,255,255,.05)']]);
+    x.fillRect(0, 0, W, H);
+    /* three shelves of samples */
+    PRODUCTS.forEach(function (pr) {
+      var row = pr[0], slot = pr[1], shape = pr[2], body = pr[3], cap = pr[4];
+      var s0 = .09 + slot * .142, s1 = s0 + .1;
+      var yb = 1.39 - row * .19 + .005;           /* shelf top, metres */
+      var hgt = shape === 'pet' ? .165 : shape === 'bot' ? .145 : .115;
+      var sm = (s0 + s1) / 2;
+      var outline;
+      if (shape === 'can') {
+        outline = [vmFace(s0, yb, .02), vmFace(s1, yb, .02), vmFace(s1, yb + hgt, .02), vmFace(s0, yb + hgt, .02)];
+      } else {
+        var neck = shape === 'pet' ? .028 : .022;
+        outline = [vmFace(s0, yb, .02), vmFace(s1, yb, .02), vmFace(s1, yb + hgt * .66, .02),
+                   vmFace(sm + neck, yb + hgt * .86, .02), vmFace(sm + neck, yb + hgt, .02),
+                   vmFace(sm - neck, yb + hgt, .02), vmFace(sm - neck, yb + hgt * .86, .02), vmFace(s0, yb + hgt * .66, .02)];
+      }
+      both(x, function () { poly(x, outline); }, body, .9, '#243040');
+      /* the label band */
+      var band = [vmFace(s0, yb + hgt * .28, .021), vmFace(s1, yb + hgt * .28, .021), vmFace(s1, yb + hgt * .5, .021), vmFace(s0, yb + hgt * .5, .021)];
+      block(x, function () { poly(x, band); }, cap);
+      /* a highlight down the left of every can: they are lit from behind the glass */
+      var hl = [vmFace(s0 + .012, yb + .01, .022), vmFace(s0 + .026, yb + .01, .022), vmFace(s0 + .026, yb + hgt * .6, .022), vmFace(s0 + .012, yb + hgt * .6, .022)];
+      block(x, function () { poly(x, hl); }, 'rgba(255,255,255,.55)');
+      /* price tag and button under each */
+      var pt = [vmFace(s0, yb - .045, .01), vmFace(s1, yb - .045, .01), vmFace(s1, yb - .01, .01), vmFace(s0, yb - .01, .01)];
+      block(x, function () { poly(x, pt); }, '#1a1f26');
+      var bt = vmFace(sm, yb - .028, .012);
+      block(x, function () { x.ellipse(bt[0], bt[1], 1.6, 1.3, 0, 0, 7); }, pr[5] ? '#ff6a4a' : '#6fd0ff');
+    });
+    /* the shelf lips */
+    [1.39, 1.2, 1.01].forEach(function (yy) {
+      var p = vmFace(.05, yy, .01), q = vmFace(.95, yy, .01);
+      key(x, function () { x.moveTo(p[0], p[1]); x.lineTo(q[0], q[1]); }, 1.1, '#5a6a7a', .8);
+    });
+    x.restore();
+    key(x, function () { poly(x, win); }, 1.5, '#060a10');
+
+    /* the hot row is labelled in red: あったか〜い — even in August, two cans of coffee stay hot */
+    var hotL = faceQuad(.56, .975, .95, 1.0, .015);
+    block(x, function () { poly(x, hotL); }, INK.shu);
+
+    /* the control panel: IC reader, coin slot, note slot, a little display */
+    both(x, function () { poly(x, faceQuad(.05, .74, .95, .93)); }, '#cfd6dc', 1, '#3a4450');
+    both(x, function () { poly(x, faceQuad(.1, .79, .3, .89, .005)); }, '#2a8a9a', .8, '#0a1a20');  /* IC card pad */
+    both(x, function () { poly(x, faceQuad(.62, .83, .7, .9, .005)); }, '#2a2f36', .8);            /* coin slot */
+    both(x, function () { poly(x, faceQuad(.74, .84, .92, .87, .005)); }, '#1a1f26', .8);          /* note slot */
+    both(x, function () { poly(x, faceQuad(.4, .8, .56, .86, .005)); }, '#0e2a18', .8);            /* display */
+    var dg = vmFace(.48, .83, .006);
+    x.save(); x.fillStyle = '#7dff9a'; x.font = '600 7px monospace'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText('0', dg[0], dg[1]); x.restore();
+    both(x, function () { poly(x, faceQuad(.72, .76, .84, .79, .005)); }, '#9aa4ae', .6);             /* coin return */
+
+    /* the take-out flap, and the kick plate */
+    both(x, function () { poly(x, faceQuad(.08, .14, .92, .36, .004)); }, '#1b2027', 1.3, '#060a10');
+    block(x, function () { poly(x, faceQuad(.1, .3, .9, .35, .006)); }, '#343b45');
+    block(x, function () { poly(x, faceQuad(0, 0, 1, .09, .003)); }, '#2b3440');
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* 2. THE SHOP AROUND THE OPENING — printed once                      */
+
+  function shop(x) {
+    reseed(41);
+    /* walls either side */
+    [[0, OX - 22], [OX + OW + 22, W]].forEach(function (s) {
+      block(x, function () { rr(x, s[0], 0, s[1] - s[0], 500); }, INK.wall);
+      grain(x, function () { rr(x, s[0] + MIS.x, MIS.y, s[1] - s[0], 500); }, '#1f150f', 34, s[1] - s[0], 2, false, s[0]);
+    });
+    /* posts and lintel */
+    [[OX - 22, 0, 22, 500], [OX + OW, 0, 22, 500], [OX - 22, 0, OW + 44, 32]].forEach(function (r) {
+      block(x, function () { rr(x, r[0], r[1], r[2], r[3]); }, INK.wood);
+      grain(x, function () { rr(x, r[0] + MIS.x, r[1] + MIS.y, r[2], r[3]); }, INK.woodDk, 12, r[2] > r[3] ? r[3] : r[2], 1.5, r[2] > r[3], r[2] > r[3] ? r[1] : r[0]);
+      key(x, function () { rr(x, r[0], r[1], r[2], r[3]); }, 2);
+    });
+
+    /* menu tanzaku */
+    ['醤油', '味噌', '塩', '豚骨'].forEach(function (m, i) {
+      var mx = 22 + i * 52;
+      both(x, function () { rr(x, mx, 150, 40, 150); }, INK.washi, 1.6);
+      x.save(); x.fillStyle = INK.sumi; x.font = jp(26); x.textAlign = 'center';
+      for (var k = 0; k < m.length; k++) x.fillText(m[k], mx + 20 + MIS.x, 190 + k * 32);
+      x.restore();
+      block(x, function () { x.arc(mx + 20, 286, 5, 0, 7); }, INK.shu);
+    });
+
+    /* the calendar: half the squares have a name written in */
+    both(x, function () { rr(x, 46, 326, 112, 124); }, INK.washi, 1.8);
+    block(x, function () { rr(x, 46, 326, 112, 26); }, INK.shu);
+    x.save(); x.fillStyle = INK.washi; x.font = jp(15); x.textAlign = 'center'; x.fillText('八月', 102 + MIS.x, 345); x.restore();
+    for (var r = 0; r < 4; r++) for (var c = 0; c < 6; c++) {
+      (function (r, c) {
+        var cx = 55 + c * 16, cy = 360 + r * 21;
+        block(x, function () { rr(x, cx, cy, 11, 11); }, '#d8ceb8');
+        if ((r * 6 + c) % 3 === 0) key(x, function () { x.moveTo(cx + 2, cy + 7); x.lineTo(cx + 9, cy + 4); }, 1.2, INK.shu, .9);
+      }(r, c));
+    }
+
+    /* the photograph from opening day, 1984 */
+    both(x, function () { rr(x, 1090, 70, 150, 110); }, INK.cream, 1.8);
+    block(x, function () { rr(x, 1102, 82, 126, 86); }, '#8d7c63');
+    block(x, function () { rr(x, 1102, 130, 126, 38); }, '#a89678');
+    for (var p = 0; p < 6; p++) block(x, function () { x.arc(1116 + p * 20, 118, 6.5, 0, 7); x.rect(1111 + p * 20, 123, 11, 16); }, '#5f513f');
+    key(x, function () { x.moveTo(1102, 82); x.lineTo(1228, 82); }, 1, INK.sumi, .3);
+
+    /* shelf and bottles */
+    both(x, function () { rr(x, 1070, 330, 210, 10); }, INK.wood, 1.6);
+    ['#7a4a2a', '#4a5a3a', '#6a5a2a', INK.indigo, '#5a3a3a'].forEach(function (c, i) {
+      var bx = 1090 + i * 38;
+      both(x, function () { x.rect(bx, 272, 22, 58); x.rect(bx + 6, 256, 10, 18); }, c, 1.4);
+      block(x, function () { rr(x, bx + 3, 288, 16, 20); }, INK.washi);
+    });
+    /* a maneki-neko on the shelf end, paw up, as they always are */
+    both(x, function () { x.ellipse(1250, 312, 14, 17, 0, 0, 7); }, '#f3ede2', 1.4);
+    both(x, function () { x.arc(1250, 290, 11, 0, 7); }, '#f3ede2', 1.4);
+    both(x, function () { x.ellipse(1262, 280, 4, 7, .3, 0, 7); }, '#f3ede2', 1.2);
+    block(x, function () { rr(x, 1242, 299, 16, 3); }, INK.shu);
+    block(x, function () { x.arc(1250, 304, 3, 0, 7); }, INK.ochre);
+    key(x, function () { x.moveTo(1245, 289); x.lineTo(1248, 289); x.moveTo(1252, 289); x.lineTo(1255, 289); }, 1.2);
+
+    /* the lantern hanging in the corner, lit by itself */
+    key(x, function () { x.moveTo(112, 0); x.lineTo(112, 24); }, 2);
+    block(x, function () { x.ellipse(112, 72, 34, 48, 0, 0, 7); }, INK.shu);
+    x.fillStyle = bok(x, 78, 0, 146, 0, [[0, 'rgba(255,200,120,0)'], [.45, 'rgba(255,215,150,.78)'], [1, 'rgba(255,200,120,0)']]);
+    x.beginPath(); x.ellipse(112 + MIS.x, 72 + MIS.y, 34, 48, 0, 0, 7); x.fill();
+    key(x, function () { x.ellipse(112, 72, 34, 48, 0, 0, 7); }, 2.2);
+    for (var k = -3; k <= 3; k++) (function (k) {
+      key(x, function () { x.ellipse(112, 72 + k * 12, Math.sqrt(1 - Math.pow(k * 12 / 48, 2)) * 34, 3, 0, 0, Math.PI); }, 1, INK.sumi, .45);
+    }(k));
+    block(x, function () { rr(x, 94, 20, 36, 8); rr(x, 94, 116, 36, 8); }, INK.sumi);
+    x.save(); x.fillStyle = INK.sumi; x.font = jp(30); x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText('悦', 112 + MIS.x, 74); x.restore();
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* 3. THE COUNTER — printed once                                      */
+
+  function counter(x) {
+    reseed(53);
+    block(x, function () { rr(x, 0, 470, W, 30); }, INK.woodLt);
+    block(x, function () { rr(x, 0, 500, W, 220); }, INK.wood);
+    grain(x, function () { rr(x, MIS.x, 470 + MIS.y, W, 30); }, INK.woodDk, 12, 30, 2, true, 470);
+    grain(x, function () { rr(x, MIS.x, 500 + MIS.y, W, 220); }, INK.woodDk, 70, 220, 6, true, 500);
+    grain(x, function () { rr(x, MIS.x, 500 + MIS.y, W, 220); }, INK.woodLt, 26, 220, 4, true, 500);
+    key(x, function () { x.moveTo(0, 470); x.lineTo(W, 470); x.moveTo(0, 500); x.lineTo(W, 500); }, 2.6);
+    key(x, function () { x.moveTo(0, 612); x.lineTo(W, 612); }, 1.4, INK.woodDk, .8);
+    /* your side of it: the stock pot, the stacked bowls, the chopstick pot */
+    both(x, function () { rr(x, 24, 560, 150, 130); }, '#4a4e57', 2.2);
+    both(x, function () { rr(x, 16, 548, 166, 16); }, '#5c616b', 2);
+    block(x, function () { rr(x, 30, 600, 138, 6); }, '#3a3e46');
+    x.fillStyle = bok(x, 24, 0, 174, 0, [[0, 'rgba(255,255,255,0)'], [.25, 'rgba(255,255,255,.14)'], [.4, 'rgba(255,255,255,0)']]);
+    x.fillRect(24 + MIS.x, 560, 150, 130);
+    [0, 1, 2].forEach(function (i) {
+      both(x, function () {
+        x.moveTo(1030 - i * 4, 640 - i * 22); x.lineTo(1170 + i * 4, 640 - i * 22);
+        x.quadraticCurveTo(1160 + i * 4, 668 - i * 22, 1130, 672 - i * 22); x.lineTo(1070, 672 - i * 22);
+        x.quadraticCurveTo(1040 - i * 4, 668 - i * 22, 1030 - i * 4, 640 - i * 22);
+      }, '#ede4d2', 1.8);
+      block(x, function () { rr(x, 1044 - i * 3, 648 - i * 22, 112 + i * 6, 5); }, INK.shu);
+    });
+    /* a ladle hooked over the rim of the pot */
+    key(x, function () { x.moveTo(150, 552); x.quadraticCurveTo(190, 500, 236, 470); }, 5, '#8a8f98');
+    key(x, function () { x.moveTo(150, 552); x.quadraticCurveTo(190, 500, 236, 470); }, 1, INK.sumi, .8);
+    both(x, function () { x.ellipse(144, 566, 18, 8, 0, 0, 7); }, '#6f747d', 1.4);
+
+    /* the cutting board: scallions done, the knife put down square */
+    both(x, function () { x.moveTo(300, 606); x.lineTo(560, 598); x.lineTo(572, 672); x.lineTo(308, 684); x.closePath(); }, '#c9a878', 2);
+    grain(x, function () { x.moveTo(300 + MIS.x, 606 + MIS.y); x.lineTo(560, 598); x.lineTo(572, 672); x.lineTo(308, 684); x.closePath(); }, '#9a7a4e', 14, 90, 1.5, true, 598);
+    for (var sc2 = 0; sc2 < 60; sc2++) {
+      (function () {
+        var nx = 330 + R() * 90, ny = 620 + R() * 40;
+        both(x, function () { x.arc(nx, ny, 3.2, 0, 7); }, sc2 % 5 ? '#8fbf5a' : '#e2f0c8', .8, '#3a5a20');
+      }());
+    }
+    both(x, function () { x.moveTo(440, 648); x.lineTo(546, 636); x.lineTo(548, 646); x.lineTo(442, 660); x.closePath(); }, '#c9d2da', 1.4);
+    both(x, function () { x.moveTo(546, 636); x.lineTo(600, 630); x.lineTo(602, 642); x.lineTo(548, 646); x.closePath(); }, INK.woodDk, 1.4);
+    /* a folded indigo tenugui */
+    both(x, function () { x.moveTo(620, 640); x.lineTo(720, 632); x.lineTo(724, 668); x.lineTo(624, 676); x.closePath(); }, INK.indigo, 1.8);
+    key(x, function () { for (var i = 0; i < 5; i++) { x.moveTo(630 + i * 20, 640); x.lineTo(634 + i * 20, 672); } }, 1, '#e8e2d4', .5);
+
+    /* the condiment tray on the customers' ledge: shichimi, pepper, soy, garlic, pickled ginger */
+    both(x, function () { x.rect(930, 460, 150, 12); }, INK.woodDk, 1.6);
+    both(x, function () { x.moveTo(944, 460); x.lineTo(944, 424); x.quadraticCurveTo(952, 412, 960, 424); x.lineTo(960, 460); x.closePath(); }, '#e8dcc4', 1.4);
+    both(x, function () { x.rect(944, 418, 16, 8); }, INK.shu, 1.2);
+    both(x, function () { x.rect(972, 426, 18, 34); }, '#efe8da', 1.4);
+    both(x, function () { x.rect(972, 420, 18, 7); }, '#9aa2aa', 1.2);
+    both(x, function () { x.moveTo(1000, 460); x.lineTo(1000, 432); x.quadraticCurveTo(1010, 418, 1020, 432); x.lineTo(1020, 460); x.closePath(); }, 'rgba(120,70,40,.85)', 1.4);
+    both(x, function () { x.rect(1004, 412, 12, 10); }, INK.shu, 1.2);
+    both(x, function () { x.ellipse(1050, 450, 20, 10, 0, 0, 7); x.rect(1030, 438, 40, 12); }, '#c8402f', 1.4);
+    block(x, function () { x.ellipse(1050, 438, 20, 6, 0, 0, 7); }, '#e87a6a');
+
+    both(x, function () { rr(x, 1206, 600, 44, 70); }, INK.woodDk, 1.8);
+    [0, 1, 2, 3].forEach(function (i) {
+      key(x, function () { x.moveTo(1214 + i * 9, 600); x.lineTo(1210 + i * 11, 540); }, 3, '#c9a878');
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* THE PAPER — built once, laid over every frame                      */
+
+  function buildPaper() {
+    reseed(71);
+    /* uneven ink take-up, multiplied */
+    paperMul = mk(W, H);
+    var m = paperMul.getContext('2d');
+    var small = mk(160, 90), sx = small.getContext('2d'), id = sx.createImageData(160, 90);
+    for (var i = 0; i < id.data.length; i += 4) {
+      var v = 228 + R() * 27; id.data[i] = v; id.data[i + 1] = v - 3; id.data[i + 2] = v - 10; id.data[i + 3] = 255;
+    }
+    sx.putImageData(id, 0, 0);
+    m.imageSmoothingEnabled = true; m.drawImage(small, 0, 0, W, H);
+    var gd = m.getImageData(0, 0, W, H), d = gd.data;
+    for (var j = 0; j < d.length; j += 4) { var n = (R() - .5) * 22; d[j] += n; d[j + 1] += n; d[j + 2] += n; }
+    m.putImageData(gd, 0, 0);
+    /* fibre, screened */
+    paperScr = mk(W, H);
+    var s = paperScr.getContext('2d');
+    for (var f = 0; f < 3200; f++) {
+      var fx = R() * W, fy = R() * H, fl = 3 + R() * 10, fa = R() * Math.PI;
+      s.strokeStyle = 'rgba(240,230,210,' + (.04 + R() * .06) + ')'; s.lineWidth = .8;
+      s.beginPath(); s.moveTo(fx, fy); s.lineTo(fx + Math.cos(fa) * fl, fy + Math.sin(fa) * fl); s.stroke();
+    }
+    /* the darkened edge of the sheet */
+    vignette = mk(W, H);
+    var v = vignette.getContext('2d');
+    var g = v.createRadialGradient(W / 2, H * .46, H * .35, W / 2, H * .5, H * .95);
+    g.addColorStop(0, 'rgba(10,8,6,0)'); g.addColorStop(1, 'rgba(10,8,6,.5)');
+    v.fillStyle = g; v.fillRect(0, 0, W, H);
+  }
+
+  function build() {
+    backdrop = mk(W, H);
+    var x = backdrop.getContext('2d');
+    arcade(x);
+    shop(x);
+    counterLayer = mk(W, H);
+    counter(counterLayer.getContext('2d'));
+    buildPaper();
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* 4. PEOPLE                                                          */
+  /*                                                                    */
+  /* Every face is built from the same few lines — the woodblock way.   */
+  /* What makes each person is proportion, hair, clothing, and age      */
+  /* lines; what makes each mood is a brow, an eye and a mouth.         */
+
+  var LOOK = {
+    etsuko: { skin: '#e8c7a4', sh: '#c9a07c', hair: '#d7d2c8', hairLn: '#a39d92', style: 'tenugui',
+              cloth: 'kappogi', c1: '#f1ebe0', c2: '#cfc6b6', c3: INK.indigo, fw: 60, fh: 88, jaw: .9, age: 3 },
+    daiki:  { skin: '#dcb892', sh: '#b99270', hair: '#2a2320', hairLn: '#4a3f38', style: 'crop',
+              cloth: 'work', c1: '#8a9aa8', c2: '#6d7d8b', c3: '#c8402f', fw: 68, fh: 92, jaw: 1.1, age: 1, tired: true },
+    kenji:  { skin: '#e2c09e', sh: '#c29b78', hair: '#e2ddd4', hairLn: '#a8a298', style: 'cap', cap: '#56604e',
+              cloth: 'cardigan', c1: '#8a6a4a', c2: '#6c5238', c3: '#e8e0d0', fw: 64, fh: 86, jaw: .95, age: 3, glasses: 'rect' },
+    mary:   { skin: '#b98a63', sh: '#9a6e4a', hair: '#241a15', hairLn: '#4a3a30', style: 'pony',
+              cloth: 'scrubs', c1: '#3f8a86', c2: '#2f6d6a', c3: '#f1ebe0', fw: 60, fh: 86, jaw: .9, age: 0, earring: true , nose: .85 },
+    aiko:   { skin: '#e8c6a6', sh: '#c9a282', hair: '#1c1817', hairLn: '#3a3230', style: 'bob',
+              cloth: 'blazer', c1: '#3a404c', c2: '#2c313b', c3: '#f3efe8', fw: 58, fh: 86, jaw: .85, age: 0, earring: true , nose: .85 },
+    ren:    { skin: '#e0bd98', sh: '#c09a76', hair: '#2e2626', hairLn: '#504444', style: 'mop',
+              cloth: 'sweater', c1: '#b0724a', c2: '#8f5b3a', c3: '#e0cdb0', fw: 66, fh: 88, jaw: 1, age: 0, glasses: 'round' },
+    tanaka: { skin: '#e2c2a0', sh: '#c29c7a', hair: '#dcd8d0', hairLn: '#8f897f', style: 'side', brow: '#4a4540',
+              cloth: 'suit', c1: '#3a3c48', c2: '#2a2c36', c3: INK.indigo, fw: 70, fh: 90, jaw: 1.15, age: 2, glasses: 'bold', nose: 1.12 },
+    yui:    { skin: '#e8c6a6', sh: '#c9a282', hair: '#221a18', hairLn: '#44383a', style: 'long',
+              cloth: 'blouse', c1: '#7a5a8a', c2: '#5f4570', c3: INK.ochre, fw: 58, fh: 86, jaw: .85, age: 0, earring: true , nose: .85 },
+    hiroshi:{ skin: '#e6c3a0', sh: '#c79e7c', hair: '#ece7de', hairLn: '#a9a399', style: 'comb',
+              cloth: 'shirt', c1: '#9fb0bf', c2: '#7d8fa0', c3: '#c3cfda', fw: 61, fh: 95, jaw: .9, age: 3, glasses: 'rect' }
+  };
+
+  var FW = 380, FH = 470;           /* scratch canvas per figure */
+  var FC = { x: 190, y: 160 };      /* face centre within it */
+  var figCache = {};
+
+  function figure(id, ex, blink, dim) {
+    var k = id + '|' + ex + '|' + (blink ? 1 : 0) + '|' + (dim ? 1 : 0);
+    if (figCache[k]) return figCache[k];
+    var L = LOOK[id]; if (!L) return null;
+    var c = mk(FW, FH), x = c.getContext('2d');
+    reseed(id.length * 97 + 13);
+    drawFigure(x, L, ex, blink);
+    if (dim) {
+      /* those not speaking recede, the way a printer would pull a lighter impression */
+      x.save(); x.globalCompositeOperation = 'source-atop';
+      x.fillStyle = 'rgba(16,22,36,.3)'; x.fillRect(0, 0, FW, FH); x.restore();
+    }
+    figCache[k] = c;
+    return c;
+  }
+
+  function drawFigure(x, L, ex, blink) {
+    var cx = FC.x, cy = FC.y, fw = L.fw, fh = L.fh;
+    var neckTop = cy + fh * .62, shY = cy + fh + 18;
+
+    /* ---- hair that sits behind the head -------------------------- */
+    if (L.style === 'long') {
+      both(x, function () {
+        x.moveTo(cx - fw - 8, cy - 20); x.quadraticCurveTo(cx - fw - 22, cy + 120, cx - fw - 30, shY + 110);
+        x.lineTo(cx + fw + 30, shY + 110); x.quadraticCurveTo(cx + fw + 22, cy + 120, cx + fw + 8, cy - 20); x.closePath();
+      }, L.hair, 2.2);
+    }
+    if (L.style === 'pony') {
+      both(x, function () { x.ellipse(cx + fw + 6, cy + 30, 16, 44, .35, 0, 7); }, L.hair, 2);
+    }
+
+    /* ---- body and clothes ---------------------------------------- */
+    var bw = fw * 2.25;
+    function torso() {
+      x.moveTo(cx - bw, FH); x.lineTo(cx - bw + 10, shY + 40);
+      x.quadraticCurveTo(cx - bw + 22, shY + 4, cx - fw, shY - 6);
+      x.lineTo(cx + fw, shY - 6); x.quadraticCurveTo(cx + bw - 22, shY + 4, cx + bw - 10, shY + 40);
+      x.lineTo(cx + bw, FH); x.closePath();
+    }
+    block(x, torso, L.c1);
+    /* shadow side */
+    block(x, function () {
+      x.moveTo(cx + fw * .5, shY - 6); x.lineTo(cx + fw, shY - 6); x.quadraticCurveTo(cx + bw - 22, shY + 4, cx + bw - 10, shY + 40);
+      x.lineTo(cx + bw, FH); x.lineTo(cx + fw * .8, FH); x.closePath();
+    }, L.c2);
+
+    /* neck */
+    both(x, function () {
+      x.moveTo(cx - fw * .45, neckTop); x.lineTo(cx - fw * .5, shY + 2); x.lineTo(cx, shY + 30);
+      x.lineTo(cx + fw * .5, shY + 2); x.lineTo(cx + fw * .45, neckTop); x.closePath();
+    }, L.skin, 2);
+    block(x, function () { x.moveTo(cx + 6, neckTop + 8); x.lineTo(cx + fw * .45, neckTop); x.lineTo(cx + fw * .5, shY + 2); x.lineTo(cx + 6, shY + 24); x.closePath(); }, L.sh);
+
+    clothing(x, L, cx, shY, bw, fw);
+    key(x, torso, 2.4);
+
+    /* ---- the head -------------------------------------------------- */
+    function head() {
+      x.moveTo(cx - fw, cy - 18);
+      x.bezierCurveTo(cx - fw - 4, cy - fh * 1.18, cx + fw + 4, cy - fh * 1.18, cx + fw, cy - 18);
+      x.bezierCurveTo(cx + fw - 2, cy + fh * .42 * L.jaw, cx + fw * .6, cy + fh * .92, cx, cy + fh);
+      x.bezierCurveTo(cx - fw * .6, cy + fh * .92, cx - fw + 2, cy + fh * .42 * L.jaw, cx - fw, cy - 18);
+    }
+    /* ears first, so the head sits over them */
+    [-1, 1].forEach(function (s) {
+      both(x, function () { x.ellipse(cx + s * (fw + 2), cy + 6, 10, 20, s * .15, 0, 7); }, s > 0 ? L.sh : L.skin, 2);
+      key(x, function () { x.moveTo(cx + s * fw, cy - 6); x.quadraticCurveTo(cx + s * (fw + 8), cy + 6, cx + s * fw, cy + 18); }, 1.1, INK.sumi, .5);
+    });
+    if (L.earring) [-1, 1].forEach(function (s) {
+      both(x, function () { x.arc(cx + s * (fw + 3), cy + 28, 3.2, 0, 7); }, INK.ochre, 1);
+    });
+    block(x, head, L.skin);
+    /* one flat shadow tone down the side away from the lantern */
+    block(x, function () {
+      x.moveTo(cx + fw * .28, cy - fh * .96);
+      x.bezierCurveTo(cx + fw * .95, cy - fh * .9, cx + fw + 4, cy - fh * .45, cx + fw, cy - 18);
+      x.bezierCurveTo(cx + fw - 2, cy + fh * .42 * L.jaw, cx + fw * .6, cy + fh * .92, cx, cy + fh);
+      x.bezierCurveTo(cx + fw * .45, cy + fh * .55, cx + fw * .5, cy - fh * .1, cx + fw * .28, cy - fh * .96);
+    }, L.sh);
+    /* a little warmth on the near cheek, from the lantern */
+    var ck = x.createRadialGradient(cx - fw * .5, cy + fh * .3, 1, cx - fw * .5, cy + fh * .3, fw * .3);
+    ck.addColorStop(0, 'rgba(200,64,47,.13)'); ck.addColorStop(1, 'rgba(200,64,47,0)');
+    x.fillStyle = ck; x.fillRect(cx - fw, cy, fw, fh);
+
+    hairFront(x, L, cx, cy, fw, fh);
+    key(x, head, 2.5);
+    face(x, L, ex, blink, cx, cy, fw, fh);
+
+    /* the cold edge from the machine outside, down the far side */
+    key(x, function () { x.moveTo(cx + fw - 1, cy - 30); x.bezierCurveTo(cx + fw - 2, cy + fh * .42, cx + fw * .6, cy + fh * .9, cx + 4, cy + fh); }, 3, INK.cold, .5);
+    key(x, function () { x.moveTo(cx + fw + 6, shY - 4); x.quadraticCurveTo(cx + bw - 22, shY + 4, cx + bw - 10, shY + 40); x.lineTo(cx + bw, FH - 40); }, 3, INK.cold, .4);
+  }
+
+  function clothing(x, L, cx, shY, bw, fw) {
+    var t = L.cloth;
+    if (t === 'shirt' || t === 'work') {
+      both(x, function () {
+        x.moveTo(cx - fw * .7, shY - 8); x.lineTo(cx - 6, shY + 38); x.lineTo(cx - 18, shY + 48); x.lineTo(cx - fw * .95, shY + 8); x.closePath();
+        x.moveTo(cx + fw * .7, shY - 8); x.lineTo(cx + 6, shY + 38); x.lineTo(cx + 18, shY + 48); x.lineTo(cx + fw * .95, shY + 8); x.closePath();
+      }, L.c3 === '#c8402f' ? '#aab8c4' : L.c3, 2);
+      key(x, function () { x.moveTo(cx, shY + 44); x.lineTo(cx, FH); }, 2);
+      [shY + 78, shY + 124].forEach(function (by) { both(x, function () { x.arc(cx + 6, by, 3.5, 0, 7); }, '#e8eef3', 1); });
+      key(x, function () { x.moveTo(cx - bw * .62, shY + 60); x.quadraticCurveTo(cx - bw * .52, shY + 100, cx - bw * .6, shY + 150); }, 1.6, INK.sumi, .6);
+      if (t === 'work') {
+        /* the company lanyard he forgot to take off */
+        key(x, function () { x.moveTo(cx - fw * .55, shY - 4); x.quadraticCurveTo(cx - 20, shY + 70, cx - 12, shY + 110);
+                             x.moveTo(cx + fw * .55, shY - 4); x.quadraticCurveTo(cx + 4, shY + 70, cx - 8, shY + 110); }, 3, INK.shu);
+        both(x, function () { rr(x, cx - 34, shY + 108, 44, 56); }, '#eef0f2', 1.6);
+        block(x, function () { rr(x, cx - 30, shY + 114, 16, 18); }, '#8a9aa8');
+        key(x, function () { x.moveTo(cx - 10, shY + 118); x.lineTo(cx + 6, shY + 118); x.moveTo(cx - 10, shY + 126); x.lineTo(cx + 2, shY + 126); x.moveTo(cx - 30, shY + 146); x.lineTo(cx + 6, shY + 146); }, 1.2, INK.sumi, .6);
+      }
+    } else if (t === 'kappogi') {
+      /* the white cook's overcoat, crossed at the neck, over an indigo collar */
+      both(x, function () { x.moveTo(cx - fw * .7, shY - 8); x.lineTo(cx + 26, shY + 70); x.lineTo(cx + 10, shY + 82); x.lineTo(cx - fw * .98, shY + 6); x.closePath(); }, L.c3, 2);
+      both(x, function () { x.moveTo(cx + fw * .7, shY - 8); x.lineTo(cx - 26, shY + 70); x.lineTo(cx - 10, shY + 82); x.lineTo(cx + fw * .98, shY + 6); x.closePath(); }, L.c3, 2);
+      key(x, function () { x.moveTo(cx - bw * .7, shY + 50); x.quadraticCurveTo(cx - bw * .6, shY + 110, cx - bw * .66, FH);
+                           x.moveTo(cx + bw * .5, shY + 70); x.quadraticCurveTo(cx + bw * .44, shY + 120, cx + bw * .5, FH); }, 1.4, INK.sumi, .5);
+    } else if (t === 'cardigan') {
+      both(x, function () { x.moveTo(cx - fw * .6, shY - 8); x.lineTo(cx - 2, shY + 52); x.lineTo(cx + fw * .6, shY - 8); x.closePath(); }, L.c3, 1.8);
+      key(x, function () { x.moveTo(cx - fw * .6, shY - 8); x.lineTo(cx - 8, shY + 64); x.lineTo(cx - 8, FH); x.moveTo(cx + fw * .6, shY - 8); x.lineTo(cx + 8, shY + 64); x.lineTo(cx + 8, FH); }, 2.2);
+      [shY + 90, shY + 136].forEach(function (by) { both(x, function () { x.arc(cx - 16, by, 4.5, 0, 7); }, '#5a4028', 1); });
+      /* knit ribbing */
+      for (var i = 0; i < 18; i++) key(x, function () { x.moveTo(cx - bw + 20 + i * 5, FH - 30); x.lineTo(cx - bw + 20 + i * 5, FH); }, 1, INK.sumi, .25);
+    } else if (t === 'scrubs') {
+      both(x, function () { x.moveTo(cx - fw * .62, shY - 8); x.lineTo(cx, shY + 64); x.lineTo(cx + fw * .62, shY - 8); x.closePath(); }, L.skin, 2);
+      key(x, function () { x.moveTo(cx - fw * .62, shY - 8); x.lineTo(cx, shY + 64); x.lineTo(cx + fw * .62, shY - 8); }, 3, L.c2);
+      /* a chest pocket with two pens */
+      both(x, function () { rr(x, cx - bw * .62, shY + 76, 46, 40); }, L.c1, 1.6);
+      key(x, function () { x.moveTo(cx - bw * .6 + 10, shY + 60); x.lineTo(cx - bw * .6 + 10, shY + 80); x.moveTo(cx - bw * .6 + 20, shY + 64); x.lineTo(cx - bw * .6 + 20, shY + 80); }, 3, INK.indigo);
+    } else if (t === 'blazer' || t === 'suit') {
+      both(x, function () { x.moveTo(cx - fw * .55, shY - 10); x.lineTo(cx, shY + 60); x.lineTo(cx + fw * .55, shY - 10); x.closePath(); }, L.c3 === INK.indigo ? '#eef0f2' : L.c3, 1.8);
+      if (t === 'suit') both(x, function () { x.moveTo(cx - 9, shY + 6); x.lineTo(cx + 9, shY + 6); x.lineTo(cx + 12, shY + 120); x.lineTo(cx, shY + 136); x.lineTo(cx - 12, shY + 120); x.closePath(); }, L.c3, 1.6);
+      /* lapels */
+      both(x, function () { x.moveTo(cx - fw * .62, shY - 10); x.lineTo(cx - 22, shY + 96); x.lineTo(cx - 40, shY + 40); x.lineTo(cx - fw * .98, shY + 18); x.closePath(); }, L.c2, 2);
+      both(x, function () { x.moveTo(cx + fw * .62, shY - 10); x.lineTo(cx + 22, shY + 96); x.lineTo(cx + 40, shY + 40); x.lineTo(cx + fw * .98, shY + 18); x.closePath(); }, L.c2, 2);
+      if (t === 'suit') both(x, function () { x.arc(cx - bw * .5, shY + 50, 5, 0, 7); }, INK.ochre, 1.2);   /* the council pin */
+    } else if (t === 'sweater') {
+      both(x, function () { x.moveTo(cx - fw * .55, shY - 8); x.quadraticCurveTo(cx, shY + 36, cx + fw * .55, shY - 8); x.quadraticCurveTo(cx, shY + 20, cx - fw * .55, shY - 8); }, L.c2, 2);
+      for (var j = 0; j < 7; j++) key(x, function () { x.moveTo(cx - bw * .7 + j * 26, shY + 70); x.quadraticCurveTo(cx - bw * .7 + j * 26 + 6, shY + 110, cx - bw * .7 + j * 26, FH); }, 1, INK.sumi, .22);
+    } else if (t === 'blouse') {
+      both(x, function () { x.moveTo(cx - fw * .5, shY - 8); x.quadraticCurveTo(cx, shY + 50, cx + fw * .5, shY - 8); x.quadraticCurveTo(cx, shY + 30, cx - fw * .5, shY - 8); }, L.skin, 1.8);
+      key(x, function () { x.moveTo(cx - fw * .42, shY - 2); x.quadraticCurveTo(cx, shY + 44, cx + fw * .42, shY - 2); }, 1.2, L.c3, .95);
+      both(x, function () { x.arc(cx, shY + 42, 3.2, 0, 7); }, L.c3, 1);
+    }
+  }
+
+  function hairFront(x, L, cx, cy, fw, fh) {
+    var s = L.style, top = cy - fh * .98;
+    if (s === 'tenugui') {
+      /* grey hair at the temples, the rest under an indigo tenugui */
+      both(x, function () { x.moveTo(cx - fw - 2, cy - 4); x.quadraticCurveTo(cx - fw - 4, cy - 50, cx - fw * .5, cy - 58); x.lineTo(cx - fw + 8, cy + 6); x.closePath(); }, L.hair, 1.6);
+      both(x, function () { x.moveTo(cx + fw + 2, cy - 4); x.quadraticCurveTo(cx + fw + 4, cy - 50, cx + fw * .5, cy - 58); x.lineTo(cx + fw - 8, cy + 6); x.closePath(); }, L.hair, 1.6);
+      both(x, function () {
+        x.moveTo(cx - fw - 6, cy - 40); x.bezierCurveTo(cx - fw - 8, top - 30, cx + fw + 8, top - 30, cx + fw + 6, cy - 40);
+        x.quadraticCurveTo(cx, cy - fh * .62, cx - fw - 6, cy - 40);
+      }, L.c3, 2.2);
+      /* the tenugui's pattern — a small repeating asanoha star, printed white */
+      for (var i = 0; i < 9; i++) {
+        var px = cx - fw * .8 + i * fw * .2, py = cy - fh * .8 + Math.sin(i) * 6;
+        key(x, function () { for (var a = 0; a < 3; a++) { var an = a * Math.PI / 3; x.moveTo(px - Math.cos(an) * 4, py - Math.sin(an) * 4); x.lineTo(px + Math.cos(an) * 4, py + Math.sin(an) * 4); } }, 1, '#e8e2d4', .8);
+      }
+      /* the knot at the side */
+      both(x, function () { x.ellipse(cx + fw + 10, cy - 52, 10, 7, .5, 0, 7); x.moveTo(cx + fw + 14, cy - 48); x.lineTo(cx + fw + 30, cy - 30); x.lineTo(cx + fw + 20, cy - 26); x.closePath(); }, L.c3, 1.8);
+    } else if (s === 'crop') {
+      both(x, function () {
+        x.moveTo(cx - fw - 1, cy - 12); x.bezierCurveTo(cx - fw - 8, top - 26, cx + fw + 8, top - 26, cx + fw + 1, cy - 12);
+        x.lineTo(cx + fw - 6, cy - 40); x.quadraticCurveTo(cx + 20, cy - fh * .78, cx - 30, cy - fh * .72);
+        x.quadraticCurveTo(cx - fw + 4, cy - 50, cx - fw - 1, cy - 12);
+      }, L.hair, 2.2);
+    } else if (s === 'cap') {
+      both(x, function () { x.moveTo(cx - fw - 2, cy - 8); x.lineTo(cx - fw + 2, cy - 36); x.lineTo(cx - fw + 12, cy + 4); x.closePath();
+                             x.moveTo(cx + fw + 2, cy - 8); x.lineTo(cx + fw - 2, cy - 36); x.lineTo(cx + fw - 12, cy + 4); x.closePath(); }, L.hair, 1.4);
+      both(x, function () {
+        x.moveTo(cx - fw - 8, cy - 36); x.bezierCurveTo(cx - fw - 6, top - 44, cx + fw + 6, top - 44, cx + fw + 8, cy - 36);
+        x.quadraticCurveTo(cx, cy - fh * .58, cx - fw - 8, cy - 36);
+      }, L.cap, 2.2);
+      both(x, function () { x.moveTo(cx - fw - 10, cy - 38); x.quadraticCurveTo(cx - 10, cy - fh * .5, cx + fw * .5, cy - 44); x.quadraticCurveTo(cx - 10, cy - fh * .64, cx - fw - 10, cy - 38); }, '#46503f', 1.8);
+      key(x, function () { x.moveTo(cx, top - 30); x.lineTo(cx, cy - fh * .6); }, 1.2, INK.sumi, .5);
+    } else if (s === 'pony') {
+      both(x, function () {
+        x.moveTo(cx - fw - 1, cy - 4); x.bezierCurveTo(cx - fw - 8, top - 24, cx + fw + 8, top - 24, cx + fw + 1, cy - 4);
+        x.quadraticCurveTo(cx + fw * .6, cy - fh * .66, cx, cy - fh * .7); x.quadraticCurveTo(cx - fw * .6, cy - fh * .66, cx - fw - 1, cy - 4);
+      }, L.hair, 2.2);
+      key(x, function () { for (var i = 0; i < 5; i++) { x.moveTo(cx - fw * .7 + i * fw * .3, cy - fh * .66); x.quadraticCurveTo(cx - fw * .5 + i * fw * .3, top - 8, cx + fw * .6, top); } }, 1, L.hairLn, .8);
+    } else if (s === 'bob') {
+      both(x, function () {
+        x.moveTo(cx - fw - 12, cy + 44); x.bezierCurveTo(cx - fw - 24, top - 52, cx + fw + 24, top - 52, cx + fw + 12, cy + 44);
+        x.lineTo(cx + fw - 8, cy + 44); x.lineTo(cx + fw - 6, cy - 20);
+        x.lineTo(cx - fw + 6, cy - 36); x.lineTo(cx - fw + 8, cy + 44); x.closePath();
+      }, L.hair, 2.2);
+      /* the straight fringe */
+      var fr = function () {
+        x.moveTo(cx - fw + 4, cy - fh * .8); x.lineTo(cx + fw - 4, cy - fh * .8);
+        x.lineTo(cx + fw - 4, cy - fh * .36);
+        for (var i = 0; i <= 6; i++) x.lineTo(cx + fw - 4 - i * (fw * 2 - 8) / 6, cy - fh * (.33 + (i % 2) * .035));
+        x.closePath();
+      };
+      block(x, fr, L.hair);
+      key(x, function () { for (var i = 0; i <= 6; i++) { var px = cx + fw - 4 - i * (fw * 2 - 8) / 6; x.lineTo(px, cy - fh * (.33 + (i % 2) * .035)); } }, 2);
+      key(x, function () { for (var i = 1; i < 6; i++) { var px = cx - fw + 4 + i * (fw * 2 - 8) / 6; x.moveTo(px, cy - fh * .78); x.lineTo(px + 3, cy - fh * .38); } }, 1, L.hairLn, .8);
+    } else if (s === 'mop') {
+      both(x, function () {
+        x.moveTo(cx - fw - 6, cy - 2); x.bezierCurveTo(cx - fw - 16, top - 40, cx + fw + 16, top - 40, cx + fw + 6, cy - 2);
+        for (var i = 0; i <= 8; i++) { var px = cx + fw - i * fw / 4, py = cy - fh * .42 + (i % 2 ? 12 : -4); x.lineTo(px, py); }
+        x.closePath();
+      }, L.hair, 2.2);
+      key(x, function () { for (var i = 0; i < 8; i++) { var px = cx - fw * .8 + i * fw * .23; x.moveTo(px, top - 16); x.quadraticCurveTo(px + 10, cy - fh * .7, px + 4, cy - fh * .44); } }, 1.1, L.hairLn, .85);
+    } else if (s === 'side') {
+      both(x, function () {
+        x.moveTo(cx - fw - 3, cy - 8); x.bezierCurveTo(cx - fw - 12, top - 40, cx + fw + 12, top - 40, cx + fw + 3, cy - 8);
+        x.lineTo(cx + fw - 8, cy - 36); x.quadraticCurveTo(cx + 10, cy - fh * .8, cx - fw * .35, cy - fh * .66);
+        x.quadraticCurveTo(cx - fw + 4, cy - 44, cx - fw - 2, cy - 8);
+      }, L.hair, 2.2);
+      key(x, function () { x.moveTo(cx - fw * .35, cy - fh * .66); x.quadraticCurveTo(cx - fw * .32, top + 4, cx - fw * .26, top + 2);
+                           for (var i = 0; i < 6; i++) { x.moveTo(cx - fw * .22 + i * 10, top + 6 + i * 3); x.quadraticCurveTo(cx + fw * .45, top + 10 + i * 5, cx + fw - 8, cy - 42 + i * 4); } }, 1.3, L.hairLn, .95);
+    } else if (s === 'long') {
+      both(x, function () {
+        x.moveTo(cx - fw - 8, cy + 30); x.bezierCurveTo(cx - fw - 14, top - 32, cx + fw + 14, top - 32, cx + fw + 8, cy + 30);
+        x.lineTo(cx + fw - 6, cy + 20); x.quadraticCurveTo(cx + fw * .5, cy - fh * .66, cx + 4, cy - fh * .8);
+        x.quadraticCurveTo(cx - fw * .5, cy - fh * .66, cx - fw + 6, cy + 20); x.closePath();
+      }, L.hair, 2.2);
+    } else if (s === 'comb') {
+      both(x, function () {
+        x.moveTo(cx - fw + 2, cy - 30); x.bezierCurveTo(cx - fw - 4, top - 22, cx + fw - 6, top - 30, cx + fw, cy - 40);
+        x.quadraticCurveTo(cx + fw * .6, cy - fh * .8, cx - fw * .3, cy - fh * .84);
+        x.quadraticCurveTo(cx - fw * .8, cy - fh * .76, cx - fw + 2, cy - 30);
+      }, L.hair, 1.6);
+      key(x, function () { for (var i = 0; i < 7; i++) { x.moveTo(cx - fw * .8 + i * 6, cy - fh * .74 - i * 4); x.quadraticCurveTo(cx + 10, top - 12 + i * 2, cx + fw * .88 - i * 2, cy - fh * .6 + i * 2); } }, 1.2, L.hairLn, 1);
+    }
+  }
+
+  function face(x, L, ex, blink, cx, cy, fw, fh) {
+    var ey = cy - 4, eo = fw * .45, ew = fw * .22;
+
+    /* ---- brows: most of every expression is here ------------------- */
+    var bIn = { neutral: 0, warm: 2, worried: -8, stern: 7, surprised: -12 }[ex] || 0;
+    var bOut = { neutral: 0, warm: 0, worried: 2, stern: -3, surprised: -12 }[ex] || 0;
+    [-1, 1].forEach(function (s) {
+      var ox = cx + s * eo, yIn = ey - 22 + bIn, yOut = ey - 20 + bOut;
+      var pale = ['#ece7de', '#e2ddd4', '#d7d2c8'].indexOf(L.hair) !== -1;
+      key(x, function () { x.moveTo(ox + s * ew * 1.15, yOut); x.quadraticCurveTo(ox, ey - 30 + (bIn + bOut) / 2, ox - s * ew * .95, yIn); }, L.brow ? 4.2 : pale ? 3 : 3.4, L.brow || (pale ? '#8f8a82' : INK.sumi));
+    });
+
+    /* ---- eyes ------------------------------------------------------- */
+    [-1, 1].forEach(function (s) {
+      var ox = cx + s * eo;
+      if (blink) {
+        key(x, function () { x.moveTo(ox - ew, ey); x.quadraticCurveTo(ox, ey + 5, ox + ew, ey); }, 2.6);
+      } else if (ex === 'warm') {
+        key(x, function () { x.moveTo(ox - ew, ey + 2); x.quadraticCurveTo(ox, ey - 7, ox + ew, ey + 2); }, 2.8);
+      } else {
+        var open = ex === 'surprised' ? 8 : ex === 'stern' ? 3.4 : 5;
+        /* the white of the eye, then the iris under the lid */
+        block(x, function () { x.moveTo(ox - ew, ey); x.quadraticCurveTo(ox, ey - open * 1.4, ox + ew, ey); x.quadraticCurveTo(ox, ey + open * .9, ox - ew, ey); }, '#f5efe4');
+        x.save(); x.beginPath(); x.moveTo(ox - ew, ey); x.quadraticCurveTo(ox, ey - open * 1.4, ox + ew, ey); x.quadraticCurveTo(ox, ey + open * .9, ox - ew, ey); x.clip();
+        var ir = ex === 'surprised' ? 4.4 : 5.4, look = ex === 'worried' ? 2 : 0;
+        block(x, function () { x.arc(ox - 1 + look, ey - 1 + look, ir, 0, 7); }, '#2a221e');
+        x.fillStyle = 'rgba(255,255,255,.8)'; x.fillRect(ox - 3 + look, ey - 4 + look, 2, 2);
+        x.restore();
+        key(x, function () { x.moveTo(ox - ew - 1, ey + 1); x.quadraticCurveTo(ox, ey - open * 1.45, ox + ew + 1, ey + 1); }, 2.8);
+        key(x, function () { x.moveTo(ox - ew + 3, ey + 2); x.quadraticCurveTo(ox, ey + open * .95, ox + ew - 3, ey + 2); }, 1, INK.sumi, .45);
+      }
+      /* the tired line under the eye */
+      if (L.tired || L.age >= 2) key(x, function () { x.moveTo(ox - ew * .8, ey + 9); x.quadraticCurveTo(ox, ey + 13, ox + ew * .8, ey + 9); }, 1.1, INK.sumi, .45);
+      /* crow's feet */
+      if (L.age >= 2) key(x, function () { x.moveTo(ox + s * (ew + 4), ey - 2); x.lineTo(ox + s * (ew + 11), ey - 6); x.moveTo(ox + s * (ew + 4), ey + 3); x.lineTo(ox + s * (ew + 11), ey + 5); }, 1.1, INK.sumi, .5);
+    });
+
+    /* ---- glasses ---------------------------------------------------- */
+    if (L.glasses) {
+      [-1, 1].forEach(function (s) {
+        var gx = cx + s * eo;
+        key(x, function () {
+          if (L.glasses === 'round') x.arc(gx, ey - 1, ew + 7, 0, 7);
+          else if (L.glasses === 'bold') x.roundRect(gx - ew - 8, ey - 15, (ew + 8) * 2, 25, 3);
+          else x.roundRect(gx - ew - 7, ey - 15, (ew + 7) * 2, 27, 8);
+        }, L.glasses === 'bold' ? 4 : 2, L.glasses === 'bold' ? '#231f1c' : '#4a4e55');
+      });
+      key(x, function () { x.moveTo(cx - eo + ew + 6, ey - 5); x.quadraticCurveTo(cx, ey - 10, cx + eo - ew - 6, ey - 5);
+                           x.moveTo(cx - eo - ew - 7, ey - 6); x.lineTo(cx - fw, ey - 2); x.moveTo(cx + eo + ew + 7, ey - 6); x.lineTo(cx + fw, ey - 2); }, 2, '#4a4e55');
+      /* the lantern catches the near lens */
+      x.save(); x.globalAlpha = .32; x.fillStyle = INK.lamp;
+      x.beginPath(); x.moveTo(cx - eo - ew, ey - 11); x.lineTo(cx - eo - ew + 9, ey - 11); x.lineTo(cx - eo - ew + 2, ey + 6); x.closePath(); x.fill(); x.restore();
+    }
+
+    /* ---- nose ------------------------------------------------------- */
+    var nz = L.nose || 1;
+    key(x, function () { x.moveTo(cx - 2, ey + 4 * nz); x.quadraticCurveTo(cx + 6, ey + 26 * nz, cx + 2, ey + 34 * nz); x.quadraticCurveTo(cx - 6 * nz, ey + 38 * nz, cx - 11 * nz, ey + 34 * nz); }, 2);
+
+    /* ---- age: forehead lines and the lines from nose to mouth ------- */
+    if (L.age >= 1) key(x, function () { x.moveTo(cx - 20, ey + 32); x.quadraticCurveTo(cx - 28, ey + 48, cx - 25, ey + 60); x.moveTo(cx + 20, ey + 32); x.quadraticCurveTo(cx + 28, ey + 48, cx + 25, ey + 60); }, 1.2, INK.sumi, L.age >= 2 ? .55 : .3);
+    if (L.age >= 2 && L.style !== 'bob' && L.style !== 'cap' && L.style !== 'tenugui') {
+      key(x, function () { x.moveTo(cx - 28, cy - fh * .5); x.quadraticCurveTo(cx, cy - fh * .55, cx + 28, cy - fh * .5);
+                           x.moveTo(cx - 20, cy - fh * .6); x.quadraticCurveTo(cx, cy - fh * .64, cx + 20, cy - fh * .6); }, 1.1, INK.sumi, .38);
+    }
+    if (L.style === 'crop' && L.tired) {
+      /* a day's stubble, stippled */
+      x.save(); x.fillStyle = 'rgba(40,32,28,.13)';
+      for (var i = 0; i < 260; i++) { var a = R() * Math.PI, rr2 = .55 + R() * .42; x.fillRect(cx + Math.cos(a) * fw * .62 * rr2, ey + 36 + Math.sin(a) * fh * .46 * rr2, .9, .9); }
+      x.restore();
+    }
+
+    /* ---- mouth ------------------------------------------------------ */
+    var my = ey + 54;
+    if (ex === 'warm') {
+      key(x, function () { x.moveTo(cx - 20, my - 3); x.quadraticCurveTo(cx, my + 9, cx + 20, my - 3); }, 2.6);
+    } else if (ex === 'worried') {
+      key(x, function () { x.moveTo(cx - 15, my + 4); x.quadraticCurveTo(cx, my - 2, cx + 15, my + 4); }, 2.4);
+    } else if (ex === 'stern') {
+      key(x, function () { x.moveTo(cx - 17, my + 1); x.lineTo(cx + 17, my + 1); }, 2.8);
+    } else if (ex === 'surprised') {
+      both(x, function () { x.ellipse(cx, my + 1, 5.5, 4.5, 0, 0, 7); }, '#a0584c', 2);
+    } else {
+      key(x, function () { x.moveTo(cx - 17, my); x.quadraticCurveTo(cx, my + 3, cx + 17, my - 1); }, 2.4);
+    }
+    /* a touch of colour on the lip */
+    x.save(); x.globalAlpha = .22; x.fillStyle = INK.shu;
+    x.beginPath(); x.ellipse(cx + MIS.x, my + 6, 10, 3, 0, 0, 7); x.fill(); x.restore();
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* OPTIONAL PNG SPRITES                                               */
+
+  var poses = {}, tried = {};
   function sprite(id, want) {
-    var set = (global.SPRITES || {})[id];
-    if (!set) return null;
-    var file = fallbackChain(set, want);
+    var set = (global.SPRITES || {})[id]; if (!set) return null;
+    var order = { warm: ['warm', 'neutral'], worried: ['worried', 'neutral'], stern: ['stern', 'worried', 'neutral'],
+                  surprised: ['surprised', 'neutral'], neutral: ['neutral'] }[want] || ['neutral'];
+    var file = null;
+    for (var i = 0; i < order.length; i++) if (set[order[i]]) { file = set[order[i]]; break; }
     if (!file) return null;
     if (poses[file]) return poses[file];
     if (tried[file]) return null;
     tried[file] = true;
-    var img = new Image();
-    img.onload = function () { poses[file] = img; };
-    img.src = file;
+    var img = new Image(); img.onload = function () { poses[file] = img; }; img.src = file;
     return null;
   }
 
-  /* ------------------------------------------------------------------ */
-  /* PEOPLE                                                              */
-
-  /* People are drawn small into a scratch canvas and then blown up, so the
-     pixels stay square and the whole figure can be scaled in one place. */
-  var pcan = document.createElement('canvas');
-  pcan.width = 100; pcan.height = 130;
-  var g = pcan.getContext('2d');
-  g.imageSmoothingEnabled = false;
-  var FOOT = 130;                 /* where the figure sits on the scratch canvas */
-  var SCALE = 1.30;
-
-  function face(cx, cy, L, ex, blink) {
-    var eyeY = cy + 1;
-    g.fillStyle = '#20181a';
-    if (blink) {
-      g.fillRect(cx - 7, eyeY, 5, 1); g.fillRect(cx + 2, eyeY, 5, 1);
-    } else if (ex === 'surprised') {
-      g.fillRect(cx - 7, eyeY - 1, 4, 4); g.fillRect(cx + 3, eyeY - 1, 4, 4);
-    } else {
-      g.fillRect(cx - 7, eyeY, 4, 3); g.fillRect(cx + 3, eyeY, 4, 3);
-    }
-    g.fillStyle = L.hair;
-    if (ex === 'stern') { g.fillRect(cx - 8, eyeY - 4, 5, 1); g.fillRect(cx + 3, eyeY - 3, 5, 1); }
-    else if (ex === 'worried') { g.fillRect(cx - 8, eyeY - 3, 5, 1); g.fillRect(cx + 3, eyeY - 4, 5, 1); }
-    else if (ex === 'surprised') { g.fillRect(cx - 8, eyeY - 5, 5, 1); g.fillRect(cx + 3, eyeY - 5, 5, 1); }
-    else { g.fillRect(cx - 8, eyeY - 4, 5, 1); g.fillRect(cx + 3, eyeY - 4, 5, 1); }
-    g.fillStyle = '#7f4744';
-    if (ex === 'warm') {
-      g.fillRect(cx - 3, cy + 8, 7, 1); g.fillRect(cx - 4, cy + 7, 1, 1); g.fillRect(cx + 4, cy + 7, 1, 1);
-    } else if (ex === 'worried') {
-      g.fillRect(cx - 3, cy + 9, 7, 1); g.fillRect(cx - 4, cy + 10, 1, 1); g.fillRect(cx + 4, cy + 10, 1, 1);
-    } else if (ex === 'surprised') {
-      g.fillRect(cx - 2, cy + 7, 5, 4);
-    } else {
-      g.fillRect(cx - 3, cy + 9, 7, 1);
-    }
-    if (L.glasses) {
-      g.strokeStyle = '#3f382f'; g.lineWidth = 1;
-      g.strokeRect(cx - 9.5, eyeY - 3.5, 8, 8);
-      g.strokeRect(cx + 1.5, eyeY - 3.5, 8, 8);
-      g.beginPath(); g.moveTo(cx - 1.5, eyeY + 0.5); g.lineTo(cx + 1.5, eyeY + 0.5); g.stroke();
-    }
-  }
-
-  function hair(cx, cy, L) {
-    g.fillStyle = L.hair;
-    var s = L.style;
-    if (s === 'bun') {
-      g.beginPath(); g.arc(cx, cy - 3, 13, Math.PI, 0); g.fill();
-      g.beginPath(); g.arc(cx, cy - 16, 6, 0, 7); g.fill();
-    } else if (s === 'crop') {
-      g.fillRect(cx - 13, cy - 15, 26, 9);
-      g.beginPath(); g.arc(cx, cy - 5, 13, Math.PI, 0); g.fill();
-    } else if (s === 'thin') {
-      g.fillRect(cx - 11, cy - 12, 22, 3);
-      g.fillRect(cx - 13, cy - 10, 3, 9); g.fillRect(cx + 10, cy - 10, 3, 9);
-    } else if (s === 'tie') {
-      g.beginPath(); g.arc(cx, cy - 4, 13, Math.PI, 0); g.fill();
-      g.fillRect(cx - 14, cy - 6, 3, 11); g.fillRect(cx + 11, cy - 6, 3, 11);
-      g.beginPath(); g.arc(cx + 14, cy + 3, 5, 0, 7); g.fill();
-    } else if (s === 'bob') {
-      g.beginPath(); g.arc(cx, cy - 3, 14, Math.PI, 0); g.fill();
-      g.fillRect(cx - 14, cy - 4, 5, 15); g.fillRect(cx + 9, cy - 4, 5, 15);
-    } else if (s === 'mop') {
-      g.beginPath(); g.arc(cx, cy - 5, 14, Math.PI, 0.25); g.fill();
-      g.fillRect(cx - 14, cy - 9, 28, 6);
-    } else if (s === 'side') {
-      g.fillRect(cx - 13, cy - 13, 26, 5);
-      g.fillRect(cx - 13, cy - 9, 7, 6); g.fillRect(cx + 7, cy - 9, 6, 6);
-    } else if (s === 'comb') {
-      g.fillRect(cx - 12, cy - 13, 24, 3);
-      g.fillRect(cx - 12, cy - 10, 17, 4);
-      g.fillRect(cx - 13, cy - 10, 3, 9); g.fillRect(cx + 10, cy - 10, 3, 9);
-    } else if (s === 'long') {
-      g.beginPath(); g.arc(cx, cy - 3, 14, Math.PI, 0); g.fill();
-      g.fillRect(cx - 14, cy - 4, 5, 30); g.fillRect(cx + 9, cy - 4, 5, 30);
-    }
-  }
-
-  function figure(id, L, ex, frame) {
-    g.clearRect(0, 0, 100, 130);
-    var cx = 50;
-    var cy = FOOT - L.h - 16;          /* face centre */
-    var shoulder = FOOT - L.h + 2;
-
-    /* torso: flat shoulders, slight taper — a person leaning on a counter */
-    g.fillStyle = L.cloth;
-    g.beginPath();
-    g.moveTo(cx - L.w, FOOT);
-    g.lineTo(cx - L.w + 1, shoulder + 5);
-    g.quadraticCurveTo(cx - L.w + 4, shoulder, cx - L.w + 9, shoulder - 1);
-    g.lineTo(cx + L.w - 9, shoulder - 1);
-    g.quadraticCurveTo(cx + L.w - 4, shoulder, cx + L.w - 1, shoulder + 5);
-    g.lineTo(cx + L.w, FOOT);
-    g.closePath(); g.fill();
-
-    /* collar */
-    g.fillStyle = L.cloth2;
-    g.beginPath(); g.moveTo(cx - 7, shoulder - 1); g.lineTo(cx, shoulder + 10);
-    g.lineTo(cx + 7, shoulder - 1); g.closePath(); g.fill();
-    g.fillRect(cx - L.w + 1, shoulder + 12, 2, FOOT - shoulder - 12);
-    if (L.apron) { g.fillStyle = '#e6dcc8'; g.fillRect(cx - 11, shoulder + 14, 22, FOOT); }
-
-    /* neck and head */
-    g.fillStyle = L.skin;
-    g.fillRect(cx - 5, cy + 10, 10, 8);
-    g.beginPath(); g.ellipse(cx, cy, 13, 14, 0, 0, 7); g.fill();
-    g.fillRect(cx - 15, cy, 2, 5); g.fillRect(cx + 13, cy, 2, 5);
-    /* a little shading down one side of the face */
-    g.fillStyle = 'rgba(0,0,0,.07)';
-    g.beginPath(); g.ellipse(cx + 7, cy + 1, 6, 12, 0, 0, 7); g.fill();
-
-    hair(cx, cy, L);
-    if (L.cap) {
-      g.fillStyle = '#5a6a5a'; g.fillRect(cx - 14, cy - 16, 28, 7); g.fillRect(cx - 15, cy - 10, 30, 2);
-    }
-    face(cx, cy, L, ex, (frame - (blinkAt[id] || 0)) % 260 < 8);
-  }
-
-  function drawPerson(id, x, baseY, lit, frame) {
-    var L = LOOK[id];
-    if (!L) return;
+  function drawPerson(id, sx, lit, frame) {
     var ex = (speaker === id) ? expr : 'neutral';
     var img = sprite(id, ex);
-
-    b.globalAlpha = lit ? 1 : 0.5;
+    var blink = ((frame + (blinkAt[id] || 0)) % 290) < 7;
+    var scale = 1;
     if (img) {
-      var hgt = 132, wid = Math.round(img.width * (hgt / img.height));
-      b.drawImage(img, Math.round(x - wid / 2), Math.round(baseY - hgt), wid, hgt);
-    } else {
-      figure(id, L, ex, frame);
-      var w2 = 100 * SCALE, h2 = 130 * SCALE;
-      b.drawImage(pcan, Math.round(x - w2 / 2), Math.round(baseY - h2), Math.round(w2), Math.round(h2));
+      var hgt = FH * scale, wid = img.width * hgt / img.height;
+      b.save(); if (!lit) b.globalAlpha = .6;
+      b.drawImage(img, sx - wid / 2, 470 + 60 - hgt, wid, hgt); b.restore();
+      return;
     }
-    b.globalAlpha = 1;
+    var c = figure(id, ex, blink, !lit);
+    if (!c) return;
+    /* the face centre lands at about y 262 on screen; the counter hides the rest */
+    b.drawImage(c, sx - FC.x * scale, 272 - FC.y * scale, FW * scale, FH * scale);
   }
 
   /* ------------------------------------------------------------------ */
-  /* THE ROOM                                                            */
+  /* BOWLS ON THE COUNTER                                               */
 
-  var HOT = [
-    { key: 'calendar', x: 14,  y: 96,  w: 34, h: 40 },
-    { key: 'photo',    x: 306, y: 46,  w: 46, h: 34 },
-    { key: 'noren',    x: 88,  y: 16,  w: 208, h: 26 },
-    { key: 'shutter',  x: 92,  y: 84,  w: 130, h: 30 },
-    { key: 'vending',  x: 244, y: 64,  w: 46, h: 50 },
-    { key: 'arcade',   x: 88,  y: 42,  w: 208, h: 16 },
-    { key: 'cat',      x: 98,  y: 116, w: 30, h: 22 },
-    { key: 'bench',    x: 196, y: 110, w: 48, h: 28 },
-    { key: 'seats',    x: 40,  y: 150, w: 180, h: 22 }
-  ];
+  function drawBowlAt(x, bx, by, sc, broth, tops, frame) {
+    var Ico = global.Icons;
+    if (!Ico || !Ico.paintBowl) return;
+    Ico.paintBowl(x, bx, by, sc, broth, tops, frame);
+  }
 
-  /* The shop front is open onto the arcade. Everything between these two
-     posts is outside; everything either side of them is the shop. */
-  var AX = 88, AW = 208, AY = 16, AB = 150;
+  /* ------------------------------------------------------------------ */
+  /* 5. EVERY FRAME                                                     */
 
-  function alley(frame) {
-    b.save();
-    b.beginPath(); b.rect(AX, AY, AW, AB - AY); b.clip();
+  function liveAlley(frame) {
+    b.save(); b.beginPath(); b.rect(OX, OY, OW, OB - OY); b.clip();
 
-    b.fillStyle = '#10141b'; b.fillRect(AX, AY, AW, AB - AY);
-
-    /* --- under the arcade roof: one lamp left working ------------------ */
-    b.fillStyle = '#171c25'; b.fillRect(AX, AY, AW, 40);
-    b.fillStyle = '#0d1117';
-    for (var rb = 0; rb < 6; rb++) b.fillRect(AX + 10 + rb * 34, AY, 5, 40);
-    [[132, 1], [206, 0], [268, 2]].forEach(function (L) {
-      var lx = L[0], live = L[1] === 1 || (L[1] === 2 && Math.sin(frame / 6) > -0.25);
-      b.fillStyle = '#242a34'; b.fillRect(lx, 44, 1, 4);
-      b.fillStyle = live ? 'rgba(230,212,160,.9)' : '#282d36';
-      b.beginPath(); b.ellipse(lx, 50, 5, 3.5, 0, 0, 7); b.fill();
-      if (live) {
-        b.fillStyle = 'rgba(230,212,160,.09)';
-        b.beginPath(); b.moveTo(lx - 4, 51); b.lineTo(lx + 4, 51);
-        b.lineTo(lx + 26, AB); b.lineTo(lx - 26, AB); b.closePath(); b.fill();
+    /* the lamps: one alive, the middle one dead, one flickering, the rest long gone */
+    [[12, 1], [16, 0], [21, 2], [29, 0], [38, 0]].forEach(function (L) {
+      var p = proj(0, 3.15, L[0]), top = proj(0, 4.5, L[0]);
+      var on = L[1] === 1 || (L[1] === 2 && (Math.sin(frame / 5.3) + Math.sin(frame / 2.1)) > -.4);
+      var r = 60 / L[0];
+      if (on) {
+        glow(b, p[0], p[1], r * 12, '246,213,140', L[1] === 1 ? .5 : .32);
+        var fl = proj(0, 0, L[0]);
+        b.save(); b.translate(fl[0], fl[1]); b.scale(1, .2);
+        var pg = b.createRadialGradient(0, 0, 1, 0, 0, r * 20);
+        pg.addColorStop(0, 'rgba(246,213,140,' + (L[1] === 1 ? .26 : .14) + ')'); pg.addColorStop(1, 'rgba(246,213,140,0)');
+        b.fillStyle = pg; b.fillRect(-r * 20, -r * 20, r * 40, r * 40); b.restore();
       }
-    });
-    b.strokeStyle = '#0b0e13'; b.lineWidth = 1;
-    [50, 57].forEach(function (cy2) {
-      b.beginPath(); b.moveTo(AX, cy2);
-      b.quadraticCurveTo(AX + AW / 2, cy2 + 6, AX + AW, cy2 - 2); b.stroke();
+      key(b, function () { b.moveTo(top[0], top[1]); b.lineTo(p[0], p[1] - r); }, 1, '#070b12', .8);
+      both(b, function () { b.ellipse(p[0], p[1], r * 1.2, r * .9, 0, 0, 7); }, on ? INK.lamp : '#2b3140', 1.2, '#070b12');
+      block(b, function () { rr(b, p[0] - r * .9, p[1] - r * 1.1, r * 1.8, r * .3); }, '#10151d');
     });
 
-    /* --- the building opposite, close enough to touch ------------------ */
-    b.fillStyle = '#1e2732'; b.fillRect(AX, 56, AW, 58);
-    b.fillStyle = '#1a222c';
-    for (var pl = 0; pl < 14; pl++) b.fillRect(AX + pl * 16, 56, 1, 58);
-
-    /* hanging signs for shops that closed years apart */
-    var signs = [[100, '#2c3646', 26], [150, '#38323c', 22], [196, '#2c3c3c', 28]];
-    signs.forEach(function (sg) {
-      b.fillStyle = '#141922'; b.fillRect(sg[0] - 1, 58, 15, 2);
-      b.fillStyle = sg[1]; b.fillRect(sg[0], 60, 13, sg[2]);
-      b.fillStyle = 'rgba(190,200,214,.20)';
-      for (var t = 0; t < 3; t++) b.fillRect(sg[0] + 3, 65 + t * 7, 7, 2);
-    });
-
-    /* --- the shutters, all the way down -------------------------------- */
-    b.fillStyle = '#1a2029'; b.fillRect(AX + 4, 84, 130, 3);
-    b.fillStyle = '#232a34'; b.fillRect(AX + 4, 87, 130, 27);
-    b.fillStyle = '#2c343f';
-    for (var sh = 0; sh < 7; sh++) b.fillRect(AX + 4, 88 + sh * 4, 130, 2);
-    b.fillStyle = '#8a8468'; b.fillRect(AX + 52, 95, 10, 8);
-    b.fillStyle = '#6e6a52'; b.fillRect(AX + 53, 97, 8, 1); b.fillRect(AX + 53, 100, 6, 1);
-
-    /* --- the vending machine, the only other thing open ---------------- */
-    var vx = 246;
-    var vg = b.createRadialGradient(vx + 20, 92, 4, vx + 20, 92, 54);
-    vg.addColorStop(0, 'rgba(154,204,240,' + (0.16 + Math.sin(frame / 60) * 0.02) + ')');
-    vg.addColorStop(1, 'rgba(154,204,240,0)');
-    b.fillStyle = vg; b.fillRect(AX, 42, AW, AB - 42);
-    b.fillStyle = '#20262e'; b.fillRect(vx - 2, 64, 44, 50);
-    b.fillStyle = '#2f363f'; b.fillRect(vx, 66, 40, 46);
-    b.fillStyle = '#e4eff7'; b.fillRect(vx + 3, 69, 34, 28);
-    var cans = ['#d8483a', '#3a7ad8', '#e0a92c', '#4aa86a', '#c8543a', '#3a8ad0', '#d8b83a', '#5a9a5a'];
-    for (var cn = 0; cn < 8; cn++) {
-      b.fillStyle = cans[cn];
-      b.fillRect(vx + 6 + (cn % 4) * 8, 72 + Math.floor(cn / 4) * 13, 5, 10);
-      b.fillStyle = 'rgba(255,255,255,.5)';
-      b.fillRect(vx + 6 + (cn % 4) * 8, 72 + Math.floor(cn / 4) * 13, 1, 10);
+    /* the machine's cold light: on the floor, on the bench, on the cat */
+    var fc = vmFace(.5, 1.2, .05);
+    var pulse = .30 + Math.sin(frame / 50) * .02;
+    glow(b, fc[0] - 20, fc[1] + 40, 250, '160,215,240', pulse);
+    var sp0 = vmFace(.5, 0, .9);
+    b.save(); b.translate(sp0[0], sp0[1]); b.scale(1, .28);
+    var sg = b.createRadialGradient(0, 0, 1, 0, 0, 150);
+    sg.addColorStop(0, 'rgba(170,220,240,.22)'); sg.addColorStop(1, 'rgba(170,220,240,0)');
+    b.fillStyle = sg; b.fillRect(-150, -150, 300, 300); b.restore();
+    /* its reflection in the wet floor: broken vertical strokes */
+    reseed(101 + Math.floor(frame / 6) % 3);
+    for (var i = 0; i < 24; i++) {
+      var s = R(), bp = vmFace(s, 0, .3);
+      var rl = 8 + R() * 24, a = .14 + R() * .2;
+      key(b, function () { b.moveTo(bp[0], bp[1] + 4 + R() * 12); b.lineTo(bp[0], bp[1] + 6 + rl); }, 2, INK.cold, a);
     }
-    b.fillStyle = '#9fb8cc'; b.fillRect(vx + 3, 98, 34, 2);
-    b.fillStyle = '#151a20'; b.fillRect(vx + 6, 102, 28, 7);
-    b.fillStyle = '#c8402f'; b.fillRect(vx + 30, 100, 4, 2);
 
-    /* --- the ground, still damp from this afternoon -------------------- */
-    b.fillStyle = '#151a20'; b.fillRect(AX, 114, AW, AB - 114);
-    b.fillStyle = '#1a2028';
-    for (var gg = 0; gg < 6; gg++) b.fillRect(AX, 118 + gg * 6, AW, 1);
-    for (var rf = 0; rf < 5; rf++) {
-      b.globalAlpha = 0.10 + (rf % 2) * 0.04;
-      b.fillStyle = '#a8d6ee';
-      b.fillRect(vx + 4 + rf * 8, 114, 3, 11 + Math.sin(frame / 20 + rf) * 3);
-    }
-    for (var rw = 0; rw < 7; rw++) {
-      b.globalAlpha = 0.07 + (rw % 3) * 0.03;
-      b.fillStyle = '#f0a848';
-      b.fillRect(AX + 10 + rw * 14, 130, 3, 10 + Math.sin(frame / 17 + rw) * 3);
-    }
-    b.globalAlpha = 1;
+    /* the cat that lives under the machine, lit from one side by it */
+    var ct = proj(1.05, 0, 5.1), sc = 5.1 / 5.1;
+    var tail = Math.sin(frame / 26) * 5;
+    block(b, function () { b.ellipse(ct[0], ct[1] - 12 * sc, 22 * sc, 11 * sc, 0, 0, 7); b.moveTo(ct[0] - 16, ct[1] - 20); b.arc(ct[0] - 18 * sc, ct[1] - 22 * sc, 11 * sc, 0, 7); }, '#0c1016');
+    block(b, function () { poly(b, [[ct[0] - 27, ct[1] - 28], [ct[0] - 24, ct[1] - 40], [ct[0] - 19, ct[1] - 30]]); poly(b, [[ct[0] - 16, ct[1] - 30], [ct[0] - 11, ct[1] - 41], [ct[0] - 9, ct[1] - 28]]); }, '#0c1016');
+    key(b, function () { b.moveTo(ct[0] + 20, ct[1] - 10); b.quadraticCurveTo(ct[0] + 38, ct[1] - 14 + tail, ct[0] + 34, ct[1] - 32 + tail); }, 3.4, '#0c1016');
+    key(b, function () { b.moveTo(ct[0] - 10, ct[1] - 22); b.quadraticCurveTo(ct[0] + 6, ct[1] - 26, ct[0] + 20, ct[1] - 18); }, 1.6, INK.cold, .5);
+    b.fillStyle = '#d9cf7c'; b.fillRect(ct[0] - 24, ct[1] - 25, 2.5, 2); b.fillRect(ct[0] - 17, ct[1] - 25, 2.5, 2);
 
-    /* --- the bench, bolted down, facing the shutters ------------------- */
-    b.fillStyle = '#2a3038'; b.fillRect(198, 122, 44, 3);
-    b.fillStyle = '#222831'; b.fillRect(198, 125, 44, 2);
-    b.fillRect(201, 127, 3, 8); b.fillRect(236, 127, 3, 8);
-    b.fillStyle = '#1d232b'; b.fillRect(198, 112, 44, 2);
-    b.fillRect(201, 114, 3, 8); b.fillRect(236, 114, 3, 8);
-
-    /* somebody has been sitting on it a while */
+    /* somebody on the bench, facing the shutters, not coming in yet */
     if (waiting) {
-      var bx = 220, by = 122;
-      b.fillStyle = '#171c23';
-      b.fillRect(bx - 5, by - 13, 11, 14);              /* back and shoulders */
-      b.fillRect(bx - 6, by, 13, 4);                    /* knees */
-      b.fillRect(bx - 5, by + 4, 4, 7); b.fillRect(bx + 2, by + 4, 4, 7);
-      b.beginPath(); b.arc(bx, by - 17, 5, 0, 7); b.fill();
-      b.fillStyle = '#20262f'; b.fillRect(bx - 6, by - 21, 12, 3);   /* the cap */
-      b.fillRect(bx - 7, by - 19, 14, 1);
-      /* the vending machine puts a cold edge down one side of him */
-      b.fillStyle = 'rgba(168,214,238,.30)';
-      b.fillRect(bx + 5, by - 12, 1, 13); b.fillRect(bx + 4, by - 19, 1, 5);
+      var bs = proj(-2.28, .44, 6.2), k2 = 6.2;
+      var u = CAM.f / k2 * .01;      /* pixels per centimetre at that depth */
+      var bx = bs[0], by = bs[1];
+      b.save(); b.translate(bx, 0); b.scale(-1, 1); b.translate(-bx, 0);   /* he faces the machine */
+      both(b, function () {
+        b.moveTo(bx + 10 * u, by);                                 /* hips */
+        b.lineTo(bx - 32 * u, by - 2 * u); b.lineTo(bx - 34 * u, by + 44 * u); b.lineTo(bx - 26 * u, by + 44 * u); b.lineTo(bx - 22 * u, by + 6 * u);   /* thigh, shin */
+        b.lineTo(bx + 14 * u, by + 6 * u);
+        b.lineTo(bx + 12 * u, by - 56 * u);                        /* back, a little stooped */
+        b.quadraticCurveTo(bx - 4 * u, by - 62 * u, bx - 12 * u, by - 50 * u);
+        b.lineTo(bx - 8 * u, by - 18 * u);
+        b.closePath();
+      }, '#141a24', 1.2, '#05080d');
+      both(b, function () { b.arc(bx - 4 * u, by - 72 * u, 11 * u, 0, 7); }, '#141a24', 1.2, '#05080d');
+      both(b, function () { rr(b, bx - 17 * u, by - 84 * u, 24 * u, 6 * u); rr(b, bx - 22 * u, by - 79 * u, 12 * u, 2 * u); }, '#1d2430', 1, '#05080d');
+      key(b, function () { b.moveTo(bx - 14 * u, by - 76 * u); b.quadraticCurveTo(bx - 18 * u, by - 66 * u, bx - 12 * u, by - 62 * u); b.moveTo(bx - 8 * u, by - 18 * u); b.lineTo(bx - 32 * u, by - 2 * u); }, 1.6, INK.cold, .5);
+      b.restore();
     }
 
-    /* --- the cat nobody owns and everybody feeds ----------------------- */
-    var cxx = 112, cyy = 128, tw = Math.sin(frame / 26) * 2;
-    b.fillStyle = '#12151a';
-    b.beginPath(); b.ellipse(cxx, cyy + 4, 10, 5, 0, 0, 7); b.fill();
-    b.beginPath(); b.arc(cxx - 7, cyy - 3, 5, 0, 7); b.fill();
-    b.fillRect(cxx - 11, cyy - 10, 2, 4); b.fillRect(cxx - 5, cyy - 10, 2, 4);
-    b.fillRect(cxx + 7, cyy + 1 + tw, 7, 1);
-    b.fillStyle = '#c9c07a';
-    b.fillRect(cxx - 9, cyy - 4, 1, 1); b.fillRect(cxx - 5, cyy - 4, 1, 1);
-
+    /* RAIN: between the shop and the start of the arcade roof, falling in the open */
+    var rain = Math.max(0, Math.min(1, (phase - .22) / .45));
+    if (rain > 0) {
+      reseed(7 + (frame % 997));
+      var n = Math.round(90 + rain * 190);
+      for (var r = 0; r < n; r++) {
+        var rx = OX + R() * (OW + 80) - 40, ry = OY + ((R() * (OB - OY) + frame * (9 + R() * 4)) % (OB - OY));
+        var rl = 18 + R() * 32;
+        key(b, function () { b.moveTo(rx, ry); b.lineTo(rx - rl * .2, ry + rl); }, .9, '#c9d7e6', (.08 + R() * .16) * (.4 + rain * .6));
+      }
+      /* splashes where it lands, just outside the door */
+      for (var sp = 0; sp < 18 * rain; sp++) {
+        var spx = OX + R() * OW, spy = 420 + R() * 45;
+        key(b, function () { b.arc(spx, spy, 2 + R() * 3, Math.PI, 0); }, .9, '#c9d7e6', .25);
+      }
+    }
     b.restore();
   }
 
-  function wall(frame) {
-    /* the inside of the shop */
-    b.fillStyle = '#2b2723'; b.fillRect(0, 0, W, 152);
-    b.fillStyle = '#252119';
-    for (var i = 0; i < 14; i++) b.fillRect(0, 9 + i * 11, W, 1);
-
-    alley(frame);
-
-    /* the posts and beam of the shop front */
-    b.fillStyle = '#3b332a';
-    b.fillRect(AX - 8, 6, 8, 146); b.fillRect(AX + AW, 6, 8, 146);
-    b.fillRect(AX - 8, 6, AW + 16, 10);
-    b.fillStyle = '#4a4136'; b.fillRect(AX - 8, 6, AW + 16, 2);
-
-    /* the noren, swaying — harder for a moment when somebody comes in */
-    var sway = Math.sin(frame / 40) * 1.2 + gust * Math.sin(frame / 5) * 3;
-    for (var np = 0; np < 4; np++) {
-      var px2 = AX + np * (AW / 4), pw = AW / 4 - 1;
-      var off = Math.sin(frame / 40 + np * 0.8) * 1.1 + gust * Math.sin(frame / 5 + np) * 3;
-      b.fillStyle = np % 2 ? '#1f3350' : '#22385a';
-      b.fillRect(px2 + off, 16, pw, 26);
+  function noren(frame) {
+    var NP = 4, NW = OW / NP;
+    for (var i = 0; i < NP; i++) {
+      (function (i) {
+        var nx = OX + i * NW;
+        var sway = Math.sin(frame / 40 + i * 1.3) * 2 + gust * Math.sin(frame / 5 + i) * 10;
+        var path = function () { b.moveTo(nx + 2, 32); b.lineTo(nx + NW - 2, 32); b.lineTo(nx + NW - 2 + sway, 150); b.lineTo(nx + 2 + sway, 152); b.closePath(); };
+        block(b, path, INK.indigo);
+        b.fillStyle = bok(b, nx, 0, nx + NW, 0, [[0, 'rgba(0,0,0,.28)'], [.18, 'rgba(0,0,0,0)'], [.82, 'rgba(0,0,0,0)'], [1, 'rgba(0,0,0,.22)']]);
+        b.beginPath(); path(); b.fill();
+        key(b, path, 2);
+        b.save(); b.fillStyle = INK.washi; b.font = jp(76); b.textAlign = 'center'; b.textBaseline = 'middle';
+        b.fillText(['ラ', 'ー', 'メ', 'ン'][i], nx + NW / 2 + 1 + sway * .5, 96); b.restore();
+      }(i));
     }
-    b.fillStyle = '#eae4d4'; b.font = '13px serif'; b.textAlign = 'center';
-    b.fillText('ラーメン', AX + AW / 2 + sway * 0.4, 34);
-    b.fillStyle = '#16243a'; b.fillRect(AX, 40, AW, 2);
-    if (gust > 0) gust = Math.max(0, gust - 0.012);
-
-    /* ---- the left-hand wall: lantern, menu strips, calendar ---------- */
-    b.fillStyle = '#3b332a'; b.fillRect(40, 0, 2, 10);
-    var glow = 0.80 + Math.sin(frame / 33) * 0.05;
-    b.fillStyle = 'rgba(240,168,72,' + glow + ')';
-    b.beginPath(); b.ellipse(41, 20, 12, 10, 0, 0, 7); b.fill();
-    b.fillStyle = 'rgba(255,228,175,.92)';
-    b.beginPath(); b.ellipse(41, 19, 6, 5, 0, 0, 7); b.fill();
-    b.fillStyle = '#c8402f'; b.fillRect(32, 28, 18, 2);
-
-    var menus = ['しょうゆ', 'みそ', 'しお', 'とんこつ'];
-    for (var m = 0; m < 4; m++) {
-      var mx = 4 + m * 19;
-      b.fillStyle = '#e9dfc8'; b.fillRect(mx, 40, 15, 44);
-      b.fillStyle = '#cfc4aa'; b.fillRect(mx, 82, 15, 2);
-      b.fillStyle = '#2e2a22'; b.font = '8px serif'; b.textAlign = 'center';
-      for (var ch = 0; ch < menus[m].length; ch++) b.fillText(menus[m][ch], mx + 7, 50 + ch * 9);
-    }
-
-    b.fillStyle = '#efe6d4'; b.fillRect(14, 96, 34, 40);
-    b.fillStyle = '#c8402f'; b.fillRect(14, 96, 34, 8);
-    for (var r = 0; r < 4; r++) for (var c = 0; c < 6; c++) {
-      b.fillStyle = ((r * 6 + c) % 5 === 0) ? '#c8402f' : '#a89a86';
-      b.fillRect(17 + c * 5, 108 + r * 6, 3, 3);
-    }
-
-    /* ---- the right-hand wall: the photograph and the shelf ------------ */
-    b.fillStyle = '#d8c7a6'; b.fillRect(306, 46, 46, 34);
-    b.fillStyle = '#94836a'; b.fillRect(309, 49, 40, 28);
-    b.fillStyle = '#b3a288'; b.fillRect(312, 60, 34, 14);
-    b.fillStyle = '#7a6a52';
-    for (var pp = 0; pp < 4; pp++) b.fillRect(314 + pp * 8, 56, 4, 6);
-
-    b.fillStyle = '#3b332a'; b.fillRect(304, 116, 80, 4);
-    var cols = ['#7a4a2a', '#4a5a3a', '#6a5a2a', '#1f3350', '#5a3a3a'];
-    for (var q = 0; q < 5; q++) {
-      b.fillStyle = cols[q]; b.fillRect(308 + q * 15, 102, 8, 14);
-      b.fillStyle = '#d8cbb4'; b.fillRect(310 + q * 15, 98, 4, 5);
-    }
-
+    if (gust > 0) gust = Math.max(0, gust - .01);
   }
 
-  function counter(frame) {
-    b.fillStyle = '#4a3a2c'; b.fillRect(0, 150, W, 13);
-    b.fillStyle = '#5e4a38'; b.fillRect(0, 150, W, 3);
-    b.fillStyle = '#2e2620'; b.fillRect(0, 163, W, H - 163);
-    b.fillStyle = '#271f1a';
-    for (var i = 0; i < 9; i++) b.fillRect(0, 170 + i * 6, W, 1);
-
-    /* the pot, your side, on the left */
-    b.fillStyle = '#454952'; b.fillRect(14, 170, 48, 32);
-    b.fillStyle = '#575c66'; b.fillRect(12, 166, 52, 6);
-    b.fillStyle = '#6b7078'; b.fillRect(14, 167, 48, 2);
-    b.fillStyle = '#383c44'; b.fillRect(14, 186, 48, 2);
-    b.globalAlpha = 0.32; b.fillStyle = '#e8ded0';
-    for (var s = 0; s < 4; s++) {
-      var t = (frame * 0.7 + s * 30) % 130;
-      b.fillRect(22 + s * 11 + Math.sin(t / 11 + s) * 3, 164 - t * 0.26, 2, 3);
+  /* 6:40 when the curtain goes out, 10:10 when Etsuko takes it down */
+  function wallClock() {
+    var cx = 1165, cy = 408, r = 40;
+    both(b, function () { b.arc(cx, cy, r + 6, 0, 7); }, INK.woodDk, 2.2);
+    both(b, function () { b.arc(cx, cy, r, 0, 7); }, '#efe6d2', 1.6);
+    for (var i = 0; i < 12; i++) {
+      var a = i / 12 * Math.PI * 2;
+      key(b, function () { b.moveTo(cx + Math.sin(a) * r * .78, cy - Math.cos(a) * r * .78); b.lineTo(cx + Math.sin(a) * r * .9, cy - Math.cos(a) * r * .9); }, i % 3 ? 1.2 : 2.4);
     }
-    b.globalAlpha = 1;
-
-    b.fillStyle = '#e8e2d8';
-    b.fillRect(88, 180, 28, 5); b.fillRect(90, 175, 24, 5); b.fillRect(92, 170, 20, 5);
-    b.fillStyle = '#1f3350'; b.fillRect(88, 183, 28, 1); b.fillRect(90, 178, 24, 1);
-    b.fillStyle = '#5e4a38'; b.fillRect(140, 172, 13, 18);
-    b.fillStyle = '#c9a878';
-    b.fillRect(142, 163, 2, 10); b.fillRect(146, 161, 2, 12); b.fillRect(149, 164, 2, 9);
-    b.fillStyle = '#c8bda6'; b.fillRect(184, 176, 22, 7);
-    b.fillStyle = '#b3a68d'; b.fillRect(184, 180, 22, 3);
+    var mins = 18 * 60 + 40 + phase * (22 * 60 + 10 - (18 * 60 + 40));
+    var hA = (mins / 60 % 12) / 12 * Math.PI * 2, mA = (mins % 60) / 60 * Math.PI * 2;
+    key(b, function () { b.moveTo(cx, cy); b.lineTo(cx + Math.sin(hA) * r * .5, cy - Math.cos(hA) * r * .5); }, 3.4);
+    key(b, function () { b.moveTo(cx, cy); b.lineTo(cx + Math.sin(mA) * r * .76, cy - Math.cos(mA) * r * .76); }, 2);
+    block(b, function () { b.arc(cx, cy, 3.2, 0, 7); }, INK.shu);
   }
 
-  function nightWash() {
-    /* the evening going by: the room cools and darkens */
-    var a = 0.10 + phase * 0.26;
-    b.fillStyle = 'rgba(12,10,26,' + a + ')';
-    b.fillRect(0, 0, W, H);
-    /* lantern keeps a pool of warm light no matter how late it is */
-    var g = b.createRadialGradient(120, 90, 10, 120, 90, 190);
-    g.addColorStop(0, 'rgba(240,180,90,' + (0.16 - phase * 0.04) + ')');
-    g.addColorStop(1, 'rgba(240,180,90,0)');
-    b.fillStyle = g; b.fillRect(0, 0, W, H);
+  function lanternLight(frame) {
+    var a = .30 + Math.sin(frame / 33) * .02 - phase * .04;
+    glow(b, 112, 72, 560, '246,190,110', a);
   }
 
   function drawRoom(frame) {
-    wall(frame);
+    if (!backdrop) build();
+    b.clearRect(0, 0, W, H);
+    b.drawImage(backdrop, 0, 0);
+    wallClock();
+    liveAlley(frame);
+    noren(frame);
 
+    seats.forEach(function (s) { drawPerson(s.id, s.x, speaker === null || speaker === s.id, frame); });
+
+    b.drawImage(counterLayer, 0, 0);
+
+    /* what they are eating */
     seats.forEach(function (s) {
-      drawPerson(s.id, s.x, 160, speaker === null || speaker === s.id, frame);
+      var bw = bowls[s.id];
+      if (bw) drawBowlAt(b, s.x, 492, .7, bw.broth, bw.tops, frame);
     });
 
-    counter(frame);
+    lanternLight(frame);
 
-    nightWash();
+    /* the night going by: the whole print cools and darkens */
+    b.fillStyle = 'rgba(12,16,34,' + (.04 + phase * .22) + ')';
+    b.fillRect(0, 0, W, H);
+
+    b.save(); b.globalCompositeOperation = 'multiply'; b.globalAlpha = .6; b.drawImage(paperMul, 0, 0); b.restore();
+    b.save(); b.globalCompositeOperation = 'screen'; b.drawImage(paperScr, 0, 0); b.restore();
+    b.drawImage(vignette, 0, 0);
+
     blit();
   }
 
   function blit() {
     if (!vctx) return;
-    vctx.imageSmoothingEnabled = false;
-    vctx.clearRect(0, 0, view.width, view.height);
-    vctx.drawImage(buf, 0, 0, W, H, 0, 0, view.width, view.height);
+    vctx.drawImage(buf, 0, 0, view.width, view.height);
   }
 
   /* ------------------------------------------------------------------ */
-  /* TITLE AND END CARDS                                                  */
-  /*                                                                      */
-  /* The title is the arcade from the outside: one lit stall in a run of  */
-  /* shutters. The end card is Tokyo at dawn — where everybody went.      */
+  /* TITLE AND END CARDS                                                */
 
-  function arcade(canvas) {
-    var c = canvas.getContext('2d');
-    c.imageSmoothingEnabled = false;
-    c.fillStyle = '#0b0e13'; c.fillRect(0, 0, W, H);
+  function paperOver(c) {
+    var x = c.getContext('2d');
+    if (!paperMul) buildPaper();
+    x.save(); x.globalCompositeOperation = 'multiply'; x.globalAlpha = .6; x.drawImage(paperMul, 0, 0, c.width, c.height); x.restore();
+    x.save(); x.globalCompositeOperation = 'screen'; x.drawImage(paperScr, 0, 0, c.width, c.height); x.restore();
+    x.drawImage(vignette, 0, 0, c.width, c.height);
+  }
 
-    /* roof of the arcade, in perspective, running away from us */
-    c.fillStyle = '#141922'; c.fillRect(0, 0, W, 46);
-    for (var rb = 0; rb < 11; rb++) {
-      var t = rb / 10, bx = 192 + (rb - 5) * 40 * (1 - t * 0.2);
-      c.fillStyle = '#0d1117'; c.fillRect(bx, 0, 5, 46);
-    }
-    /* strung lamps down the middle, most of them out */
-    [[96, 0], [150, 1], [206, 0], [262, 0], [312, 1]].forEach(function (L) {
-      c.fillStyle = L[1] ? 'rgba(226,206,150,.8)' : '#252a33';
-      c.beginPath(); c.ellipse(L[0], 44, 5, 3.5, 0, 0, 7); c.fill();
+  /* The title: the arcade from its mouth on the street, looking all the way
+     down to the far end, where one shop still has its lights on. It is the
+     same arcade as the room, seen from the other end. */
+  function titleArt(canvas) {
+    var x = canvas.getContext('2d'); reseed(211);
+    var T = { vx: 640, hz: 340, f: 600, y: 1.55 };
+    function P(X, Y, Z) { return [T.vx + T.f * X / Z, T.hz + T.f * (T.y - Y) / Z]; }
+    function PQ(a) { return a.map(function (p) { return P(p[0], p[1], p[2]); }); }
+    var END = 19, MOUTH = 6.5;
+
+    /* night sky over the street, then the arcade's dark interior */
+    x.fillStyle = bok(x, 0, 0, 0, H, [[0, '#0b111c'], [.5, '#152036'], [1, '#1f2b40']]);
+    x.fillRect(0, 0, W, H);
+    block(x, function () { poly(x, PQ([[-3, 0, MOUTH], [3, 0, MOUTH], [3, 4.9, MOUTH], [-3, 4.9, MOUTH]])); }, '#121a28');
+
+    /* floor, wet, tiles running away */
+    x.fillStyle = bok(x, 0, T.hz, 0, H, [[0, '#1a2436'], [1, '#2a374c']]);
+    x.beginPath(); poly(x, PQ([[-3, 0, 2.2], [3, 0, 2.2], [3, 0, END], [-3, 0, END]])); x.fill();
+    for (var tz = MOUTH; tz < END; tz += 1.2) (function (tz) { var a = P(-3, 0, tz), c = P(3, 0, tz); key(x, function () { x.moveTo(a[0], a[1]); x.lineTo(c[0], c[1]); }, 1, '#0d1420', .45); }(tz));
+    [-2, -1, 0, 1, 2].forEach(function (tx) { var a = P(tx, 0, MOUTH), c = P(tx, 0, END); key(x, function () { x.moveTo(a[0], a[1]); x.lineTo(c[0], c[1]); }, 1, '#0d1420', .4); });
+
+    /* both walls of dead shutters */
+    [-1, 1].forEach(function (side) {
+      var X = 3 * side;
+      block(x, function () { poly(x, PQ([[X, 0, MOUTH], [X, 4, MOUTH], [X, 4, END], [X, 0, END]])); }, '#1b2435');
+      for (var z = MOUTH; z < END - 1; z += 3) (function (z0, z1, k) {
+        block(x, function () { poly(x, PQ([[X, 2.4, z0], [X, 3.1, z0], [X, 3.1, z1], [X, 2.4, z1]])); }, ['#2a3244', '#2e2b38', '#26343a', '#332c2c'][k % 4]);
+        var sh = PQ([[X, 0, z0 + .15], [X, 2.35, z0 + .15], [X, 2.35, z1 - .15], [X, 0, z1 - .15]]);
+        block(x, function () { poly(x, sh); }, '#283142');
+        for (var yy = .12; yy < 2.35; yy += (z0 < 10 ? .09 : .15)) (function (yy) {
+          var p = P(X, yy, z0 + .15), q = P(X, yy, z1 - .15);
+          key(x, function () { x.moveTo(p[0], p[1]); x.lineTo(q[0], q[1]); }, 1, '#131a26', .55);
+        }(yy));
+        key(x, function () { poly(x, sh); }, 1.4, '#0b1019', .85);
+        block(x, function () { poly(x, PQ([[X, 0, z0 - .08], [X, 3.1, z0 - .08], [X, 3.1, z0 + .1], [X, 0, z0 + .1]])); }, '#141b27');
+      }(z, z + 3, z));
     });
 
-    /* the two walls of shops, angled in */
-    function side(dir) {
-      for (var i = 0; i < 5; i++) {
-        var t = i / 5;
-        var x0 = dir < 0 ? i * 34 : W - i * 34 - 34;
-        var top = 46 + t * 26, bot = 168 - t * 12;
-        c.fillStyle = i % 2 ? '#171d26' : '#1b222c';
-        c.fillRect(x0, top, 34, bot - top);
-        /* shutters */
-        c.fillStyle = '#232a33'; c.fillRect(x0 + 4, bot - 34, 26, 32);
-        c.fillStyle = '#2b333e';
-        for (var sh = 0; sh < 7; sh++) c.fillRect(x0 + 4, bot - 32 + sh * 4, 26, 2);
-        /* a dead sign */
-        c.fillStyle = ['#2a3240', '#33303a', '#2c3a3a'][i % 3];
-        c.fillRect(x0 + 10, top + 6, 9, 22);
-      }
+    /* hanging signs, faded */
+    [[-1, 8, '中野鮮魚', '#3b4a52'], [1, 9.5, '写真', '#34424e'], [-1, 12, '書店', '#3d3642'], [1, 14, 'パン', '#4c3e2e'], [-1, 16, '薬', '#2f4a44']].forEach(function (sg) {
+      var X0 = 3 * sg[0], X1 = 2.15 * sg[0];
+      var a = P(Math.min(X0, X1), 3.55, sg[1]), c = P(Math.max(X0, X1), 1.75, sg[1]);
+      both(x, function () { rr(x, a[0], a[1], c[0] - a[0], c[1] - a[1]); }, sg[3], 1.4, '#0a0e16');
+      var sw = c[0] - a[0], shh = c[1] - a[1], fs = Math.min(sw * .7, shh / (sg[2].length + .6));
+      x.save(); x.globalAlpha = .45; x.fillStyle = '#d9d0bc'; x.font = jp(fs); x.textAlign = 'center'; x.textBaseline = 'middle';
+      for (var i = 0; i < sg[2].length; i++) x.fillText(sg[2][i], a[0] + sw / 2, a[1] + shh * (i + .8) / (sg[2].length + .6));
+      x.restore();
+    });
+
+    /* the roof: arches, and every lamp dark but one near the end */
+    for (var az = MOUTH; az <= END; az += 2.5) (function (az) {
+      var pts = []; for (var q = 0; q <= 16; q++) { var t = q / 16 * Math.PI; pts.push(P(-3 * Math.cos(t), 3.9 + Math.sin(t) * .9, az)); }
+      key(x, function () { x.moveTo(pts[0][0], pts[0][1]); pts.forEach(function (p) { x.lineTo(p[0], p[1]); }); }, az < 8 ? 3 : 2, '#070b12', .95);
+    }(az));
+    [[8, 0], [11, 0], [14, 0], [17, 1]].forEach(function (L) {
+      var p = P(0, 3.2, L[0]), r = 70 / L[0];
+      if (L[1]) glow(x, p[0], p[1], r * 12, '246,213,140', .45);
+      both(x, function () { x.ellipse(p[0], p[1], r * 1.2, r * .9, 0, 0, 7); }, L[1] ? INK.lamp : '#2b3140', 1.2, '#070b12');
+    });
+
+    /* THE END OF THE ARCADE: Menya Etsuko, the one light on */
+    var sf = PQ([[-2.6, 0, END], [2.6, 0, END], [2.6, 2.7, END], [-2.6, 2.7, END]]);
+    var mid = P(0, 1.3, END);
+    glow(x, mid[0], mid[1], 300, '246,190,110', .34);
+    both(x, function () { poly(x, sf); }, '#2b2723', 2);
+    var lit = PQ([[-2.3, .1, END], [2.3, .1, END], [2.3, 2.2, END], [-2.3, 2.2, END]]);
+    x.fillStyle = bok(x, 0, lit[2][1], 0, lit[0][1], [[0, '#f6c878'], [1, '#e39a44']]);
+    x.beginPath(); poly(x, lit); x.fill();
+    /* the counter inside, a customer on a stool, and her behind it */
+    var ctr = PQ([[-2.3, .95, END], [2.3, .95, END], [2.3, 1.05, END], [-2.3, 1.05, END]]);
+    block(x, function () { poly(x, ctr); }, 'rgba(90,52,20,.75)');
+    var s2 = T.f / END * .01;
+    var et = P(.8, 1.05, END);
+    block(x, function () { x.moveTo(et[0] - 20 * s2, et[1]); x.quadraticCurveTo(et[0] - 22 * s2, et[1] - 34 * s2, et[0], et[1] - 38 * s2); x.quadraticCurveTo(et[0] + 22 * s2, et[1] - 34 * s2, et[0] + 20 * s2, et[1]); x.closePath();
+                          x.moveTo(et[0] + 11 * s2, et[1] - 52 * s2); x.arc(et[0], et[1] - 52 * s2, 11 * s2, 0, 7); }, 'rgba(46,26,10,.7)');
+    block(x, function () { x.ellipse(et[0], et[1] - 60 * s2, 12 * s2, 5 * s2, 0, 0, 7); }, 'rgba(31,51,80,.85)');
+    var cu = P(-1.0, .5, END - .8), s3 = T.f / (END - .8) * .01;
+    block(x, function () { x.moveTo(cu[0] - 26 * s3, cu[1] + 10 * s3); x.quadraticCurveTo(cu[0] - 28 * s3, cu[1] - 44 * s3, cu[0], cu[1] - 50 * s3);
+                          x.quadraticCurveTo(cu[0] + 28 * s3, cu[1] - 44 * s3, cu[0] + 26 * s3, cu[1] + 10 * s3); x.closePath();
+                          x.moveTo(cu[0] + 13 * s3, cu[1] - 64 * s3); x.arc(cu[0], cu[1] - 64 * s3, 13 * s3, 0, 7); }, 'rgba(24,14,6,.85)');
+    /* the noren, four panels, and the lantern hung beside it */
+    var nr = PQ([[-2.4, 2.2, END], [2.4, 2.2, END], [2.4, 2.72, END], [-2.4, 2.72, END]]);
+    both(x, function () { poly(x, nr); }, INK.indigo, 1.4);
+    for (var ni = 1; ni < 4; ni++) (function (ni) { var p = P(-2.4 + ni * 1.2, 2.72, END), q = P(-2.4 + ni * 1.2, 2.25, END); key(x, function () { x.moveTo(p[0], p[1]); x.lineTo(q[0], q[1]); }, 1.2, INK.indigoDk); }(ni));
+    x.save(); x.fillStyle = INK.washi; x.font = jp((nr[0][1] - nr[3][1]) * .62); x.textAlign = 'center'; x.textBaseline = 'middle';
+    ['ラ', 'ー', 'メ', 'ン'].forEach(function (ch, i) { var p = P(-1.8 + i * 1.2, 2.46, END); x.fillText(ch, p[0], p[1]); }); x.restore();
+    var ch = P(-2.85, 2.25, END), cr = T.f / END * .22;
+    glow(x, ch[0], ch[1], cr * 5, '255,190,110', .5);
+    both(x, function () { x.ellipse(ch[0], ch[1], cr * .7, cr, 0, 0, 7); }, INK.shu, 1.4);
+
+    /* its light, running down the wet floor all the way to you */
+    for (var rs = 0; rs < 150; rs++) {
+      var zz = 2.4 + R() * (END - 2.9), xx = (R() - .5) * 4.4, p0 = P(xx * (zz / END), 0, zz);
+      var len = 6 + R() * (46 * 6 / zz);
+      key(x, function () { x.moveTo(p0[0], p0[1]); x.lineTo(p0[0], p0[1] + len); }, Math.max(1.2, 26 / zz), INK.lamp, .05 + R() * .16 * Math.pow(zz / END, .6));
     }
-    side(-1); side(1);
 
-    /* our shop, right of centre, the only warm thing in the picture */
-    var sx = 156, sw = 74;
-    c.fillStyle = '#2b2723'; c.fillRect(sx, 58, sw, 110);
-    c.fillStyle = 'rgba(240,168,72,.92)'; c.fillRect(sx + 5, 76, sw - 10, 84);
-    /* the counter, seen end-on through the opening, with stools */
-    c.fillStyle = 'rgba(90,58,26,.55)'; c.fillRect(sx + 5, 128, sw - 10, 5);
-    c.fillStyle = 'rgba(70,44,20,.45)';
-    for (var st2 = 0; st2 < 4; st2++) c.fillRect(sx + 10 + st2 * 15, 133, 7, 12);
-    /* one person at the far end, and somebody behind the counter */
-    c.fillStyle = 'rgba(58,34,16,.6)';
-    c.beginPath(); c.ellipse(sx + 20, 116, 7, 15, 0, 0, 7); c.fill();
-    c.fillStyle = 'rgba(48,28,12,.5)';
-    c.beginPath(); c.ellipse(sx + 52, 112, 6, 13, 0, 0, 7); c.fill();
-    /* the noren, and the beam over it */
-    c.fillStyle = '#1f3350'; c.fillRect(sx + 3, 70, sw - 6, 16);
-    c.fillStyle = '#16243a';
-    c.fillRect(sx + 20, 74, 2, 12); c.fillRect(sx + 50, 74, 2, 12);
-    c.fillStyle = '#eae4d4'; c.font = '11px serif'; c.textAlign = 'center';
-    c.fillText('ラーメン', sx + sw / 2, 82);
-    c.fillStyle = '#3b332a'; c.fillRect(sx, 58, sw, 6);
+    /* a machine's cold light spilling in from somewhere off to the left */
+    var gl = P(-2.8, .9, 8.5);
+    glow(x, gl[0], gl[1], 230, '160,215,240', .2);
+    x.save(); x.translate(gl[0] + 60, P(0, 0, 8.5)[1]); x.scale(1, .22);
+    var cg = x.createRadialGradient(0, 0, 1, 0, 0, 170); cg.addColorStop(0, 'rgba(170,220,240,.25)'); cg.addColorStop(1, 'rgba(170,220,240,0)');
+    x.fillStyle = cg; x.fillRect(-170, -170, 340, 340); x.restore();
 
-    /* the floor of the arcade, wet */
-    c.fillStyle = '#12161d'; c.fillRect(0, 160, W, H - 160);
-    c.fillStyle = '#171c24';
-    for (var g = 0; g < 8; g++) c.fillRect(0, 164 + g * 6, W, 1);
-    for (var rw = 0; rw < 7; rw++) {
-      c.globalAlpha = 0.07 + (rw % 3) * 0.035;
-      c.fillStyle = '#f0a848';
-      c.fillRect(sx + 4 + rw * 10, 162, 4, 18 + (rw % 3) * 5);
+    /* the mouth of the arcade, framing it all, with the street's name */
+    var a = P(-3.3, 0, MOUTH), b2 = P(3.3, 0, MOUTH), c = P(3.3, 4.1, MOUTH), d = P(-3.3, 4.1, MOUTH), t = P(0, 5.4, MOUTH);
+    /* the street in front, wet */
+    x.fillStyle = bok(x, 0, a[1], 0, H, [[0, '#1c2638'], [1, '#2a364a']]); x.fillRect(0, a[1], W, H - a[1]);
+    key(x, function () { x.moveTo(0, a[1] + 60); x.lineTo(W, a[1] + 60); }, 2, '#c9c2ae', .25);
+    /* the sky over the street, with the wires every Japanese street has */
+    x.fillStyle = bok(x, 0, 0, 0, 90, [[0, '#0a0f19'], [1, '#141d2e']]); x.fillRect(0, 0, W, 90);
+    /* the buildings either side of the arcade's mouth */
+    both(x, function () {
+      x.moveTo(0, a[1]); x.lineTo(0, 40); x.lineTo(d[0] - 40, 30); x.lineTo(d[0], d[1] - 60);
+      x.lineTo(d[0], a[1]); x.closePath();
+      x.moveTo(W, a[1]); x.lineTo(W, 50); x.lineTo(c[0] + 50, 36); x.lineTo(c[0], c[1] - 60);
+      x.lineTo(c[0], b2[1]); x.closePath();
+    }, '#161d2a', 2.4);
+    [[60, 120], [60, 230], [180, 170], [1100, 140], [1200, 250], [1060, 260]].forEach(function (w, i) {
+      both(x, function () { rr(x, w[0], w[1], 46, 58); }, i === 4 ? 'rgba(246,213,140,.55)' : '#0e141e', 1.4, '#070b12');
+    });
+    /* the arch */
+    both(x, function () {
+      x.moveTo(d[0] - 30, a[1]); x.lineTo(d[0] - 30, d[1]); x.quadraticCurveTo(t[0], t[1] - 70, c[0] + 30, c[1]); x.lineTo(c[0] + 30, b2[1]);
+      x.lineTo(c[0], b2[1]); x.lineTo(c[0], c[1]); x.quadraticCurveTo(t[0], t[1] - 20, d[0], d[1]); x.lineTo(d[0], a[1]); x.closePath();
+    }, '#2a3244', 2.6);
+    /* a telegraph pole, and the wires */
+    both(x, function () { rr(x, 1040, 0, 22, a[1] + 60); rr(x, 1010, 40, 82, 8); rr(x, 1016, 70, 70, 7); }, '#221e1a', 2);
+    key(x, function () { x.moveTo(0, 60); x.quadraticCurveTo(520, 110, 1030, 44); x.moveTo(0, 90); x.quadraticCurveTo(520, 140, 1030, 74); x.moveTo(1060, 44); x.quadraticCurveTo(1170, 70, W, 52); }, 1.4, '#070b12', .9);
+    var sgn = P(0, 4.62, MOUTH);
+    both(x, function () { rr(x, sgn[0] - 170, sgn[1] - 30, 340, 58); }, '#232a3a', 2.2);
+    x.save(); x.fillStyle = '#d8cfbc'; x.globalAlpha = .7; x.font = jp(36); x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText('本町商店街', sgn[0] + MIS.x, sgn[1]); x.restore();
+    /* one letter of the sign has lost its light for good */
+    x.save(); x.fillStyle = '#232a3a'; x.globalAlpha = .55; x.fillRect(sgn[0] + 34, sgn[1] - 20, 34, 40); x.restore();
+
+    /* the street: a kerb, a manhole cover with the town flower on it, and a puddle holding the shop's light */
+    key(x, function () { x.moveTo(0, a[1] + 8); x.lineTo(W, a[1] + 8); }, 3, '#0d131d', .8);
+    x.save(); x.translate(360, 620); x.scale(1, .28);
+    both(x, function () { x.arc(0, 0, 90, 0, 7); }, '#2c333d', 3, '#0a0e14');
+    key(x, function () { x.arc(0, 0, 76, 0, 7); }, 2, '#0a0e14', .8);
+    for (var pe = 0; pe < 5; pe++) (function (pe) {
+      var an = pe / 5 * Math.PI * 2;
+      key(x, function () { x.ellipse(Math.cos(an) * 30, Math.sin(an) * 30, 26, 14, an, 0, 7); }, 2, '#4a525e', .9);
+    }(pe));
+    key(x, function () { x.arc(0, 0, 12, 0, 7); }, 2, '#4a525e', .9);
+    x.restore();
+    x.save(); x.translate(660, 560); x.scale(1, .16);
+    var pg2 = x.createRadialGradient(0, 0, 1, 0, 0, 260); pg2.addColorStop(0, 'rgba(246,190,110,.28)'); pg2.addColorStop(1, 'rgba(246,190,110,0)');
+    x.fillStyle = pg2; x.fillRect(-260, -260, 520, 520); x.restore();
+    for (var pr2 = 0; pr2 < 30; pr2++) {
+      var px2 = 600 + R() * 120, py2 = 525 + R() * 60;
+      key(x, function () { x.moveTo(px2, py2); x.lineTo(px2, py2 + 10 + R() * 24); }, 3, INK.lamp, .08 + R() * .16);
     }
-    c.globalAlpha = 1;
 
-    /* a vending machine down on the left, and the glow off it */
-    var vgr = c.createRadialGradient(58, 138, 4, 58, 138, 52);
-    vgr.addColorStop(0, 'rgba(150,200,236,.16)'); vgr.addColorStop(1, 'rgba(150,200,236,0)');
-    c.fillStyle = vgr; c.fillRect(0, 80, 140, 110);
-    c.fillStyle = '#20262e'; c.fillRect(40, 116, 36, 46);
-    c.fillStyle = '#2f363f'; c.fillRect(42, 118, 32, 42);
-    c.fillStyle = '#dceaf4'; c.fillRect(45, 121, 26, 24);
-    c.fillStyle = '#151a20'; c.fillRect(46, 148, 24, 6);
-
-    var v = c.createRadialGradient(sx + 36, 118, 10, sx + 36, 118, 170);
-    v.addColorStop(0, 'rgba(240,168,72,.20)'); v.addColorStop(1, 'rgba(240,168,72,0)');
-    c.fillStyle = v; c.fillRect(0, 0, W, H);
+    /* rain on the street in front of you — the arcade roof keeps the rest dry */
+    for (var q2 = 0; q2 < 380; q2++) {
+      var qx = R() * W, qy = R() * H, ql = 26 + R() * 44;
+      key(x, function () { x.moveTo(qx, qy); x.lineTo(qx - ql * .22, qy + ql); }, 1, '#c8d6e6', .08 + R() * .15);
+    }
+    x.fillStyle = bok(x, 0, H - 70, 0, H, [[0, 'rgba(10,16,26,0)'], [1, 'rgba(10,16,26,.6)']]); x.fillRect(0, H - 70, W, 70);
+    paperOver(canvas);
   }
 
-  function tokyoDawn(canvas) {
-    var c = canvas.getContext('2d');
-    c.imageSmoothingEnabled = false;
-    var sky = c.createLinearGradient(0, 0, 0, H);
-    sky.addColorStop(0, '#24314e');
-    sky.addColorStop(0.55, '#8a7488'); sky.addColorStop(1, '#e0a878');
-    c.fillStyle = sky; c.fillRect(0, 0, W, H);
-
-    /* towers, layered back to front, full of lit windows */
-    function block(x, w, h, shade, lit) {
-      c.fillStyle = shade; c.fillRect(x, H - h, w, h);
-      for (var wy = 0; wy < Math.floor(h / 7); wy++) {
-        for (var wx = 0; wx < Math.floor(w / 6); wx++) {
-          if (((wx * 7 + wy * 13 + x) % 5) > 2) continue;
-          c.fillStyle = 'rgba(248,222,168,' + lit + ')';
-          c.fillRect(x + 2 + wx * 6, H - h + 4 + wy * 7, 3, 4);
-        }
+  /* Tokyo, at dawn: where everybody went */
+  function endArt(canvas) {
+    var x = canvas.getContext('2d'); reseed(307);
+    x.fillStyle = bok(x, 0, 0, 0, H, [[0, '#24314e'], [.5, '#7a6a86'], [.8, '#d9a07a'], [1, '#e9c48e']]);
+    x.fillRect(0, 0, W, H);
+    /* a thin crescent, going */
+    both(x, function () { x.arc(1060, 120, 24, 0, 7); }, '#efe6d2', 1.4);
+    block(x, function () { x.arc(1070, 114, 22, 0, 7); }, '#3a4466');
+    /* Fuji, faint, beyond everything */
+    block(x, function () { poly(x, [[380, 470], [640, 250], [700, 262], [940, 470]]); }, 'rgba(90,96,130,.55)');
+    block(x, function () { poly(x, [[590, 292], [640, 250], [700, 262], [740, 300], [700, 296], [670, 310], [640, 296], [612, 306]]); }, 'rgba(240,236,228,.7)');
+    /* towers, back to front, full of lit windows */
+    function tower(bx, bw, bh, col, lit) {
+      both(x, function () { rr(x, bx, H - bh, bw, bh); }, col, 1.4, '#141824');
+      for (var wy = 0; wy < Math.floor(bh / 16); wy++) for (var wx = 0; wx < Math.floor(bw / 13); wx++) {
+        if (R() > lit) continue;
+        block(x, function () { rr(x, bx + 5 + wx * 13, H - bh + 8 + wy * 16, 6, 9); }, 'rgba(248,222,168,.8)');
       }
     }
-    block(6, 44, 120, '#2e3448', 0.55);   block(56, 30, 92, '#333950', 0.5);
-    block(92, 52, 148, '#272d40', 0.6);   block(150, 34, 104, '#343a52', 0.5);
-    block(190, 46, 132, '#2b3145', 0.6);  block(242, 30, 88, '#363c54', 0.45);
-    block(278, 50, 156, '#252b3c', 0.65); block(334, 44, 118, '#303648', 0.5);
-
-    /* the street below, and the crowd on it */
-    c.fillStyle = '#1d2130'; c.fillRect(0, 176, W, H - 176);
-    c.fillStyle = '#161a26'; c.fillRect(0, 176, W, 3);
-    for (var p2 = 0; p2 < 34; p2++) {
-      var px2 = (p2 * 37 + 11) % W, ph = 10 + (p2 % 3) * 2;
-      c.fillStyle = 'rgba(18,20,30,' + (0.55 + (p2 % 4) * 0.1) + ')';
-      c.fillRect(px2, 190 - ph, 4, ph);
-      c.beginPath(); c.arc(px2 + 2, 190 - ph - 2, 2, 0, 7); c.fill();
+    [[20, 120, 380, '#3a3f5a', .35], [150, 90, 300, '#434866', .3], [250, 150, 470, '#333850', .45], [410, 100, 340, '#3c4160', .35],
+     [520, 130, 420, '#30354c', .45], [660, 90, 310, '#40456a', .3], [760, 150, 520, '#2c3048', .5], [920, 110, 360, '#3a3f5c', .35],
+     [1040, 140, 440, '#31364e', .45], [1190, 90, 330, '#40456a', .3]].forEach(function (t) { tower(t[0], t[1], t[2], t[3], t[4]); });
+    /* the crossing, and the crowd on it */
+    both(x, function () { rr(x, 0, H - 110, W, 110); }, '#262b3e', 1.6);
+    for (var z = 0; z < 16; z++) block(x, function () { rr(x, 60 + z * 76, H - 88, 44, 10); }, 'rgba(236,230,214,.55)');
+    for (var p = 0; p < 90; p++) {
+      var px = R() * W, py = H - 100 + R() * 70, ph = 22 + R() * 14, s = 1 - (py - (H - 100)) / 160;
+      both(x, function () { rr(x, px - 4, py - ph, 8, ph); x.moveTo(px + 5, py - ph - 5); x.arc(px, py - ph - 5, 5, 0, 7); }, ['#1d2232', '#2a2230', '#20283a', INK.indigo][p % 4], .8, '#0d1018');
+      if (p % 7 === 0) { both(x, function () { x.ellipse(px, py - ph - 10, 14, 5, 0, Math.PI, 0); }, ['#c8402f', '#e3a54a', '#3a6ea8'][p % 3], .8); }
     }
-    /* first light coming down the avenue */
-    var v2 = c.createRadialGradient(W / 2, 176, 6, W / 2, 176, 200);
-    v2.addColorStop(0, 'rgba(240,190,130,.28)'); v2.addColorStop(1, 'rgba(240,190,130,0)');
-    c.fillStyle = v2; c.fillRect(0, 0, W, H);
+    glow(x, W / 2, H, 700, '246,196,140', .3);
+    paperOver(canvas);
   }
 
   /* ------------------------------------------------------------------ */
-  /* A BUST, FOR THE PERSON STANDING NEXT TO YOU                          */
+  /* A BUST, FOR WHOEVER IS STANDING NEXT TO YOU                         */
 
   function portrait(canvas, id, ex, frame) {
-    var c = canvas.getContext('2d');
-    c.imageSmoothingEnabled = false;
-    c.clearRect(0, 0, canvas.width, canvas.height);
-    var L = LOOK[id];
-    if (!L) return;
+    var x = canvas.getContext('2d');
+    x.clearRect(0, 0, canvas.width, canvas.height);
     var img = sprite(id, ex);
     if (img) {
-      /* a supplied PNG is cropped to its top half — head and shoulders */
-      var w2 = canvas.width, h2 = Math.round(img.height * 0.62);
-      c.drawImage(img, 0, 0, img.width, h2, 0, 0, w2, Math.round(w2 * h2 / img.width));
+      var h2 = img.height * .6;
+      x.drawImage(img, 0, 0, img.width, h2, 0, 0, canvas.width, canvas.width * h2 / img.width);
       return;
     }
-    figure(id, L, ex, frame || 0);
-    /* the scratch figure is 100x130 with the head near the top; take the
-       top 62 pixels of it and blow that up to fill the frame */
-    c.drawImage(pcan, 20, FOOT - L.h - 34, 60, 62, 0, 0, canvas.width, canvas.height);
+    var blink = ((frame + (blinkAt[id] || 0)) % 290) < 7;
+    var c = figure(id, ex, blink, false); if (!c) return;
+    x.fillStyle = INK.nightLt; x.fillRect(0, 0, canvas.width, canvas.height);
+    glow(x, 0, 0, canvas.width * 1.4, '246,190,110', .35);
+    /* crop head and shoulders out of the full figure */
+    x.drawImage(c, FC.x - 150, FC.y - 150, 300, 318, 0, 0, canvas.width, canvas.height);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* CLICKABLE THINGS                                                   */
+
+  function hot() {
+    var vmq = faceQuad(0, 0, 1, VM.h), ct = proj(1.05, 0, 5.1);
+    var bs = proj(-2.5, .95, 5.3), be = proj(-2.05, 0, 6.9);
+    return [
+      { key: 'calendar', x: 46, y: 326, w: 112, h: 124 },
+      { key: 'photo', x: 1090, y: 70, w: 150, h: 110 },
+      { key: 'noren', x: OX, y: 32, w: OW, h: 120 },
+      { key: 'shutter', x: OX, y: 200, w: 170, h: 220 },
+      { key: 'vending', x: vmq[0][0] - 4, y: vmq[3][1] - 4, w: vmSide(1, 0)[0] - vmq[0][0] + 8, h: vmq[0][1] - vmq[3][1] + 20 },
+      { key: 'cat', x: ct[0] - 45, y: ct[1] - 48, w: 90, h: 52 },
+      { key: 'bench', x: bs[0] - 10, y: bs[1] - 10, w: be[0] - bs[0] + 30, h: be[1] - bs[1] + 20 },
+      { key: 'arcade', x: 450, y: 152, w: 420, h: 60 },
+      { key: 'seats', x: 300, y: 470, w: 680, h: 40 }
+    ];
   }
 
   /* ------------------------------------------------------------------ */
 
   global.Art = {
+    W: W, H: H,
     init: function (canvas) {
       view = canvas; vctx = canvas.getContext('2d');
-      Object.keys(LOOK).forEach(function (k, i) { blinkAt[k] = i * 37; });
+      Object.keys(LOOK).forEach(function (k, i) { blinkAt[k] = i * 53; });
+      build();
     },
     setSeats: function (ids) {
-      var xs = ids.length === 1 ? [152] : ids.length === 2 ? [128, 258] : [96, 192, 288];
+      var xs = ids.length === 1 ? [520] : ids.length === 2 ? [420, 740] : [360, 600, 840];
       seats = ids.map(function (id, i) { return { id: id, x: xs[i] }; });
+      bowls = {};
     },
+    setBowl: function (id, broth, tops) { bowls[id] = { broth: broth, tops: (tops || []).slice() }; },
     setSpeaker: function (id, e) { speaker = id || null; expr = e || 'neutral'; },
+    setPhase: function (p) { phase = Math.max(0, Math.min(1, p)); },
     gust: function () { gust = 1; },
     setWaiting: function (v) { waiting = !!v; },
-    setPhase: function (p) { phase = Math.max(0, Math.min(1, p)); },
     drawRoom: drawRoom,
-    titleArt: arcade,
-    endArt: tokyoDawn,
+    titleArt: titleArt,
+    endArt: endArt,
     portrait: portrait,
     hitTest: function (mx, my) {
-      for (var i = 0; i < HOT.length; i++) {
-        var r = HOT[i];
+      var hs = hot();
+      for (var i = 0; i < hs.length; i++) {
+        var r = hs[i];
         if (mx >= r.x && mx <= r.x + r.w && my >= r.y && my <= r.y + r.h) return r.key;
       }
       return null;
-    }
+    },
+    /* shared with icons.js so the bench, notebook and room are one print */
+    ink: INK, tools: { block: block, key: key, both: both, bok: bok, glow: glow, poly: poly, jp: jp, mk: mk, MIS: MIS }
   };
 
 }(window));
@@ -3705,6 +4551,7 @@ window.SPRITES = {
     var v = D.verdict(g, bench.broth, bench.tops);
     st.outcomes[g.id] = v.outcome;
     st.bowls[g.id] = { broth: bench.broth, tops: bench.tops.slice() };
+    A.setBowl(g.id, bench.broth, bench.tops);
     Snd.serve();
     benchAt++;
     nextBowl();
@@ -3810,7 +4657,7 @@ window.SPRITES = {
     A.setWaiting(!!soon);
 
     el.line.innerHTML = soon
-      ? 'The shop is empty. Out under the dead middle lamp, somebody is sitting on the bench by the vending machine, facing the shutters. They were there when you took the bins out. ' +
+      ? 'The shop is empty. Out under the dead middle lamp, somebody is sitting on the bench across from the vending machine, in its light, not moving much. They were there when you took the bins out. ' +
         '<span class="quiet">(Click anything in the room to look at it.)</span>'
       : 'The shop is empty. Somewhere behind you the pot ticks over. ' +
         '<span class="quiet">(Click anything in the room to look at it.)</span>';
@@ -4127,8 +4974,8 @@ window.SPRITES = {
     el.stage.onclick = function (e) {
       if (!el.choices.querySelector('.choice')) return;   /* only while idle */
       var r = el.stage.getBoundingClientRect();
-      var mx = (e.clientX - r.left) / r.width * 384;
-      var my = (e.clientY - r.top) / r.height * 216;
+      var mx = (e.clientX - r.left) / r.width * A.W;
+      var my = (e.clientY - r.top) / r.height * A.H;
       var key = A.hitTest(mx, my);
       if (key) roomNote(key);
     };

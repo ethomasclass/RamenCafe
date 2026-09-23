@@ -129,6 +129,30 @@ about ramen.
 
 ### How it looks, and why
 
+**It is printed as a shin-hanga woodblock** — the early-twentieth-century
+Japanese print revival whose best-known artist, Kawase Hasui, made almost
+exactly this picture: a lantern-lit shopfront, rain, one person. Everything is
+drawn in code at 1280×720, and the style was chosen because its rules are ones
+code can follow well: flat colour blocks from a fixed set of inks; gradients
+only as *bokashi*, the smooth hand-wiped wipe; a black key-block of line work
+printed a hair out of register with the colour; all of it pressed onto washi
+paper grain. Faces are a handful of lines, so a change of mood is a brow, an
+eye and a mouth.
+
+The arcade outside is built in **real one-point perspective**, so everything
+in it sits in one space: the shutters' corrugations run to the vanishing
+point, the hanging signs shrink with distance, and the vending machine stands
+at a three-quarter angle with its eighteen drinks, price buttons, IC reader,
+coin slot and take-out flap all laid out on the angled face. The two hot cans
+on the bottom row are labelled in red, because some are kept hot even in
+August.
+
+The lighting carries the story. The paper lantern warms every face from the
+shop side; the vending machine puts a cold edge down the side facing the
+street. When somebody is served, their bowl appears in front of them on the
+counter. The wall clock runs from 6:40 to 10:10 across the night, and the
+rain starts partway through.
+
 The shop opens onto a **shotengai** — a covered shopping arcade — rather than
 a street, so the whole back of the frame is depth: the arcade roof, one
 working lamp of three, cables, the building opposite close enough to touch, a

@@ -333,7 +333,7 @@
     shutter:  { name: 'The shutters opposite', text: 'A run of them, all the way down that side of the arcade. The nearest one has a laminated notice taped to it that has gone yellow. It was a fishmonger for fifty-one years. Etsuko can still tell you what day he did the mackerel.' },
     vending:  { name: 'The vending machine', text: 'It is the brightest thing in the arcade and the only other business on this side of it that is open at this hour. It takes cards now. Somebody drives out from Kōriyama to fill it once a fortnight, which makes him the most reliable visitor the street gets.' },
     cat:      { name: 'The cat', text: 'Nobody owns her. Everybody feeds her, which in a street with fourteen hundred people and falling is a smaller committee than it used to be. Etsuko denies feeding her and buys the small dried fish in the large bag.' },
-    bench:    { name: 'The bench', text: 'A metal bench by the vending machine, bolted down, facing the shutters. Etsuko has been meaning to ask the town to move it so it faces something. She has been meaning to for nine years.' },
+    bench:    { name: 'The bench', text: 'A metal bench against the shutters, across from the vending machine, bolted down. Etsuko has been meaning to ask the town to move it so it faces something other than a vending machine. She has been meaning to for nine years.' },
     arcade:   { name: 'The arcade roof', text: 'Put up in 1988, when the shopping street was busy enough that the rain was the problem. Half the lamps under it have gone and nobody has decided whose job that is.' }
   };
 

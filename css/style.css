@@ -107,8 +107,7 @@ body.size-4 { --fs: 22px; }
   background: #000; border-bottom: 1px solid #3a2820;
 }
 #stage {
-  width: 100%; max-width: 1040px; height: auto;
-  image-rendering: pixelated; display: block;
+  width: 100%; max-width: 1040px; height: auto; display: block;
 }
 
 /* ----------------------------------------------------------- DIALOGUE --- */
@@ -133,7 +132,7 @@ body.size-4 { --fs: 22px; }
   content: ''; position: absolute; right: -7px; top: 26px;
   border: 7px solid transparent; border-left-color: var(--indigo-lt);
 }
-.aside canvas { display: block; image-rendering: pixelated; width: 86px; height: 91px; }
+.aside canvas { display: block; width: 100px; height: 106px; }
 
 /* the card everything is said on */
 .say-card {
@@ -247,8 +246,9 @@ body.size-4 { --fs: 22px; }
 
 .title-screen { flex-direction: column; gap: 10px; }
 .title-art {
-  width: min(560px, 92vw); height: auto; image-rendering: pixelated;
+  width: min(620px, 92vw); height: auto;
   border: 2px solid var(--indigo); border-radius: 2px;
+  image-rendering: auto;
 }
 .title-inner { width: min(620px, 94vw); text-align: center; }
 .title-mark { position: relative; }
@@ -311,12 +311,12 @@ body.size-4 { --fs: 22px; }
 .ing:hover { background: #fff; border-color: var(--indigo-lt); }
 .ing.on { background: #fff; border-color: var(--shu); box-shadow: inset 0 0 0 2px var(--shu); }
 .ing.off { opacity: .3; cursor: default; }
-.ing canvas { image-rendering: pixelated; }
+.ing canvas { display: block; }
 .ing .nm { font-size: .78rem; line-height: 1.25; }
 .ing .jp { font-size: .68rem; color: var(--ink-soft); font-family: var(--mincho); }
 
 .bowl-side { flex: 0 0 210px; text-align: center; }
-#bowlArt { image-rendering: pixelated; width: 180px; height: 140px; }
+#bowlArt { width: 180px; height: 140px; }
 .bowl-name { font-family: var(--mincho); color: var(--indigo); margin-top: 4px; font-size: 1.05rem; font-weight: 700; }
 .bowl-parts { font-size: .8rem; color: var(--ink-soft); min-height: 2.6em; margin: 4px 0 10px; line-height: 1.45; }
 .bowl-btns { display: flex; gap: 8px; justify-content: center; }
@@ -423,7 +423,7 @@ body.size-4 { --fs: 22px; }
 }
 .book-list { display: flex; flex-direction: column; gap: 8px; }
 .entry { display: flex; gap: 10px; align-items: flex-start; }
-.entry canvas { image-rendering: pixelated; flex: 0 0 auto; }
+.entry canvas { flex: 0 0 auto; }
 .entry .e-name { font-weight: 700; font-size: .9rem; }
 .entry .e-name { font-family: var(--mincho); }
 .entry .e-name .jp { font-weight: 400; color: var(--ink-soft); font-size: .82rem; margin-left: 7px; }
@@ -432,7 +432,7 @@ body.size-4 { --fs: 22px; }
 .entry.locked { opacity: .45; }
 .entry.locked .e-desc { font-style: italic; }
 .book-list.tight .entry { align-items: center; }
-#mapArt { width: 200px; height: 260px; image-rendering: pixelated; }
+#mapArt { width: 200px; height: 260px; }
 .margin-list { font-size: .84rem; line-height: 1.5; }
 .margin-list .mg { border-left: 3px solid var(--shu); padding-left: 10px; margin-bottom: 11px; }
 .margin-list .mg b { font-family: var(--mincho); color: var(--indigo); }
