@@ -149,7 +149,7 @@ _________________________________________________________________
 
 ### 8. The long answer
 
-**Tanaka says the senior centre will win the vote, and he is not happy about
+**Tanaka says the senior center will win the vote, and he is not happy about
 it. Explain why he is confident, using what you know about who votes — and
 then explain why he calls it his own fault.**
 

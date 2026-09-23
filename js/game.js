@@ -452,15 +452,15 @@
     A.setWaiting(!!soon);
 
     el.line.innerHTML = soon
-      ? 'The shop is empty. Out under the dead middle lamp, somebody is sitting on the bench across from the vending machine, in its light, not moving much. They were there when you took the bins out. ' +
+      ? 'The shop is empty. Out under the broken lamp, somebody is sitting on the bench across from the vending machine, in its light. They are barely moving. They were there when you took the trash out, too. ' +
         '<span class="quiet">(Click anything in the room to look at it.)</span>'
-      : 'The shop is empty. Somewhere behind you the pot ticks over. ' +
+      : 'The shop is empty. Behind you, the soup pot bubbles. ' +
         '<span class="quiet">(Click anything in the room to look at it.)</span>';
     el.advance.hidden = true;
     el.choices.innerHTML = '';
     var btn = document.createElement('button');
     btn.className = 'choice';
-    btn.innerHTML = '<span class="tone">Wait</span>Wipe down the counter and see who comes in.';
+    btn.innerHTML = '<span class="tone">Wait</span>Wipe the counter and see who comes in.';
     btn.onclick = function () { el.choices.innerHTML = ''; after(); };
     el.choices.appendChild(btn);
   }
@@ -556,8 +556,8 @@
         if (got) heard++;
         lines += '<div class="close-line"><span class="who">' + g.name + '</span> — ' +
           (got
-            ? '<span class="heard">told you the thing they had not told anyone.</span>'
-            : '<span class="missed">ate what you gave them, said thank you, and kept it to themselves.</span>') +
+            ? '<span class="heard">told you something they hadn’t told anyone.</span>'
+            : '<span class="missed">ate what you made, said thank you, and kept their secret.</span>') +
           '</div>';
       });
     });
@@ -569,17 +569,17 @@
     el.closeBody.innerHTML =
       '<div class="close-sec"><h3>Who talked to you</h3>' + lines + '</div>' +
       '<div class="close-sec"><h3>The night, counted</h3><div class="tally">' +
-        '<b>' + heard + ' of ' + total + '</b> people told you the thing they were not going to say.<br>' +
+        '<b>' + heard + ' of ' + total + '</b> people told you something they weren’t planning to say.<br>' +
         '<b>' + brothsKnown + ' of ' + D.BROTHS.length + '</b> broths cooked &middot; ' +
         '<b>' + topsKnown + ' of ' + D.TOPPINGS.length + '</b> toppings used<br>' +
-        '<b>' + wordsMet + '</b> of the words in the back of the notebook turned up in conversation.' +
+        '<b>' + wordsMet + '</b> of the words in the back of the notebook came up tonight.' +
       '</div></div>' +
       '<div class="close-sec"><h3>What everybody was actually talking about</h3>' +
-        '<div class="close-line">Daiki drives to a hospital twice a month because he is one working-age adult and there is one of him. That is the <b>old-age dependency ratio</b> with a steering wheel.</div>' +
-        '<div class="close-line">Kenji’s street lost its shops because it ran out of people, not customers — <b>rural depopulation</b> — and Mary is here because a country short of care workers opened a door it does not like talking about.</div>' +
-        '<div class="close-line">Aiko is not undecided. She is doing arithmetic, and ¥600,000 does not change it. That is why <b>pro-natalist policy</b> keeps not working.</div>' +
-        '<div class="close-line">Tanaka has voted in every election since 1971 and Yui’s neighbours mostly have not. Nobody in that council room is greedy. They are just the ones who came.</div>' +
-        '<div class="close-line">And Hiroshi waited on a bench until the shop was quiet, because being a nuisance is the worst thing he can imagine being. <b>Social isolation</b> is the consequence nobody puts on a poster, and it is the one with a word, a cleaning industry and a budget line of its own.</div>' +
+        '<div class="close-line">Daiki drives his mother to the hospital twice a month because he is the only working-age adult nearby to do it. That is the <b>old-age dependency ratio</b> — with a steering wheel.</div>' +
+        '<div class="close-line">Kenji’s street lost its shops because the town ran out of people. That is <b>rural depopulation</b>. And Mary is here because Japan doesn’t have enough care workers, so it let workers in from other countries — something it doesn’t like to talk about.</div>' +
+        '<div class="close-line">Aiko isn’t unsure about wanting a baby. She is doing the math, and ¥600,000 doesn’t change the answer. That is why <b>pro-natalist policy</b> — paying people to have babies — keeps failing.</div>' +
+        '<div class="close-line">Tanaka has voted in every election since 1971. Most of Yui’s neighbors haven’t. Nobody in that town meeting is greedy. They are just the ones who showed up.</div>' +
+        '<div class="close-line">And Hiroshi waited on a bench until the shop was quiet, because being a bother is the worst thing he can imagine. <b>Social isolation</b> is the result nobody puts on a poster. But it has its own word, its own cleaning companies, and its own line in the budget.</div>' +
       '</div>';
 
     el.closing.hidden = false;

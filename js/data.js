@@ -27,8 +27,8 @@
       say: 'hah-KAH-tah ton-KOTS',
       region: 'Fukuoka, on Kyushu — the south',
       map: { x: 34, y: 199 },
-      desc: 'Pork bone boiled hard for hours until the broth turns cloudy and white. Thin, straight noodles. The signature of Japan’s southern island.',
-      more: 'Hakata shops expect you to eat fast, so the portion is small and the noodles are thin — and when you finish them there is still broth in the bowl. That is what kaedama is for: you call for a second helping of noodles and drop them straight in.',
+      desc: 'Pork bones boiled for hours until the soup turns cloudy and white. Thin, straight noodles. The famous style of Japan’s southern island.',
+      more: 'Hakata shops expect you to eat fast, so the noodles are thin and the serving is small. When you finish the noodles, there’s still soup left. That’s what kaedama is for: you ask for more noodles and drop them right in.',
       tags: ['rich', 'bold', 'hearty', 'traditional'],
       colour: '#efe6dc' },
 
@@ -36,8 +36,8 @@
       say: 'sah-POH-roh MEE-soh',
       region: 'Sapporo, on Hokkaido — the far north',
       map: { x: 150, y: 34 },
-      desc: 'Fermented soybean paste stirred into a pork-and-vegetable broth. Thick curly noodles. Usually crowned with corn and a slab of butter.',
-      more: 'Younger than it tastes: a Sapporo cook put miso in ramen in the 1950s, and the corn and butter came from Hokkaido being Japan’s dairy and corn country. A regional tradition can be about seventy years old and still be a tradition.',
+      desc: 'Fermented soybean paste stirred into a pork and vegetable soup. Thick, curly noodles. Usually topped with corn and a slab of butter.',
+      more: 'It’s newer than it tastes. A cook in Sapporo first put miso in ramen in the 1950s. The corn and butter are there because Hokkaido is Japan’s farm country. A tradition can be only seventy years old and still be a tradition.',
       tags: ['hearty', 'warming', 'sweet', 'modern'],
       colour: '#c98a42' },
 
@@ -45,8 +45,8 @@
       say: 'kee-TAH-kah-tah SHOH-yoo',
       region: 'Kitakata, in Fukushima — the Tohoku region',
       map: { x: 128, y: 120 },
-      desc: 'A clear brown soy-sauce broth with flat, wide, wavy noodles. One of the three oldest ramen towns in the country.',
-      more: 'Kitakata has something like a hundred ramen shops for a town of forty thousand people, and people there eat ramen for breakfast. It is also, like this town, losing residents every year — the shops are outlasting the customers.',
+      desc: 'A clear brown soy sauce soup with flat, wide, wavy noodles. It comes from one of the three oldest ramen towns in Japan.',
+      more: 'Kitakata has about a hundred ramen shops in a town of forty thousand people. People there eat ramen for breakfast. Like this town, it is losing people every year. The shops are outlasting the customers.',
       tags: ['plain', 'classic', 'nostalgic', 'traditional'],
       colour: '#b9793a' },
 
@@ -54,8 +54,8 @@
       say: 'hah-KOH-dah-teh SHEE-oh',
       region: 'Hakodate, on Hokkaido — the northern port',
       map: { x: 143, y: 62 },
-      desc: 'Salt, and almost nothing else. A pale gold broth you can see the bottom of. The oldest and plainest of the four.',
-      more: 'Hakodate was one of the first ports opened to foreign ships in 1859, and Chinese cooks working there are part of how noodles in soup became a Japanese dish at all. Every bowl in this shop is descended from somebody’s immigrant grandmother.',
+      desc: 'Salt, and almost nothing else. A pale gold soup so clear you can see the bottom of the bowl. The oldest and plainest of the four.',
+      more: 'In 1859, Hakodate was one of the first ports opened to foreign ships. Chinese cooks who worked there helped turn noodle soup into a Japanese dish. Every bowl in this shop comes from somebody’s immigrant grandmother.',
       tags: ['plain', 'clear', 'light', 'old'],
       colour: '#e8d49a' }
   ];
@@ -67,42 +67,42 @@
   var TOPPINGS = [
     { id: 'chashu', name: 'Chashu', jp: 'チャーシュー',
       desc: 'Rolled pork belly, simmered slow in soy and sugar, sliced thin.',
-      more: 'The name comes from Chinese char siu, though the cooking method went its own way once it got here.',
+      more: 'The name comes from Chinese char siu pork, but Japan cooks it its own way now.',
       tags: ['rich', 'hearty'], colour: '#b5714a' },
 
     { id: 'ajitama', name: 'Ajitama egg', jp: '味玉',
       desc: 'A soft-boiled egg marinated overnight. The yolk should still run a little.',
-      more: 'Ajitama means "seasoned egg". Getting the yolk right is the fussiest thing on this shelf and the thing regulars notice first.',
+      more: 'Ajitama means "seasoned egg." Getting the yolk just right is the hardest thing on this shelf. It’s the first thing regular customers notice.',
       tags: ['rich', 'comforting'], colour: '#f3c34a' },
 
     { id: 'menma', name: 'Menma', jp: 'メンマ',
       desc: 'Bamboo shoots, fermented and then dried. Sour, salty, chewy.',
-      more: 'Fermented bamboo arrived from China and Taiwan; for decades most menma in Japan was imported, which made a shelf staple quietly dependent on somebody else’s harvest.',
+      more: 'Fermented bamboo came from China and Taiwan. For many years, most menma in Japan was imported. So a basic topping depended on other countries’ crops.',
       tags: ['traditional', 'savory'], colour: '#c9a24a' },
 
     { id: 'nori', name: 'Nori', jp: '海苔',
       desc: 'A sheet of dried seaweed, stood up against the side of the bowl.',
-      more: 'You are meant to push it under, let it go soft, and wrap a mouthful of noodles in it before it dissolves.',
+      more: 'You push it into the soup, let it get soft, and wrap some noodles in it before it falls apart.',
       tags: ['plain', 'classic'], colour: '#26332c' },
 
     { id: 'negi', name: 'Scallion', jp: 'ねぎ',
       desc: 'Green onion, sliced fine. Nearly every bowl in Japan gets some.',
-      more: 'It is there to cut the fat. A heavy broth without something sharp on top gets tiring by the halfway mark.',
+      more: 'It’s there to balance the fat. A heavy soup without something fresh on top gets tiring halfway through.',
       tags: ['fresh', 'plain'], colour: '#8fbf5a' },
 
     { id: 'corn', name: 'Sweetcorn', jp: 'コーン',
       desc: 'A scoop of sweetcorn, northern style.',
-      more: 'Hokkaido grows most of Japan’s corn, which is the whole reason it ends up in a Sapporo bowl and almost never in a Hakata one.',
+      more: 'Hokkaido, in the north, grows most of Japan’s corn. That’s why corn goes on northern Sapporo ramen and almost never on southern Hakata ramen.',
       tags: ['sweet', 'modern'], colour: '#f2c53d' },
 
     { id: 'butter', name: 'Butter', jp: 'バター',
       desc: 'A pat of butter, melting into the top of the broth.',
-      more: 'Hokkaido dairy again. Purists grumble about it. It has been on menus for sixty years and the grumbling has changed nothing.',
+      more: 'Butter comes from Hokkaido’s dairy farms. Some old-school ramen fans complain about it. It’s been on menus for sixty years, and complaining hasn’t changed a thing.',
       tags: ['rich', 'warming', 'modern'], colour: '#f6e6a8' },
 
     { id: 'naruto', name: 'Narutomaki', jp: '鳴門巻き',
       desc: 'A slice of white fish cake with a pink spiral cut through it.',
-      more: 'Named for the whirlpools in the Naruto Strait. It is old-fashioned now — you see it in cartoons more than in new shops, which is exactly why some people order it.',
+      more: 'It’s named after the whirlpools in the Naruto Strait, a stretch of sea in Japan. It’s old-fashioned now. You see it in cartoons more than in new shops, which is exactly why some people order it.',
       tags: ['classic', 'nostalgic'], colour: '#f6f0ea' }
   ];
 
@@ -127,20 +127,20 @@
       term: 'dependency ratio',
       guests: [
         { id: 'daiki', name: 'Daiki', jp: '大輝', role: 'Etsuko’s son, 46',
-          order: 'Whatever’s fastest. He has not eaten since a conbini rice ball at seven this morning and he keeps looking at his phone.',
+          order: 'Whatever’s fastest. He hasn’t eaten since a convenience-store rice ball at seven this morning. He keeps checking his phone.',
           wants: ['rich', 'hearty', 'comforting', 'warming'] }
       ] },
 
     { id: 'kenji_mary',
-      title: 'Kenji, and the woman who looks after him',
+      title: 'Kenji, and the woman who takes care of him',
       teaches: 'rural depopulation; the silver economy outside the cities; migrant care work',
       term: 'depopulation',
       guests: [
         { id: 'kenji', name: 'Kenji', jp: '健二', role: 'a retired greengrocer, 81',
-          order: 'The plainest thing you have. He says he has been eating the same bowl since 1968 and sees no reason to review the decision.',
+          order: 'The plainest thing you have. He has eaten the same bowl since 1968 and sees no reason to change now.',
           wants: ['plain', 'clear', 'old', 'classic'] },
         { id: 'mary', name: 'Mary', jp: 'メアリー', role: 'his care worker, 34',
-          order: 'Something rich and a little sweet. She learned to like this the year she arrived and orders it every time, slightly defensively.',
+          order: 'Something rich and a little sweet. She learned to love it her first year in Japan. She orders it every time, and she’ll defend it.',
           wants: ['rich', 'sweet', 'modern', 'bold'] }
       ] },
 
@@ -150,10 +150,10 @@
       term: 'total fertility rate',
       guests: [
         { id: 'aiko', name: 'Aiko', jp: '愛子', role: 'a project manager, 33',
-          order: 'Northern broth, and keep it simple — she has had a day and does not want to be asked questions about it.',
+          order: 'Northern broth, and keep it simple. She’s had a long day and doesn’t want any questions.',
           wants: ['warming', 'plain', 'fresh', 'hearty'] },
         { id: 'ren', name: 'Ren', jp: '蓮', role: 'her husband, 34',
-          order: 'The same broth as his wife, and then everything comfortable you can put on it. He is not embarrassed about this.',
+          order: 'The same broth as his wife, plus every comfortable, cozy topping you can add. He is not embarrassed about this.',
           wants: ['sweet', 'warming', 'rich', 'comforting'] }
       ] },
 
@@ -163,7 +163,7 @@
       term: 'social isolation',
       guests: [
         { id: 'hiroshi', name: 'Hiroshi', jp: '博', role: 'a retired engineer, 79',
-          order: 'He says whatever is easiest. He does not mean it — he has had the same bowl for thirty years and will not ask for it in case it is a nuisance.',
+          order: 'He says whatever is easiest. He doesn’t mean it. He has ordered the same bowl for thirty years, but he won’t ask for it in case he’s being a bother.',
           wants: ['nostalgic', 'traditional', 'savory', 'comforting'] }
       ] },
 
@@ -173,10 +173,10 @@
       term: 'voter turnout',
       guests: [
         { id: 'tanaka', name: 'Tanaka', jp: '田中', role: 'retired town councilman, 76',
-          order: 'Southern broth, done properly, the way he had it as a young man in Fukuoka. No modern nonsense on top.',
+          order: 'Southern broth, done the old way, like he ate as a young man in Fukuoka. No trendy extras on top.',
           wants: ['traditional', 'bold', 'rich', 'savory'] },
         { id: 'yui', name: 'Yui', jp: '結衣', role: 'his daughter, urban planner, 38',
-          order: 'The same broth as her father, but she wants it sharp and she is going to ask for a noodle refill afterwards.',
+          order: 'The same broth as her father, but she wants it fresh and sharp. She will ask for extra noodles after.',
           wants: ['bold', 'rich', 'fresh', 'modern'] }
       ] }
   ];
@@ -218,79 +218,79 @@
 
   var GLOSSARY = {
     aging: { term: 'aging population', jp: '高齢化',
-      def: 'A population where the share of older people is rising and the share of children is falling. It happens when people have fewer babies and live longer at the same time — which is most of the rich world, and Japan first and fastest.' },
+      def: 'A population where more and more people are old and fewer are children. It happens when people have fewer babies and live longer at the same time. This is happening in most rich countries. Japan got there first and fastest.' },
 
     dependency: { term: 'dependency ratio',
-      def: 'The number of people too young or too old to be working, compared to every 100 people of working age (15–64). Split it up and you get the <b>child dependency ratio</b> and the <b>old-age dependency ratio</b>. A high ratio means fewer workers supporting more non-workers — through taxes, and through showing up in person.' },
+      def: 'How many people are too young or too old to work, for every 100 people of working age (15–64). You can split it into the <b>child dependency ratio</b> and the <b>old-age dependency ratio</b>. A high ratio means fewer workers are supporting more people who don’t work — by paying taxes, and by showing up to help.' },
 
     oldage: { term: 'old-age dependency ratio',
-      def: 'People 65 and over for every 100 people of working age. Japan’s is above 50 — roughly two working-age adults for every retired person, and falling. In 1970 it was about ten per hundred.' },
+      def: 'How many people are 65 or older for every 100 people of working age. Japan’s is above 50. That means about two working-age adults for every retired person, and the number of workers keeps shrinking. In 1970 it was about ten per hundred.' },
 
     tfr: { term: 'total fertility rate', jp: '合計特殊出生率',
-      def: 'The average number of children a woman would have over her lifetime at current rates. Japan’s is about 1.2. Anything under about 2.1 means each generation is smaller than the one before it.' },
+      def: 'The average number of kids a woman has in her life. Japan’s is about 1.2. Anything below about 2.1 means each generation is smaller than the one before.' },
 
     replacement: { term: 'replacement level',
-      def: 'A fertility rate of about 2.1 children per woman — the level that keeps a population the same size without immigration. Two to replace the parents, and a fraction over for children who do not survive to have their own.' },
+      def: 'A fertility rate of about 2.1 kids per woman. That’s what keeps a population the same size without people moving in. Two kids replace the two parents. The extra 0.1 covers children who don’t live long enough to have kids of their own.' },
 
     natdecrease: { term: 'natural decrease',
-      def: 'More deaths than births in a year, so the population shrinks on its own regardless of anybody moving in or out. Japan has been in natural decrease every year since 2007.' },
+      def: 'When more people die than are born in a year. The population shrinks by itself, even if nobody moves away. Japan has had natural decrease every year since 2007.' },
 
     lifeexp: { term: 'life expectancy',
-      def: 'How long an average newborn can expect to live. Japan’s is around 84, among the highest anywhere. Longer life is a triumph and a bill at the same time: the same person draws a pension for twenty-five years instead of eight.' },
+      def: 'How long a baby born today can expect to live, on average. Japan’s is about 84 — one of the highest in the world. Living longer is a win, but it also costs money. A person might get a pension for twenty-five years instead of eight.' },
 
     pronatal: { term: 'pro-natalist policy', jp: '少子化対策',
-      def: 'Government spending meant to get people to have more children — cash payments per baby, free daycare, subsidised fertility treatment, paid leave. Japan has spent decades on it. The birth rate has kept falling. The usual explanation is that the money is small next to the real costs: housing, hours, careers, and who is expected to stop working.' },
+      def: 'Government programs that try to get people to have more babies — cash for each baby, free daycare, help paying for fertility treatment, paid time off. Japan has tried this for decades. The birth rate kept falling anyway. The usual reason: the money is small compared to the real costs, like housing, long work hours, careers, and which parent is expected to quit working.' },
 
     silver: { term: 'silver economy',
-      def: 'The whole business of selling to old people — care homes, adult diapers, handrails, easy-open packaging, hearing aids. In an aging country it is one of the few markets that grows. It also concentrates where old people can pay, which is not usually a shrinking rural town.' },
+      def: 'All the businesses that sell things to old people — nursing homes, adult diapers, handrails, easy-open packages, hearing aids. In an aging country, it’s one of the few kinds of business that keeps growing. But it grows in places where old people can pay, which usually isn’t a shrinking country town.' },
 
     depop: { term: 'depopulation', jp: '過疎',
-      def: 'A place losing residents faster than it gains them. In rural Japan it runs on two engines at once: young people leaving for cities, and the people left behind being too old to have children. The Japanese word, kaso, has been a formal government category since 1970.' },
+      def: 'When a place loses people faster than it gains them. In the Japanese countryside, two things cause it at once: young people move to the cities, and the people left behind are too old to have kids. The Japanese word for it, kaso, has been an official government term since 1970.' },
 
     akiya: { term: 'akiya', jp: '空き家',
-      def: 'An empty house. Japan has roughly nine million, many inherited by children who live in cities and cannot sell, rent, or afford to demolish them. They are the most visible thing about a shrinking town.' },
+      def: 'An empty house. Japan has about nine million of them. Many belong to grown children who live in cities. They can’t sell them, rent them, or afford to tear them down. Empty houses are the easiest way to see that a town is shrinking.' },
 
     labor: { term: 'labor shortage',
-      def: 'More jobs than workers to fill them. It is the direct consequence of a small generation replacing a large one, and it hits care work, construction, farming and small shops first — the jobs that cannot be moved somewhere else.' },
+      def: 'When there are more jobs than workers to fill them. It happens when a small generation replaces a big one. It hits nursing, building, farming, and small shops first — jobs that can’t be moved somewhere else.' },
 
     migrant: { term: 'foreign worker program', jp: '技能実習・特定技能',
-      def: 'Japan does not describe itself as an immigration country, but it now runs several visa routes for foreign workers, including one specifically for nursing care. It is one of the two standard responses to a labor shortage — the other is automation.' },
+      def: 'Japan doesn’t call itself a country of immigrants. But it now has several visas that let foreign workers come, including one just for nursing care. Bringing in workers is one of the two usual answers to a labor shortage. The other is using machines.' },
 
     automation: { term: 'automation',
-      def: 'Replacing missing workers with machines: self-order screens, delivery robots, care-home lifting equipment. A country with a shrinking workforce automates faster, because it has to rather than because it wants to.' },
+      def: 'Using machines to do the work of missing workers — ordering screens in restaurants, delivery robots, machines that lift patients in nursing homes. A country with fewer workers uses more machines, because it has to, not because it wants to.' },
 
     burden: { term: 'caregiving burden',
-      def: 'The unpaid work of looking after aging parents — hours, travel, money, and career. In Japan it falls heavily on people in their forties and fifties, and disproportionately on daughters and daughters-in-law. Tens of thousands of people a year leave a job over it. It has its own word: kaigo rishoku.' },
+      def: 'The unpaid work of taking care of aging parents. It costs time, travel, money, and careers. In Japan it falls mostly on people in their forties and fifties, and more on daughters and daughters-in-law than on sons. Tens of thousands of people a year quit their jobs because of it. There’s a Japanese word for that: kaigo rishoku.' },
 
     turnout: { term: 'voter turnout',
-      def: 'The share of eligible people who actually vote. In Japan people over 60 vote at roughly twice the rate of people in their twenties. Politicians can count. That arithmetic decides what gets funded.' },
+      def: 'The share of people who are allowed to vote and actually do. In Japan, people over 60 vote about twice as much as people in their twenties. Politicians can count. That math decides what gets paid for.' },
 
     silverdem: { term: 'silver democracy', jp: 'シルバー民主主義',
-      def: 'The Japanese term for what happens when older voters are both the largest bloc and the most reliable one: spending tilts toward pensions and healthcare, and away from childcare, schools and young families — even when everyone agrees the young ones are the problem.' },
+      def: 'A Japanese term for what happens when older voters are both the biggest group and the most likely to vote. Government spending leans toward pensions and health care, and away from childcare, schools, and young families — even when everyone agrees the lack of young people is the real problem.' },
 
     pension: { term: 'pension',
-      def: 'A retirement income, in Japan paid mostly out of the contributions of people working today rather than out of a pot the retiree filled up. That design is fine when there are many workers per retiree and painful when there are two.' },
+      def: 'Money paid to people after they retire. In Japan, it mostly comes from people who are working today, not from money the retired person saved. That works fine when there are many workers for each retired person. It gets hard when there are only two.' },
 
     dtm: { term: 'demographic transition model',
-      def: 'The five-stage model of how a country’s birth and death rates change as it develops. Japan is the standard example of <b>Stage 5</b>: death rate now higher than birth rate, so the population shrinks without anyone moving in.' },
+      def: 'A five-stage model that shows how a country’s birth and death rates change as it develops. Japan is the classic example of <b>Stage 5</b>: the death rate is now higher than the birth rate, so the population shrinks.' },
 
     median: { term: 'median age',
-      def: 'The age that splits a population in half. Japan’s is about 49 — the highest of any large country. Nigeria’s is about 18.' },
+      def: 'The age right in the middle — half the people are older, half are younger. Japan’s is about 49, the highest of any big country. Nigeria’s is about 18.' },
 
     isolation: { term: 'social isolation', jp: '社会的孤立',
-      def: 'Having little or no regular contact with other people. In Japan it is measured and worried about as a public health problem, not a private sadness. It is sharply gendered: men who built their whole social world through a company tend to lose it on the day they retire, and are far more likely than women to go a week without a conversation.' },
+      def: 'Having little or no regular contact with other people. Japan treats it as a public health problem, not just a private sadness. It hits men much harder than women. Many men’s whole social life was at their company. When they retire, they lose it. They are far more likely than women to go a week without talking to anyone.' },
 
     solohouse: { term: 'single-person households', jp: '単身世帯',
-      def: 'People living alone. Around a fifth of Japanese men over 65 live by themselves, and the number is rising fast — a direct consequence of smaller families, children moving to cities, and longer life expectancy, which reliably leaves one of a married couple on their own for years.' },
+      def: 'People who live alone. About one in five Japanese men over 65 live by themselves, and the number is growing fast. The causes: smaller families, children moving to cities, and longer lives — which usually means one person in a married couple lives alone for years after the other dies.' },
 
     kodokushi: { term: 'kodokushi', jp: '孤独死',
-      def: 'Literally "lonely death" — dying alone and not being found for some time. Japan records thousands of cases a year, concentrated among older men living alone. It has its own word, its own specialist cleaning industry, and its own line in municipal budgets, which tells you it is treated as a structural problem rather than bad luck.' },
+      def: 'It means "lonely death" — dying alone and not being found for a while. Japan has thousands of cases a year, mostly older men who live alone. It has its own word, its own cleaning companies, and its own line in town budgets. That tells you it’s treated as a problem built into society, not just bad luck.' },
 
     mimamori: { term: 'watch-over services', jp: '見守り',
-      def: 'Arrangements for checking that an older person living alone is all right: a post office visit, a daily phone call, a neighbourhood volunteer, or sensors — a kettle, a fridge door, an electricity meter — that quietly message a relative when the usual thing does not happen. One of the fastest-growing corners of the silver economy.' },
+      def: 'Ways to check that an older person living alone is okay: a visit from the mail carrier, a daily phone call, a neighborhood volunteer, or sensors on a kettle, a fridge door, or an electric meter. The sensors message a family member when something normal doesn’t happen. It is one of the fastest-growing parts of the silver economy.' },
 
     kaedama: { term: 'kaedama', jp: '替え玉',
-      def: 'A second helping of noodles, dropped into the broth you have left. A Hakata custom, and a thing you have to know to ask for.' }
+      def: 'A second helping of noodles, dropped into the soup you have left. It’s a custom from Hakata, in southern Japan. You have to know to ask for it.' }
   };
 
   /* =======================================================================
@@ -299,15 +299,15 @@
 
   var MARGIN = {
     daiki: { head: 'Dependency ratio',
-      note: 'Grandma is one person. Uncle Daiki is one person. That is the ratio, standing in one room. Nationally: about 50 people over 65 for every 100 of working age.' },
+      note: 'Grandma is one person. Uncle Daiki is one person. That’s the ratio, right in one room. In all of Japan: about 50 people over 65 for every 100 people of working age.' },
     kenji_mary: { head: 'Depopulation &amp; the silver economy',
-      note: 'The shops that close are not failing at business. They are running out of people. And the care work the town needs is done by somebody who moved 5,000 km to do it.' },
+      note: 'The shops that close aren’t bad businesses. The town is running out of people. And the care work the town needs is done by someone who moved about 3,000 miles to do it.' },
     aiko_ren: { head: 'Total fertility rate',
-      note: 'Japan: about 1.2. Replacement: 2.1. The government has been paying people to close that gap since before Aiko was born, and it has not closed.' },
+      note: 'Japan: about 1.2 kids per woman. Needed to stay the same size: 2.1. The government has paid people to close that gap since before Aiko was born. It hasn’t closed.' },
     hiroshi: { head: 'Social isolation',
-      note: 'A fifth of Japanese men over 65 live alone. He has a kettle that tells his son he is still making tea. He was sitting on the bench outside for an hour, waiting for the shop to be quiet enough that he would not be a nuisance.' },
+      note: 'One in five Japanese men over 65 live alone. Hiroshi has a kettle that tells his son he’s still making tea. He sat on the bench outside for an hour, waiting until the shop was quiet so he wouldn’t be a bother.' },
     tanaka_yui: { head: 'Voter turnout &amp; silver democracy',
-      note: 'Two buildings, one budget: a senior centre or a daycare. Whoever turns up on election day wins that argument before it starts.' }
+      note: 'Two buildings, money for only one: a senior center or a daycare. Whoever shows up to vote wins that argument before it starts.' }
   };
 
   /* =======================================================================
@@ -317,24 +317,24 @@
 
   var TIMELINE = [
     { yr: 'now', ev: 'Japan has about <b>124 million</b> people. Roughly <b>29%</b> are 65 or over — the highest share of any country on earth. The population has fallen every year since 2010.' },
-    { yr: '2035', ev: 'One in three people is 65 or over. The generation that would be having children is itself smaller than its parents’, so the birth number keeps falling even if the <b>fertility rate</b> stops falling.' },
-    { yr: '2040', ev: 'A government-commissioned study estimated that <b>roughly 40% of Japan’s municipalities</b> are at risk of disappearing as functioning towns. Kenji’s street is what that looks like from the inside.' },
-    { yr: '2050', ev: 'Care work is projected to be short by <b>hundreds of thousands</b> of workers. Japan has two levers — <b>bring people in</b>, or <b>build machines</b> — and is pulling both, cautiously.' },
-    { yr: '2070', ev: 'On current projections the population is about <b>87 million</b>, and around one in ten residents is foreign-born — a bigger change to what Japan is than anything that happened in the last century.' },
+    { yr: '2035', ev: 'One in three people is 65 or older. The generation that would be having kids is smaller than their parents’ generation. So the number of births keeps falling, even if the <b>fertility rate</b> stops falling.' },
+    { yr: '2040', ev: 'A study for the government found that <b>about 40% of Japan’s towns and cities</b> could stop working as real towns. Kenji’s street is what that looks like up close.' },
+    { yr: '2050', ev: 'Japan is expected to be short <b>hundreds of thousands</b> of care workers. It has two choices — <b>bring people in</b>, or <b>build machines</b> — and it is carefully trying both.' },
+    { yr: '2070', ev: 'If things keep going this way, Japan will have about <b>87 million</b> people, and about one in ten will have been born in another country. That would change Japan more than anything in the last hundred years.' },
     { yr: 'and not only here', ev: 'South Korea, Italy, Spain, Germany and China are all on the same road, some of them faster. Japan is not a special case. Japan is just early.' }
   ];
 
   /* Things in the room you can click when nobody is sitting down. */
   var ROOM = {
-    calendar: { name: 'The calendar', text: 'A free calendar from the fish supplier, still on the right month. Half the squares have a name written in: hospital, hospital, Daiki, hospital.' },
-    photo:    { name: 'The photograph', text: 'The shop on opening day, 1984. Six seats, all full, and a queue out the door in the rain. Etsuko is in it, thirty-four years old, not smiling because she is busy.' },
+    calendar: { name: 'The calendar', text: 'A free calendar from the fish company, still on the right month. Half the squares have something written in: hospital, hospital, Daiki, hospital.' },
+    photo:    { name: 'The photograph', text: 'The shop on opening day, 1984. Six seats, all full, and a line out the door in the rain. Etsuko is in it, thirty-four years old. She isn’t smiling because she’s busy.' },
     seats:    { name: 'The empty seats', text: 'Six stools. On a Tuesday, four of them stay empty all night. Etsuko still wipes down all six.' },
-    noren:    { name: 'The noren', text: 'The split curtain over the door. Hung out means open. Etsuko has taken it down twenty minutes early three times this month and denies it each time.' },
-    shutter:  { name: 'The shutters opposite', text: 'A run of them, all the way down that side of the arcade. The nearest one has a laminated notice taped to it that has gone yellow. It was a fishmonger for fifty-one years. Etsuko can still tell you what day he did the mackerel.' },
-    vending:  { name: 'The vending machine', text: 'It is the brightest thing in the arcade and the only other business on this side of it that is open at this hour. It takes cards now. Somebody drives out from Kōriyama to fill it once a fortnight, which makes him the most reliable visitor the street gets.' },
-    cat:      { name: 'The cat', text: 'Nobody owns her. Everybody feeds her, which in a street with fourteen hundred people and falling is a smaller committee than it used to be. Etsuko denies feeding her and buys the small dried fish in the large bag.' },
+    noren:    { name: 'The noren', text: 'The split curtain over the door. When it hangs outside, the shop is open. Etsuko has taken it down twenty minutes early three times this month. She denies it every time.' },
+    shutter:  { name: 'The shutters opposite', text: 'Metal shutters, all the way down that side of the arcade. The nearest one has a paper notice taped to it, turned yellow. It was a fish shop for fifty-one years. Etsuko can still tell you which day he sold mackerel.' },
+    vending:  { name: 'The vending machine', text: 'It’s the brightest thing in the arcade, and the only other business open this late. It takes cards now. A man drives in from the city every two weeks to fill it. He is the street’s most reliable visitor.' },
+    cat:      { name: 'The cat', text: 'Nobody owns her. Everybody feeds her — but in a town of fourteen hundred people and shrinking, “everybody” is fewer people than it used to be. Etsuko says she doesn’t feed her. She buys the dried fish in the big bag.' },
     bench:    { name: 'The bench', text: 'A metal bench against the shutters, across from the vending machine, bolted down. Etsuko has been meaning to ask the town to move it so it faces something other than a vending machine. She has been meaning to for nine years.' },
-    arcade:   { name: 'The arcade roof', text: 'Put up in 1988, when the shopping street was busy enough that the rain was the problem. Half the lamps under it have gone and nobody has decided whose job that is.' }
+    arcade:   { name: 'The arcade roof', text: 'The roof was built in 1988, back when the shopping street was so busy that rain was the biggest problem. Half the lamps under it are broken now. Nobody has decided whose job it is to fix them.' }
   };
 
   global.Data = {

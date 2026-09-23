@@ -72,7 +72,7 @@ server, no build step, no dependencies.
 |---|---|
 | **Setting** | A dying covered shopping arcade in a Tohoku town, present day. Menya Etsuko, six seats, half the shutters opposite are down |
 | **Length** | 35–42 minutes: five conversations, eight bowls, five phone breaks, closing up, end card. **See the timing note in the teaching guide** — cut a scene from `ORDER` if you only have a short period |
-| **Reading level** | Written for 9th graders with zero background in Japan, Japanese food, or the DTM. Every specialist term is glossed in-game |
+| **Reading level** | All dialogue, phone posts, orders and glossary written at or below an 8th-grade reading level, in plain American English, for students with zero background in Japan, Japanese food, or the DTM. Places are explained where they first come up, and every specialist term is glossed in-game |
 | **Ramen** | Four real regional broths and eight toppings, all named and placed on a map. Nothing is invented food |
 | **Sound** | The pot, the extractor fan, a car going past, and a hand bell when somebody confides in you — all synthesised in-browser. No audio files. **Off by default**, one toggle |
 | **Fail state** | None. Every bowl is eaten and nobody walks out |

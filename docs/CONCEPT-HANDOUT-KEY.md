@@ -58,7 +58,7 @@ housing, or whose career pauses. That is why decades of pro-natalist spending
 have moved the rate very little (big packages ≈ **+0.1**; the gap ≈ **0.9**).
 
 ### Tanaka & Yui, 76 & 38
-**Details:** one building budget — senior centre *or* extended-hours childcare ·
+**Details:** one building budget — senior center *or* extended-hours childcare ·
 over-65 turnout ~4 in 5, twentysomethings ~1 in 3 · pensions and healthcare
 ~a third of the national budget, paid by people working now · ~4 in 10
 municipalities at risk by 2040.

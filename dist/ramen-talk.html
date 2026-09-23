@@ -790,8 +790,8 @@ body.size-4 { --fs: 22px; }
       say: 'hah-KAH-tah ton-KOTS',
       region: 'Fukuoka, on Kyushu — the south',
       map: { x: 34, y: 199 },
-      desc: 'Pork bone boiled hard for hours until the broth turns cloudy and white. Thin, straight noodles. The signature of Japan’s southern island.',
-      more: 'Hakata shops expect you to eat fast, so the portion is small and the noodles are thin — and when you finish them there is still broth in the bowl. That is what kaedama is for: you call for a second helping of noodles and drop them straight in.',
+      desc: 'Pork bones boiled for hours until the soup turns cloudy and white. Thin, straight noodles. The famous style of Japan’s southern island.',
+      more: 'Hakata shops expect you to eat fast, so the noodles are thin and the serving is small. When you finish the noodles, there’s still soup left. That’s what kaedama is for: you ask for more noodles and drop them right in.',
       tags: ['rich', 'bold', 'hearty', 'traditional'],
       colour: '#efe6dc' },
 
@@ -799,8 +799,8 @@ body.size-4 { --fs: 22px; }
       say: 'sah-POH-roh MEE-soh',
       region: 'Sapporo, on Hokkaido — the far north',
       map: { x: 150, y: 34 },
-      desc: 'Fermented soybean paste stirred into a pork-and-vegetable broth. Thick curly noodles. Usually crowned with corn and a slab of butter.',
-      more: 'Younger than it tastes: a Sapporo cook put miso in ramen in the 1950s, and the corn and butter came from Hokkaido being Japan’s dairy and corn country. A regional tradition can be about seventy years old and still be a tradition.',
+      desc: 'Fermented soybean paste stirred into a pork and vegetable soup. Thick, curly noodles. Usually topped with corn and a slab of butter.',
+      more: 'It’s newer than it tastes. A cook in Sapporo first put miso in ramen in the 1950s. The corn and butter are there because Hokkaido is Japan’s farm country. A tradition can be only seventy years old and still be a tradition.',
       tags: ['hearty', 'warming', 'sweet', 'modern'],
       colour: '#c98a42' },
 
@@ -808,8 +808,8 @@ body.size-4 { --fs: 22px; }
       say: 'kee-TAH-kah-tah SHOH-yoo',
       region: 'Kitakata, in Fukushima — the Tohoku region',
       map: { x: 128, y: 120 },
-      desc: 'A clear brown soy-sauce broth with flat, wide, wavy noodles. One of the three oldest ramen towns in the country.',
-      more: 'Kitakata has something like a hundred ramen shops for a town of forty thousand people, and people there eat ramen for breakfast. It is also, like this town, losing residents every year — the shops are outlasting the customers.',
+      desc: 'A clear brown soy sauce soup with flat, wide, wavy noodles. It comes from one of the three oldest ramen towns in Japan.',
+      more: 'Kitakata has about a hundred ramen shops in a town of forty thousand people. People there eat ramen for breakfast. Like this town, it is losing people every year. The shops are outlasting the customers.',
       tags: ['plain', 'classic', 'nostalgic', 'traditional'],
       colour: '#b9793a' },
 
@@ -817,8 +817,8 @@ body.size-4 { --fs: 22px; }
       say: 'hah-KOH-dah-teh SHEE-oh',
       region: 'Hakodate, on Hokkaido — the northern port',
       map: { x: 143, y: 62 },
-      desc: 'Salt, and almost nothing else. A pale gold broth you can see the bottom of. The oldest and plainest of the four.',
-      more: 'Hakodate was one of the first ports opened to foreign ships in 1859, and Chinese cooks working there are part of how noodles in soup became a Japanese dish at all. Every bowl in this shop is descended from somebody’s immigrant grandmother.',
+      desc: 'Salt, and almost nothing else. A pale gold soup so clear you can see the bottom of the bowl. The oldest and plainest of the four.',
+      more: 'In 1859, Hakodate was one of the first ports opened to foreign ships. Chinese cooks who worked there helped turn noodle soup into a Japanese dish. Every bowl in this shop comes from somebody’s immigrant grandmother.',
       tags: ['plain', 'clear', 'light', 'old'],
       colour: '#e8d49a' }
   ];
@@ -830,42 +830,42 @@ body.size-4 { --fs: 22px; }
   var TOPPINGS = [
     { id: 'chashu', name: 'Chashu', jp: 'チャーシュー',
       desc: 'Rolled pork belly, simmered slow in soy and sugar, sliced thin.',
-      more: 'The name comes from Chinese char siu, though the cooking method went its own way once it got here.',
+      more: 'The name comes from Chinese char siu pork, but Japan cooks it its own way now.',
       tags: ['rich', 'hearty'], colour: '#b5714a' },
 
     { id: 'ajitama', name: 'Ajitama egg', jp: '味玉',
       desc: 'A soft-boiled egg marinated overnight. The yolk should still run a little.',
-      more: 'Ajitama means "seasoned egg". Getting the yolk right is the fussiest thing on this shelf and the thing regulars notice first.',
+      more: 'Ajitama means "seasoned egg." Getting the yolk just right is the hardest thing on this shelf. It’s the first thing regular customers notice.',
       tags: ['rich', 'comforting'], colour: '#f3c34a' },
 
     { id: 'menma', name: 'Menma', jp: 'メンマ',
       desc: 'Bamboo shoots, fermented and then dried. Sour, salty, chewy.',
-      more: 'Fermented bamboo arrived from China and Taiwan; for decades most menma in Japan was imported, which made a shelf staple quietly dependent on somebody else’s harvest.',
+      more: 'Fermented bamboo came from China and Taiwan. For many years, most menma in Japan was imported. So a basic topping depended on other countries’ crops.',
       tags: ['traditional', 'savory'], colour: '#c9a24a' },
 
     { id: 'nori', name: 'Nori', jp: '海苔',
       desc: 'A sheet of dried seaweed, stood up against the side of the bowl.',
-      more: 'You are meant to push it under, let it go soft, and wrap a mouthful of noodles in it before it dissolves.',
+      more: 'You push it into the soup, let it get soft, and wrap some noodles in it before it falls apart.',
       tags: ['plain', 'classic'], colour: '#26332c' },
 
     { id: 'negi', name: 'Scallion', jp: 'ねぎ',
       desc: 'Green onion, sliced fine. Nearly every bowl in Japan gets some.',
-      more: 'It is there to cut the fat. A heavy broth without something sharp on top gets tiring by the halfway mark.',
+      more: 'It’s there to balance the fat. A heavy soup without something fresh on top gets tiring halfway through.',
       tags: ['fresh', 'plain'], colour: '#8fbf5a' },
 
     { id: 'corn', name: 'Sweetcorn', jp: 'コーン',
       desc: 'A scoop of sweetcorn, northern style.',
-      more: 'Hokkaido grows most of Japan’s corn, which is the whole reason it ends up in a Sapporo bowl and almost never in a Hakata one.',
+      more: 'Hokkaido, in the north, grows most of Japan’s corn. That’s why corn goes on northern Sapporo ramen and almost never on southern Hakata ramen.',
       tags: ['sweet', 'modern'], colour: '#f2c53d' },
 
     { id: 'butter', name: 'Butter', jp: 'バター',
       desc: 'A pat of butter, melting into the top of the broth.',
-      more: 'Hokkaido dairy again. Purists grumble about it. It has been on menus for sixty years and the grumbling has changed nothing.',
+      more: 'Butter comes from Hokkaido’s dairy farms. Some old-school ramen fans complain about it. It’s been on menus for sixty years, and complaining hasn’t changed a thing.',
       tags: ['rich', 'warming', 'modern'], colour: '#f6e6a8' },
 
     { id: 'naruto', name: 'Narutomaki', jp: '鳴門巻き',
       desc: 'A slice of white fish cake with a pink spiral cut through it.',
-      more: 'Named for the whirlpools in the Naruto Strait. It is old-fashioned now — you see it in cartoons more than in new shops, which is exactly why some people order it.',
+      more: 'It’s named after the whirlpools in the Naruto Strait, a stretch of sea in Japan. It’s old-fashioned now. You see it in cartoons more than in new shops, which is exactly why some people order it.',
       tags: ['classic', 'nostalgic'], colour: '#f6f0ea' }
   ];
 
@@ -890,20 +890,20 @@ body.size-4 { --fs: 22px; }
       term: 'dependency ratio',
       guests: [
         { id: 'daiki', name: 'Daiki', jp: '大輝', role: 'Etsuko’s son, 46',
-          order: 'Whatever’s fastest. He has not eaten since a conbini rice ball at seven this morning and he keeps looking at his phone.',
+          order: 'Whatever’s fastest. He hasn’t eaten since a convenience-store rice ball at seven this morning. He keeps checking his phone.',
           wants: ['rich', 'hearty', 'comforting', 'warming'] }
       ] },
 
     { id: 'kenji_mary',
-      title: 'Kenji, and the woman who looks after him',
+      title: 'Kenji, and the woman who takes care of him',
       teaches: 'rural depopulation; the silver economy outside the cities; migrant care work',
       term: 'depopulation',
       guests: [
         { id: 'kenji', name: 'Kenji', jp: '健二', role: 'a retired greengrocer, 81',
-          order: 'The plainest thing you have. He says he has been eating the same bowl since 1968 and sees no reason to review the decision.',
+          order: 'The plainest thing you have. He has eaten the same bowl since 1968 and sees no reason to change now.',
           wants: ['plain', 'clear', 'old', 'classic'] },
         { id: 'mary', name: 'Mary', jp: 'メアリー', role: 'his care worker, 34',
-          order: 'Something rich and a little sweet. She learned to like this the year she arrived and orders it every time, slightly defensively.',
+          order: 'Something rich and a little sweet. She learned to love it her first year in Japan. She orders it every time, and she’ll defend it.',
           wants: ['rich', 'sweet', 'modern', 'bold'] }
       ] },
 
@@ -913,10 +913,10 @@ body.size-4 { --fs: 22px; }
       term: 'total fertility rate',
       guests: [
         { id: 'aiko', name: 'Aiko', jp: '愛子', role: 'a project manager, 33',
-          order: 'Northern broth, and keep it simple — she has had a day and does not want to be asked questions about it.',
+          order: 'Northern broth, and keep it simple. She’s had a long day and doesn’t want any questions.',
           wants: ['warming', 'plain', 'fresh', 'hearty'] },
         { id: 'ren', name: 'Ren', jp: '蓮', role: 'her husband, 34',
-          order: 'The same broth as his wife, and then everything comfortable you can put on it. He is not embarrassed about this.',
+          order: 'The same broth as his wife, plus every comfortable, cozy topping you can add. He is not embarrassed about this.',
           wants: ['sweet', 'warming', 'rich', 'comforting'] }
       ] },
 
@@ -926,7 +926,7 @@ body.size-4 { --fs: 22px; }
       term: 'social isolation',
       guests: [
         { id: 'hiroshi', name: 'Hiroshi', jp: '博', role: 'a retired engineer, 79',
-          order: 'He says whatever is easiest. He does not mean it — he has had the same bowl for thirty years and will not ask for it in case it is a nuisance.',
+          order: 'He says whatever is easiest. He doesn’t mean it. He has ordered the same bowl for thirty years, but he won’t ask for it in case he’s being a bother.',
           wants: ['nostalgic', 'traditional', 'savory', 'comforting'] }
       ] },
 
@@ -936,10 +936,10 @@ body.size-4 { --fs: 22px; }
       term: 'voter turnout',
       guests: [
         { id: 'tanaka', name: 'Tanaka', jp: '田中', role: 'retired town councilman, 76',
-          order: 'Southern broth, done properly, the way he had it as a young man in Fukuoka. No modern nonsense on top.',
+          order: 'Southern broth, done the old way, like he ate as a young man in Fukuoka. No trendy extras on top.',
           wants: ['traditional', 'bold', 'rich', 'savory'] },
         { id: 'yui', name: 'Yui', jp: '結衣', role: 'his daughter, urban planner, 38',
-          order: 'The same broth as her father, but she wants it sharp and she is going to ask for a noodle refill afterwards.',
+          order: 'The same broth as her father, but she wants it fresh and sharp. She will ask for extra noodles after.',
           wants: ['bold', 'rich', 'fresh', 'modern'] }
       ] }
   ];
@@ -981,79 +981,79 @@ body.size-4 { --fs: 22px; }
 
   var GLOSSARY = {
     aging: { term: 'aging population', jp: '高齢化',
-      def: 'A population where the share of older people is rising and the share of children is falling. It happens when people have fewer babies and live longer at the same time — which is most of the rich world, and Japan first and fastest.' },
+      def: 'A population where more and more people are old and fewer are children. It happens when people have fewer babies and live longer at the same time. This is happening in most rich countries. Japan got there first and fastest.' },
 
     dependency: { term: 'dependency ratio',
-      def: 'The number of people too young or too old to be working, compared to every 100 people of working age (15–64). Split it up and you get the <b>child dependency ratio</b> and the <b>old-age dependency ratio</b>. A high ratio means fewer workers supporting more non-workers — through taxes, and through showing up in person.' },
+      def: 'How many people are too young or too old to work, for every 100 people of working age (15–64). You can split it into the <b>child dependency ratio</b> and the <b>old-age dependency ratio</b>. A high ratio means fewer workers are supporting more people who don’t work — by paying taxes, and by showing up to help.' },
 
     oldage: { term: 'old-age dependency ratio',
-      def: 'People 65 and over for every 100 people of working age. Japan’s is above 50 — roughly two working-age adults for every retired person, and falling. In 1970 it was about ten per hundred.' },
+      def: 'How many people are 65 or older for every 100 people of working age. Japan’s is above 50. That means about two working-age adults for every retired person, and the number of workers keeps shrinking. In 1970 it was about ten per hundred.' },
 
     tfr: { term: 'total fertility rate', jp: '合計特殊出生率',
-      def: 'The average number of children a woman would have over her lifetime at current rates. Japan’s is about 1.2. Anything under about 2.1 means each generation is smaller than the one before it.' },
+      def: 'The average number of kids a woman has in her life. Japan’s is about 1.2. Anything below about 2.1 means each generation is smaller than the one before.' },
 
     replacement: { term: 'replacement level',
-      def: 'A fertility rate of about 2.1 children per woman — the level that keeps a population the same size without immigration. Two to replace the parents, and a fraction over for children who do not survive to have their own.' },
+      def: 'A fertility rate of about 2.1 kids per woman. That’s what keeps a population the same size without people moving in. Two kids replace the two parents. The extra 0.1 covers children who don’t live long enough to have kids of their own.' },
 
     natdecrease: { term: 'natural decrease',
-      def: 'More deaths than births in a year, so the population shrinks on its own regardless of anybody moving in or out. Japan has been in natural decrease every year since 2007.' },
+      def: 'When more people die than are born in a year. The population shrinks by itself, even if nobody moves away. Japan has had natural decrease every year since 2007.' },
 
     lifeexp: { term: 'life expectancy',
-      def: 'How long an average newborn can expect to live. Japan’s is around 84, among the highest anywhere. Longer life is a triumph and a bill at the same time: the same person draws a pension for twenty-five years instead of eight.' },
+      def: 'How long a baby born today can expect to live, on average. Japan’s is about 84 — one of the highest in the world. Living longer is a win, but it also costs money. A person might get a pension for twenty-five years instead of eight.' },
 
     pronatal: { term: 'pro-natalist policy', jp: '少子化対策',
-      def: 'Government spending meant to get people to have more children — cash payments per baby, free daycare, subsidised fertility treatment, paid leave. Japan has spent decades on it. The birth rate has kept falling. The usual explanation is that the money is small next to the real costs: housing, hours, careers, and who is expected to stop working.' },
+      def: 'Government programs that try to get people to have more babies — cash for each baby, free daycare, help paying for fertility treatment, paid time off. Japan has tried this for decades. The birth rate kept falling anyway. The usual reason: the money is small compared to the real costs, like housing, long work hours, careers, and which parent is expected to quit working.' },
 
     silver: { term: 'silver economy',
-      def: 'The whole business of selling to old people — care homes, adult diapers, handrails, easy-open packaging, hearing aids. In an aging country it is one of the few markets that grows. It also concentrates where old people can pay, which is not usually a shrinking rural town.' },
+      def: 'All the businesses that sell things to old people — nursing homes, adult diapers, handrails, easy-open packages, hearing aids. In an aging country, it’s one of the few kinds of business that keeps growing. But it grows in places where old people can pay, which usually isn’t a shrinking country town.' },
 
     depop: { term: 'depopulation', jp: '過疎',
-      def: 'A place losing residents faster than it gains them. In rural Japan it runs on two engines at once: young people leaving for cities, and the people left behind being too old to have children. The Japanese word, kaso, has been a formal government category since 1970.' },
+      def: 'When a place loses people faster than it gains them. In the Japanese countryside, two things cause it at once: young people move to the cities, and the people left behind are too old to have kids. The Japanese word for it, kaso, has been an official government term since 1970.' },
 
     akiya: { term: 'akiya', jp: '空き家',
-      def: 'An empty house. Japan has roughly nine million, many inherited by children who live in cities and cannot sell, rent, or afford to demolish them. They are the most visible thing about a shrinking town.' },
+      def: 'An empty house. Japan has about nine million of them. Many belong to grown children who live in cities. They can’t sell them, rent them, or afford to tear them down. Empty houses are the easiest way to see that a town is shrinking.' },
 
     labor: { term: 'labor shortage',
-      def: 'More jobs than workers to fill them. It is the direct consequence of a small generation replacing a large one, and it hits care work, construction, farming and small shops first — the jobs that cannot be moved somewhere else.' },
+      def: 'When there are more jobs than workers to fill them. It happens when a small generation replaces a big one. It hits nursing, building, farming, and small shops first — jobs that can’t be moved somewhere else.' },
 
     migrant: { term: 'foreign worker program', jp: '技能実習・特定技能',
-      def: 'Japan does not describe itself as an immigration country, but it now runs several visa routes for foreign workers, including one specifically for nursing care. It is one of the two standard responses to a labor shortage — the other is automation.' },
+      def: 'Japan doesn’t call itself a country of immigrants. But it now has several visas that let foreign workers come, including one just for nursing care. Bringing in workers is one of the two usual answers to a labor shortage. The other is using machines.' },
 
     automation: { term: 'automation',
-      def: 'Replacing missing workers with machines: self-order screens, delivery robots, care-home lifting equipment. A country with a shrinking workforce automates faster, because it has to rather than because it wants to.' },
+      def: 'Using machines to do the work of missing workers — ordering screens in restaurants, delivery robots, machines that lift patients in nursing homes. A country with fewer workers uses more machines, because it has to, not because it wants to.' },
 
     burden: { term: 'caregiving burden',
-      def: 'The unpaid work of looking after aging parents — hours, travel, money, and career. In Japan it falls heavily on people in their forties and fifties, and disproportionately on daughters and daughters-in-law. Tens of thousands of people a year leave a job over it. It has its own word: kaigo rishoku.' },
+      def: 'The unpaid work of taking care of aging parents. It costs time, travel, money, and careers. In Japan it falls mostly on people in their forties and fifties, and more on daughters and daughters-in-law than on sons. Tens of thousands of people a year quit their jobs because of it. There’s a Japanese word for that: kaigo rishoku.' },
 
     turnout: { term: 'voter turnout',
-      def: 'The share of eligible people who actually vote. In Japan people over 60 vote at roughly twice the rate of people in their twenties. Politicians can count. That arithmetic decides what gets funded.' },
+      def: 'The share of people who are allowed to vote and actually do. In Japan, people over 60 vote about twice as much as people in their twenties. Politicians can count. That math decides what gets paid for.' },
 
     silverdem: { term: 'silver democracy', jp: 'シルバー民主主義',
-      def: 'The Japanese term for what happens when older voters are both the largest bloc and the most reliable one: spending tilts toward pensions and healthcare, and away from childcare, schools and young families — even when everyone agrees the young ones are the problem.' },
+      def: 'A Japanese term for what happens when older voters are both the biggest group and the most likely to vote. Government spending leans toward pensions and health care, and away from childcare, schools, and young families — even when everyone agrees the lack of young people is the real problem.' },
 
     pension: { term: 'pension',
-      def: 'A retirement income, in Japan paid mostly out of the contributions of people working today rather than out of a pot the retiree filled up. That design is fine when there are many workers per retiree and painful when there are two.' },
+      def: 'Money paid to people after they retire. In Japan, it mostly comes from people who are working today, not from money the retired person saved. That works fine when there are many workers for each retired person. It gets hard when there are only two.' },
 
     dtm: { term: 'demographic transition model',
-      def: 'The five-stage model of how a country’s birth and death rates change as it develops. Japan is the standard example of <b>Stage 5</b>: death rate now higher than birth rate, so the population shrinks without anyone moving in.' },
+      def: 'A five-stage model that shows how a country’s birth and death rates change as it develops. Japan is the classic example of <b>Stage 5</b>: the death rate is now higher than the birth rate, so the population shrinks.' },
 
     median: { term: 'median age',
-      def: 'The age that splits a population in half. Japan’s is about 49 — the highest of any large country. Nigeria’s is about 18.' },
+      def: 'The age right in the middle — half the people are older, half are younger. Japan’s is about 49, the highest of any big country. Nigeria’s is about 18.' },
 
     isolation: { term: 'social isolation', jp: '社会的孤立',
-      def: 'Having little or no regular contact with other people. In Japan it is measured and worried about as a public health problem, not a private sadness. It is sharply gendered: men who built their whole social world through a company tend to lose it on the day they retire, and are far more likely than women to go a week without a conversation.' },
+      def: 'Having little or no regular contact with other people. Japan treats it as a public health problem, not just a private sadness. It hits men much harder than women. Many men’s whole social life was at their company. When they retire, they lose it. They are far more likely than women to go a week without talking to anyone.' },
 
     solohouse: { term: 'single-person households', jp: '単身世帯',
-      def: 'People living alone. Around a fifth of Japanese men over 65 live by themselves, and the number is rising fast — a direct consequence of smaller families, children moving to cities, and longer life expectancy, which reliably leaves one of a married couple on their own for years.' },
+      def: 'People who live alone. About one in five Japanese men over 65 live by themselves, and the number is growing fast. The causes: smaller families, children moving to cities, and longer lives — which usually means one person in a married couple lives alone for years after the other dies.' },
 
     kodokushi: { term: 'kodokushi', jp: '孤独死',
-      def: 'Literally "lonely death" — dying alone and not being found for some time. Japan records thousands of cases a year, concentrated among older men living alone. It has its own word, its own specialist cleaning industry, and its own line in municipal budgets, which tells you it is treated as a structural problem rather than bad luck.' },
+      def: 'It means "lonely death" — dying alone and not being found for a while. Japan has thousands of cases a year, mostly older men who live alone. It has its own word, its own cleaning companies, and its own line in town budgets. That tells you it’s treated as a problem built into society, not just bad luck.' },
 
     mimamori: { term: 'watch-over services', jp: '見守り',
-      def: 'Arrangements for checking that an older person living alone is all right: a post office visit, a daily phone call, a neighbourhood volunteer, or sensors — a kettle, a fridge door, an electricity meter — that quietly message a relative when the usual thing does not happen. One of the fastest-growing corners of the silver economy.' },
+      def: 'Ways to check that an older person living alone is okay: a visit from the mail carrier, a daily phone call, a neighborhood volunteer, or sensors on a kettle, a fridge door, or an electric meter. The sensors message a family member when something normal doesn’t happen. It is one of the fastest-growing parts of the silver economy.' },
 
     kaedama: { term: 'kaedama', jp: '替え玉',
-      def: 'A second helping of noodles, dropped into the broth you have left. A Hakata custom, and a thing you have to know to ask for.' }
+      def: 'A second helping of noodles, dropped into the soup you have left. It’s a custom from Hakata, in southern Japan. You have to know to ask for it.' }
   };
 
   /* =======================================================================
@@ -1062,15 +1062,15 @@ body.size-4 { --fs: 22px; }
 
   var MARGIN = {
     daiki: { head: 'Dependency ratio',
-      note: 'Grandma is one person. Uncle Daiki is one person. That is the ratio, standing in one room. Nationally: about 50 people over 65 for every 100 of working age.' },
+      note: 'Grandma is one person. Uncle Daiki is one person. That’s the ratio, right in one room. In all of Japan: about 50 people over 65 for every 100 people of working age.' },
     kenji_mary: { head: 'Depopulation &amp; the silver economy',
-      note: 'The shops that close are not failing at business. They are running out of people. And the care work the town needs is done by somebody who moved 5,000 km to do it.' },
+      note: 'The shops that close aren’t bad businesses. The town is running out of people. And the care work the town needs is done by someone who moved about 3,000 miles to do it.' },
     aiko_ren: { head: 'Total fertility rate',
-      note: 'Japan: about 1.2. Replacement: 2.1. The government has been paying people to close that gap since before Aiko was born, and it has not closed.' },
+      note: 'Japan: about 1.2 kids per woman. Needed to stay the same size: 2.1. The government has paid people to close that gap since before Aiko was born. It hasn’t closed.' },
     hiroshi: { head: 'Social isolation',
-      note: 'A fifth of Japanese men over 65 live alone. He has a kettle that tells his son he is still making tea. He was sitting on the bench outside for an hour, waiting for the shop to be quiet enough that he would not be a nuisance.' },
+      note: 'One in five Japanese men over 65 live alone. Hiroshi has a kettle that tells his son he’s still making tea. He sat on the bench outside for an hour, waiting until the shop was quiet so he wouldn’t be a bother.' },
     tanaka_yui: { head: 'Voter turnout &amp; silver democracy',
-      note: 'Two buildings, one budget: a senior centre or a daycare. Whoever turns up on election day wins that argument before it starts.' }
+      note: 'Two buildings, money for only one: a senior center or a daycare. Whoever shows up to vote wins that argument before it starts.' }
   };
 
   /* =======================================================================
@@ -1080,24 +1080,24 @@ body.size-4 { --fs: 22px; }
 
   var TIMELINE = [
     { yr: 'now', ev: 'Japan has about <b>124 million</b> people. Roughly <b>29%</b> are 65 or over — the highest share of any country on earth. The population has fallen every year since 2010.' },
-    { yr: '2035', ev: 'One in three people is 65 or over. The generation that would be having children is itself smaller than its parents’, so the birth number keeps falling even if the <b>fertility rate</b> stops falling.' },
-    { yr: '2040', ev: 'A government-commissioned study estimated that <b>roughly 40% of Japan’s municipalities</b> are at risk of disappearing as functioning towns. Kenji’s street is what that looks like from the inside.' },
-    { yr: '2050', ev: 'Care work is projected to be short by <b>hundreds of thousands</b> of workers. Japan has two levers — <b>bring people in</b>, or <b>build machines</b> — and is pulling both, cautiously.' },
-    { yr: '2070', ev: 'On current projections the population is about <b>87 million</b>, and around one in ten residents is foreign-born — a bigger change to what Japan is than anything that happened in the last century.' },
+    { yr: '2035', ev: 'One in three people is 65 or older. The generation that would be having kids is smaller than their parents’ generation. So the number of births keeps falling, even if the <b>fertility rate</b> stops falling.' },
+    { yr: '2040', ev: 'A study for the government found that <b>about 40% of Japan’s towns and cities</b> could stop working as real towns. Kenji’s street is what that looks like up close.' },
+    { yr: '2050', ev: 'Japan is expected to be short <b>hundreds of thousands</b> of care workers. It has two choices — <b>bring people in</b>, or <b>build machines</b> — and it is carefully trying both.' },
+    { yr: '2070', ev: 'If things keep going this way, Japan will have about <b>87 million</b> people, and about one in ten will have been born in another country. That would change Japan more than anything in the last hundred years.' },
     { yr: 'and not only here', ev: 'South Korea, Italy, Spain, Germany and China are all on the same road, some of them faster. Japan is not a special case. Japan is just early.' }
   ];
 
   /* Things in the room you can click when nobody is sitting down. */
   var ROOM = {
-    calendar: { name: 'The calendar', text: 'A free calendar from the fish supplier, still on the right month. Half the squares have a name written in: hospital, hospital, Daiki, hospital.' },
-    photo:    { name: 'The photograph', text: 'The shop on opening day, 1984. Six seats, all full, and a queue out the door in the rain. Etsuko is in it, thirty-four years old, not smiling because she is busy.' },
+    calendar: { name: 'The calendar', text: 'A free calendar from the fish company, still on the right month. Half the squares have something written in: hospital, hospital, Daiki, hospital.' },
+    photo:    { name: 'The photograph', text: 'The shop on opening day, 1984. Six seats, all full, and a line out the door in the rain. Etsuko is in it, thirty-four years old. She isn’t smiling because she’s busy.' },
     seats:    { name: 'The empty seats', text: 'Six stools. On a Tuesday, four of them stay empty all night. Etsuko still wipes down all six.' },
-    noren:    { name: 'The noren', text: 'The split curtain over the door. Hung out means open. Etsuko has taken it down twenty minutes early three times this month and denies it each time.' },
-    shutter:  { name: 'The shutters opposite', text: 'A run of them, all the way down that side of the arcade. The nearest one has a laminated notice taped to it that has gone yellow. It was a fishmonger for fifty-one years. Etsuko can still tell you what day he did the mackerel.' },
-    vending:  { name: 'The vending machine', text: 'It is the brightest thing in the arcade and the only other business on this side of it that is open at this hour. It takes cards now. Somebody drives out from Kōriyama to fill it once a fortnight, which makes him the most reliable visitor the street gets.' },
-    cat:      { name: 'The cat', text: 'Nobody owns her. Everybody feeds her, which in a street with fourteen hundred people and falling is a smaller committee than it used to be. Etsuko denies feeding her and buys the small dried fish in the large bag.' },
+    noren:    { name: 'The noren', text: 'The split curtain over the door. When it hangs outside, the shop is open. Etsuko has taken it down twenty minutes early three times this month. She denies it every time.' },
+    shutter:  { name: 'The shutters opposite', text: 'Metal shutters, all the way down that side of the arcade. The nearest one has a paper notice taped to it, turned yellow. It was a fish shop for fifty-one years. Etsuko can still tell you which day he sold mackerel.' },
+    vending:  { name: 'The vending machine', text: 'It’s the brightest thing in the arcade, and the only other business open this late. It takes cards now. A man drives in from the city every two weeks to fill it. He is the street’s most reliable visitor.' },
+    cat:      { name: 'The cat', text: 'Nobody owns her. Everybody feeds her — but in a town of fourteen hundred people and shrinking, “everybody” is fewer people than it used to be. Etsuko says she doesn’t feed her. She buys the dried fish in the big bag.' },
     bench:    { name: 'The bench', text: 'A metal bench against the shutters, across from the vending machine, bolted down. Etsuko has been meaning to ask the town to move it so it faces something other than a vending machine. She has been meaning to for nine years.' },
-    arcade:   { name: 'The arcade roof', text: 'Put up in 1988, when the shopping street was busy enough that the rain was the problem. Half the lamps under it have gone and nobody has decided whose job that is.' }
+    arcade:   { name: 'The arcade roof', text: 'The roof was built in 1988, back when the shopping street was so busy that rain was the biggest problem. Half the lamps under it are broken now. Nobody has decided whose job it is to fix them.' }
   };
 
   global.Data = {
@@ -1148,7 +1148,7 @@ body.size-4 { --fs: 22px; }
      BEFORE OPENING — Etsuko, the shop, and why you are standing here.
      ===================================================================== */
   open_shop: { script: [
-    { narrate: 'Six-forty in the evening. The broth has been on since two. Your grandmother is standing on a rubber mat behind the counter with her hands on the rail, doing the thing where she pretends she is thinking about something.' },
+    { narrate: 'It’s 6:40 in the evening. The soup has been cooking since two o’clock. Your grandmother stands behind the counter with her hands on the rail. She is pretending to think about something.' },
     { say: 'You’re early.', who: 'etsuko', expr: 'neutral' },
     { say: 'I said seven. It is not seven.', who: 'etsuko', expr: 'stern' },
     { choose: [
@@ -1156,22 +1156,22 @@ body.size-4 { --fs: 22px; }
         then: [
           { say: 'Set up. There is nothing to set up. The broth is on, the noodles are in the fridge, the bowls are where the bowls go.', who: 'etsuko', expr: 'neutral' },
           { narrate: 'She hands you an apron anyway, without looking at you.' },
-          { say: 'Eggs need doing. Six. Marinade is in the blue container and don’t crack them on the rim, use the counter.', who: 'etsuko', expr: 'warm' } ] },
-      { label: '"Mum said you’d try to open by yourself again."', tone: 'Playful', warm: 'etsuko',
+          { say: 'The eggs need doing. Six of them. The sauce is in the blue container. Don’t crack them on the edge of the bowl. Use the counter.', who: 'etsuko', expr: 'warm' } ] },
+      { label: '"Mom said you’d try to open by yourself again."', tone: 'Playful', warm: 'etsuko',
         then: [
-          { say: 'Your mother says a great many things from Sendai, where she is not.', who: 'etsuko', expr: 'stern' },
+          { say: 'Your mother says a lot of things from Sendai. She is not here. She is in the city.', who: 'etsuko', expr: 'stern' },
           { narrate: 'A beat.' },
           { say: 'Apron’s on the hook. Eggs need doing. Six.', who: 'etsuko', expr: 'warm' } ] },
       { label: '"How’s your back today?"', tone: 'Empathetic',
         then: [
           { say: 'My back is my business.', who: 'etsuko', expr: 'stern' },
-          { narrate: 'She turns to the pot, which does not need turning to.' },
+          { narrate: 'She turns to the pot. It doesn’t need her.' },
           { say: 'Apron. Eggs. Six of them.', who: 'etsuko', expr: 'neutral' } ] }
     ]},
-    { narrate: 'You do the eggs. It takes nine minutes and she watches you do all nine without saying anything.' },
-    { say: 'Forty-one years I have opened this shop. Your grandfather did eleven of them and then he stopped, which was rude of him.', who: 'etsuko', expr: 'warm' },
-    { say: 'Now hang the noren out. Nobody comes in if the curtain isn’t out.', who: 'etsuko', expr: 'neutral' },
-    { narrate: 'Outside, the street is the colour of an evening in August. Four shops on it. Two of them have their shutters down and one of those has had them down since before you were born.' },
+    { narrate: 'You do the eggs. It takes nine minutes. She watches you the whole time and doesn’t say a word.' },
+    { say: 'I have opened this shop for forty-one years. Your grandfather helped for eleven of them. Then he died, which was rude of him.', who: 'etsuko', expr: 'warm' },
+    { say: 'Now hang the noren out. That’s the curtain over the door. Nobody comes in if the curtain isn’t out.', who: 'etsuko', expr: 'neutral' },
+    { narrate: 'Outside, it is an August evening. There are four shops on this stretch. Two have their metal shutters pulled down. One of those has been closed since before you were born.' },
     { narrate: 'You hang the curtain out. Somewhere down the road a car door shuts.' }
   ]},
 
@@ -1181,94 +1181,94 @@ body.size-4 { --fs: 22px; }
      caregiving burden as an actual timetable rather than an idea.
      ===================================================================== */
   daiki: { script: [
-    { narrate: 'The curtain lifts and a man in a work shirt ducks under it, already apologising to the room in general.' },
+    { narrate: 'The curtain lifts. A man in a work shirt ducks under it. He is already saying sorry to everybody.' },
     { say: 'Sorry — sorry. Am I — you’re open? You’re open.', who: 'daiki', expr: 'surprised' },
     { say: 'We are open because the curtain is out. That is what the curtain is for.', who: 'etsuko', expr: 'stern' },
-    { say: 'Hello, Mum.', who: 'daiki', expr: 'warm' },
-    { narrate: 'He sits at the end stool, the one nearest the door, which is where he always sits. He puts his phone face up on the counter and then turns it face down. Then face up again.' },
+    { say: 'Hello, Mom.', who: 'daiki', expr: 'warm' },
+    { narrate: 'He sits on the stool nearest the door. He always sits there. He puts his phone face up on the counter, then face down. Then face up again.' },
     { choose: [
       { label: '"Long one?"', tone: 'Empathetic', warm: 'daiki',
         then: [
-          { say: 'Nagoya and back. Left at five. There was a lorry on the expressway at Toyota and I sat in it for an hour and a half thinking about nothing at all.', who: 'daiki', expr: 'worried' },
-          { say: 'It was quite restful, honestly. Nothing was my fault for ninety minutes.', who: 'daiki', expr: 'warm' } ] },
+          { say: 'I drove to Nagoya and back. That’s hours each way. I left at five this morning. A truck broke down on the highway and I sat in traffic for an hour and a half.', who: 'daiki', expr: 'worried' },
+          { say: 'It was kind of relaxing, honestly. For ninety minutes, nothing was my fault.', who: 'daiki', expr: 'warm' } ] },
       { label: '"You look like you’ve been driving since Tuesday."', tone: 'Playful', warm: 'daiki',
         then: [
           { say: 'I have. Not the same Tuesday, though. Several Tuesdays.', who: 'daiki', expr: 'warm' },
-          { say: 'Nagoya and back today. Left at five this morning.', who: 'daiki', expr: 'neutral' } ] },
+          { say: 'I drove to Nagoya and back today. That’s hours each way. I left at five this morning.', who: 'daiki', expr: 'neutral' } ] },
       { label: '"How was the drive?"', tone: 'Curious',
         then: [
           { say: 'Long. Fine. Long.', who: 'daiki', expr: 'neutral' },
-          { narrate: 'He rubs his eyes with the back of his wrist, the way you do when your hands are dirty, except his hands are clean.' } ] }
+          { narrate: 'He rubs his eyes with the back of his wrist, like someone with dirty hands. His hands are clean.' } ] }
     ]},
     { say: 'He drives too much. I have said this.', who: 'etsuko', expr: 'stern' },
     { say: 'She has said this.', who: 'daiki', expr: 'warm' },
     { say: 'Give him the fast one. He won’t chew it anyway.', who: 'etsuko', expr: 'neutral' },
-    { narrate: 'He has not eaten since a rice ball from a convenience store at seven this morning. He would not say so. His mother says so, from the other end of the counter, without turning round.' },
+    { narrate: 'He hasn’t eaten since a rice ball from a convenience store at seven this morning. He wouldn’t tell you that. His mother tells you, without even turning around.' },
     { bench: true },
     { reactions: true },
     { say: 'Right. Yes. That’s — thank you.', who: 'daiki', expr: 'warm' },
-    { narrate: 'He eats about a third of it before he says anything else, which for him is a long time.' },
-    { say: 'She had the hospital on Thursday. Did she tell you she had the hospital on Thursday?', who: 'daiki', expr: 'neutral' },
+    { narrate: 'He eats about a third of it before he says anything. For him, that is a long time.' },
+    { say: 'She had a hospital visit on Thursday. Did she tell you about the hospital on Thursday?', who: 'daiki', expr: 'neutral' },
     { say: 'I am standing here.', who: 'etsuko', expr: 'stern' },
-    { say: 'You are. It’s one of my favourite things about you.', who: 'daiki', expr: 'warm' },
+    { say: 'You are. It’s one of my favorite things about you.', who: 'daiki', expr: 'warm' },
     { choose: [
       { label: '"How often is the hospital?"', tone: 'Curious',
         then: [
-          { say: 'Twice a month at the moment. It’s in Kōriyama, so it’s fifty minutes there and fifty back, plus the waiting.', who: 'daiki', expr: 'neutral' },
-          { say: 'The bus goes at 7:40 and then not again until half one, so it’s a whole day whichever way you cut it. I take the Thursday off when I can.', who: 'daiki', expr: 'worried' },
-          { say: 'The clinic in town closed in 2019. There was one doctor and he was seventy-one.', who: 'daiki', expr: 'neutral' } ] },
+          { say: 'Twice a month right now. The hospital is in Kōriyama, the nearest big city. That’s fifty minutes there and fifty back, plus the waiting.', who: 'daiki', expr: 'neutral' },
+          { say: 'The bus leaves at 7:40 and the next one isn’t until 1:30. So it takes a whole day either way. I take Thursdays off work when I can.', who: 'daiki', expr: 'worried' },
+          { say: 'The clinic here in town closed in 2019. It had one doctor, and he was seventy-one.', who: 'daiki', expr: 'neutral' } ] },
       { label: '"That’s a lot to carry on your own."', tone: 'Empathetic', warm: 'daiki',
         then: [
-          { say: 'It isn’t on my own, exactly. Your mother does the money and the forms from Sendai, which is genuinely half of it, and she’d come if she could get away.', who: 'daiki', expr: 'neutral' },
-          { say: 'But the hospital is a body in a car. You can’t do a body in a car from Sendai.', who: 'daiki', expr: 'worried' },
+          { say: 'I’m not totally on my own. Your mother handles the money and the paperwork from Sendai. That’s really half the work. She’d come if she could get away.', who: 'daiki', expr: 'neutral' },
+          { say: 'But the hospital means somebody has to drive her there. You can’t drive a car from Sendai.', who: 'daiki', expr: 'worried' },
           { say: 'So it’s me. It was always going to be me. I’m the one who came back.', who: 'daiki', expr: 'worried' } ] },
       { label: '"Is she a difficult patient?"', tone: 'Playful', warm: 'daiki',
         then: [
-          { say: 'She told the cardiologist he looked tired.', who: 'daiki', expr: 'warm' },
+          { say: 'She told her heart doctor that he looked tired.', who: 'daiki', expr: 'warm' },
           { say: 'He did look tired.', who: 'etsuko', expr: 'neutral' },
-          { say: 'He looked tired because he is one of two cardiologists for four towns, Mum.', who: 'daiki', expr: 'warm' } ] }
+          { say: 'He looked tired because he’s one of only two heart doctors for four towns, Mom.', who: 'daiki', expr: 'warm' } ] }
     ]},
     { say: 'You came back from Osaka. I remember when you came back.', who: 'etsuko', expr: 'neutral' },
     { say: 'I did.', who: 'daiki', expr: 'neutral' },
     { choose: [
       { label: '"Why did you come back?"', tone: 'Curious',
         then: [
-          { say: 'Because there wasn’t anybody else to.', who: 'daiki', expr: 'neutral' },
-          { say: 'Look — it isn’t a tragedy. I had a good job and now I have an all right job. That’s the whole size of it.', who: 'daiki', expr: 'warm' },
-          { say: 'But that’s the arithmetic, isn’t it. Two of us in my generation. One of me here. She’s seventy-four and Grandad’s gone and the neighbours are all older than she is.', who: 'daiki', expr: 'worried' },
-          { say: 'When Grandma was my age there were five children in a family and four of them lived on this street. Somebody was always ten minutes away. Nobody is ten minutes away now.', who: 'daiki', expr: 'worried' } ] },
+          { say: 'Because there wasn’t anybody else to do it.', who: 'daiki', expr: 'neutral' },
+          { say: 'Look — it isn’t a tragedy. I had a good job. Now I have an okay job. That’s all it is.', who: 'daiki', expr: 'warm' },
+          { say: 'But do the math. There are two of us kids. Only one of us is here. She’s seventy-four, Grandpa’s gone, and the neighbors are all older than she is.', who: 'daiki', expr: 'worried' },
+          { say: 'When Grandma was my age, families had five kids, and four of them lived on this street. Somebody was always ten minutes away. Now nobody is ten minutes away.', who: 'daiki', expr: 'worried' } ] },
       { label: '"Do you miss Osaka?"', tone: 'Empathetic', warm: 'daiki',
         then: [
-          { say: 'Every single day, and I’d make the same choice again, and both of those are true at once, which nobody warns you about.', who: 'daiki', expr: 'worried' },
-          { say: 'I had a team of eleven people there. Here I drive.', who: 'daiki', expr: 'neutral' },
-          { say: 'About a hundred thousand people a year in this country leave a job or change one to look after a parent. There’s a word for it. There’s a government leaflet about it. I’ve read the leaflet.', who: 'daiki', expr: 'worried' },
-          { say: 'It is a very good leaflet. It does not drive to Kōriyama.', who: 'daiki', expr: 'neutral' } ] },
+          { say: 'Every single day. And I’d make the same choice again. Both things are true at once. Nobody warns you about that.', who: 'daiki', expr: 'worried' },
+          { say: 'In Osaka I ran a team of eleven people. Here, I drive.', who: 'daiki', expr: 'neutral' },
+          { say: 'About a hundred thousand people a year in Japan quit or change jobs to take care of a parent. There’s a word for it. There’s a government pamphlet about it. I’ve read the pamphlet.', who: 'daiki', expr: 'worried' },
+          { say: 'It is a very good pamphlet. It does not drive to the hospital.', who: 'daiki', expr: 'neutral' } ] },
       { label: '"Osaka’s loss."', tone: 'Playful',
         then: [
           { say: 'Osaka has not noticed.', who: 'daiki', expr: 'warm' },
-          { say: 'That’s the thing about cities. They’re where everyone under forty went, and they didn’t leave a gap. The gap is all back here.', who: 'daiki', expr: 'neutral' } ] }
+          { say: 'That’s the thing about big cities. Everyone under forty moved there. The cities didn’t notice. The empty space is all back here.', who: 'daiki', expr: 'neutral' } ] }
     ]},
-    { say: 'He is telling you the {{dependency|dependency ratio}} and pretending it is a story about a car.', who: 'etsuko', expr: 'stern' },
+    { say: 'He is telling you about the {{dependency|dependency ratio}}. He is just pretending it’s a story about a car.', who: 'etsuko', expr: 'stern' },
     { narrate: 'You both look at her.' },
-    { say: 'I watch the news. I am old, not dead. They put it on a chart. So many of us, so many of you.', who: 'etsuko', expr: 'neutral' },
+    { say: 'I watch the news. I am old, not dead. They show it on a chart. This many old people. This many working people.', who: 'etsuko', expr: 'neutral' },
     { say: 'When I opened this shop there were eleven working people in this country for every two of my age. It is nearer two to one now, and I am the one.', who: 'etsuko', expr: 'stern' },
     { choose: [
-      { label: '"Two working people for every one over 65 — nationally?"', tone: 'Curious',
+      { label: '"Two working people for every person over 65 — in the whole country?"', tone: 'Curious',
         then: [
-          { say: 'Near enough. They say it as a number out of a hundred. {{oldage|Fifty-odd of us for every hundred of you}}, and rising.', who: 'etsuko', expr: 'neutral' },
-          { say: 'It sounds like nothing. It is a tax rate, a pension, and a man in a car on the expressway at Toyota.', who: 'etsuko', expr: 'stern' } ] },
+          { say: 'Close enough. They say it as a number out of a hundred. {{oldage|About fifty of us for every hundred of you}}, and going up.', who: 'etsuko', expr: 'neutral' },
+          { say: 'It sounds like just a number. But it means taxes, and pensions, and a man stuck in his car on the highway.', who: 'etsuko', expr: 'stern' } ] },
       { label: '"That must be strange, being a chart."', tone: 'Empathetic',
         then: [
-          { say: 'It is not strange. It is accurate.', who: 'etsuko', expr: 'stern' },
-          { say: 'I would rather be a difficult old woman than a statistic, and I have arranged to be both.', who: 'etsuko', expr: 'warm' } ] },
-      { label: '"You’ve been watching demography documentaries again."', tone: 'Playful', warm: 'etsuko',
+          { say: 'It is not strange. It is true.', who: 'etsuko', expr: 'stern' },
+          { say: 'I would rather be a difficult old woman than a number on a chart. I have managed to be both.', who: 'etsuko', expr: 'warm' } ] },
+      { label: '"You’ve been watching TV shows about population again."', tone: 'Playful', warm: 'etsuko',
         then: [
           { say: 'There is nothing else on at two in the afternoon.', who: 'etsuko', expr: 'warm' },
-          { say: 'They are always filmed in a town like this one and they always find the emptiest street to stand in. They could film this street. I would tell them to move their van.', who: 'etsuko', expr: 'stern' } ] }
+          { say: 'They always film in a town like this one. They always find the emptiest street to stand in. They could film this street. I would tell them to move their van.', who: 'etsuko', expr: 'stern' } ] }
     ]},
     { confessions: true },
-    { narrate: 'Daiki drinks the last of the broth holding the bowl in both hands, which his mother taught him and which he does without thinking about it.' },
-    { say: 'Right. Thanks. I’ve got Sendai at six tomorrow.', who: 'daiki', expr: 'neutral' },
+    { narrate: 'Daiki drinks the last of the soup, holding the bowl in both hands. His mother taught him that. He doesn’t even think about it.' },
+    { say: 'Right. Thanks. I have to drive to Sendai at six tomorrow.', who: 'daiki', expr: 'neutral' },
     { say: 'Take the eggs. There are eggs.', who: 'etsuko', expr: 'neutral' },
     { say: 'I don’t need—', who: 'daiki', expr: 'surprised' },
     { say: 'Take the eggs, Daiki.', who: 'etsuko', expr: 'stern' },
@@ -1278,31 +1278,31 @@ body.size-4 { --fs: 22px; }
   react: {
     daiki: {
       matched: [
-        { say: 'Oh — oh, that’s a proper one.', who: 'daiki', expr: 'surprised' },
-        { narrate: 'He stops with the spoon halfway and looks at the bowl like it has said something to him.' },
-        { say: 'I didn’t know I was hungry. I genuinely did not know that.', who: 'daiki', expr: 'warm' } ],
+        { say: 'Oh — oh, that’s a real bowl of ramen.', who: 'daiki', expr: 'surprised' },
+        { narrate: 'He stops with the spoon halfway up. He looks at the bowl like it just said something to him.' },
+        { say: 'I didn’t know I was hungry. I really didn’t know.', who: 'daiki', expr: 'warm' } ],
       near: [
         { say: 'That’s good. Thank you. That’s good.', who: 'daiki', expr: 'warm' },
-        { narrate: 'He eats it steadily, the way you eat when eating is a task on a list.' } ],
+        { narrate: 'He eats it steadily, like eating is just one more job on his list.' } ],
       mismatched: [
-        { say: 'Ah — lovely. Thank you.', who: 'daiki', expr: 'neutral' },
-        { narrate: 'He eats all of it and says nothing more about it. Your grandmother looks at the bowl, then at you, and does not comment, which is worse.' } ]
+        { say: 'Oh — great. Thank you.', who: 'daiki', expr: 'neutral' },
+        { narrate: 'He eats all of it and doesn’t say anything else. Your grandmother looks at the bowl, then at you. She doesn’t say anything either. That’s worse.' } ]
     }
   },
   confession: {
     daiki: [
       { narrate: 'He puts the spoon down. The phone stays face down.' },
-      { say: 'Can I tell you something I haven’t said to your mother.', who: 'daiki', expr: 'worried' },
-      { say: 'There is a version of the next ten years where I am here every Thursday and she gets worse slowly, and that is the good version. That’s the one I’m hoping for.', who: 'daiki', expr: 'worried' },
-      { say: 'And some days on the expressway I catch myself doing the sums on the bad version instead, and how long I could keep the job, and I hate myself for about forty kilometres.', who: 'daiki', expr: 'worried' },
-      { say: 'She’d have done it for her mother without blinking. She did, actually. Nobody wrote a leaflet about it then, they just called it being a daughter.', who: 'daiki', expr: 'neutral' },
-      { say: 'Don’t tell her I said any of that. She’d be insulted on behalf of both of us.', who: 'daiki', expr: 'warm' } ]
+      { say: 'Can I tell you something I haven’t told your mother?', who: 'daiki', expr: 'worried' },
+      { say: 'Here is one way the next ten years could go. I’m here every Thursday, and she gets worse slowly. That’s the good version. That’s the one I’m hoping for.', who: 'daiki', expr: 'worried' },
+      { say: 'But some days on the highway, I catch myself planning for the bad version. How long could I keep my job? Then I hate myself for about twenty-five miles.', who: 'daiki', expr: 'worried' },
+      { say: 'She would have done the same for her mother without even thinking. She did, actually. Nobody wrote a pamphlet about it back then. They just called it being a daughter.', who: 'daiki', expr: 'neutral' },
+      { say: 'Don’t tell her I said any of that. She’d be insulted for both of us.', who: 'daiki', expr: 'warm' } ]
   },
   bonus: {
     daiki: [
       { narrate: 'At the curtain he stops, holding the eggs.' },
-      { say: 'Oi. Summer kid.', who: 'daiki', expr: 'warm' },
-      { say: 'It’s better with you here. Not the shop. Her.', who: 'daiki', expr: 'warm' } ]
+      { say: 'Hey. Summer kid.', who: 'daiki', expr: 'warm' },
+      { say: 'It’s better with you here. Not for the shop. For her.', who: 'daiki', expr: 'warm' } ]
   }},
 
   /* =====================================================================
@@ -1311,160 +1311,160 @@ body.size-4 { --fs: 22px; }
      sell to, and migrant care work as the human form of a policy response.
      ===================================================================== */
   kenji_mary: { script: [
-    { narrate: 'The curtain goes up slowly, held for somebody. An old man comes in at the pace of a man who has decided how fast he is going, followed by a woman with an umbrella she did not need and a bag over her shoulder.' },
+    { narrate: 'Someone holds the curtain up slowly. An old man walks in. He moves at exactly the speed he has decided to move. Behind him is a younger woman with an umbrella she didn’t need and a bag on her shoulder.' },
     { say: 'Etsuko! You’ve changed the curtain.', who: 'kenji', expr: 'warm' },
     { say: 'In 2011.', who: 'etsuko', expr: 'neutral' },
     { say: 'Well. It’s very good.', who: 'kenji', expr: 'warm' },
-    { narrate: 'He takes the middle stool, which takes a moment, and the woman does not help him do it and does not look away either. When he is down she sits beside him and puts the bag where he can’t trip on it.' },
-    { say: 'Good evening. Sorry, we’re a bit slow tonight, the hill was warm.', who: 'mary', expr: 'warm' },
-    { say: 'The hill was not warm. She walks fast because she is thirty-four.', who: 'kenji', expr: 'stern' },
+    { narrate: 'Getting onto the middle stool takes him a moment. The woman doesn’t help him, but she doesn’t look away either. Once he’s seated, she sits next to him and puts the bag where he won’t trip on it.' },
+    { say: 'Good evening. Sorry we’re a bit slow tonight. The hill was hot.', who: 'mary', expr: 'warm' },
+    { say: 'The hill was not hot. She walks fast because she is thirty-four.', who: 'kenji', expr: 'stern' },
     { say: 'I am thirty-four,', who: 'mary', expr: 'warm' },
     { say: 'and I walk fast because you walk fast when I’m not looking.', who: 'mary', expr: 'warm' },
     { choose: [
       { label: '"Have you two been coming here long?"', tone: 'Curious', warm: 'kenji',
         then: [
-          { say: 'I have been coming here since this one’s mother-in-law ran it. Two owners. Same stool.', who: 'kenji', expr: 'warm' },
-          { say: 'Mary has been coming here two years, four months, and she likes it better than I do, which is a scandal.', who: 'kenji', expr: 'warm' } ] },
+          { say: 'I’ve been coming here since Etsuko’s mother-in-law ran the place. Two owners. Same stool.', who: 'kenji', expr: 'warm' },
+          { say: 'Mary has been coming here for two years and four months. She likes it more than I do, which is shocking.', who: 'kenji', expr: 'warm' } ] },
       { label: '"You look like you’ve had a day."', tone: 'Empathetic', warm: 'mary',
         then: [
-          { say: 'A bit. It’s bath day and it’s bin day and they should never be the same day.', who: 'mary', expr: 'warm' },
-          { say: 'She is very funny about the bins. There is a schedule with colours.', who: 'kenji', expr: 'warm' } ] },
+          { say: 'A little. It’s bath day and trash day, and those should never be the same day.', who: 'mary', expr: 'warm' },
+          { say: 'She is very serious about the trash. There is a schedule with colors.', who: 'kenji', expr: 'warm' } ] },
       { label: '"Is he always this much trouble?"', tone: 'Playful', warm: 'mary',
         then: [
           { say: 'Yes.', who: 'mary', expr: 'warm' },
           { say: 'I heard that.', who: 'kenji', expr: 'stern' },
           { say: 'You were meant to.', who: 'mary', expr: 'warm' } ] }
     ]},
-    { say: 'The plainest thing you have, for me. I have had the same bowl since 1968 and I see no reason to review it now.', who: 'kenji', expr: 'neutral' },
+    { say: 'The plainest thing you have, for me. I have eaten the same bowl since 1968. I see no reason to change now.', who: 'kenji', expr: 'neutral' },
     { say: 'And I’ll have the rich one. The white broth. With the corn.', who: 'mary', expr: 'warm' },
-    { say: 'She eats it like a northerner and she is from Cebu.', who: 'kenji', expr: 'warm' },
-    { say: 'I am from Cebu and I eat it like a person who is cold nine months of the year.', who: 'mary', expr: 'warm' },
+    { say: 'She eats it like someone from the cold north. She is from Cebu, in the Philippines.', who: 'kenji', expr: 'warm' },
+    { say: 'I am from the Philippines, where it is warm. I eat it like a person who is cold nine months of the year.', who: 'mary', expr: 'warm' },
     { bench: true },
     { reactions: true },
-    { narrate: 'For a while there is only the sound of two people eating and the fan over the range.' },
-    { say: 'Etsuko. Did you hear about Nakano’s.', who: 'kenji', expr: 'worried' },
+    { narrate: 'For a while, the only sounds are two people eating and the fan over the stove.' },
+    { say: 'Etsuko. Did you hear about Nakano’s?', who: 'kenji', expr: 'worried' },
     { say: 'I heard.', who: 'etsuko', expr: 'neutral' },
-    { say: 'Fifty-one years. He didn’t even put a notice up until the Friday.', who: 'kenji', expr: 'worried' },
+    { say: 'Fifty-one years. He didn’t even put up a sign until Friday.', who: 'kenji', expr: 'worried' },
     { choose: [
-      { label: '"Nakano’s — the fishmonger across the road?"', tone: 'Curious', warm: 'kenji',
+      { label: '"Nakano’s — the fish shop across the way?"', tone: 'Curious', warm: 'kenji',
         then: [
-          { say: 'The shutter you can see from that window. Fish on the left, ice at the back, and his father before him.', who: 'kenji', expr: 'worried' },
-          { say: 'He didn’t go bankrupt, mind. That’s the part people get wrong. He ran out of customers and he ran out of a son.', who: 'kenji', expr: 'worried' },
-          { say: 'The son is in Yokohama in insurance and he is doing very well and why on earth would he come back to gut fish in a town with a closed school.', who: 'kenji', expr: 'neutral' } ] },
+          { say: 'That’s the shutter you can see from here. Fish on the left, ice in the back. His father ran it before him.', who: 'kenji', expr: 'worried' },
+          { say: 'He didn’t go broke. That’s the part people get wrong. He ran out of customers and he ran out of a son.', who: 'kenji', expr: 'worried' },
+          { say: 'His son lives near Tokyo and sells insurance. He is doing very well. Why would he come back here to clean fish in a town where the school is closed?', who: 'kenji', expr: 'neutral' } ] },
       { label: '"That must be hard to watch, one at a time."', tone: 'Empathetic', warm: 'kenji',
         then: [
-          { say: 'It is like counting. That is what nobody tells you about getting old in a small place.', who: 'kenji', expr: 'worried' },
-          { say: 'When I opened my shop there were eleven businesses on this street. Now there is this, and the vending machine, and the post office three days a week.', who: 'kenji', expr: 'worried' },
-          { say: 'The bus went from nine a day to two. The school shut in 2016 — eleven children, they bus them to Kawaguchi now. And every one of those is somebody deciding it isn’t worth it any more, and each one makes the next one easier to decide.', who: 'kenji', expr: 'worried' } ] },
+          { say: 'It is like counting down. Nobody tells you that about getting old in a small town.', who: 'kenji', expr: 'worried' },
+          { say: 'When I opened my shop, there were eleven businesses on this street. Now there is this place, the vending machine, and a post office that opens three days a week.', who: 'kenji', expr: 'worried' },
+          { say: 'The bus went from nine a day to two. The school closed in 2016 with eleven children left. Now they bus them to the next town. Each time, somebody decided it wasn’t worth it anymore. And each one made the next one easier to decide.', who: 'kenji', expr: 'worried' } ] },
       { label: '"Ran out of customers, or ran out of people?"', tone: 'Curious', warm: 'kenji',
         then: [
-          { say: 'Ha! Now you sound like the man from the prefecture.', who: 'kenji', expr: 'warm' },
-          { say: 'People. There is no shortage of appetite in this town. There is a shortage of {{depop|town}}.', who: 'kenji', expr: 'worried' },
-          { say: 'Four thousand of us when I married. Under fifteen hundred now, and half of those are over sixty-five. Say that to a man who wants to sell fish.', who: 'kenji', expr: 'worried' } ] }
+          { say: 'Ha! Now you sound like the man from the government office.', who: 'kenji', expr: 'warm' },
+          { say: 'People. Nobody here stopped being hungry. What we ran out of is {{depop|town}}.', who: 'kenji', expr: 'worried' },
+          { say: 'There were four thousand of us when I got married. Now there are under fifteen hundred, and half of them are over sixty-five. Try selling fish to that.', who: 'kenji', expr: 'worried' } ] }
     ]},
-    { say: 'They keep saying we are a growth market. Have you heard this one? Old people are a growth market.', who: 'kenji', expr: 'stern' },
+    { say: 'They keep saying we are a growth market. Have you heard this? Old people are a growth market. A market that keeps getting bigger.', who: 'kenji', expr: 'stern' },
     { choose: [
-      { label: '"That’s the — what, the ‘silver economy’?"', tone: 'Curious',
+      { label: '"That’s the — what’s it called — the ‘silver economy’?"', tone: 'Curious',
         then: [
-          { say: 'That is what they call it. {{silver|The silver economy}}. Handrails, hearing aids, the soft food, the little scooters.', who: 'kenji', expr: 'neutral' },
-          { say: 'And it is real! Somebody is making a fortune out of my knees. But look out of that window and tell me where the shop is.', who: 'kenji', expr: 'stern' },
-          { say: 'It’s all in Kōriyama and Sendai, where there are enough old people in one place to be worth the rent. Out here we are the market and there is nobody to sell to us.', who: 'kenji', expr: 'worried' } ] },
-      { label: '"Growth market. There’s a sales pitch."', tone: 'Playful', warm: 'mary',
+          { say: 'That’s what they call it. {{silver|The silver economy}}. Businesses that sell to old people. Handrails, hearing aids, soft food, little scooters.', who: 'kenji', expr: 'neutral' },
+          { say: 'And it is real! Somebody is getting rich off my bad knees. But look out there and tell me where the store is.', who: 'kenji', expr: 'stern' },
+          { say: 'Those stores are all in the big cities, Kōriyama and Sendai. There are enough old people there to pay the rent. Out here, we are the customers, and nobody is here to sell to us.', who: 'kenji', expr: 'worried' } ] },
+      { label: '"A growth market. That sounds like an ad."', tone: 'Playful', warm: 'mary',
         then: [
-          { say: 'The catalogue comes to the house. It is enormous. It is all beige.', who: 'mary', expr: 'warm' },
-          { say: 'Everything in it is beige and everything in it costs four times what it should because they know exactly who is buying.', who: 'kenji', expr: 'stern' } ] },
+          { say: 'The catalog comes to the house. It is huge. Everything in it is beige.', who: 'mary', expr: 'warm' },
+          { say: 'Everything in it is beige. And everything costs four times too much, because they know exactly who is buying.', who: 'kenji', expr: 'stern' } ] },
       { label: '"Somebody’s making money off it, at least."', tone: 'Empathetic',
         then: [
           { say: 'Somebody always is. It is not the town.', who: 'kenji', expr: 'stern' } ] }
     ]},
-    { narrate: 'Mary has been quiet through this, working steadily down her bowl. She catches you looking.' },
+    { narrate: 'Mary has been quiet, eating her way through her bowl. She sees you looking at her.' },
     { choose: [
       { label: '"How did you end up here, Mary?"', tone: 'Curious', warm: 'mary',
         then: [
-          { say: 'The nursing route. There is a visa for it — for {{migrant|care work specifically}}. I did two years of Japanese and an exam I still have dreams about.', who: 'mary', expr: 'warm' },
-          { say: 'I trained in Cebu, worked four years in Manila. My mother is a nurse. My sister is a nurse in Riyadh. It is what my family does.', who: 'mary', expr: 'warm' },
-          { say: 'This country needs about half a million more care workers than it has, and it is not going to find them among Japanese twenty-year-olds, because there aren’t enough Japanese twenty-year-olds.', who: 'mary', expr: 'neutral' } ] },
+          { say: 'Through nursing. Japan has a special visa just for {{migrant|care work}}. I studied Japanese for two years and passed a test I still have nightmares about.', who: 'mary', expr: 'warm' },
+          { say: 'I trained in Cebu and worked four years in Manila, back home. My mother is a nurse. My sister is a nurse in Saudi Arabia. It’s what my family does.', who: 'mary', expr: 'warm' },
+          { say: 'Japan needs about half a million more care workers than it has. It won’t find them among Japanese twenty-year-olds. There aren’t enough Japanese twenty-year-olds.', who: 'mary', expr: 'neutral' } ] },
       { label: '"Is it strange, being so far from home?"', tone: 'Empathetic', warm: 'mary',
         then: [
-          { say: 'Some days. Video calls at six in the morning because of the hours. My son is nine. My mother has him.', who: 'mary', expr: 'worried' },
-          { say: 'But I like this work and I am good at it and it pays for his school, so — yes and yes, both.', who: 'mary', expr: 'warm' },
-          { say: 'And this one is easy. He talks the whole time so I always know he is breathing.', who: 'mary', expr: 'warm' } ] },
+          { say: 'Some days. I make video calls at six in the morning because of the time difference. My son is nine. My mother takes care of him.', who: 'mary', expr: 'worried' },
+          { say: 'But I like this work. I’m good at it, and it pays for his school. So — yes, it’s hard, and yes, it’s worth it.', who: 'mary', expr: 'warm' },
+          { say: 'And this one is easy. He talks the whole time, so I always know he is still breathing.', who: 'mary', expr: 'warm' } ] },
       { label: '"Does he ever actually let you finish a sentence?"', tone: 'Playful', warm: 'mary',
         then: [
           { say: 'Once. In March.', who: 'mary', expr: 'warm' },
           { say: 'It was a very good sentence,', who: 'kenji', expr: 'warm' },
           { say: 'and I have thought about it often since.', who: 'kenji', expr: 'warm' } ] }
     ]},
-    { say: 'His daughter arranged it. Through the agency. She rang thirty places.', who: 'mary', expr: 'neutral' },
-    { say: 'She did. She is very organised. She gets that from her mother.', who: 'kenji', expr: 'warm' },
-    { narrate: 'His phone goes off in his shirt pocket at a volume set for somebody who cannot hear it. He gets it out with two hands.' },
+    { say: 'His daughter set it up through an agency. She called thirty places.', who: 'mary', expr: 'neutral' },
+    { say: 'She did. She is very organized. She gets that from her mother.', who: 'kenji', expr: 'warm' },
+    { narrate: 'His phone rings in his shirt pocket, very loud, set for someone who can’t hear well. He takes it out with both hands.' },
     { say: 'Ah — that’s her. That’s Sachiko.', who: 'kenji', expr: 'warm' },
-    { narrate: 'He answers it at the counter, because it does not occur to him that a phone is private.' },
+    { narrate: 'He answers it right there at the counter. It never occurs to him that a phone call could be private.' },
     { narrate: 'A voice, thin through the speaker: "Dad? Sorry, I’ve only got a minute, I’m still at the office—"' },
     { say: 'I’m at Etsuko’s! I’m having the salt one!', who: 'kenji', expr: 'warm' },
-    { narrate: '"—good, good. Listen, about this month. I’ve got the audit and then Hiroto’s exams, so I don’t think I can get up until — it might be October, Dad. Is Mary there? Is she there now?"' },
+    { narrate: '"—good, good. Listen, about this month. I have a big project at work, and then Hiroto has exams. So I don’t think I can visit until — it might be October, Dad. Is Mary there? Is she there now?"' },
     { say: 'She is here. She is eating corn.', who: 'kenji', expr: 'warm' },
     { narrate: '"Good. Good. That’s — okay. I’ll call Sunday. I will actually call Sunday."' },
     { say: 'Sunday. Yes. Work hard.', who: 'kenji', expr: 'warm' },
-    { narrate: 'He puts the phone down on the counter, face up, and looks at it for a moment longer than the call lasted.' },
+    { narrate: 'He sets the phone on the counter, face up. He looks at it longer than the call lasted.' },
     { say: 'Tokyo,', who: 'kenji', expr: 'neutral' },
-    { say: 'is four hours if the train is kind.', who: 'kenji', expr: 'neutral' },
+    { say: 'is four hours away, if the train is on time.', who: 'kenji', expr: 'neutral' },
     { confessions: true },
-    { say: 'Right. Bath day. Up you get before you stiffen.', who: 'mary', expr: 'warm' },
-    { say: 'I do not stiffen.', who: 'kenji', expr: 'stern' },
-    { say: 'You stiffen.', who: 'mary', expr: 'warm' },
+    { say: 'Okay. Bath day. Up you get, before you get stiff.', who: 'mary', expr: 'warm' },
+    { say: 'I do not get stiff.', who: 'kenji', expr: 'stern' },
+    { say: 'You get stiff.', who: 'mary', expr: 'warm' },
     { bonus: 'kenji' },
     { bonus: 'mary' },
-    { narrate: 'She gets the bag before he reaches for it, and gets it in a way that looks like she happened to be standing up anyway.' }
+    { narrate: 'She grabs the bag before he reaches for it. She makes it look like she was standing up anyway.' }
   ],
   react: {
     kenji: {
       matched: [
-        { narrate: 'He looks into it before he touches it. You can see the bottom of the bowl through the broth.' },
+        { narrate: 'He looks into the bowl before he touches it. The soup is so clear you can see the bottom.' },
         { say: 'Ha! Yes. That is the one.', who: 'kenji', expr: 'warm' },
-        { say: 'Nobody makes this any more. Everybody wants it thick enough to stand a chopstick in. This is what it tasted like when it was new.', who: 'kenji', expr: 'warm' } ],
+        { say: 'Nobody makes this anymore. Everybody wants soup thick enough to stand a chopstick in. This is how ramen tasted when it was new.', who: 'kenji', expr: 'warm' } ],
       near: [
         { say: 'That’s a good bowl. Thank you.', who: 'kenji', expr: 'warm' },
-        { narrate: 'He eats it happily enough, though he stirs it twice, as if checking for something that isn’t in there.' } ],
+        { narrate: 'He eats it happily. But he stirs it twice, like he’s looking for something that isn’t there.' } ],
       mismatched: [
-        { say: 'Oh — that’s very generous.', who: 'kenji', expr: 'surprised' },
-        { narrate: 'He eats around the top of it and drinks about half the broth, and is far too polite to say a word.' } ]
+        { say: 'Oh — that’s a lot of food.', who: 'kenji', expr: 'surprised' },
+        { narrate: 'He eats a little from the top and drinks about half the soup. He is much too polite to say anything.' } ]
     },
     mary: {
       matched: [
         { say: 'Yes! Yes. That is exactly it.', who: 'mary', expr: 'warm' },
-        { say: 'The first winter here I could not get warm. Somebody put this in front of me and I understood the entire country in about four minutes.', who: 'mary', expr: 'warm' } ],
+        { say: 'My first winter here, I could not get warm. Somebody put this in front of me, and I understood this whole country in about four minutes.', who: 'mary', expr: 'warm' } ],
       near: [
-        { say: 'That’s lovely, thank you.', who: 'mary', expr: 'warm' },
-        { narrate: 'She finishes all of it and stacks her bowl neatly inside Kenji’s, which nobody asked her to do.' } ],
+        { say: 'That’s really nice, thank you.', who: 'mary', expr: 'warm' },
+        { narrate: 'She finishes every bite and stacks her bowl neatly inside Kenji’s. Nobody asked her to.' } ],
       mismatched: [
-        { say: 'Ah — thank you.', who: 'mary', expr: 'neutral' },
-        { narrate: 'She eats it without complaint. Halfway down she quietly reaches for the pepper.' } ]
+        { say: 'Oh — thank you.', who: 'mary', expr: 'neutral' },
+        { narrate: 'She eats it without complaining. Halfway through, she quietly reaches for the pepper.' } ]
     }
   },
   confession: {
     kenji: [
-      { narrate: 'He turns the phone face down. It takes him two goes.' },
-      { say: 'She is a good daughter. I want that said first.', who: 'kenji', expr: 'worried' },
-      { say: 'She rang thirty agencies for me. She pays the part the insurance doesn’t. She has a job and a boy doing exams and a husband who works later than she does.', who: 'kenji', expr: 'worried' },
-      { say: 'And I have not eaten a meal with my daughter since New Year.', who: 'kenji', expr: 'worried' },
-      { say: 'Mary is here five days a week and she is kind and she is good at it and she is not my daughter, and both of those are true, and I would not say the second one in front of her for anything in the world.', who: 'kenji', expr: 'worried' },
+      { narrate: 'He turns the phone face down. It takes him two tries.' },
+      { say: 'She is a good daughter. I want to say that first.', who: 'kenji', expr: 'worried' },
+      { say: 'She called thirty agencies for me. She pays what the insurance doesn’t. She has a job, a son with exams, and a husband who works even later than she does.', who: 'kenji', expr: 'worried' },
+      { say: 'And I have not eaten a meal with my daughter since New Year’s.', who: 'kenji', expr: 'worried' },
+      { say: 'Mary is here five days a week. She is kind, and she is good at her job. And she is not my daughter. Both things are true. I would never say the second one in front of her.', who: 'kenji', expr: 'worried' },
       { say: 'That is what all this costs. Not money. The money is fine.', who: 'kenji', expr: 'neutral' } ],
     mary: [
-      { narrate: 'Kenji has turned to say something to Etsuko about the curtain again. Mary leans in a little.' },
-      { say: 'Can I say something you should not repeat.', who: 'mary', expr: 'neutral' },
-      { say: 'I know what I am here for. I am a policy. Somebody in Tokyo worked out the numbers, and the numbers said: not enough young people, too many old people, open a door.', who: 'mary', expr: 'neutral' },
-      { say: 'And it is a narrow door. Ten years on this route and I am still not sure what I am — the visa says one thing and the neighbours say another.', who: 'mary', expr: 'worried' },
-      { say: 'But he taught me to ride a bicycle again after my accident. He shouted at me the whole way down the hill.', who: 'mary', expr: 'warm' },
-      { say: 'You cannot put that on a form. So they will keep arguing about the forms.', who: 'mary', expr: 'warm' } ]
+      { narrate: 'Kenji has turned to talk to Etsuko about the curtain again. Mary leans closer to you.' },
+      { say: 'Can I tell you something you shouldn’t repeat?', who: 'mary', expr: 'neutral' },
+      { say: 'I know why I’m here. I am a policy. Somebody in the government did the math. The math said: not enough young people, too many old people — so open a door.', who: 'mary', expr: 'neutral' },
+      { say: 'And it is a narrow door. Even after years on this visa, I’m still not sure what I am here. The visa says one thing. The neighbors say another.', who: 'mary', expr: 'worried' },
+      { say: 'But after my accident, he taught me to ride a bike again. He yelled at me the whole way down the hill.', who: 'mary', expr: 'warm' },
+      { say: 'You can’t put that on a form. So people will keep arguing about the forms.', who: 'mary', expr: 'warm' } ]
   },
   bonus: {
     kenji: [
-      { say: 'You listen properly. That is not nothing.', who: 'kenji', expr: 'warm' },
-      { say: 'Most people my age get talked past. You get talked past for about ten years and then you stop starting.', who: 'kenji', expr: 'warm' } ],
+      { say: 'You really listen. That matters.', who: 'kenji', expr: 'warm' },
+      { say: 'Most people talk right past someone my age. After about ten years of that, you stop trying to talk at all.', who: 'kenji', expr: 'warm' } ],
     mary: [
-      { say: 'Hey. Next time I will teach you to say something rude in Cebuano.', who: 'mary', expr: 'warm' },
-      { say: 'He already knows four. He uses them on the bins.', who: 'mary', expr: 'warm' } ]
+      { say: 'Hey. Next time I’ll teach you to say something rude in my language.', who: 'mary', expr: 'warm' },
+      { say: 'He already knows four. He uses them on the trash cans.', who: 'mary', expr: 'warm' } ]
   }},
 
   /* =====================================================================
@@ -1474,11 +1474,11 @@ body.size-4 { --fs: 22px; }
      times that it has worn smooth, which is worse and more accurate.
      ===================================================================== */
   aiko_ren: { script: [
-    { narrate: 'Two people about the age of your mother come in mid-conversation and stop having it the moment the curtain drops behind them.' },
-    { say: '—no, I’m just saying we could have gone at the weekend instead.', who: 'ren', expr: 'neutral' },
+    { narrate: 'Two people about your mother’s age come in, in the middle of an argument. They stop the moment the curtain drops behind them.' },
+    { say: '—no, I’m just saying we could have gone on the weekend instead.', who: 'ren', expr: 'neutral' },
     { say: 'And I’m saying I’m hungry now.', who: 'aiko', expr: 'stern' },
-    { narrate: 'They sit. She puts her phone screen-down without looking at it. He reads the whole wall menu, every time, even though he already knows.' },
-    { say: 'Miso for me. Nothing on it. Actually — negi, that’s it.', who: 'aiko', expr: 'neutral' },
+    { narrate: 'They sit. She puts her phone face down without looking at it. He reads the whole menu on the wall, like always, even though he knows it already.' },
+    { say: 'Miso for me. Nothing on it. Actually — green onions. That’s it.', who: 'aiko', expr: 'neutral' },
     { say: 'Miso as well, and could I have—', who: 'ren', expr: 'warm' },
     { say: 'He wants the corn and the butter.', who: 'aiko', expr: 'neutral' },
     { say: 'I want the corn and the butter.', who: 'ren', expr: 'warm' },
@@ -1490,132 +1490,132 @@ body.size-4 { --fs: 22px; }
           { say: 'Once. I did that once, in 2019, and I will hear about it at my funeral.', who: 'ren', expr: 'warm' } ] },
       { label: '"Rough day?"', tone: 'Empathetic',
         then: [
-          { say: 'It was a normal day. It was a completely normal day and I am this tired at the end of it, which is the part that gets me.', who: 'aiko', expr: 'worried' },
-          { narrate: 'She catches herself, and rearranges her chopsticks so they are square with the edge of the counter.' },
+          { say: 'It was a normal day. A completely normal day. And I’m this tired at the end of it. That’s the part that gets me.', who: 'aiko', expr: 'worried' },
+          { narrate: 'She stops herself. She lines up her chopsticks with the edge of the counter.' },
           { say: 'Sorry. Yes. Rough day.', who: 'aiko', expr: 'neutral' } ] },
-      { label: '"Are you two from the new block?"', tone: 'Curious', warm: 'aiko',
+      { label: '"Are you two from the new apartments?"', tone: 'Curious', warm: 'aiko',
         then: [
-          { say: 'Two years now. We came from Sendai — his job, my job’s remote three days.', who: 'aiko', expr: 'neutral' },
+          { say: 'For two years now. We moved from Sendai, the city, for his job. I work from home three days a week.', who: 'aiko', expr: 'neutral' },
           { say: 'The rent here is a third of what we paid there. A third. For twice the space.', who: 'aiko', expr: 'warm' },
           { say: 'Because nobody wants to live here,', who: 'aiko', expr: 'neutral' },
-          { say: 'which is either a bargain or a warning, and we are still finding out which.', who: 'aiko', expr: 'neutral' } ] }
+          { say: 'which is either a great deal or a bad sign. We’re still finding out which.', who: 'aiko', expr: 'neutral' } ] }
     ]},
     { bench: true },
     { reactions: true },
-    { narrate: 'Ren gets his phone out to photograph his bowl, thinks better of it, and then does it anyway.' },
-    { say: 'Oh — did you see the town thing? The banner by the station.', who: 'ren', expr: 'warm' },
+    { narrate: 'Ren takes out his phone to take a picture of his bowl. He changes his mind. Then he does it anyway.' },
+    { say: 'Oh — did you see the town’s new banner? The one by the train station.', who: 'ren', expr: 'warm' },
     { say: 'I saw it.', who: 'aiko', expr: 'stern' },
-    { say: 'They’ve put the settlement grant up again. Six hundred thousand a child now, I think, plus the moving money.', who: 'ren', expr: 'warm' },
+    { say: 'They raised the baby money again. It’s six hundred thousand yen per child now, I think, plus money for moving here.', who: 'ren', expr: 'warm' },
     { choose: [
       { label: '"Six hundred thousand yen — for having a baby here?"', tone: 'Curious', warm: 'aiko',
         then: [
-          { say: 'For having one and staying. There’s a grant for moving here, a grant per child, free medical until junior high, and the daycare fee waiver.', who: 'aiko', expr: 'neutral' },
-          { say: 'It is about four thousand dollars. It sounds enormous until you price a year of childcare and then price the eighteen years after that.', who: 'aiko', expr: 'stern' },
-          { say: 'They’ve been doing versions of this since the nineties. {{pronatal|Every prefecture has a scheme}}. The national rate has gone one direction the entire time.', who: 'aiko', expr: 'neutral' } ] },
+          { say: 'For having one and staying. There’s money for moving here, money for each child, free doctor visits until junior high, and free daycare.', who: 'aiko', expr: 'neutral' },
+          { say: 'It’s about four thousand dollars. That sounds like a lot until you look up what one year of childcare costs. Then the eighteen years after that.', who: 'aiko', expr: 'stern' },
+          { say: 'They’ve been trying things like this since the 1990s. {{pronatal|Every part of Japan has a program}}. The birth rate has kept going down the whole time.', who: 'aiko', expr: 'neutral' } ] },
       { label: '"Does that kind of thing work?"', tone: 'Curious', warm: 'aiko',
         then: [
-          { say: 'It moves people around. A town with a good grant takes a family off the town next door. That’s not new babies, that’s a transfer.', who: 'aiko', expr: 'neutral' },
-          { say: 'The national number is {{tfr|about 1.2}}. You need {{replacement|2.1}} to stand still. There is no cheque in that gap.', who: 'aiko', expr: 'stern' } ] },
+          { say: 'It moves people around. A town with good money steals a family from the town next door. That’s not new babies. That’s just moving them.', who: 'aiko', expr: 'neutral' },
+          { say: 'Japan’s number is {{tfr|about 1.2}} kids per woman. You need {{replacement|2.1}} just to stay the same size. No check is big enough to close that gap.', who: 'aiko', expr: 'stern' } ] },
       { label: '"You sound like you’ve looked into it."', tone: 'Empathetic',
         then: [
           { say: 'I have a spreadsheet.', who: 'aiko', expr: 'neutral' },
           { say: 'She has a spreadsheet.', who: 'ren', expr: 'warm' },
-          { say: 'I have a spreadsheet because it is the only way to have this conversation without it being about feelings for four hours.', who: 'aiko', expr: 'stern' } ] }
+          { say: 'I have a spreadsheet because it’s the only way to talk about this without it turning into four hours of feelings.', who: 'aiko', expr: 'stern' } ] }
     ]},
-    { say: 'It’s not nothing, though. It’s a year of nursery, near enough.', who: 'ren', expr: 'warm' },
+    { say: 'It’s not nothing, though. It pays for about a year of daycare.', who: 'ren', expr: 'warm' },
     { say: 'It’s a year. And then it’s me.', who: 'aiko', expr: 'stern' },
-    { narrate: 'It is not said sharply. It is said the way you say a thing you have said before.' },
+    { narrate: 'She doesn’t say it sharply. She says it like something she has said many times before.' },
     { choose: [
       { label: '"Why you?"', tone: 'Curious', warm: 'aiko',
         then: [
-          { say: 'Because that’s how it goes. Not in this house — he’d do it, he genuinely would.', who: 'aiko', expr: 'neutral' },
+          { say: 'Because that’s how it usually goes. Not in our house — he would do it. He really would.', who: 'aiko', expr: 'neutral' },
           { say: 'I would.', who: 'ren', expr: 'warm' },
-          { say: 'But my team lead had a baby in March and she is back and she is finished. She’s the one doing pickup at six, so she’s the one who doesn’t travel, so she’s the one who didn’t get the Osaka account.', who: 'aiko', expr: 'worried' },
-          { say: 'Nobody was cruel to her. There was no meeting where they decided. It just happened to her, in order, over eight months.', who: 'aiko', expr: 'worried' },
-          { say: 'I am thirty-three and I have spent nine years getting where I am. That is what the six hundred thousand is bidding against, and it does not know that.', who: 'aiko', expr: 'stern' } ] },
+          { say: 'But my boss had a baby in March. She came back to work, and her career is over. She’s the one who picks up the baby at six. So she can’t travel. So she didn’t get the big job in Osaka.', who: 'aiko', expr: 'worried' },
+          { say: 'Nobody was mean to her. Nobody decided it in a meeting. It just happened to her, one step at a time, over eight months.', who: 'aiko', expr: 'worried' },
+          { say: 'I’m thirty-three. I worked for nine years to get where I am. That’s what the six hundred thousand yen is up against. The town doesn’t understand that.', who: 'aiko', expr: 'stern' } ] },
       { label: '"That sounds like a lot to be holding."', tone: 'Empathetic',
         then: [
           { say: 'It’s fine.', who: 'aiko', expr: 'stern' },
-          { narrate: 'She eats two mouthfuls. Ren says nothing, which appears to be a technique.' },
-          { say: '—It is not fine. It is a normal amount of not fine that everyone I know is carrying, which is somehow worse than it being unusual.', who: 'aiko', expr: 'worried' } ] },
+          { narrate: 'She eats two bites. Ren says nothing. It seems to be on purpose.' },
+          { say: '—It’s not fine. It’s the normal amount of not fine that everyone I know is dealing with. Somehow that’s worse than if it were just me.', who: 'aiko', expr: 'worried' } ] },
       { label: '"Ren, what do you think?"', tone: 'Curious', warm: 'ren',
         then: [
           { say: 'Honestly? I want one. I’ve always wanted one.', who: 'ren', expr: 'warm' },
-          { say: 'But I’m not the one whose life goes sideways, so my wanting it is cheap, and I know that, and I try not to spend it.', who: 'ren', expr: 'worried' },
+          { say: 'But I’m not the one whose life gets turned upside down. So my wanting one doesn’t cost me much. I know that. So I try not to push.', who: 'ren', expr: 'worried' },
           { say: 'He is the only man I have ever met who says that out loud.', who: 'aiko', expr: 'warm' },
-          { say: 'I got very good at it in therapy,', who: 'ren', expr: 'warm' },
+          { say: 'I got really good at it in therapy,', who: 'ren', expr: 'warm' },
           { say: 'which you also paid for.', who: 'ren', expr: 'warm' } ] }
     ]},
     { say: 'My mother had three by thirty-one.', who: 'aiko', expr: 'neutral' },
     { choose: [
       { label: '"What was different for her?"', tone: 'Curious', warm: 'aiko',
         then: [
-          { say: 'Everything and nothing. She married at twenty-three because that was when you did. She stopped working because that was what happened.', who: 'aiko', expr: 'neutral' },
-          { say: 'Her mother lived four minutes away and did the afternoons. My mother is in Sendai and works part-time at sixty-two because her pension isn’t what she was told it would be.', who: 'aiko', expr: 'worried' },
-          { say: 'So: later marriage, later first child, no grandmother, and rent. It isn’t that we stopped wanting them. Everything got about four years later and four years later compounds.', who: 'aiko', expr: 'neutral' } ] },
+          { say: 'Everything, and nothing. She got married at twenty-three because that’s when people did. She quit her job because that’s what women did.', who: 'aiko', expr: 'neutral' },
+          { say: 'Her own mother lived four minutes away and watched the kids every afternoon. My mother lives in Sendai. She still works part-time at sixty-two, because her pension is smaller than she was promised.', who: 'aiko', expr: 'worried' },
+          { say: 'So: we married later, we’d have kids later, there’s no grandma nearby, and there’s rent. We didn’t stop wanting kids. Everything just got pushed about four years later. And four years later adds up.', who: 'aiko', expr: 'neutral' } ] },
       { label: '"Does she ask about it?"', tone: 'Empathetic',
         then: [
-          { say: 'She has stopped asking, which is the loudest thing she has ever done.', who: 'aiko', expr: 'worried' } ] },
+          { say: 'She stopped asking. That is the loudest thing she has ever done.', who: 'aiko', expr: 'worried' } ] },
       { label: '"Three! Where did she keep them all?"', tone: 'Playful', warm: 'ren',
         then: [
-          { say: 'A two-room house with her mother-in-law in it. She has told me. Repeatedly. In detail.', who: 'aiko', expr: 'warm' },
+          { say: 'In a two-room house, with her mother-in-law living there too. She has told me. Many times. In detail.', who: 'aiko', expr: 'warm' },
           { say: 'The detail is the point of the story, I think,', who: 'ren', expr: 'warm' } ] }
     ]},
-    { say: 'The bit that gets me is the school.', who: 'ren', expr: 'worried' },
-    { say: 'The one here shut before we came. So it’s the bus to Kawaguchi, thirty-five minutes, from six years old.', who: 'ren', expr: 'worried' },
-    { say: 'And that is a reason not to, isn’t it. And it’s a reason because nobody had children, and it’s a reason nobody will.', who: 'ren', expr: 'worried' },
-    { say: 'That’s the whole thing in one bus.', who: 'aiko', expr: 'neutral' },
+    { say: 'The part that gets me is the school.', who: 'ren', expr: 'worried' },
+    { say: 'The school here closed before we moved in. So a kid would ride a bus to the next town. Thirty-five minutes each way, starting at six years old.', who: 'ren', expr: 'worried' },
+    { say: 'And that’s a reason not to have a kid, isn’t it? The school closed because nobody had children. And now nobody will, because the school closed.', who: 'ren', expr: 'worried' },
+    { say: 'That’s the whole problem, in one bus.', who: 'aiko', expr: 'neutral' },
     { confessions: true },
-    { narrate: 'She finishes first and waits, which she does not do for anybody at work.' },
-    { say: 'Right. Sorry. That got heavy — it’s a ramen shop.', who: 'aiko', expr: 'neutral' },
-    { say: 'Everything gets said in here. It is the steam.', who: 'etsuko', expr: 'neutral' },
+    { narrate: 'She finishes first, and she waits for him. She never waits for anybody at work.' },
+    { say: 'Okay. Sorry. That got heavy. It’s a ramen shop.', who: 'aiko', expr: 'neutral' },
+    { say: 'People say everything in here. It’s the steam.', who: 'etsuko', expr: 'neutral' },
     { bonus: 'aiko' },
     { bonus: 'ren' }
   ],
   react: {
     aiko: {
       matched: [
-        { narrate: 'She eats the first mouthful standing the way people do when they have decided to be somewhere else in a minute, and then she sits back down properly.' },
-        { say: 'Oh, that’s good. That’s clean. Thank you.', who: 'aiko', expr: 'warm' },
-        { say: 'I’ve had a day where everything had eleven things in it. This has four.', who: 'aiko', expr: 'warm' } ],
+        { narrate: 'She takes the first bite like someone about to leave. Then she settles back onto her stool.' },
+        { say: 'Oh, that’s good. That’s simple. Thank you.', who: 'aiko', expr: 'warm' },
+        { say: 'Today, everything I touched had eleven parts. This has four.', who: 'aiko', expr: 'warm' } ],
       near: [ { say: 'That’s good, thanks.', who: 'aiko', expr: 'neutral' } ],
       mismatched: [
-        { say: 'Ah — thank you.', who: 'aiko', expr: 'surprised' },
-        { narrate: 'She moves two of the toppings to the side of the bowl in a neat little pile and does not eat them.' } ]
+        { say: 'Oh — thank you.', who: 'aiko', expr: 'surprised' },
+        { narrate: 'She pushes two of the toppings to the side of the bowl in a neat little pile. She doesn’t eat them.' } ]
     },
     ren: {
       matched: [
-        { say: 'Oh, that’s obscene. Look at it. Look at the butter.', who: 'ren', expr: 'warm' },
-        { say: 'It is eight in the evening and this is a dessert.', who: 'aiko', expr: 'neutral' },
-        { say: 'It’s an emotional support bowl,', who: 'ren', expr: 'warm' } ],
-      near: [ { say: 'Lovely, thank you. Really.', who: 'ren', expr: 'warm' } ],
+        { say: 'Oh, that’s ridiculous. Look at it. Look at the butter.', who: 'ren', expr: 'warm' },
+        { say: 'It’s eight at night and he’s eating dessert.', who: 'aiko', expr: 'neutral' },
+        { say: 'It’s my comfort bowl,', who: 'ren', expr: 'warm' } ],
+      near: [ { say: 'Really good, thank you. Really.', who: 'ren', expr: 'warm' } ],
       mismatched: [
-        { say: 'Ah — nice. Very restrained.', who: 'ren', expr: 'neutral' },
+        { say: 'Oh — nice. Very… plain.', who: 'ren', expr: 'neutral' },
         { say: 'He wanted it to be a birthday cake.', who: 'aiko', expr: 'warm' } ]
     }
   },
   confession: {
     aiko: [
-      { narrate: 'Ren has gone to look at the old photograph on the back wall, which he does not need to do.' },
-      { say: 'He does that when he thinks I want a minute. It’s infuriating and it works.', who: 'aiko', expr: 'warm' },
-      { say: 'Here is the thing I don’t say. I’m not undecided.', who: 'aiko', expr: 'worried' },
-      { say: 'I want one. I have wanted one since I was twenty-six. I’m not the career woman in the article who chose otherwise — I have just been doing arithmetic for seven years and the arithmetic keeps saying: not this year.', who: 'aiko', expr: 'worried' },
-      { say: 'And I am thirty-three, and there is a number of years left in that sentence, and I know exactly what it is.', who: 'aiko', expr: 'worried' },
-      { say: 'So when the town puts a banner up offering me six hundred thousand yen — I’m not insulted that it’s small. I’m insulted that they think the problem is that I didn’t want to.', who: 'aiko', expr: 'stern' } ],
+      { narrate: 'Ren has gotten up to look at the old photo on the wall. He doesn’t need to.' },
+      { say: 'He does that when he thinks I need a minute alone. It’s annoying, and it works.', who: 'aiko', expr: 'warm' },
+      { say: 'Here’s what I don’t say out loud. I’m not unsure.', who: 'aiko', expr: 'worried' },
+      { say: 'I want a baby. I’ve wanted one since I was twenty-six. I’m not some woman in a magazine story who picked her career instead. I’ve just been doing the math for seven years. And the math keeps saying: not this year.', who: 'aiko', expr: 'worried' },
+      { say: 'And I’m thirty-three. There are only so many years left to keep saying ‘not this year.’ I know exactly how many.', who: 'aiko', expr: 'worried' },
+      { say: 'So when the town hangs a banner offering me six hundred thousand yen, I’m not insulted that it’s small. I’m insulted that they think the problem is that I didn’t want to.', who: 'aiko', expr: 'stern' } ],
     ren: [
-      { narrate: 'Aiko has stepped out to take a call she apologised for twice.' },
-      { say: 'She’ll have told you it’s the money and the job. That’s true.', who: 'ren', expr: 'neutral' },
-      { say: 'The bit she won’t have said: her mother rang in June to say she’s having tests, and Aiko booked the train before she put the phone down.', who: 'ren', expr: 'worried' },
-      { say: 'So that’s Sendai every other weekend, probably, for however long that is.', who: 'ren', expr: 'worried' },
-      { say: 'Everybody talks about this like it’s one thing at a time — you have the babies, then thirty years later you look after your parents.', who: 'ren', expr: 'worried' },
-      { say: 'For us it’d be the same five years. Same money, same weekends, same person.', who: 'ren', expr: 'worried' },
-      { say: 'I don’t think anybody who writes these schemes has done that sum. I think they did the baby one and stopped.', who: 'ren', expr: 'neutral' } ]
+      { narrate: 'Aiko has stepped outside to take a phone call. She said sorry about it twice.' },
+      { say: 'She probably told you it’s the money and the job. That’s true.', who: 'ren', expr: 'neutral' },
+      { say: 'Here’s what she didn’t say. Her mother called in June to say she needs medical tests. Aiko bought a train ticket before she even hung up.', who: 'ren', expr: 'worried' },
+      { say: 'So that means going to Sendai every other weekend, probably. For as long as it takes.', who: 'ren', expr: 'worried' },
+      { say: 'Everybody talks about this like it’s one thing at a time. First you raise babies. Then, thirty years later, you take care of your parents.', who: 'ren', expr: 'worried' },
+      { say: 'For us, it would be the same five years. Same money, same weekends, same person.', who: 'ren', expr: 'worried' },
+      { say: 'I don’t think the people who make these programs have done that math. I think they did the baby part and stopped.', who: 'ren', expr: 'neutral' } ]
   },
   bonus: {
     aiko: [
       { say: 'This was better than being at home. Don’t tell him I said that either.', who: 'aiko', expr: 'warm' } ],
     ren: [
-      { say: 'We’ll come back. She won’t say so but she’ll come back on Thursday and pretend it was my idea.', who: 'ren', expr: 'warm' } ]
+      { say: 'We’ll come back. She won’t say so, but she’ll want to come back Thursday and pretend it was my idea.', who: 'ren', expr: 'warm' } ]
   }},
 
   /* =====================================================================
@@ -1624,133 +1624,133 @@ body.size-4 { --fs: 22px; }
      want different buildings.
      ===================================================================== */
   tanaka_yui: { script: [
-    { narrate: 'The last two of the night. He comes in like a man arriving at a place he has a relationship with; she comes in behind him carrying a folder she has clearly been carrying all day.' },
-    { say: 'Etsuko-san. Still here.', who: 'tanaka', expr: 'warm' },
+    { narrate: 'The last two of the night. He walks in like he owns a piece of the place. She follows, carrying a folder she’s clearly been holding all day.' },
+    { say: 'Etsuko. Still here.', who: 'tanaka', expr: 'warm' },
     { say: 'Still here.', who: 'etsuko', expr: 'neutral' },
-    { say: 'This is my daughter. She is up from Sendai. She is telling me I am wrong about several things.', who: 'tanaka', expr: 'warm' },
-    { say: 'Two things. I’ve been extremely restrained.', who: 'yui', expr: 'warm' },
-    { say: 'Tonkotsu. Properly. Nothing modern on it.', who: 'tanaka', expr: 'neutral' },
-    { say: 'Same, but make mine sharp. And I’ll want a {{kaedama|kaedama}} after.', who: 'yui', expr: 'warm' },
-    { say: 'She orders a refill before she has had the first one.', who: 'tanaka', expr: 'stern' },
-    { say: 'That’s how it’s done in Fukuoka, Dad. You told me that.', who: 'yui', expr: 'warm' },
+    { say: 'This is my daughter. She came up from Sendai. She is telling me I am wrong about several things.', who: 'tanaka', expr: 'warm' },
+    { say: 'Two things. I’ve been very polite about it.', who: 'yui', expr: 'warm' },
+    { say: 'Pork bone broth. Done right. Nothing trendy on it.', who: 'tanaka', expr: 'neutral' },
+    { say: 'Same, but make mine with a kick. And I’ll want a {{kaedama|kaedama}} after — extra noodles.', who: 'yui', expr: 'warm' },
+    { say: 'She orders a refill before she has even started.', who: 'tanaka', expr: 'stern' },
+    { say: 'That’s how they do it down south in Fukuoka, Dad. You told me that.', who: 'yui', expr: 'warm' },
     { say: 'I told you that in 1994 and you have used it against me ever since.', who: 'tanaka', expr: 'warm' },
     { bench: true },
     { reactions: true },
-    { narrate: 'The folder sits on the counter between them, closed, which is somehow more present than if it were open.' },
+    { narrate: 'The folder sits closed on the counter between them. Somehow, closed, it’s louder than if it were open.' },
     { choose: [
       { label: '"What’s in the folder?"', tone: 'Curious', warm: 'tanaka',
         then: [
-          { say: 'Ah — well. That is Tuesday’s meeting.', who: 'tanaka', expr: 'neutral' },
-          { say: 'The town has one building budget left this cycle and two things it could be.', who: 'yui', expr: 'neutral' },
-          { say: 'The community health and senior centre — a proper one, with the day service and the rehabilitation room. Or the childcare centre, extended hours, so people can work in Kōriyama and still have a child here.', who: 'tanaka', expr: 'neutral' },
+          { say: 'Ah — well. That is for Tuesday’s town meeting.', who: 'tanaka', expr: 'neutral' },
+          { say: 'The town has enough money left for one new building. There are two things it could be.', who: 'yui', expr: 'neutral' },
+          { say: 'One is a health and senior center — a real one, with daytime care and a room for physical therapy. The other is a daycare center, open late, so parents can work in the city and still raise a child here.', who: 'tanaka', expr: 'neutral' },
           { say: 'One building. One.', who: 'yui', expr: 'stern' } ] },
-      { label: '"Councilman — you were on the council?"', tone: 'Curious', warm: 'tanaka',
+      { label: '"Councilman? You were on the town council?"', tone: 'Curious', warm: 'tanaka',
         then: [
-          { say: 'Twenty-six years. Retired in 2019 and they still send me the papers, which I think is a kindness and my daughter thinks is a problem.', who: 'tanaka', expr: 'warm' },
-          { say: 'It’s not a problem. It’s that you still get a vote at the meeting and the meeting is Tuesday.', who: 'yui', expr: 'neutral' } ] },
+          { say: 'For twenty-six years. I retired in 2019, and they still send me the papers. I think that’s kind. My daughter thinks it’s a problem.', who: 'tanaka', expr: 'warm' },
+          { say: 'It’s not a problem. It’s just that you still get a vote at the meeting, and the meeting is Tuesday.', who: 'yui', expr: 'neutral' } ] },
       { label: '"You two have been arguing all the way here, haven’t you."', tone: 'Playful',
         then: [
-          { say: 'From the station.', who: 'yui', expr: 'warm' },
-          { say: 'It is not arguing. It is that she is wrong at length.', who: 'tanaka', expr: 'stern' },
-          { say: 'There’s a folder. There’s a meeting Tuesday. One building, two things it could be.', who: 'yui', expr: 'neutral' } ] }
+          { say: 'Since the train station.', who: 'yui', expr: 'warm' },
+          { say: 'It is not arguing. She is simply wrong, for a long time.', who: 'tanaka', expr: 'stern' },
+          { say: 'There’s a folder. There’s a meeting Tuesday. One building, and two things it could be.', who: 'yui', expr: 'neutral' } ] }
     ]},
-    { say: 'And I will tell you exactly how Tuesday goes, because I have sat in that room for twenty-six years.', who: 'tanaka', expr: 'neutral' },
-    { say: 'The senior centre goes through. Eleven to four, maybe twelve to three.', who: 'tanaka', expr: 'neutral' },
+    { say: 'I will tell you exactly how Tuesday goes. I sat in that room for twenty-six years.', who: 'tanaka', expr: 'neutral' },
+    { say: 'The senior center wins. The vote will be eleven to four, maybe twelve to three.', who: 'tanaka', expr: 'neutral' },
     { choose: [
       { label: '"How can you know that already?"', tone: 'Curious', warm: 'tanaka',
         then: [
-          { say: 'Because I know who is in the room, and I know who was in the room at the election.', who: 'tanaka', expr: 'neutral' },
-          { say: 'In this town, of the people over sixty-five, near enough four in five vote. Every time. Rain, snow, by-election, doesn’t matter.', who: 'tanaka', expr: 'neutral' },
-          { say: 'Of the people in their twenties — a third. On a good day.', who: 'tanaka', expr: 'stern' },
-          { say: 'Now. I have never in twenty-six years heard a councillor say "let us ignore the young people". Not once. Not one man.', who: 'tanaka', expr: 'neutral' },
-          { say: 'But every one of them can count, and {{turnout|counting is the whole job}}.', who: 'tanaka', expr: 'neutral' } ] },
+          { say: 'Because I know who sits in that room. And I know who showed up to vote them in.', who: 'tanaka', expr: 'neutral' },
+          { say: 'In this town, about four out of five people over sixty-five vote. Every time. Rain, snow, small election — it doesn’t matter.', who: 'tanaka', expr: 'neutral' },
+          { say: 'People in their twenties? About one in three. On a good day.', who: 'tanaka', expr: 'stern' },
+          { say: 'Now. In twenty-six years, I never once heard a council member say "let’s ignore the young people." Not once. Not one person.', who: 'tanaka', expr: 'neutral' },
+          { say: 'But every one of them can count. And {{turnout|counting voters is the whole job}}.', who: 'tanaka', expr: 'neutral' } ] },
       { label: '"Is that what you want to happen?"', tone: 'Curious', warm: 'tanaka',
         then: [
-          { say: 'I want the senior centre. I am not going to pretend otherwise.', who: 'tanaka', expr: 'stern' },
-          { say: 'Sixty per cent of this town is over sixty. The nearest rehabilitation room is fifty minutes by a bus that runs twice.', who: 'tanaka', expr: 'stern' },
-          { say: 'People are falling over in their houses, alone, and lying there. That is not a lobby. That is Wednesday.', who: 'tanaka', expr: 'worried' } ] },
+          { say: 'I want the senior center. I won’t pretend I don’t.', who: 'tanaka', expr: 'stern' },
+          { say: 'Sixty percent of this town is over sixty. The nearest physical therapy is fifty minutes away, on a bus that runs twice a day.', who: 'tanaka', expr: 'stern' },
+          { say: 'Old people are falling down in their homes, alone, and lying there. That isn’t some special-interest group. That’s just an ordinary Wednesday.', who: 'tanaka', expr: 'worried' } ] },
       { label: '"And the daycare doesn’t?"', tone: 'Curious', warm: 'yui',
         then: [
-          { say: 'It gets a discussion. It has had a discussion for six years.', who: 'yui', expr: 'stern' },
-          { say: 'It gets a discussion because the people it is for are twenty-nine and busy and mostly not here yet, and they don’t vote, and half of them can’t — they haven’t moved in, because there’s no daycare.', who: 'yui', expr: 'stern' } ] }
+          { say: 'It gets talked about. It has been talked about for six years.', who: 'yui', expr: 'stern' },
+          { say: 'It only gets talked about, because the people it’s for are twenty-nine and busy. Most of them don’t live here yet, so they can’t vote. They haven’t moved here because there’s no daycare.', who: 'yui', expr: 'stern' } ] }
     ]},
-    { narrate: 'Yui opens the folder about two centimetres and shuts it again.' },
-    { say: 'Dad. Tell them the other bit. The bit you told me on the train.', who: 'yui', expr: 'neutral' },
-    { narrate: 'He takes his time with a mouthful he does not need.' },
-    { say: 'The pension and the medical bill is about a third of the national budget now. Rather more, depending who is counting.', who: 'tanaka', expr: 'neutral' },
-    { say: 'And it is paid by people working today. It was set up when there were many of them and few of us.', who: 'tanaka', expr: 'neutral' },
-    { say: 'And no one — no party, no one — will touch it, because {{silverdem|we are the ones who show up}}.', who: 'tanaka', expr: 'worried' },
+    { narrate: 'Yui opens the folder about an inch, then shuts it again.' },
+    { say: 'Dad. Tell them the other part. The part you told me on the train.', who: 'yui', expr: 'neutral' },
+    { narrate: 'He takes his time chewing a bite he doesn’t need.' },
+    { say: 'Pensions and medical care for old people take up about a third of the national budget now. Maybe more, depending on who’s counting.', who: 'tanaka', expr: 'neutral' },
+    { say: 'And it is paid for by people working today. The system was set up when there were many workers and few old people.', who: 'tanaka', expr: 'neutral' },
+    { say: 'And no one — no political party, no one — will change it, because {{silverdem|we are the ones who show up to vote}}.', who: 'tanaka', expr: 'worried' },
     { choose: [
       { label: '"So what would you actually do about it?"', tone: 'Curious', warm: 'yui',
         then: [
           { say: 'Split it. Same building.', who: 'yui', expr: 'neutral' },
-          { say: 'Day service one wing, childcare the other, one kitchen, one car park, one heating bill. They’ve done it in Toyama and the old people like it because there are children in the building.', who: 'yui', expr: 'warm' },
-          { say: 'It’s cheaper than either done separately and it is somehow the hardest thing in the world to get voted for, because it isn’t what either side asked for.', who: 'yui', expr: 'stern' },
+          { say: 'Senior care in one half, daycare in the other. One kitchen, one parking lot, one heating bill. A city called Toyama did it, and the old people love it because there are kids in the building.', who: 'yui', expr: 'warm' },
+          { say: 'It’s cheaper than building two. But it’s somehow the hardest thing in the world to get passed, because it isn’t what either side asked for.', who: 'yui', expr: 'stern' },
           { say: '...It is not a stupid idea.', who: 'tanaka', expr: 'neutral' },
           { say: 'High praise. I’ll take it to the meeting.', who: 'yui', expr: 'warm' } ] },
       { label: '"That’s a hard thing to say out loud."', tone: 'Empathetic', warm: 'yui',
         then: [
-          { say: 'He’s said it precisely twice. Both times not in a meeting.', who: 'yui', expr: 'neutral' },
-          { say: 'Because in a meeting it is not a thought, it is a resignation letter.', who: 'tanaka', expr: 'stern' } ] },
+          { say: 'He’s said it exactly twice. Never in a meeting.', who: 'yui', expr: 'neutral' },
+          { say: 'Because if you say it in a meeting, you might as well quit your job.', who: 'tanaka', expr: 'stern' } ] },
       { label: '"So the young people should just vote."', tone: 'Playful', warm: 'yui',
         then: [
-          { say: 'Yes! Yes, they should, and I say that at every family dinner and it changes nothing.', who: 'yui', expr: 'stern' },
-          { say: 'Because there are also just fewer of them, and that part is not a lecture — that’s the birth rate arriving at a ballot box twenty years late.', who: 'yui', expr: 'neutral' },
-          { say: 'You cannot out-vote demographics. You can only build the thing before it’s too late to matter.', who: 'yui', expr: 'worried' } ] }
+          { say: 'Yes! Yes, they should. I say that at every family dinner, and it changes nothing.', who: 'yui', expr: 'stern' },
+          { say: 'Because there are also just fewer young people. That’s not a lecture. That’s the low birth rate showing up at the voting booth, twenty years later.', who: 'yui', expr: 'neutral' },
+          { say: 'You can’t out-vote the population numbers. You can only build the thing before it’s too late to matter.', who: 'yui', expr: 'worried' } ] }
     ]},
-    { narrate: 'You put the kaedama in front of Yui. She drops the noodles into what is left of her father’s broth as well, without asking, and he lets her.' },
+    { narrate: 'You put the extra noodles in front of Yui. She drops some into what’s left of her father’s soup too, without asking. He lets her.' },
     { confessions: true },
     { say: 'Tuesday, then.', who: 'yui', expr: 'neutral' },
     { say: 'Tuesday.', who: 'tanaka', expr: 'neutral' },
-    { say: 'I make no promises. I am a very stubborn man and I have a reputation to consider.', who: 'tanaka', expr: 'warm' },
+    { say: 'I make no promises. I am a very stubborn man, and I have a reputation to protect.', who: 'tanaka', expr: 'warm' },
     { bonus: 'tanaka' },
     { bonus: 'yui' }
   ],
   react: {
     tanaka: {
       matched: [
-        { narrate: 'He does not say anything for a moment. He turns the bowl about ten degrees, the way you square up something that matters.' },
-        { say: 'Now that. That is how it was in Hakata in 1971 when I was twenty-two and had no money and no sense.', who: 'tanaka', expr: 'warm' },
+        { narrate: 'He doesn’t say anything for a moment. He turns the bowl a tiny bit, the way you straighten something that matters.' },
+        { say: 'Now that. That’s how it tasted in the south, in 1971, when I was twenty-two and had no money and no sense.', who: 'tanaka', expr: 'warm' },
         { say: 'Dad’s doing the face.', who: 'yui', expr: 'warm' },
         { say: 'I am not doing a face.', who: 'tanaka', expr: 'stern' } ],
       near: [ { say: 'Good. Yes. That’s good work.', who: 'tanaka', expr: 'warm' } ],
       mismatched: [
         { say: 'Hm.', who: 'tanaka', expr: 'stern' },
-        { narrate: 'He eats all of it, correctly, at a steady pace, and says nothing whatsoever about it, which from him is a review.' } ]
+        { narrate: 'He eats all of it, properly, at a steady pace. He says nothing at all about it. From him, that says plenty.' } ]
     },
     yui: {
       matched: [
         { say: 'Oh, that’s the one. That’s exactly the one.', who: 'yui', expr: 'warm' },
-        { say: 'I have eaten a lot of bad tonkotsu in Sendai out of homesickness. This is what I was homesick for.', who: 'yui', expr: 'warm' } ],
+        { say: 'I’ve eaten a lot of bad pork bone ramen in Sendai because I missed home. This is what I was missing.', who: 'yui', expr: 'warm' } ],
       near: [ { say: 'That’s really good, thank you.', who: 'yui', expr: 'warm' } ],
       mismatched: [
         { say: 'Thanks. Yeah, that’s — thanks.', who: 'yui', expr: 'neutral' },
-        { narrate: 'She eats it quickly, mostly to have eaten it, and puts more pepper on than the bowl deserves.' } ]
+        { narrate: 'She eats it fast, just to get it done. She adds more pepper than it needs.' } ]
     }
   },
   confession: {
     tanaka: [
       { narrate: 'Yui has gone outside to take a call. He watches the curtain swing.' },
-      { say: 'I will tell you the thing I have not said to her.', who: 'tanaka', expr: 'worried' },
+      { say: 'I will tell you something I haven’t said to her.', who: 'tanaka', expr: 'worried' },
       { say: 'She is right. About the building, and about the rest of it.', who: 'tanaka', expr: 'worried' },
-      { say: 'I sat in that room for twenty-six years and I voted for people my own age every single time, and I told myself each time it was the urgent one. And each time it was! That is the trick of it. Every single one was urgent.', who: 'tanaka', expr: 'worried' },
-      { say: 'And now the school is shut and the young ones are in Sendai and the town I was protecting is fourteen hundred people with a median age of sixty-one.', who: 'tanaka', expr: 'worried' },
-      { say: 'I did not vote it away in one meeting. I did it in two hundred meetings, being reasonable each time.', who: 'tanaka', expr: 'worried' },
-      { say: 'So on Tuesday I am going to vote for her building. And I am going to complain about it the whole way there, because I am seventy-six and I am owed that much.', who: 'tanaka', expr: 'stern' } ],
+      { say: 'I sat in that room for twenty-six years. Every single time, I voted for people my own age. Each time, I told myself it was the most urgent thing. And each time, it was! That is the trick. Every single one was urgent.', who: 'tanaka', expr: 'worried' },
+      { say: 'And now the school is closed, the young people are in the city, and the town I was protecting has fourteen hundred people. Half of them are over sixty-one.', who: 'tanaka', expr: 'worried' },
+      { say: 'I didn’t vote the town away in one meeting. I did it in two hundred meetings, being reasonable every time.', who: 'tanaka', expr: 'worried' },
+      { say: 'So on Tuesday, I am going to vote for her building. And I am going to complain the whole way there. I am seventy-six. I’ve earned that much.', who: 'tanaka', expr: 'stern' } ],
     yui: [
-      { narrate: 'Her father has turned to argue with Etsuko about a road that was resurfaced in 2006.' },
+      { narrate: 'Her father has turned to argue with Etsuko about a road that was repaved in 2006.' },
       { say: 'Can I be honest? I don’t actually think he’s the problem.', who: 'yui', expr: 'neutral' },
-      { say: 'Everyone my age talks about the old people like it’s a robbery. And then I sit in a room like Tuesday’s and it’s twelve people who all know each other trying to keep a town alive with one building.', who: 'yui', expr: 'worried' },
+      { say: 'People my age talk about old people like they’re stealing from us. But then I sit in a meeting like Tuesday’s. It’s twelve people who all know each other, trying to keep a town alive with one building.', who: 'yui', expr: 'worried' },
       { say: 'Nobody in that room is greedy. They are just the ones who came.', who: 'yui', expr: 'neutral' },
-      { say: 'I do urban planning. Do you know how many towns in this country are on the list to stop functioning by 2040? About four in ten.', who: 'yui', expr: 'worried' },
-      { say: 'So I fly at my dad about a daycare, and what I actually mean is: I don’t want to come back in fifteen years and find you in a house on an empty street with nobody left to notice.', who: 'yui', expr: 'worried' },
+      { say: 'I plan cities for a living. Do you know how many towns in Japan might stop working as towns by 2040? About four in ten.', who: 'yui', expr: 'worried' },
+      { say: 'So I yell at my dad about a daycare. But what I really mean is this: I don’t want to come back in fifteen years and find him alone in a house on an empty street, with nobody left to notice.', who: 'yui', expr: 'worried' },
       { say: 'I can say that about a building. I can’t say it about him.', who: 'yui', expr: 'worried' } ]
   },
   bonus: {
     tanaka: [
-      { say: 'You asked me what I thought. People do not, at my age. They tell me what I think.', who: 'tanaka', expr: 'warm' } ],
+      { say: 'You asked me what I think. People don’t do that at my age. They tell me what I think.', who: 'tanaka', expr: 'warm' } ],
     yui: [
-      { say: 'If you’re here next summer, come to a meeting. They’re unbelievably boring and they’re where everything actually happens.', who: 'yui', expr: 'warm' } ]
+      { say: 'If you’re here next summer, come to a town meeting. They’re incredibly boring. And they’re where everything really gets decided.', who: 'yui', expr: 'warm' } ]
   }},
 
   /* =====================================================================
@@ -1764,194 +1764,194 @@ body.size-4 { --fs: 22px; }
      also the only customer all night who asks the player a question.
      ===================================================================== */
   hiroshi: { script: [
-    { narrate: 'Ten to ten. You are wiping down the far end of the counter when the curtain lifts, carefully, with one hand, the way you do when you are not sure you should.' },
-    { say: 'Ah — you are still open. Are you still open. I can come another time.', who: 'hiroshi', expr: 'worried' },
+    { narrate: 'It’s ten minutes to ten. You’re wiping the counter when the curtain lifts, slowly, with one hand. Like someone who isn’t sure he should come in.' },
+    { say: 'Ah — you’re still open? Are you still open? I can come another time.', who: 'hiroshi', expr: 'worried' },
     { say: 'Sit down, Hiroshi.', who: 'etsuko', expr: 'neutral' },
-    { say: 'Only if it is no trouble.', who: 'hiroshi', expr: 'worried' },
+    { say: 'Only if it’s no trouble.', who: 'hiroshi', expr: 'worried' },
     { say: 'Sit down.', who: 'etsuko', expr: 'stern' },
-    { narrate: 'He sits at the second stool from the end. He puts his cap on the counter, then thinks better of it and puts it on his knee. He is wearing a collared shirt, ironed, for a Tuesday.' },
+    { narrate: 'He sits on the second stool from the end. He puts his cap on the counter, then changes his mind and puts it on his knee. He’s wearing an ironed, collared shirt. On a Tuesday.' },
     { choose: [
       { label: '"You’re not trouble. It’s been quiet all night."', tone: 'Empathetic',
         then: [
           { say: 'That is kind. That is very kind.', who: 'hiroshi', expr: 'warm' },
-          { narrate: 'He says it like somebody accepting a formal gift, and then looks at the counter for a moment.' } ] },
+          { narrate: 'He says it like someone accepting a gift. Then he looks down at the counter for a moment.' } ] },
       { label: '"I don’t think we’ve met — I’m Etsuko’s grandchild."', tone: 'Curious', warm: 'hiroshi',
         then: [
-          { say: 'Ah! The summer one. She said. She said in — June, I think it was June.', who: 'hiroshi', expr: 'warm' },
-          { say: 'Yamashita Hiroshi. I am at the end of the road, the grey house with the bad gate.', who: 'hiroshi', expr: 'warm' },
-          { say: 'It is not a bad gate. It is a fine gate. I have been going to fix it since 2011.', who: 'hiroshi', expr: 'neutral' } ] },
+          { say: 'Ah! The summer helper. She told me about you. In — June, I think. Yes, June.', who: 'hiroshi', expr: 'warm' },
+          { say: 'I’m Hiroshi. Hiroshi Yamashita. I live at the end of the road, in the gray house with the bad gate.', who: 'hiroshi', expr: 'warm' },
+          { say: 'It is not a bad gate. It is a fine gate. I have been meaning to fix it since 2011.', who: 'hiroshi', expr: 'neutral' } ] },
       { label: '"Ironed shirt on a Tuesday. Big night?"', tone: 'Playful', warm: 'hiroshi',
         then: [
           { say: 'Ha! No. No.', who: 'hiroshi', expr: 'warm' },
-          { say: 'It is a habit. Forty-one years of getting on the 6:52, you keep the habit. The train has gone and the shirt has stayed.', who: 'hiroshi', expr: 'warm' } ] }
+          { say: 'It’s a habit. I caught the 6:52 train to work for forty-one years. The job is gone, but the shirt stayed.', who: 'hiroshi', expr: 'warm' } ] }
     ]},
-    { say: 'And how are you finding it? The shop, the town. It must be very slow for somebody your age.', who: 'hiroshi', expr: 'warm' },
-    { narrate: 'It occurs to you that he is the first customer all night to ask you a question.' },
+    { say: 'And how do you like it? The shop, the town? It must be very slow for someone your age.', who: 'hiroshi', expr: 'warm' },
+    { narrate: 'You realize he is the first customer all night to ask you a question.' },
     { choose: [
       { label: '"Honestly? It’s the best summer I’ve had."', tone: 'Empathetic', warm: 'hiroshi',
         then: [
           { say: 'Is it. Is it really.', who: 'hiroshi', expr: 'warm' },
-          { say: 'That is a very good thing to hear. I shall think about that later.', who: 'hiroshi', expr: 'warm' },
-          { narrate: 'You are not sure what he means by later.' } ] },
+          { say: 'That is a very good thing to hear. I will think about that later.', who: 'hiroshi', expr: 'warm' },
+          { narrate: 'You aren’t sure what he means by later.' } ] },
       { label: '"It’s slow. I’ve started to like slow."', tone: 'Curious', warm: 'hiroshi',
         then: [
-          { say: 'It takes about two years, in my experience. My wife liked it immediately. I took until roughly 2004.', who: 'hiroshi', expr: 'warm' } ] },
-      { label: '"She works me like a rented mule."', tone: 'Playful', warm: 'hiroshi',
+          { say: 'It takes about two years, in my experience. My wife liked it right away. It took me until about 2004.', who: 'hiroshi', expr: 'warm' } ] },
+      { label: '"She works me to death."', tone: 'Playful', warm: 'hiroshi',
         then: [
-          { say: 'She does that. She did it to your grandfather. He used to hide in the walk-in.', who: 'hiroshi', expr: 'warm' },
+          { say: 'She does that. She did it to your grandfather too. He used to hide in the walk-in fridge.', who: 'hiroshi', expr: 'warm' },
           { say: 'He was counting stock.', who: 'etsuko', expr: 'stern' },
-          { say: 'He was hiding in the walk-in, Etsuko.', who: 'hiroshi', expr: 'warm' } ] }
+          { say: 'He was hiding in the fridge, Etsuko.', who: 'hiroshi', expr: 'warm' } ] }
     ]},
-    { say: 'Anyway. Whatever is easiest. I am not fussy.', who: 'hiroshi', expr: 'neutral' },
-    { narrate: 'Your grandmother does not move to help you. She is wiping a pan that is already clean.' },
-    { say: 'He will tell you, if you ask him properly.', who: 'etsuko', expr: 'neutral' },
+    { say: 'Anyway. Whatever is easiest. I’m not picky.', who: 'hiroshi', expr: 'neutral' },
+    { narrate: 'Your grandmother doesn’t help you. She is wiping a pan that is already clean.' },
+    { say: 'He will tell you, if you ask him the right way.', who: 'etsuko', expr: 'neutral' },
     { choose: [
       { label: '"What do you usually have?"', tone: 'Curious', warm: 'hiroshi',
         then: [
           { say: 'Oh — I do not want to be a—', who: 'hiroshi', expr: 'worried' },
           { say: 'Hiroshi.', who: 'etsuko', expr: 'stern' },
-          { say: 'The soy sauce one. The local one, the Kitakata. With the bamboo and the egg.', who: 'hiroshi', expr: 'warm' },
-          { say: 'That is how Kimiko had it. Every time, thirty years, and she would not be talked out of it. So I had it too and then I could not stop.', who: 'hiroshi', expr: 'warm' } ] },
-      { label: '"Nobody’s not fussy. Everybody’s got one."', tone: 'Playful', warm: 'hiroshi',
+          { say: 'The soy sauce one. The local one, Kitakata style. With the bamboo shoots and the egg.', who: 'hiroshi', expr: 'warm' },
+          { say: 'That is how Kimiko, my wife, always ordered it. Every time, for thirty years. Nobody could change her mind. So I had it too, and then I could not stop.', who: 'hiroshi', expr: 'warm' } ] },
+      { label: '"Everybody has a favorite. What’s yours?"', tone: 'Playful', warm: 'hiroshi',
         then: [
-          { say: 'Ha. All right. All right, you have me.', who: 'hiroshi', expr: 'warm' },
-          { say: 'The soy sauce. The Kitakata one, the local. Bamboo shoots and the egg. My wife’s order — I ate it beside her for thirty years and it stuck.', who: 'hiroshi', expr: 'warm' } ] },
+          { say: 'Ha. All right. All right, you caught me.', who: 'hiroshi', expr: 'warm' },
+          { say: 'The soy sauce one. The local Kitakata style. Bamboo shoots and the egg. It was my wife’s order. I ate it next to her for thirty years, and it stuck.', who: 'hiroshi', expr: 'warm' } ] },
       { label: '"I’ll surprise you, then."', tone: 'Playful',
         then: [
           { say: 'Please. Anything at all.', who: 'hiroshi', expr: 'warm' },
-          { narrate: 'He glances, very briefly, at the menu strip on the left of the wall — the soy sauce one — and then does not mention it.' } ] }
+          { narrate: 'He glances, very quickly, at the menu sign on the wall — the soy sauce one. Then he doesn’t mention it.' } ] }
     ]},
     { bench: true },
     { reactions: true },
-    { narrate: 'He eats slowly. Slower than anyone else tonight, and it takes you a minute to work out that it is on purpose.' },
-    { say: 'You have the arcade lamps out again. The middle one.', who: 'hiroshi', expr: 'neutral' },
+    { narrate: 'He eats slowly. Slower than anyone else tonight. It takes you a minute to realize he’s doing it on purpose.' },
+    { say: 'The lamps out in the arcade are broken again. The middle one.', who: 'hiroshi', expr: 'neutral' },
     { say: 'Nine months.', who: 'etsuko', expr: 'stern' },
-    { say: 'Nine months! I shall write to them again.', who: 'hiroshi', expr: 'warm' },
+    { say: 'Nine months! I will write to them again.', who: 'hiroshi', expr: 'warm' },
     { say: 'You have written twice.', who: 'etsuko', expr: 'neutral' },
-    { say: 'Then a third will not surprise them.', who: 'hiroshi', expr: 'warm' },
+    { say: 'Then a third letter won’t surprise them.', who: 'hiroshi', expr: 'warm' },
     { choose: [
       { label: '"Have you been here long? In the town, I mean."', tone: 'Curious', warm: 'hiroshi',
         then: [
-          { say: 'Twenty-seven years. We came for the retirement — the plan was the retirement. Kimiko’s people were from two valleys over.', who: 'hiroshi', expr: 'warm' },
-          { say: 'Though I was at the company until I was sixty-two, so for the first ten of those I was really only here at weekends. Electronics. I did thermostats, mostly. Kettles, rice cookers, one very bad hairdryer in 1988.', who: 'hiroshi', expr: 'warm' },
+          { say: 'Twenty-seven years. We came here to retire. That was the plan. Kimiko’s family came from a town nearby.', who: 'hiroshi', expr: 'warm' },
+          { say: 'But I worked at my company until I was sixty-two. So for the first ten years, I was only here on weekends. I made electronics. Thermostats, mostly. Kettles, rice cookers, and one very bad hair dryer in 1988.', who: 'hiroshi', expr: 'warm' },
           { say: 'Forty-one years at the same company. You do not notice at the time that it is also every single person you know.', who: 'hiroshi', expr: 'neutral' } ] },
-      { label: '"You know everyone’s business round here."', tone: 'Playful', warm: 'hiroshi',
+      { label: '"You know everyone’s business around here."', tone: 'Playful', warm: 'hiroshi',
         then: [
-          { say: 'I know the lamps. The lamps are my area.', who: 'hiroshi', expr: 'warm' },
-          { say: 'I was an engineer. Forty-one years, thermostats mostly. You retire and you find the noticing does not retire with you.', who: 'hiroshi', expr: 'warm' } ] },
+          { say: 'I know the lamps. The lamps are my job.', who: 'hiroshi', expr: 'warm' },
+          { say: 'I was an engineer. Forty-one years, mostly thermostats. You retire, but the habit of noticing things doesn’t retire with you.', who: 'hiroshi', expr: 'warm' } ] },
       { label: '"Who do you write to about a lamp?"', tone: 'Curious',
         then: [
-          { say: 'The town office, in theory. The arcade association, in fact, except the arcade association is now two people and one of them is me.', who: 'hiroshi', expr: 'neutral' },
-          { say: 'The other one is eighty-eight and in Kōriyama with her son.', who: 'hiroshi', expr: 'neutral' } ] }
+          { say: 'The town office, supposedly. Really it’s the shop owners’ club. Except the club is now two people, and one of them is me.', who: 'hiroshi', expr: 'neutral' },
+          { say: 'The other one is eighty-eight and lives in the city with her son.', who: 'hiroshi', expr: 'neutral' } ] }
     ]},
-    { narrate: 'His phone goes off on the counter — not a ring, a short two-tone chime. He looks at it and something goes out of his face for a second, and then comes back.' },
-    { say: 'Ah — that is only the kettle.', who: 'hiroshi', expr: 'neutral' },
+    { narrate: 'His phone makes a sound on the counter — not a ring, just a short beep-beep. He looks at it. For a second his face goes blank. Then he comes back.' },
+    { say: 'Ah — that’s only the kettle.', who: 'hiroshi', expr: 'neutral' },
     { choose: [
       { label: '"The kettle?"', tone: 'Curious', warm: 'hiroshi',
         then: [
-          { say: 'A thermos flask, really. My son bought it. You make tea, and it sends a little message — to him, in Chiba, and to me, so I know it sent it.', who: 'hiroshi', expr: 'neutral' },
-          { say: 'If it does not hear from me by the evening it messages him anyway, and then he telephones.', who: 'hiroshi', expr: 'neutral' },
-          { narrate: 'He turns the phone around so you can see it. A single line: 7:48pm — hot water used.' },
-          { say: 'It is a {{mimamori|watch-over}} device. There is a whole industry now — the flask, the fridge door, the electricity meter. The gas company will do it.', who: 'hiroshi', expr: 'neutral' } ] },
+          { say: 'It’s really a hot water thermos. My son bought it. When you make tea, it sends a little message to him in Chiba, near Tokyo. It sends one to me too, so I know it worked.', who: 'hiroshi', expr: 'neutral' },
+          { say: 'If I don’t use it by evening, it messages him anyway. Then he calls me.', who: 'hiroshi', expr: 'neutral' },
+          { narrate: 'He turns the phone so you can see it. One line of text: 7:48pm — hot water used.' },
+          { say: 'It is a {{mimamori|watch-over}} device. There’s a whole business in them now. Thermoses, fridge doors, electric meters. Even the gas company will check on you.', who: 'hiroshi', expr: 'neutral' } ] },
       { label: '"That’s a strange sound for a kettle."', tone: 'Playful', warm: 'hiroshi',
         then: [
           { say: 'It is a strange thing for a kettle. It writes to my son.', who: 'hiroshi', expr: 'warm' },
-          { say: 'You make tea in Fukushima and a telephone lights up in Chiba. Nobody in 1988 would have believed the use we found for that.', who: 'hiroshi', expr: 'warm' } ] },
+          { say: 'You make tea here, and a phone lights up hours away. Nobody in 1988 would have believed what we’d use that for.', who: 'hiroshi', expr: 'warm' } ] },
       { label: '"Is somebody checking on you?"', tone: 'Empathetic',
         then: [
           { say: 'Ah — no. Well. Yes.', who: 'hiroshi', expr: 'worried' },
-          { narrate: 'He straightens the phone so it is square with the edge of the counter.' },
-          { say: 'It is a flask that tells my son I have made tea. It is a {{mimamori|watch-over}} thing. There are a great many of them now.', who: 'hiroshi', expr: 'neutral' } ] }
+          { narrate: 'He lines up the phone with the edge of the counter.' },
+          { say: 'It is a thermos that tells my son I made tea. It is a {{mimamori|watch-over}} thing. There are lots of them now.', who: 'hiroshi', expr: 'neutral' } ] }
     ]},
     { say: 'And I will tell you what nobody says about it.', who: 'hiroshi', expr: 'warm' },
     { say: 'It is a lovely piece of design.', who: 'hiroshi', expr: 'warm' },
-    { narrate: 'He says this with genuine professional pleasure, and it takes a second to land.' },
-    { say: 'Really — it is. The power draw is nothing. It fails safe. My department would have been proud of it and I would have signed it off in a morning.', who: 'hiroshi', expr: 'warm' },
-    { say: 'And what it is for is telling my son that I am still here.', who: 'hiroshi', expr: 'neutral' },
-    { say: 'I do think about that. On the good days I think it is very clever. On the other days I make the tea and I look at the little light and I think: there.', who: 'hiroshi', expr: 'worried' },
+    { narrate: 'He means it. He sounds like a proud engineer. It takes you a second to understand what he’s really saying.' },
+    { say: 'Really — it is. It uses almost no power. If it breaks, it breaks safely. My old team would have been proud of it. I would have approved it in one morning.', who: 'hiroshi', expr: 'warm' },
+    { say: 'And what it is for is telling my son that I’m still alive.', who: 'hiroshi', expr: 'neutral' },
+    { say: 'I do think about that. On good days, I think it is very clever. On other days, I make the tea, I look at the little light, and I think: there. Proof.', who: 'hiroshi', expr: 'worried' },
     { confessions: true },
-    { narrate: 'He finishes the bowl and drinks the broth, and puts the bowl down exactly in the middle of the mat.' },
+    { narrate: 'He finishes the bowl, drinks the soup, and sets the bowl down exactly in the middle of the mat.' },
     { say: 'That was — thank you. That was a good one.', who: 'hiroshi', expr: 'warm' },
-    { say: 'Well. I have kept you both. It is nearly—', who: 'hiroshi', expr: 'worried' },
+    { say: 'Well. I have kept you both too long. It is nearly—', who: 'hiroshi', expr: 'worried' },
     { narrate: 'He is already reaching for his cap.' },
     { choose: [
-      { label: '"Come back Tuesday. It’s always dead on a Tuesday."', tone: 'Empathetic', warm: 'hiroshi',
+      { label: '"Come back Tuesday. It’s always empty on Tuesdays."', tone: 'Empathetic', warm: 'hiroshi',
         then: [
           { narrate: 'He stops with the cap halfway to his head.' },
           { say: 'Tuesday.', who: 'hiroshi', expr: 'surprised' },
-          { say: 'Yes. All right. Tuesday, then — if it is genuinely no—', who: 'hiroshi', expr: 'warm' },
+          { say: 'Yes. All right. Tuesday, then — if it’s really no—', who: 'hiroshi', expr: 'warm' },
           { say: 'Tuesday, Hiroshi.', who: 'etsuko', expr: 'stern' },
           { say: 'Tuesday.', who: 'hiroshi', expr: 'warm' },
-          { narrate: 'He puts the cap on. He is walking differently.' } ] },
+          { narrate: 'He puts on his cap. He walks differently now.' } ] },
       { label: '"You haven’t kept us. Finish your tea."', tone: 'Empathetic', warm: 'hiroshi',
         then: [
-          { say: 'I have finished it. I finished it eleven minutes ago and I have been sitting here anyway.', who: 'hiroshi', expr: 'warm' },
-          { narrate: 'He says it as a joke about himself and it does not entirely come out as one.' },
-          { say: 'Come Tuesday. Tuesday is dead.', who: 'etsuko', expr: 'neutral' },
+          { say: 'I have finished it. I finished it eleven minutes ago. I’ve just been sitting here anyway.', who: 'hiroshi', expr: 'warm' },
+          { narrate: 'He says it like a joke about himself. It doesn’t quite come out as a joke.' },
+          { say: 'Come Tuesday. Tuesdays are empty.', who: 'etsuko', expr: 'neutral' },
           { say: '...All right. Tuesday.', who: 'hiroshi', expr: 'warm' } ] },
-      { label: '"Next time you’re fixing that gate and I’m holding it."', tone: 'Playful', warm: 'hiroshi',
+      { label: '"Next time, you fix that gate and I’ll hold it."', tone: 'Playful', warm: 'hiroshi',
         then: [
           { say: 'The gate is fine!', who: 'hiroshi', expr: 'surprised' },
           { narrate: 'A pause.' },
-          { say: 'Saturday. I have the timber. I have had the timber since 2011.', who: 'hiroshi', expr: 'warm' },
-          { say: 'Saturday, then. Bring gloves, it is a terrible gate.', who: 'hiroshi', expr: 'warm' } ] }
+          { say: 'Saturday. I have the wood. I’ve had the wood since 2011.', who: 'hiroshi', expr: 'warm' },
+          { say: 'Saturday, then. Bring gloves. It is a terrible gate.', who: 'hiroshi', expr: 'warm' } ] }
     ]},
     { bonus: 'hiroshi' },
-    { narrate: 'At the curtain he turns and bows slightly to the room in general — to Etsuko, to you, and to the shop — and then he is out under the dead middle lamp and going slowly up the arcade.' },
-    { say: 'His wife died in the spring of 2019. Pneumonia, very fast.', who: 'etsuko', expr: 'neutral' },
-    { say: 'He came in the week after and sat where you are wiping and said nothing for forty minutes, and I let him.', who: 'etsuko', expr: 'neutral' },
+    { narrate: 'At the curtain he turns and bows a little — to Etsuko, to you, and to the shop. Then he walks out under the broken lamp and slowly up the arcade.' },
+    { say: 'His wife died in the spring of 2019. She got sick and it was very fast.', who: 'etsuko', expr: 'neutral' },
+    { say: 'He came in the week after. He sat right where you’re wiping and said nothing for forty minutes. I let him.', who: 'etsuko', expr: 'neutral' },
     { choose: [
       { label: '"Does he have anyone here?"', tone: 'Curious', warm: 'etsuko',
         then: [
-          { say: 'A son in Chiba who telephones on Sundays and comes at New Year. A good son. Not a nearby son.', who: 'etsuko', expr: 'neutral' },
-          { say: 'And that is it. He worked in Tokyo his whole life — his friends were the company, and the company is in Tokyo, and most of them are dead or in Tokyo, which from here is the same problem.', who: 'etsuko', expr: 'stern' },
-          { say: 'A fifth of the men his age in this country live alone. It is on the same chart as the rest of it. {{isolation|They put it under "social"}}, as though it were a mood.', who: 'etsuko', expr: 'stern' } ] },
+          { say: 'A son in Chiba who calls on Sundays and visits at New Year’s. A good son. Not a nearby son.', who: 'etsuko', expr: 'neutral' },
+          { say: 'And that’s all. He worked in Tokyo his whole life. His friends were the people at his company. The company is in Tokyo. Most of those friends are dead or in Tokyo. From here, that’s the same problem.', who: 'etsuko', expr: 'stern' },
+          { say: 'One in five men his age in Japan lives alone. It’s on the same chart as everything else. {{isolation|They call it a "social" problem}}, like it’s just a feeling.', who: 'etsuko', expr: 'stern' } ] },
       { label: '"He waited outside, didn’t he."', tone: 'Empathetic', warm: 'etsuko',
         then: [
           { say: 'On the bench. He does it most weeks.', who: 'etsuko', expr: 'neutral' },
-          { say: 'He waits until it is quiet so that he is not in anybody’s way, and by the time it is quiet I am closing, and so he gets twenty minutes.', who: 'etsuko', expr: 'worried' },
-          { say: 'I have told him. I have told him for four years. He is a polite man and it is going to be the thing that does for him.', who: 'etsuko', expr: 'stern' } ] },
+          { say: 'He waits until it’s quiet so he won’t be in anybody’s way. But by the time it’s quiet, I’m closing. So he only gets twenty minutes.', who: 'etsuko', expr: 'worried' },
+          { say: 'I have told him. For four years I have told him. He is a polite man, and being polite is going to be what kills him.', who: 'etsuko', expr: 'stern' } ] },
       { label: '"He seemed all right, though."', tone: 'Playful',
         then: [
-          { say: 'He is all right. That is not the same as being looked after.', who: 'etsuko', expr: 'stern' },
-          { say: 'He is all right on a Tuesday for twenty minutes, and the other six days he is a light on his son’s telephone.', who: 'etsuko', expr: 'worried' } ] }
+          { say: 'He is all right. That is not the same as being taken care of.', who: 'etsuko', expr: 'stern' },
+          { say: 'He is all right for twenty minutes on a Tuesday. The other six days, he is just a light on his son’s phone.', who: 'etsuko', expr: 'worried' } ] }
     ]},
     { say: 'Right. The pots.', who: 'etsuko', expr: 'neutral' }
   ],
   react: {
     hiroshi: {
       matched: [
-        { narrate: 'He looks at it for a moment before he picks up the chopsticks. The bamboo. The egg.' },
+        { narrate: 'He looks at it for a moment before he picks up his chopsticks. The bamboo shoots. The egg.' },
         { say: 'Ah.', who: 'hiroshi', expr: 'surprised' },
-        { narrate: 'Just that, and then he does not say anything for a while, and neither does your grandmother, and the fan hums.' },
-        { say: 'You were listening. That is — thank you. People do not, usually. It is nobody’s fault, it is only that there is a lot on.', who: 'hiroshi', expr: 'warm' } ],
+        { narrate: 'That’s all he says. Then he is quiet for a while. So is your grandmother. The fan hums.' },
+        { say: 'You were listening. That is — thank you. People don’t, usually. It’s nobody’s fault. Everybody is just busy.', who: 'hiroshi', expr: 'warm' } ],
       near: [
         { say: 'That is very good. Thank you.', who: 'hiroshi', expr: 'warm' },
-        { narrate: 'He eats it appreciatively and moves nothing around the bowl, which you will later realise is what he does with everything.' } ],
+        { narrate: 'He eats it gratefully and doesn’t move anything around in the bowl. Later you’ll realize he treats everything that way.' } ],
       mismatched: [
-        { say: 'Ah — how nice. Thank you very much indeed.', who: 'hiroshi', expr: 'warm' },
-        { narrate: 'He eats every bit of it and thanks you twice more, and at no point does he mention that it is not what he has had every week since 1994.' } ]
+        { say: 'Oh — how nice. Thank you very much.', who: 'hiroshi', expr: 'warm' },
+        { narrate: 'He eats every bite and thanks you twice more. He never mentions that it isn’t what he has ordered every week since 1994.' } ]
     }
   },
   confession: {
     hiroshi: [
-      { narrate: 'Etsuko has gone through to the back for something that is not in the back.' },
-      { say: 'May I tell you a thing I have not said to my son.', who: 'hiroshi', expr: 'worried' },
-      { say: 'In March I fell. In the hall, on the step where the floor changes — nothing dramatic, I got up after a while and there was no harm done.', who: 'hiroshi', expr: 'neutral' },
-      { say: 'It was not the falling.', who: 'hiroshi', expr: 'worried' },
-      { say: 'It was that while I was on the floor I did the arithmetic. Sunday he telephones. It was a Wednesday. The flask goes off at eight and he might think I had gone to bed early, and he is busy, and he would not want to fuss.', who: 'hiroshi', expr: 'worried' },
-      { say: 'I got to Friday. Lying there I got all the way to Friday, and I thought: well. That is the design working exactly as specified.', who: 'hiroshi', expr: 'worried' },
-      { narrate: 'He straightens the phone again. It was already straight.' },
-      { say: 'They have a word for it now. They have a word and a cleaning company and a line in the budget, which means it happens often enough to be a category.', who: 'hiroshi', expr: 'neutral' },
-      { say: 'I do not want that word. I would like to be a person it did not apply to.', who: 'hiroshi', expr: 'worried' },
-      { say: 'So — I come and sit on the bench a while, and then I come in and I am a nuisance to your grandmother for twenty minutes, and that is Tuesday sorted. That is the whole system.', who: 'hiroshi', expr: 'warm' },
-      { say: 'Do not tell him about March. He would have me in Chiba by October and I would be nobody there at all.', who: 'hiroshi', expr: 'worried' } ]
+      { narrate: 'Etsuko has gone into the back room to get something. There is nothing she needs back there.' },
+      { say: 'May I tell you something I haven’t told my son?', who: 'hiroshi', expr: 'worried' },
+      { say: 'In March, I fell. In the hallway, on the little step. Nothing dramatic. I got up after a while, and I wasn’t hurt.', who: 'hiroshi', expr: 'neutral' },
+      { say: 'It wasn’t the fall that scared me.', who: 'hiroshi', expr: 'worried' },
+      { say: 'It was this. While I was on the floor, I did the math. He calls on Sunday. It was Wednesday. If the thermos didn’t go off at eight, he might think I went to bed early. He is busy. He wouldn’t want to make a fuss.', who: 'hiroshi', expr: 'worried' },
+      { say: 'I got to Friday. Lying there, I figured nobody would check on me until Friday. And I thought: well. That’s the system doing exactly what it was built to do.', who: 'hiroshi', expr: 'worried' },
+      { narrate: 'He straightens his phone again. It was already straight.' },
+      { say: 'They have a word for it now. They have a word and a cleaning company and a line in the budget. That means it happens often enough to need all three.', who: 'hiroshi', expr: 'neutral' },
+      { say: 'I don’t want that word used about me. I want to be a person it doesn’t apply to.', who: 'hiroshi', expr: 'worried' },
+      { say: 'So — I sit on the bench for a while. Then I come in and bother your grandmother for twenty minutes. That takes care of Tuesday. That is my whole system.', who: 'hiroshi', expr: 'warm' },
+      { say: 'Don’t tell my son about March. He would move me to Chiba by October. And there, I would be nobody at all.', who: 'hiroshi', expr: 'worried' } ]
   },
   bonus: {
     hiroshi: [
       { narrate: 'He pauses with one hand on the curtain.' },
-      { say: 'You asked me a question. Earlier — about the town, and you waited for the answer.', who: 'hiroshi', expr: 'warm' },
-      { say: 'I have thought of four things to tell you since. I shall have to save them.', who: 'hiroshi', expr: 'warm' } ]
+      { say: 'You asked me a question earlier. About the town. And you waited for the answer.', who: 'hiroshi', expr: 'warm' },
+      { say: 'I’ve thought of four more things to tell you since then. I will have to save them.', who: 'hiroshi', expr: 'warm' } ]
   }},
 
   /* =====================================================================
@@ -1959,64 +1959,64 @@ body.size-4 { --fs: 22px; }
      who has been standing there through all four conversations.
      ===================================================================== */
   closing: { script: [
-    { narrate: 'Ten past ten. Etsuko takes the curtain down herself, which she will not let you do, and then sits on the customer side of her own counter, which you have never seen her do.' },
+    { narrate: 'It’s 10:10. Etsuko takes the curtain down herself. She never lets you do it. Then she sits on the customer side of her own counter. You have never seen her do that.' },
     { say: 'Sit. Two minutes. Then the pots.', who: 'etsuko', expr: 'neutral' },
-    { narrate: 'The fan clicks off. The street outside is entirely silent, which took you a week to get used to.' },
+    { narrate: 'The fan clicks off. The street outside is totally silent. It took you a week to get used to that.' },
     { choose: [
       { label: '"Is it always like that? All of them at once?"', tone: 'Curious', warm: 'etsuko',
         then: [
-          { say: 'It is always the same five conversations. Different mouths.', who: 'etsuko', expr: 'neutral' },
-          { say: 'Somebody is driving somebody to a hospital. Somebody’s shop has shut. Somebody cannot afford the child they want. Somebody is angry about a building. And somebody has come in at ten o’clock because there is nobody at home to come in from.', who: 'etsuko', expr: 'neutral' },
-          { say: 'Forty-one years. In 1984 the four conversations were: the bypass, the price of pork, a wedding, and whose son was being an idiot.', who: 'etsuko', expr: 'warm' } ] },
+          { say: 'It’s always the same five conversations. Just different people.', who: 'etsuko', expr: 'neutral' },
+          { say: 'Somebody is driving somebody to the hospital. Somebody’s shop has closed. Somebody can’t afford the child they want. Somebody is angry about a building. And somebody comes in at ten o’clock because there’s nobody waiting at home.', who: 'etsuko', expr: 'neutral' },
+          { say: 'Forty-one years. In 1984, the conversations were: the new highway, the price of pork, a wedding, and whose son was being an idiot.', who: 'etsuko', expr: 'warm' } ] },
       { label: '"Everyone was talking about the same thing tonight."', tone: 'Curious', warm: 'etsuko',
         then: [
-          { say: 'They were talking about five things and it was one thing. Yes. Well done.', who: 'etsuko', expr: 'warm' },
-          { say: 'Nobody in here would say the word. Nobody says "we are an {{aging|aging population}}" while eating. They say: my daughter cannot come in October.', who: 'etsuko', expr: 'neutral' } ] },
+          { say: 'They were talking about five things, and it was all one thing. Yes. Good job.', who: 'etsuko', expr: 'warm' },
+          { say: 'Nobody in here would use those words. Nobody says "we are an {{aging|aging population}}" while eating. They say: my daughter can’t visit until October.', who: 'etsuko', expr: 'neutral' } ] },
       { label: '"You must be exhausted."', tone: 'Empathetic',
         then: [
-          { say: 'I am seventy-four. I am always exhausted. It is the base rate.', who: 'etsuko', expr: 'stern' },
-          { narrate: 'She sits back a little, which is her version of agreeing with you.' } ] }
+          { say: 'I am seventy-four. I am always exhausted. That’s just normal now.', who: 'etsuko', expr: 'stern' },
+          { narrate: 'She leans back a little. That’s her way of agreeing with you.' } ] }
     ]},
-    { say: 'They will tell you at school it is because women stopped having babies. That is the half of it they can fit on a chart.', who: 'etsuko', expr: 'stern' },
+    { say: 'At school they’ll tell you it’s because women stopped having babies. That’s the half of the story that fits on a chart.', who: 'etsuko', expr: 'stern' },
     { choose: [
       { label: '"What’s the other half?"', tone: 'Curious', warm: 'etsuko',
         then: [
-          { say: 'That none of us died.', who: 'etsuko', expr: 'warm' },
-          { say: 'I have had two things that would have killed my mother at my age, and I am sitting here complaining about my back. {{lifeexp|We stopped dying}} and we did not start being born, and that is the whole of it, and one half of it is a triumph.', who: 'etsuko', expr: 'neutral' },
-          { say: 'Nobody wants to say the triumph is the problem. So they say it about the young women instead.', who: 'etsuko', expr: 'stern' } ] },
+          { say: 'That we old people didn’t die.', who: 'etsuko', expr: 'warm' },
+          { say: 'I have survived two illnesses that would have killed my mother at my age. And here I am, complaining about my back. {{lifeexp|We stopped dying}} and we did not start being born. That is the whole story. And one half of it is a triumph — a win.', who: 'etsuko', expr: 'neutral' },
+          { say: 'Nobody wants to say the win is part of the problem. So they blame young women instead.', who: 'etsuko', expr: 'stern' } ] },
       { label: '"That’s not really fair on Aiko, is it."', tone: 'Empathetic', warm: 'etsuko',
         then: [
-          { say: 'It is not fair on anybody. Aiko is doing arithmetic. So was I, in 1976 — my arithmetic just came out the other way because my mother lived up the road and the rent was nothing.', who: 'etsuko', expr: 'neutral' },
-          { say: 'Same woman. Different sums.', who: 'etsuko', expr: 'neutral' } ] },
+          { say: 'It isn’t fair to anybody. Aiko is doing math. So was I, in 1976. My math just came out the other way, because my mother lived up the road and rent was cheap.', who: 'etsuko', expr: 'neutral' },
+          { say: 'Same kind of woman. Different math.', who: 'etsuko', expr: 'neutral' } ] },
       { label: '"So it’s your fault for living so long."', tone: 'Playful', warm: 'etsuko',
         then: [
           { say: 'Entirely. I am extremely sorry.', who: 'etsuko', expr: 'warm' },
           { say: 'I intend to keep doing it.', who: 'etsuko', expr: 'stern' } ] }
     ]},
-    { say: 'Ask me the one you have been sitting on all night.', who: 'etsuko', expr: 'neutral' },
+    { say: 'Ask me the question you’ve been holding in all night.', who: 'etsuko', expr: 'neutral' },
     { choose: [
       { label: '"What happens to the shop?"', tone: 'Curious',
         then: [
           { say: 'Nothing happens to the shop. The shop closes.', who: 'etsuko', expr: 'neutral' },
-          { say: 'Not this year. But your uncle drives, your mother is in Sendai, and you have a life that is not this street, and you should have.', who: 'etsuko', expr: 'neutral' },
-          { say: 'There are nine million {{akiya|empty houses}} in this country and one of them will be this one, and it will not be a tragedy. It will be a Tuesday.', who: 'etsuko', expr: 'stern' },
-          { say: 'That is not sad. It is only sad if nobody knew it was here.', who: 'etsuko', expr: 'warm' },
+          { say: 'Not this year. But your uncle is always driving, your mother is in Sendai, and your life isn’t on this street. It shouldn’t be.', who: 'etsuko', expr: 'neutral' },
+          { say: 'There are nine million {{akiya|empty houses}} in Japan. Someday this will be one of them. It won’t be a tragedy. It will just be a normal Tuesday.', who: 'etsuko', expr: 'stern' },
+          { say: 'That isn’t sad. It’s only sad if nobody remembers it was here.', who: 'etsuko', expr: 'warm' },
           { say: 'That is what the summer is for.', who: 'etsuko', expr: 'warm' } ] },
       { label: '"Are you all right? Really?"', tone: 'Empathetic',
         then: [
           { say: 'No.', who: 'etsuko', expr: 'neutral' },
-          { narrate: 'She says it the way you say a fact about the weather.' },
-          { say: 'My back is going and the hospital is twice a month and my son puts a hundred thousand kilometres a year on a car because of me, and he will not say so, and I know exactly what it costs him.', who: 'etsuko', expr: 'worried' },
-          { say: 'And I would rather be a burden here than comfortable in a home in Kōriyama where nobody knows that I opened this shop in 1984 with eight hundred thousand yen and a cousin’s van.', who: 'etsuko', expr: 'stern' },
-          { say: 'That is not a policy. Nobody can build that.', who: 'etsuko', expr: 'worried' } ] },
+          { narrate: 'She says it like a fact about the weather.' },
+          { say: 'My back is getting worse. The hospital is twice a month. My son drives sixty thousand miles a year because of me. He won’t say so. But I know exactly what it costs him.', who: 'etsuko', expr: 'worried' },
+          { say: 'And I would rather be a burden here than be comfortable in a nursing home in the city. Nobody there would know that I opened this shop in 1984 with eight hundred thousand yen — about five thousand dollars — and a cousin’s van.', who: 'etsuko', expr: 'stern' },
+          { say: 'No government program can fix that. Nobody can build that.', who: 'etsuko', expr: 'worried' } ] },
       { label: '"Can I do the pots?"', tone: 'Playful', warm: 'etsuko',
         then: [
           { say: 'You may do the pots.', who: 'etsuko', expr: 'warm' },
-          { say: 'You may not do the pots the way you did them on Sunday.', who: 'etsuko', expr: 'stern' } ] }
+          { say: 'But not the way you did them on Sunday.', who: 'etsuko', expr: 'stern' } ] }
     ]},
-    { narrate: 'She gets up, holding the counter, and takes a moment on the way that she would deny taking.' },
-    { say: 'Same again tomorrow. Six o’clock. Eggs.', who: 'etsuko', expr: 'neutral' },
-    { say: 'And put the notebook somewhere you will find it. You will want it later.', who: 'etsuko', expr: 'warm' }
+    { narrate: 'She stands up, holding on to the counter. She has to stop for a moment on the way. She would say she didn’t.' },
+    { say: 'Same thing tomorrow. Six o’clock. Eggs.', who: 'etsuko', expr: 'neutral' },
+    { say: 'And keep that notebook somewhere safe. You’ll want it later.', who: 'etsuko', expr: 'warm' }
   ]}
 
   };
@@ -2061,19 +2061,19 @@ body.size-4 { --fs: 22px; }
       likes: '14K', rt: '9.2K' },
 
     { name: 'Demography Desk', handle: '@jp_demog', av: 'D', colour: '#4a6d8c', time: '17:40',
-      body: 'Some context for the numbers everyone is posting today.<br><br>· {{median|Median age}}: 49.9 (highest of any large country)<br>· Over 65: 29.3% of the population<br>· {{tfr|Fertility rate}}: 1.20, against a {{replacement|replacement level}} of 2.1<br><br>This is {{natdecrease|natural decrease}}. It is not a forecast, it is this year.',
+      body: 'Here’s what the numbers everyone is posting mean.<br><br>· {{median|Median age}}: 49.9 (the oldest of any big country)<br>· Over 65: 29.3% of people<br>· {{tfr|Fertility rate}}: 1.20 kids per woman. You need 2.1 — the {{replacement|replacement level}} — just to stay the same size.<br><br>This is {{natdecrease|natural decrease}}. It’s not a prediction. It’s happening now.',
       likes: '8.1K', rt: '6.7K' },
 
     { name: 'ゆき / Yuki', handle: '@yukiyuki_2003', av: 'ゆ', colour: '#c96a9a', time: '18:02',
-      body: 'my hometown just made the news for having the oldest population in the prefecture and honestly? checks out. i went home in august and the convenience store shut at 7pm because there was nobody to work the night shift',
+      body: 'my hometown just made the news for having the oldest people in the whole region and honestly? makes sense. i went home in august and the convenience store closed at 7pm. nobody was left to work the night shift',
       likes: '31K', rt: '12K' },
 
     { name: 'Kawaguchi Town Office', handle: '@kawaguchi_city', av: '町', colour: '#3a7a5a', time: '18:30', verified: true,
-      body: '【Settlement support】From this month the child settlement grant rises to ¥600,000 per child for families moving to or staying in the town. Free medical care to the end of junior high. Enquiries at the town office, weekdays 8:30–17:15.',
+      body: '【Money for families】Starting this month, families who move here or stay here get ¥600,000 for each child. Free doctor visits until the end of junior high. Questions? Visit the town office, weekdays 8:30–5:15.',
       likes: '412', rt: '96' },
 
     { name: 'ゆき / Yuki', handle: '@yukiyuki_2003', av: 'ゆ', colour: '#c96a9a', time: '18:34', reply: true,
-      body: 'replying to @kawaguchi_city — genuinely asking, not being rude: is ¥600,000 supposed to cover the eighteen years or just the first bit',
+      body: 'replying to @kawaguchi_city — honest question, not being rude. is ¥600,000 supposed to pay for all eighteen years? or just the first part?',
       likes: '9.4K', rt: '2.1K' }
   ],
 
@@ -2082,25 +2082,25 @@ body.size-4 { --fs: 22px; }
      --------------------------------------------------------------------- */
   daiki: [
     { name: 'Asahi Shimbun', handle: '@asahi', av: 'A', colour: '#a83232', time: '20:15', verified: true,
-      body: 'More than 100,000 people a year leave work or reduce their hours to care for a parent — 介護離職, "care-leaving". Around two-thirds are women. Ministry survey finds most had no discussion with their employer before quitting.',
+      body: 'More than 100,000 people a year quit their jobs or cut their hours to take care of a parent. In Japanese it’s called 介護離職, "quitting to give care." About two-thirds of them are women. A government survey found most never talked to their boss before they quit.',
       likes: '22K', rt: '18K' },
 
     { name: 'とも@介護4年目', handle: '@tomo_kaigo', av: 'と', colour: '#8c5a3a', time: '20:31',
-      body: 'Year four of this. Things nobody tells you about the {{burden|caregiving}} years:<br><br>1. It is not one big decision, it is 400 small ones<br>2. The paperwork is a part-time job by itself<br>3. Your siblings will remember it differently<br>4. You will grieve someone who is still alive<br><br>Anyway. Good luck out there.',
+      body: 'Year four of taking care of my dad. Things nobody tells you about the {{burden|caregiving}} years:<br><br>1. It’s not one big decision. It’s 400 small ones<br>2. The paperwork is a part-time job by itself<br>3. Your brothers and sisters will remember it differently<br>4. You will miss someone who is still alive<br><br>Anyway. Good luck out there.',
       likes: '58K', rt: '31K' },
 
     { name: 'Kenta', handle: '@kenta_dev', av: 'K', colour: '#3a5a8c', time: '20:44',
-      body: 'The bit that gets me is that the {{pension|pension}} and the health system are paid by people working NOW. My generation pays in for people who will retire before we do, and the maths only worked when there were lots of us. Nobody designed this badly. It just aged.',
+      body: 'What gets me: {{pension|pensions}} and health care for old people are paid for by people working NOW. My generation pays for people who retire before us. The math only worked when there were lots of workers. Nobody planned this badly. The country just got old.',
       likes: '17K', rt: '11K' },
 
     { name: 'Demography Desk', handle: '@jp_demog', av: 'D', colour: '#4a6d8c', time: '20:52',
-      body: 'The number behind that: the {{oldage|old-age dependency ratio}}. People 65+ per 100 people of working age.<br><br>1970: about 10<br>2000: about 25<br>Now: about 51<br><br>Two working-age adults per retired person. In 1970 it was ten.',
+      body: 'The number behind that: the {{oldage|old-age dependency ratio}}. It counts people 65+ for every 100 people of working age.<br><br>1970: about 10<br>2000: about 25<br>Now: about 51<br><br>That’s two workers for every retired person. In 1970 it was ten.',
       likes: '12K', rt: '9.8K',
-      quote: { name: 'Kenta', handle: '@kenta_dev', body: 'The bit that gets me is that the pension and the health system are paid by people working NOW...' } },
+      quote: { name: 'Kenta', handle: '@kenta_dev', body: 'What gets me: pensions and health care for old people are paid for by people working NOW...' } },
 
     { name: 'Tsubuyaki Poll', handle: '@tsubu_polls', av: '?', colour: '#1d9bf0', time: '21:00',
-      body: 'Who should be mainly responsible for looking after someone in their eighties?',
-      poll: { q: '', opts: ['Their family', 'The government', 'Paid carers, family pays', 'Paid carers, state pays'],
+      body: 'Who should be mostly responsible for taking care of someone in their eighties?',
+      poll: { q: '', opts: ['Their family', 'The government', 'Paid helpers, family pays', 'Paid helpers, government pays'],
               res: [31, 22, 18, 29], total: '48,201 votes · 6 hours left' },
       likes: '2.9K', rt: '1.1K' }
   ],
@@ -2111,31 +2111,31 @@ body.size-4 { --fs: 22px; }
      --------------------------------------------------------------------- */
   kenji_mary: [
     { name: 'Fukushima Minpo', handle: '@minpo_np', av: 'F', colour: '#2a6a5a', time: '21:18', verified: true,
-      body: 'Nakano Fisheries, Kawaguchi, has closed after 51 years. The owner, 78, said he had no successor. It is the fourth business on the same street to close since 2019.',
+      body: 'Nakano Fish Shop in Kawaguchi has closed after 51 years. The owner, 78, said he had nobody to take it over. It is the fourth business on the same street to close since 2019.',
       likes: '3.4K', rt: '2.8K' },
 
     { name: 'akiya hunter', handle: '@akiya_bot', av: '空', colour: '#7a6a4a', time: '21:20',
-      body: '【New listing】Detached house, 1974, 4 rooms + garden. 8 min walk to the (closed) primary school.<br><br>Price: ¥50,000.<br><br>That is not a typo. Roughly $330. There are nine million {{akiya|empty houses}} in this country and the problem is not that nobody will sell them.',
+      body: '【For sale】House, built 1974, 4 rooms + garden. 8-minute walk to the (closed) elementary school.<br><br>Price: ¥50,000.<br><br>That’s not a typo. About $330. Japan has nine million {{akiya|empty houses}}. The problem isn’t that nobody will sell them.',
       likes: '87K', rt: '44K' },
 
     { name: 'ゆき / Yuki', handle: '@yukiyuki_2003', av: 'ゆ', colour: '#c96a9a', time: '21:26', reply: true,
-      body: 'people in the replies going "just move there then, it\'s free!!" — mate the house is free because the school is shut, the bus goes twice a day and the nearest hospital is 50 minutes. the house was never the expensive part',
+      body: 'people in the replies saying "just move there, it\'s free!!" — ok but the house is free because the school is closed, the bus comes twice a day, and the nearest hospital is 50 minutes away. the house was never the expensive part',
       likes: '41K', rt: '19K' },
 
     { name: 'Mie', handle: '@mie_kango', av: 'M', colour: '#8c3a6a', time: '21:33',
-      body: 'I manage a care home. We are short 11 staff. I have advertised for 14 months. Last week two carers arrived from Indonesia through the {{migrant|specified skilled worker}} route and one of my residents asked me when the "real" staff were starting.<br><br>They are the real staff. They are the only staff.',
+      body: 'I run a nursing home. We need 11 more workers. I’ve been hiring for 14 months. Last week two caregivers came from Indonesia on a {{migrant|foreign worker visa}}. One of our residents asked me when the "real" workers were starting.<br><br>They are the real workers. They are the only workers.',
       likes: '64K', rt: '29K' },
 
     { name: '匿名 / anon', handle: '@kaze_no_koe', av: '匿', colour: '#6a6a6a', time: '21:39', reply: true,
-      body: 'replying to @mie_kango — Japan managed for two thousand years without importing people. Why is the answer always more foreigners and never "pay Japanese workers properly"?',
+      body: 'replying to @mie_kango — Japan did fine for two thousand years without bringing in foreigners. Why is the answer always more foreigners, and never "pay Japanese workers better"?',
       likes: '5.2K', rt: '1.9K' },
 
     { name: 'Mie', handle: '@mie_kango', av: 'M', colour: '#8c3a6a', time: '21:44', reply: true,
-      body: 'Pay them with what, and hire them from where? The under-25 population is half what it was when I started. I raised wages 22% and got four applicants, two of whom were over 60.<br><br>The other option is {{automation|machines}} and I have those too. A lifting frame cannot hold a hand.',
+      body: 'Pay them with what money? Hire them from where? There are half as many people under 25 as when I started. I raised pay 22% and got four applicants. Two were over 60.<br><br>The other option is {{automation|machines}}, and I have those too. A lifting frame cannot hold a hand.',
       likes: '38K', rt: '21K' },
 
     { name: 'Robotics Weekly', handle: '@robo_wk', av: 'R', colour: '#4a4a8c', time: '21:48',
-      body: 'Care-sector {{automation|robotics}} shipments up 19% year on year — lifting assists, monitoring sensors, medication dispensers. Every one of these exists because the workers do not.',
+      body: 'Sales of care {{automation|robots}} are up 19% from last year — machines that lift patients, sensors that watch them, machines that hand out pills. Every one of them exists because there aren’t enough workers.',
       likes: '6.1K', rt: '3.3K' }
   ],
 
@@ -2144,33 +2144,33 @@ body.size-4 { --fs: 22px; }
      --------------------------------------------------------------------- */
   aiko_ren: [
     { name: 'Cabinet Office', handle: '@cao_japan', av: '政', colour: '#2a4a8c', time: '22:02', verified: true,
-      body: 'The new package for children and families: expanded child allowance, free fertility treatment, subsidised childcare, expanded paternity leave. Total spending to double over three years. <span class="tag">#少子化対策</span>',
+      body: 'Our new plan for families: more money per child, free help for couples who can’t get pregnant, cheaper childcare, and more time off for new dads. We’ll double the spending over three years. <span class="tag">#少子化対策</span>',
       likes: '1.8K', rt: '900' },
 
     { name: 'Haruka', handle: '@haruka_works', av: 'は', colour: '#a85a3a', time: '22:09', reply: true,
-      body: 'Every government since 1994 has announced a package. I have now watched four of them from inside my thirties. The {{pronatal|money is not the binding constraint}} — the hours are, the housing is, and the fact that it is still my career that pauses and not his.',
+      body: 'Every government since 1994 has announced a plan like this. I’ve watched four of them during my thirties. The {{pronatal|money isn’t the real problem}}. The work hours are. The housing is. And it’s still my career that stops, not his.',
       likes: '73K', rt: '38K' },
 
     { name: 'Demography Desk', handle: '@jp_demog', av: 'D', colour: '#4a6d8c', time: '22:14',
-      body: 'Worth knowing: pro-natalist spending has a measurable effect. It is just small. Best estimates put big packages at roughly +0.1 on the {{tfr|fertility rate}}.<br><br>Japan needs about +0.9.<br><br>It is not that nothing works. It is that nothing works at that size.',
+      body: 'Good to know: spending money to get people to have babies does work a little. Just a little. Big plans raise the {{tfr|fertility rate}} by about +0.1.<br><br>Japan needs about +0.9.<br><br>It’s not that nothing works. It’s that nothing works that much.',
       likes: '19K', rt: '15K' },
 
     { name: 'Kenta', handle: '@kenta_dev', av: 'K', colour: '#3a5a8c', time: '22:20',
-      body: 'Also nobody says the obvious: the number of women in their twenties is itself much smaller than it was, because of the birth rate 25 years ago. Even if the rate stopped falling tomorrow, births keep falling for another generation. It is baked in.',
+      body: 'Also, nobody says the obvious part. There are far fewer women in their twenties now, because fewer babies were born 25 years ago. So even if the birth rate stopped dropping tomorrow, the number of births would keep falling for another generation. It’s already locked in.',
       likes: '24K', rt: '17K' },
 
     { name: 'Tsubuyaki Poll', handle: '@tsubu_polls', av: '?', colour: '#1d9bf0', time: '22:28',
-      body: 'Honest one. If your town offered ¥600,000 per child, would it change your decision about having one?',
-      poll: { q: '', opts: ['Yes, genuinely', 'No — nowhere near enough', 'Would move me, not decide me', 'Not my decision to make'],
+      body: 'Be honest. If your town offered ¥600,000 per child, would that change your mind about having one?',
+      poll: { q: '', opts: ['Yes, genuinely', 'No — nowhere near enough', 'I’d move here, but still not have a kid', 'Not my decision to make'],
               res: [7, 61, 24, 8], total: '112,884 votes · 1 day left' },
       likes: '4.4K', rt: '2.2K' },
 
     { name: 'Kawaguchi Town Office', handle: '@kawaguchi_city', av: '町', colour: '#3a7a5a', time: '22:35', verified: true,
-      body: '【Notice】Ordinary council meeting, Tuesday 10:00, town hall. Agenda item 3: allocation of the remaining capital budget — (a) community health and senior centre, (b) extended-hours childcare centre. Public gallery open. <span class="tag">#町議会</span>',
+      body: '【Notice】Town council meeting, Tuesday at 10:00, town hall. Item 3: what to build with the money we have left — (a) a health and senior center, or (b) a daycare center open late. The public can come watch. <span class="tag">#町議会</span>',
       likes: '38', rt: '11' },
 
     { name: 'Yui T.', handle: '@yui_planning', av: 'Y', colour: '#7a4a8c', time: '22:41', reply: true,
-      body: 'Thirty-eight likes. For the meeting that decides which of the two things this town gets for the next twenty years.<br><br>Average age in that gallery on Tuesday will be about seventy. Not because they took it — because they {{turnout|showed up}}. Doors open at ten.',
+      body: 'Thirty-eight likes. For the meeting that decides what this town gets for the next twenty years.<br><br>The average age in that room on Tuesday will be about seventy. Not because they took over — because they {{turnout|showed up}}. Doors open at ten.',
       likes: '11K', rt: '7.9K' }
   ],
 
@@ -2181,31 +2181,31 @@ body.size-4 { --fs: 22px; }
      --------------------------------------------------------------------- */
   tanaka_yui: [
     { name: 'Mainichi Shimbun', handle: '@mainichi', av: 'M', colour: '#3a5a8c', time: '22:52', verified: true,
-      body: 'Survey: <b>1 in 5</b> men over 65 living alone report speaking to someone else less than once every two weeks. The figure for women the same age is under half that. <span class="tag">#高齢者</span>',
+      body: 'Survey: <b>1 in 5</b> men over 65 who live alone say they talk to another person less than once every two weeks. For women the same age, it’s less than half that many. <span class="tag">#高齢者</span>',
       likes: '19K', rt: '14K' },
 
     { name: 'Demography Desk', handle: '@jp_demog', av: 'D', colour: '#4a6d8c', time: '22:58',
-      body: 'Why the gap between men and women is so wide, in one line: for a generation of Japanese men, the company <i>was</i> the social network. Retire and it does not shrink, it ends.<br><br>{{solohouse|Single-person households}} over 65 have roughly tripled since 1990.',
+      body: 'Why are men so much lonelier? For a whole generation of Japanese men, their company <i>was</i> their friend group. When they retire, it doesn’t shrink. It ends.<br><br>{{solohouse|People over 65 living alone}}: about three times as many as in 1990.',
       likes: '27K', rt: '19K' },
 
     { name: 'とも@介護4年目', handle: '@tomo_kaigo', av: 'と', colour: '#8c5a3a', time: '23:04', reply: true,
-      body: 'My father says "I am fine, I do not need anyone." He has said it 400 times. What he means is that asking would be an imposition, and he was raised to believe that being an imposition is the worst thing a man can be.<br><br>{{isolation|That is not a personality}}. That is a whole generation.',
+      body: 'My father says "I’m fine, I don’t need anyone." He has said it 400 times. What he means is that asking for help would be a bother. He was raised to believe that being a bother is the worst thing a man can be.<br><br>{{isolation|That’s not just his personality}}. That’s a whole generation.',
       likes: '52K', rt: '30K' },
 
     { name: 'Mie', handle: '@mie_kango', av: 'M', colour: '#8c3a6a', time: '23:09',
-      body: 'The word is <b>{{kodokushi|孤独死}}</b> and I wish people would stop saying it like a ghost story. It is thousands of people a year. It has a cleaning industry and a line in the municipal budget.<br><br>Things that prevent it are extremely boring: a neighbour, a delivery, a regular Tuesday somewhere.',
+      body: 'The word is <b>{{kodokushi|kodokushi}}</b> — dying alone and not being found for a while. I wish people would stop saying it like a ghost story. It happens to thousands of people a year. There are cleaning companies for it. Towns budget for it.<br><br>What prevents it is really boring stuff: a neighbor, a delivery, a regular Tuesday somewhere.',
       likes: '88K', rt: '51K' },
 
     { name: 'Watanabe Denki', handle: '@wtnb_denki', av: 'W', colour: '#2a6a8c', time: '23:14',
-      body: '【i-Pot / 見守り】The flask that messages your family when you make tea. Ten years on the market. Also now: fridge-door sensors, electricity-usage alerts, and a daily call service from the post office. <span class="tag">#見守りサービス</span>',
+      body: '【Check-in products】The thermos that messages your family when you make tea. On sale for ten years. Also: fridge-door sensors, alerts if your power use stops, and a daily phone call from the post office. <span class="tag">#見守りサービス</span>',
       likes: '2.2K', rt: '1.4K' },
 
     { name: 'ゆき / Yuki', handle: '@yukiyuki_2003', av: 'ゆ', colour: '#c96a9a', time: '23:19', reply: true,
-      body: 'i keep seeing this advertised as heartwarming technology and i genuinely cannot get past the fact that we invented a kettle that proves you are alive instead of just. living near each other',
+      body: 'i keep seeing this ad called heartwarming and i honestly can’t get over it. we invented a kettle that proves you’re alive. instead of just. living near each other',
       likes: '104K', rt: '61K' },
 
     { name: 'Tsubuyaki Poll', handle: '@tsubu_polls', av: '?', colour: '#1d9bf0', time: '23:24',
-      body: 'Count honestly. How many people have you had an actual conversation with in the last seven days?',
+      body: 'Be honest. How many people have you had a real conversation with in the last seven days?',
       poll: { q: '', opts: ['More than ten', 'Four to ten', 'One to three', 'None'],
               res: [46, 34, 16, 4], total: '76,455 votes · 12 hours left' },
       likes: '3.1K', rt: '1.6K' }
@@ -4665,15 +4665,15 @@ window.SPRITES = {
     A.setWaiting(!!soon);
 
     el.line.innerHTML = soon
-      ? 'The shop is empty. Out under the dead middle lamp, somebody is sitting on the bench across from the vending machine, in its light, not moving much. They were there when you took the bins out. ' +
+      ? 'The shop is empty. Out under the broken lamp, somebody is sitting on the bench across from the vending machine, in its light. They are barely moving. They were there when you took the trash out, too. ' +
         '<span class="quiet">(Click anything in the room to look at it.)</span>'
-      : 'The shop is empty. Somewhere behind you the pot ticks over. ' +
+      : 'The shop is empty. Behind you, the soup pot bubbles. ' +
         '<span class="quiet">(Click anything in the room to look at it.)</span>';
     el.advance.hidden = true;
     el.choices.innerHTML = '';
     var btn = document.createElement('button');
     btn.className = 'choice';
-    btn.innerHTML = '<span class="tone">Wait</span>Wipe down the counter and see who comes in.';
+    btn.innerHTML = '<span class="tone">Wait</span>Wipe the counter and see who comes in.';
     btn.onclick = function () { el.choices.innerHTML = ''; after(); };
     el.choices.appendChild(btn);
   }
@@ -4769,8 +4769,8 @@ window.SPRITES = {
         if (got) heard++;
         lines += '<div class="close-line"><span class="who">' + g.name + '</span> — ' +
           (got
-            ? '<span class="heard">told you the thing they had not told anyone.</span>'
-            : '<span class="missed">ate what you gave them, said thank you, and kept it to themselves.</span>') +
+            ? '<span class="heard">told you something they hadn’t told anyone.</span>'
+            : '<span class="missed">ate what you made, said thank you, and kept their secret.</span>') +
           '</div>';
       });
     });
@@ -4782,17 +4782,17 @@ window.SPRITES = {
     el.closeBody.innerHTML =
       '<div class="close-sec"><h3>Who talked to you</h3>' + lines + '</div>' +
       '<div class="close-sec"><h3>The night, counted</h3><div class="tally">' +
-        '<b>' + heard + ' of ' + total + '</b> people told you the thing they were not going to say.<br>' +
+        '<b>' + heard + ' of ' + total + '</b> people told you something they weren’t planning to say.<br>' +
         '<b>' + brothsKnown + ' of ' + D.BROTHS.length + '</b> broths cooked &middot; ' +
         '<b>' + topsKnown + ' of ' + D.TOPPINGS.length + '</b> toppings used<br>' +
-        '<b>' + wordsMet + '</b> of the words in the back of the notebook turned up in conversation.' +
+        '<b>' + wordsMet + '</b> of the words in the back of the notebook came up tonight.' +
       '</div></div>' +
       '<div class="close-sec"><h3>What everybody was actually talking about</h3>' +
-        '<div class="close-line">Daiki drives to a hospital twice a month because he is one working-age adult and there is one of him. That is the <b>old-age dependency ratio</b> with a steering wheel.</div>' +
-        '<div class="close-line">Kenji’s street lost its shops because it ran out of people, not customers — <b>rural depopulation</b> — and Mary is here because a country short of care workers opened a door it does not like talking about.</div>' +
-        '<div class="close-line">Aiko is not undecided. She is doing arithmetic, and ¥600,000 does not change it. That is why <b>pro-natalist policy</b> keeps not working.</div>' +
-        '<div class="close-line">Tanaka has voted in every election since 1971 and Yui’s neighbours mostly have not. Nobody in that council room is greedy. They are just the ones who came.</div>' +
-        '<div class="close-line">And Hiroshi waited on a bench until the shop was quiet, because being a nuisance is the worst thing he can imagine being. <b>Social isolation</b> is the consequence nobody puts on a poster, and it is the one with a word, a cleaning industry and a budget line of its own.</div>' +
+        '<div class="close-line">Daiki drives his mother to the hospital twice a month because he is the only working-age adult nearby to do it. That is the <b>old-age dependency ratio</b> — with a steering wheel.</div>' +
+        '<div class="close-line">Kenji’s street lost its shops because the town ran out of people. That is <b>rural depopulation</b>. And Mary is here because Japan doesn’t have enough care workers, so it let workers in from other countries — something it doesn’t like to talk about.</div>' +
+        '<div class="close-line">Aiko isn’t unsure about wanting a baby. She is doing the math, and ¥600,000 doesn’t change the answer. That is why <b>pro-natalist policy</b> — paying people to have babies — keeps failing.</div>' +
+        '<div class="close-line">Tanaka has voted in every election since 1971. Most of Yui’s neighbors haven’t. Nobody in that town meeting is greedy. They are just the ones who showed up.</div>' +
+        '<div class="close-line">And Hiroshi waited on a bench until the shop was quiet, because being a bother is the worst thing he can imagine. <b>Social isolation</b> is the result nobody puts on a poster. But it has its own word, its own cleaning companies, and its own line in the budget.</div>' +
       '</div>';
 
     el.closing.hidden = false;

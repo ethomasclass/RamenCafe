@@ -3,7 +3,8 @@
 **AP Human Geography, Topic 2.9 — Aging Populations (SPS-2.C)**
 Causes and consequences (political, economic, social) of an aging population.
 
-Runs in **35–42 minutes**. Written for 9th graders with no prior knowledge of
+Runs in **35–42 minutes**. Every line students read is written at or below an
+8th-grade reading level, for students with no prior knowledge of
 Japan, Japanese food, or the demographic transition model.
 
 ---
@@ -78,7 +79,7 @@ summary and progress counter all follow this list.
 |---|---|---|
 | `'aiko_ren'` | ~33 min | All the fertility and pro-natalism content. The other four scenes do not cover it |
 | `'tanaka_yui'` | ~34 min | All the political-consequences content |
-| `'hiroshi'` | ~35 min | Social isolation, and the emotional centre of the night |
+| `'hiroshi'` | ~35 min | Social isolation, and the emotional center of the night |
 | `'kenji_mary'` | ~34 min | Depopulation, the silver economy and immigration. The single most expensive cut |
 
 If you must cut one, cut `'tanaka_yui'` and cover political consequences in
@@ -146,7 +147,7 @@ they heard.
    that closed, and the fact that it is her job that pauses.
 
 6. **"Tanaka has voted since 1971. Yui's generation mostly doesn't. Who is at
-   fault for the senior centre?"**
+   fault for the senior center?"**
    The intended landing: nobody in the room is greedy, and the arithmetic does
    the deciding. Then: Yui's split-building proposal — why is the compromise
    the hardest thing to get voted for?
@@ -156,7 +157,7 @@ they heard.
    He is an engineer admiring the device that exists to prove he is still
    alive. Push toward: technology is a real response to isolation and it is
    not the same as company. Then ask what the alternative would cost — a
-   neighbour, a delivery, a regular Tuesday somewhere — and why that is
+   neighbor, a delivery, a regular Tuesday somewhere — and why that is
    harder to fund than a flask.
 
 8. **"Why did Hiroshi wait on the bench?"**
@@ -168,7 +169,7 @@ they heard.
 
 9. **"Etsuko says a fifth of men his age live alone. Why men?"**
    Their networks were built through work and ended with it. Women his age
-   are far more likely to have kept neighbourhood and family ties. Worth
+   are far more likely to have kept neighborhood and family ties. Worth
    naming that this is one of the few places where the aging story is
    sharply gendered against men.
 
@@ -291,8 +292,8 @@ school shut because families stopped having children here — each one makes the
 next more likely
 *Phone:* +0.1 · +0.9
 
-**Scene 4 — Tanaka & Yui.** (a) the community health and senior centre
-(b) the extended-hours childcare centre · four in five · one in three ·
+**Scene 4 — Tanaka & Yui.** (a) the community health and senior center
+(b) the extended-hours childcare center · four in five · one in three ·
 voter turnout · count · about a third · today (people working now) ·
 silver democracy ·
 *Yui's compromise:* both in one building — day service in one wing, childcare
